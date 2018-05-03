@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端-03-jQuery," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="链接  jQuery中的.height()、.innerHeight()和.outerHeight()1. .height()获取匹配元素集合中的第一个元素的当前计算高度值 或 设置每一个匹配元素的高度值（带一个参数）。   注意：1）.css(‘height’) 和 .height()之间的区别是后者返回一个没有单位的数值（例如，400），前者是返回带有完整单位的字符串（例如，400px）。">
+<meta name="keywords" content="前端-03-jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="14-height()">
+<meta property="og:url" content="http://yoursite.com/2018/05/03/14-height()/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:description" content="链接  jQuery中的.height()、.innerHeight()和.outerHeight()1. .height()获取匹配元素集合中的第一个元素的当前计算高度值 或 设置每一个匹配元素的高度值（带一个参数）。   注意：1）.css(‘height’) 和 .height()之间的区别是后者返回一个没有单位的数值（例如，400），前者是返回带有完整单位的字符串（例如，400px）。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://images.cnitblog.com/blog/19094/201304/26173347-f8b548330ffc4bd3804b79dd6cd39241.png">
+<meta property="og:image" content="http://images.cnitblog.com/blog/19094/201304/26173422-98459e9faef24401b2d39849f47909e8.png">
+<meta property="og:image" content="http://images.cnitblog.com/blog/19094/201304/26173438-20b7bea37b904861bf157eee7bb34c63.png">
+<meta property="og:updated_time" content="2018-05-03T03:18:18.754Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="14-height()">
+<meta name="twitter:description" content="链接  jQuery中的.height()、.innerHeight()和.outerHeight()1. .height()获取匹配元素集合中的第一个元素的当前计算高度值 或 设置每一个匹配元素的高度值（带一个参数）。   注意：1）.css(‘height’) 和 .height()之间的区别是后者返回一个没有单位的数值（例如，400），前者是返回带有完整单位的字符串（例如，400px）。">
+<meta name="twitter:image" content="http://images.cnitblog.com/blog/19094/201304/26173347-f8b548330ffc4bd3804b79dd6cd39241.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/03/14-height()/"/>
+
+
+
+
+
+  <title>14-height() | 静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/14-height()/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">14-height()</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T09:31:35+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-03-jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-03-jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p><a href="https://www.cnblogs.com/jiji262/archive/2013/04/26/3045345.html" target="_blank" rel="noopener">链接</a></p>
+</blockquote>
+<h2 id="jQuery中的-height-、-innerHeight-和-outerHeight"><a href="#jQuery中的-height-、-innerHeight-和-outerHeight" class="headerlink" title="jQuery中的.height()、.innerHeight()和.outerHeight()"></a>jQuery中的.height()、.innerHeight()和.outerHeight()</h2><h3 id="1-height"><a href="#1-height" class="headerlink" title="1. .height()"></a>1. .height()</h3><p>获取匹配元素集合中的第一个元素的当前计算高度值 或 设置每一个匹配元素的高度值（带一个参数）。</p>
+<p><img src="http://images.cnitblog.com/blog/19094/201304/26173347-f8b548330ffc4bd3804b79dd6cd39241.png" alt="image"></p>
+<blockquote>
+<p>注意：1）.css(‘height’) 和 .height()之间的区别是后者返回一个没有单位的数值（例如，400），前者是返回带有完整单位的字符串（例如，400px）。</p>
+</blockquote>
+<blockquote>
+<p>2）.height()总是返回内容高度,不管CSS box-sizing属性值。<del>.height(‘value’)设置的容器宽度是根据CSS box-sizing属性来定的, 将这个属性值改成border-box，将造成这个函数改变这个容器的outerHeight，而不是原来的内容高度。</del> jq3改变的是内容高度</p>
+</blockquote>
+<h3 id="2-innerHeight"><a href="#2-innerHeight" class="headerlink" title="2. .innerHeight()"></a>2. .innerHeight()</h3><p>为匹配的元素集合中获取第一个元素的当前计算高度值,包括padding，但是不包括border。</p>
+<p><img src="http://images.cnitblog.com/blog/19094/201304/26173422-98459e9faef24401b2d39849f47909e8.png" alt="image"></p>
+<h3 id="3-outerHeight"><a href="#3-outerHeight" class="headerlink" title="3. .outerHeight()"></a>3. .outerHeight()</h3><p>获取元素集合中第一个元素的当前计算高度值,包括padding，border和选择性的margin。返回一个整数（不包含“px”）表示的值 ，或如果在一个空集合上调用该方法，则会返回 null。</p>
+<p><img src="http://images.cnitblog.com/blog/19094/201304/26173438-20b7bea37b904861bf157eee7bb34c63.png" alt="image"></p>
+<h2 id="原生js"><a href="#原生js" class="headerlink" title="原生js"></a>原生js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">#box&#123;</span><br><span class="line">    background-color: lightgrey;</span><br><span class="line">    width: 300px;</span><br><span class="line">    border: 25px solid green;</span><br><span class="line">    padding: 25px;</span><br><span class="line">    margin: 25px;</span><br><span class="line">    height:60px;</span><br><span class="line">&#125;</span><br><span class="line">//获取盒子的内容高度，内容高度也可用用box.clientHeight获取，内容高度不包括边框和外边距和滚动条</span><br><span class="line">var box = document.getElementById(&quot;box&quot;)</span><br><span class="line">var contentHeight = window.getComputedStyle(box).height //输出 &apos;60px&apos;</span><br><span class="line"></span><br><span class="line">//获取盒子客户端的高度</span><br><span class="line">box.clientHeight //输出110 (内容高度+padding * 2)</span><br><span class="line"></span><br><span class="line">//获取盒子自身实际高度</span><br><span class="line">box.offsetHeight //输出160 (内容高度 + 内边距*2 +边框*2)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端-03-jQuery/" rel="tag"><i class="fa fa-tag"></i> 前端-03-jQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/03/01-import路径问题/" rel="next" title="01-import路径问题">
+                <i class="fa fa-chevron-left"></i> 01-import路径问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/03/05-进阶/" rel="prev" title="05-进阶">
+                05-进阶 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/avatar.jpg"
+               alt="静修" />
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">188</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery中的-height-、-innerHeight-和-outerHeight"><span class="nav-number">1.</span> <span class="nav-text">jQuery中的.height()、.innerHeight()和.outerHeight()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-height"><span class="nav-number">1.1.</span> <span class="nav-text">1. .height()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-innerHeight"><span class="nav-number">1.2.</span> <span class="nav-text">2. .innerHeight()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-outerHeight"><span class="nav-number">1.3.</span> <span class="nav-text">3. .outerHeight()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原生js"><span class="nav-number">2.</span> <span class="nav-text">原生js</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

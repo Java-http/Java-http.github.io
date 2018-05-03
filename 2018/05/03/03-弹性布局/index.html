@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端-01-切图CSS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="弹性布局(新)flex-direction1flex-direction：row | row-reverse | column | column-reverse 默认值：++row++适用于：flex容器   flex-wrap1flex-wrap：nowrap | wrap | wrap-reverse 默认值：++nowrap++适用于：flex容器   justify-content1jus">
+<meta name="keywords" content="前端-01-切图CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="03-弹性布局">
+<meta property="og:url" content="http://yoursite.com/2018/05/03/03-弹性布局/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:description" content="弹性布局(新)flex-direction1flex-direction：row | row-reverse | column | column-reverse 默认值：++row++适用于：flex容器   flex-wrap1flex-wrap：nowrap | wrap | wrap-reverse 默认值：++nowrap++适用于：flex容器   justify-content1jus">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-03T02:05:18.267Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="03-弹性布局">
+<meta name="twitter:description" content="弹性布局(新)flex-direction1flex-direction：row | row-reverse | column | column-reverse 默认值：++row++适用于：flex容器   flex-wrap1flex-wrap：nowrap | wrap | wrap-reverse 默认值：++nowrap++适用于：flex容器   justify-content1jus">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/03/03-弹性布局/"/>
+
+
+
+
+
+  <title>03-弹性布局 | 静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/03-弹性布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">03-弹性布局</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:04:27+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="弹性布局-新"><a href="#弹性布局-新" class="headerlink" title="弹性布局(新)"></a>弹性布局(新)</h1><h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-direction：row | row-reverse | column | column-reverse</span><br></pre></td></tr></table></figure>
+<p>默认值：++row++<br>适用于：flex容器  </p>
+<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-wrap：nowrap | wrap | wrap-reverse</span><br></pre></td></tr></table></figure>
+<p>默认值：++nowrap++<br>适用于：flex容器  </p>
+<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">justify-content：flex-start | flex-end | center | space-between | space-around</span><br></pre></td></tr></table></figure>
+<p>默认值：flex-start<br>适用于：flex容器</p>
+<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">align-items：flex-start | flex-end | center | baseline | stretch</span><br></pre></td></tr></table></figure>
+<p>默认值：stretch<br>适用于：flex容器</p>
+<h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">align-content：flex-start | flex-end | center | space-between | space-around | stretch</span><br></pre></td></tr></table></figure>
+<p>默认值：stretch<br>适用于：多行的弹性盒模型容器</p>
+<h3 id="flex-flow-复合属性"><a href="#flex-flow-复合属性" class="headerlink" title="flex-flow(复合属性)"></a>flex-flow(复合属性)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-flow：&lt;&apos; flex-direction &apos;&gt; || &lt;&apos; flex-wrap &apos;&gt;</span><br></pre></td></tr></table></figure>
+<p>默认值：看各分拆属性<br>适用于：flex容器</p>
+<hr>
+<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-grow：&lt;number&gt;</span><br></pre></td></tr></table></figure>
+<p>默认值：0<br>适用于：flex子项</p>
+<p>取值：</p>
+<p><number>：<br>用数值来定义扩展比率。不允许负值</number></p>
+<h3 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h3><p>flex-shrink：<number><br>默认值：1<br>适用于：flex子项  </number></p>
+<p>取值：</p>
+<p><number>：<br>用数值来定义收缩比率。不允许负值</number></p>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-basis：&lt;length&gt; | &lt;percentage&gt; | auto | content</span><br></pre></td></tr></table></figure>
+<p>默认值：auto<br>适用于：flex子项</p>
+<h3 id="flex-复合属性"><a href="#flex-复合属性" class="headerlink" title="flex(复合属性)"></a>flex(复合属性)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex：none | &lt;&apos; flex-grow &apos;&gt; &lt;&apos; flex-shrink &gt;&apos;? || &lt;&apos; flex-basis &apos;&gt;</span><br></pre></td></tr></table></figure>
+<p>默认值：看各分拆属性<br>适用于：flex子项</p>
+<h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order：&lt;integer&gt;</span><br></pre></td></tr></table></figure>
+<p>默认值：0<br>适用于：flex子项和flex容器中的绝对定位子元素</p>
+<p>取值：</p>
+<p><integer>：<br>用整数值来定义排列顺序，数值小的排在前面。可以为负值。</integer></p>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">align-self：auto | flex-start | flex-end | center | baseline | stretch</span><br></pre></td></tr></table></figure>
+<p>默认值：auto<br>适用于：flex子项</p>
+<h2 id="弹性布局-旧"><a href="#弹性布局-旧" class="headerlink" title="弹性布局(旧)"></a>弹性布局(旧)</h2><blockquote>
+<p>display:box 或者 inline-box</p>
+</blockquote>
+<h3 id="box-orient"><a href="#box-orient" class="headerlink" title="box-orient"></a>box-orient</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-orient：horizontal | vertical | inline-axis | block-axis</span><br></pre></td></tr></table></figure>
+<p>默认值：horizontal<br>适用于：伸缩盒容器</p>
+<p>horizontal：<br>设置伸缩盒对象的子元素从左到右水平排列<br>vertical：<br>设置伸缩盒对象的子元素从上到下纵向排列<br>inline-axis：<br>设置伸缩盒对象的子元素沿行轴排列<br>block-axis：<br>设置伸缩盒对象的子元素沿块轴排列  </p>
+<h3 id="box-direction"><a href="#box-direction" class="headerlink" title="box-direction"></a>box-direction</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-direction：normal | reverse</span><br></pre></td></tr></table></figure>
+<p>默认值：normal<br>适用于：伸缩盒容器</p>
+<p>取值：<br>normal：<br>设置伸缩盒对象的子元素按正常顺序排列<br>reverse：<br>反转伸缩盒对象的子元素的排列顺序  </p>
+<h3 id="box-pack"><a href="#box-pack" class="headerlink" title="box-pack"></a>box-pack</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-pack：start | center | end | justify</span><br></pre></td></tr></table></figure>
+<p>默认值：start<br>适用于：伸缩盒容器</p>
+<p>取值：<br>start：<br>设置伸缩盒对象的子元素从开始位置对齐（大部分情况等同于左对齐，受）<br>center：<br>设置伸缩盒对象的子元素居中对齐<br>end：<br>设置伸缩盒对象的子元素从结束位置对齐（大部分情况等同于右对齐）<br>justify：<br>设置或伸缩盒对象的子元素两端对齐  </p>
+<h3 id="box-align"><a href="#box-align" class="headerlink" title="box-align"></a>box-align</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-align：start | end | center | baseline | stretch</span><br></pre></td></tr></table></figure>
+<p>默认值：stretch<br>适用于：伸缩盒容器</p>
+<p>取值：<br>start：<br>设置伸缩盒对象的子元素从开始位置对齐<br>center：<br>设置伸缩盒对象的子元素居中对齐<br>end：<br>设置伸缩盒对象的子元素从结束位置对齐<br>baseline：<br>设置伸缩盒对象的子元素基线对齐<br>stretch：<br>设置伸缩盒对象的子元素自适应父元素尺寸  </p>
+<h3 id="box-lines"><a href="#box-lines" class="headerlink" title="box-lines"></a>box-lines</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-lines：single | multiple</span><br></pre></td></tr></table></figure>
+<p>默认值：single<br>适用于：伸缩盒容器</p>
+<p>取值：<br>single：<br>伸缩盒对象的子元素只在一行内显示<br>multiple：<br>伸缩盒对象的子元素超出父元素的空间时换行显示  </p>
+<h3 id="box-ordinal-group"><a href="#box-ordinal-group" class="headerlink" title="box-ordinal-group"></a>box-ordinal-group</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-ordinal-group：&lt;integer&gt;</span><br></pre></td></tr></table></figure>
+<p>默认值：1<br>适用于：伸缩盒子元素</p>
+<p>取值：</p>
+<p><integer>：<br>用整数值来定义伸缩盒对象的子元素显示顺序。</integer></p>
+<h3 id="box-flex"><a href="#box-flex" class="headerlink" title="box-flex"></a>box-flex</h3><p>box-flex：<number><br>默认值：0<br>适用于：伸缩盒子元素</number></p>
+<p>取值：</p>
+<p><number>：<br>使用浮点数指定对象所分配其父元素剩余空间的比例。</number></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端-01-切图CSS/" rel="tag"><i class="fa fa-tag"></i> 前端-01-切图CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/03/02-模仿京东/" rel="next" title="02-模仿京东">
+                <i class="fa fa-chevron-left"></i> 02-模仿京东
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/03/04-padding/" rel="prev" title="04-padding">
+                04-padding <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/avatar.jpg"
+               alt="静修" />
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">188</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#弹性布局-新"><span class="nav-number">1.</span> <span class="nav-text">弹性布局(新)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-direction"><span class="nav-number">1.0.1.</span> <span class="nav-text">flex-direction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-wrap"><span class="nav-number">1.0.2.</span> <span class="nav-text">flex-wrap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#justify-content"><span class="nav-number">1.0.3.</span> <span class="nav-text">justify-content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#align-items"><span class="nav-number">1.0.4.</span> <span class="nav-text">align-items</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#align-content"><span class="nav-number">1.0.5.</span> <span class="nav-text">align-content</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-flow-复合属性"><span class="nav-number">1.0.6.</span> <span class="nav-text">flex-flow(复合属性)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-grow"><span class="nav-number">1.0.7.</span> <span class="nav-text">flex-grow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-shrink"><span class="nav-number">1.0.8.</span> <span class="nav-text">flex-shrink</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-basis"><span class="nav-number">1.0.9.</span> <span class="nav-text">flex-basis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-复合属性"><span class="nav-number">1.0.10.</span> <span class="nav-text">flex(复合属性)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#order"><span class="nav-number">1.0.11.</span> <span class="nav-text">order</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#align-self"><span class="nav-number">1.0.12.</span> <span class="nav-text">align-self</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#弹性布局-旧"><span class="nav-number">1.1.</span> <span class="nav-text">弹性布局(旧)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#box-orient"><span class="nav-number">1.1.1.</span> <span class="nav-text">box-orient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#box-direction"><span class="nav-number">1.1.2.</span> <span class="nav-text">box-direction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#box-pack"><span class="nav-number">1.1.3.</span> <span class="nav-text">box-pack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#box-align"><span class="nav-number">1.1.4.</span> <span class="nav-text">box-align</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#box-lines"><span class="nav-number">1.1.5.</span> <span class="nav-text">box-lines</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#box-ordinal-group"><span class="nav-number">1.1.6.</span> <span class="nav-text">box-ordinal-group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#box-flex"><span class="nav-number">1.1.7.</span> <span class="nav-text">box-flex</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

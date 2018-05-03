@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端-07-scss," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1、声明混合宏不带参数混合宏：在 Sass 中，使用“@mixin”来声明一个混合宏。如： 1234@mixin border-radius&amp;#123;    -webkit-border-radius: 5px;    border-radius: 5px;&amp;#125; 其中 @mixin 是用来声明混合宏的关键词，有点类似 CSS 中的 @media、@font-face 一样。border-">
+<meta name="keywords" content="前端-07-scss">
+<meta property="og:type" content="article">
+<meta property="og:title" content="07-混合宏">
+<meta property="og:url" content="http://yoursite.com/2018/05/03/07-混合宏/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:description" content="1、声明混合宏不带参数混合宏：在 Sass 中，使用“@mixin”来声明一个混合宏。如： 1234@mixin border-radius&amp;#123;    -webkit-border-radius: 5px;    border-radius: 5px;&amp;#125; 其中 @mixin 是用来声明混合宏的关键词，有点类似 CSS 中的 @media、@font-face 一样。border-">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-03T03:02:47.410Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="07-混合宏">
+<meta name="twitter:description" content="1、声明混合宏不带参数混合宏：在 Sass 中，使用“@mixin”来声明一个混合宏。如： 1234@mixin border-radius&amp;#123;    -webkit-border-radius: 5px;    border-radius: 5px;&amp;#125; 其中 @mixin 是用来声明混合宏的关键词，有点类似 CSS 中的 @media、@font-face 一样。border-">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/03/07-混合宏/"/>
+
+
+
+
+
+  <title>07-混合宏 | 静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/07-混合宏/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">07-混合宏</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-07-scss</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1、声明混合宏"><a href="#1、声明混合宏" class="headerlink" title="1、声明混合宏"></a>1、声明混合宏</h2><h3 id="不带参数混合宏："><a href="#不带参数混合宏：" class="headerlink" title="不带参数混合宏："></a>不带参数混合宏：</h3><p>在 Sass 中，使用“@mixin”来声明一个混合宏。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@mixin border-radius&#123;</span><br><span class="line">    -webkit-border-radius: 5px;</span><br><span class="line">    border-radius: 5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中 @mixin 是用来声明混合宏的关键词，有点类似 CSS 中的 @media、@font-face 一样。border-radius 是混合宏的名称。大括号里面是复用的样式代码。</p>
+<h3 id="带参数混合宏："><a href="#带参数混合宏：" class="headerlink" title="带参数混合宏："></a>带参数混合宏：</h3><p>除了声明一个不带参数的混合宏之外，还可以在定义混合宏时带有参数，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@mixin border-radius($radius:5px)&#123;</span><br><span class="line">    -webkit-border-radius: $radius;</span><br><span class="line">    border-radius: $radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="复杂的混合宏："><a href="#复杂的混合宏：" class="headerlink" title="复杂的混合宏："></a>复杂的混合宏：</h3><p>上面是一个简单的定义混合宏的方法，当然， Sass 中的混合宏还提供更为复杂的，你可以在大括号里面写上带有逻辑关系，帮助更好的做你想做的事情,如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@mixin box-shadow($shadow...) &#123;</span><br><span class="line">  @if length($shadow) &gt;= 1 &#123;</span><br><span class="line">    @include prefixer(box-shadow, $shadow);</span><br><span class="line">  &#125; @else&#123;</span><br><span class="line">    $shadow:0 0 4px rgba(0,0,0,.3);</span><br><span class="line">    @include prefixer(box-shadow, $shadow);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个 box-shadow 的混合宏，带有多个参数，这个时候可以使用“ … ”来替代。简单的解释一下，当 $shadow 的参数数量值大于或等于“ 1 ”时，表示有多个阴影值，反之调用默认的参数值“ 0 0 4px rgba(0,0,0,.3) ”。</p>
+<h2 id="2-混合宏-调用混合宏"><a href="#2-混合宏-调用混合宏" class="headerlink" title="2.混合宏-调用混合宏"></a>2.混合宏-调用混合宏</h2><p>在 Sass 中通过 @mixin 关键词声明了一个混合宏，那么在实际调用中，其匹配了一个关键词“@include”来调用声明好的混合宏。例如在你的样式中定义了一个圆角的混合宏“border-radius”:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@mixin border-radius&#123;</span><br><span class="line">    -webkit-border-radius: 3px;</span><br><span class="line">    border-radius: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在一个按钮中要调用定义好的混合宏“border-radius”，可以这样使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">button &#123;</span><br><span class="line">    @include border-radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个时候编译出来的 CSS:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">button &#123;</span><br><span class="line">  -webkit-border-radius: 3px;</span><br><span class="line">  border-radius: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-混合宏的参数–传一个不带值的参数"><a href="#3-混合宏的参数–传一个不带值的参数" class="headerlink" title="3.混合宏的参数–传一个不带值的参数"></a>3.混合宏的参数–传一个不带值的参数</h2><p>Sass 的混合宏有一个强大的功能，可以传参，那么在 Sass 中传参主要有以下几种情形：</p>
+<h3 id="A-传一个不带值的参数"><a href="#A-传一个不带值的参数" class="headerlink" title="A) 传一个不带值的参数"></a>A) 传一个不带值的参数</h3><p>在混合宏中，可以传一个不带任何值的参数，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@mixin border-radius($radius)&#123;</span><br><span class="line">  -webkit-border-radius: $radius;</span><br><span class="line">  border-radius: $radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Sass 的混合宏有一个强大的功能，可以传参，那么在 Sass 中传参主要有以下几种情形：</p>
+<p>A) 传一个不带值的参数</p>
+<p>在混合宏中，可以传一个不带任何值的参数，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@mixin border-radius($radius)&#123;</span><br><span class="line">  -webkit-border-radius: $radius;</span><br><span class="line">  border-radius: $radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在混合宏“border-radius”中定义了一个不带任何值的参数“$radius”。</p>
+<p>在调用的时候可以给这个混合宏传一个参数值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  @include border-radius(3px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="混合宏的参数–传一个带值的参数"><a href="#混合宏的参数–传一个带值的参数" class="headerlink" title="混合宏的参数–传一个带值的参数"></a>混合宏的参数–传一个带值的参数</h2><p>在 Sass 的混合宏中，还可以给混合宏的参数传一个默认值，例如：<br>@mixin border-radius($radius:3px){</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-webkit-border-radius: $radius;</span><br><span class="line">  border-radius: $radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在混合宏“border-radius”传了一个参数“$radius”，而且给这个参数赋予了一个默认值“3px”。</p>
+<p>在调用类似这样的混合宏时，会多有一个机会，假设你的页面中的圆角很多地方都是“3px”的圆角，那么这个时候只需要调用默认的混合宏“border-radius”:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.btn &#123;</span><br><span class="line">  @include border-radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来的 CSS:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.btn &#123;</span><br><span class="line">  -webkit-border-radius: 3px;</span><br><span class="line">  border-radius: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但有的时候，页面中有些元素的圆角值不一样，那么可以随机给混合宏传值，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  @include border-radius(50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来的 CSS:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  -webkit-border-radius: 50%;</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="混合宏的参数–传多个参数"><a href="#混合宏的参数–传多个参数" class="headerlink" title="混合宏的参数–传多个参数"></a>混合宏的参数–传多个参数</h2><p>Sass 混合宏除了能传一个参数之外，还可以传多个参数，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@mixin center($width,$height)&#123;</span><br><span class="line">  width: $width;</span><br><span class="line">  height: $height;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  left: 50%;</span><br><span class="line">  margin-top: -($height) / 2;</span><br><span class="line">  margin-left: -($width) / 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在混合宏“center”就传了多个参数。在实际调用和其调用其他混合宏是一样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box-center &#123;</span><br><span class="line">  @include center(500px,300px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来 CSS:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.box-center &#123;</span><br><span class="line">  width: 500px;</span><br><span class="line">  height: 300px;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  left: 50%;</span><br><span class="line">  margin-top: -150px;</span><br><span class="line">  margin-left: -250px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  有一个特别的参数“…”。当混合宏传的参数过多之时，可以使用参数来替代，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@mixin box-shadow($shadows...)&#123;</span><br><span class="line">  @if length($shadows) &gt;= 1 &#123;</span><br><span class="line">    -webkit-box-shadow: $shadows;</span><br><span class="line">    box-shadow: $shadows;</span><br><span class="line">  &#125; @else &#123;</span><br><span class="line">    $shadows: 0 0 2px rgba(#000,.25);</span><br><span class="line">    -webkit-box-shadow: $shadow;</span><br><span class="line">    box-shadow: $shadow;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来的CSS:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);</span><br><span class="line">  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="混合宏的参数–混合宏的不足"><a href="#混合宏的参数–混合宏的不足" class="headerlink" title="混合宏的参数–混合宏的不足"></a>混合宏的参数–混合宏的不足</h2><p>混合宏在实际编码中给我们带来很多方便之处，特别是对于复用重复代码块。但其最大的不足之处是会生成冗余的代码块。比如在不同的地方调用一个相同的混合宏时。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@mixin border-radius&#123;</span><br><span class="line">  -webkit-border-radius: 3px;</span><br><span class="line">  border-radius: 3px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box &#123;</span><br><span class="line">  @include border-radius;</span><br><span class="line">  margin-bottom: 5px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.btn &#123;</span><br><span class="line">  @include border-radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>示例在“.box”和“.btn”中都调用了定义好的“border-radius”混合宏。先来看编译出来的 CSS：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  -webkit-border-radius: 3px;</span><br><span class="line">  border-radius: 3px;</span><br><span class="line">  margin-bottom: 5px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.btn &#123;</span><br><span class="line">  -webkit-border-radius: 3px;</span><br><span class="line">  border-radius: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上例明显可以看出，Sass 在调用相同的混合宏时，并不能智能的将相同的样式代码块合并在一起。这也是 Sass 的混合宏最不足之处。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端-07-scss/" rel="tag"><i class="fa fa-tag"></i> 前端-07-scss</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/03/08-AngularJS 从DOM中获取scope/" rel="next" title="08-AngularJS 从DOM中获取scope">
+                <i class="fa fa-chevron-left"></i> 08-AngularJS 从DOM中获取scope
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/03/07-sync/" rel="prev" title="07-sync">
+                07-sync <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/avatar.jpg"
+               alt="静修" />
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">188</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、声明混合宏"><span class="nav-number">1.</span> <span class="nav-text">1、声明混合宏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不带参数混合宏："><span class="nav-number">1.1.</span> <span class="nav-text">不带参数混合宏：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带参数混合宏："><span class="nav-number">1.2.</span> <span class="nav-text">带参数混合宏：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂的混合宏："><span class="nav-number">1.3.</span> <span class="nav-text">复杂的混合宏：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-混合宏-调用混合宏"><span class="nav-number">2.</span> <span class="nav-text">2.混合宏-调用混合宏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-混合宏的参数–传一个不带值的参数"><span class="nav-number">3.</span> <span class="nav-text">3.混合宏的参数–传一个不带值的参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-传一个不带值的参数"><span class="nav-number">3.1.</span> <span class="nav-text">A) 传一个不带值的参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合宏的参数–传一个带值的参数"><span class="nav-number">4.</span> <span class="nav-text">混合宏的参数–传一个带值的参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合宏的参数–传多个参数"><span class="nav-number">5.</span> <span class="nav-text">混合宏的参数–传多个参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合宏的参数–混合宏的不足"><span class="nav-number">6.</span> <span class="nav-text">混合宏的参数–混合宏的不足</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

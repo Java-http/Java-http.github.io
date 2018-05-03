@@ -103,7 +103,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="静修-个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/page/11/index.html">
 <meta property="og:site_name" content="静修-个人博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -136,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/page/11/"/>
 
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/04-语法风格变量/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/35-CMD和AMD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -296,7 +296,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/04-语法风格变量/" itemprop="url">04-语法风格变量</a></h1>
+                <a class="post-title-link" href="/2018/05/03/35-CMD和AMD/" itemprop="url">35-CMD和AMD</a></h1>
         
 
         <div class="post-meta">
@@ -308,7 +308,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T11:38:11+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
                 2018-05-03
               </time>
             
@@ -331,8 +331,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-07-scss</span>
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
                   </a>
                 </span>
 
@@ -370,26 +370,7 @@
       
         
           
-            <h2 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h2><p>SCSS 是 Sass 的新语法格式，从外形上来判断他和 CSS 长得几乎是一模一样，代码都包裹在一对大括号里，并且==末尾结束处都有一个分号==。其文件名格式常常以“.scss”为扩展名。</p>
-<p>1.嵌套输出方式 nested<br>2.展开输出方式 expanded<br>3.紧凑输出方式 compact<br>4.压缩输出方式 compressed</p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>Sass 的变量包括三个部分：<br>1.声明变量的符号“$”<br>2.变量名称<br>3.赋予变量的值</p>
-<h2 id="普通变量与默认变量"><a href="#普通变量与默认变量" class="headerlink" title="普通变量与默认变量"></a>普通变量与默认变量</h2><h3 id="普通变量"><a href="#普通变量" class="headerlink" title="普通变量"></a>普通变量</h3><p>定义之后可以在全局范围内使用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$fontSize: 12px;</span><br><span class="line">body&#123;</span><br><span class="line">    font-size:$fontSize;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译后的css代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    font-size:12px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="默认变量"><a href="#默认变量" class="headerlink" title="默认变量"></a>默认变量</h3><p>sass 的默认变量仅需要在值后面加上 !default 即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$baseLineHeight:1.5 !default;</span><br><span class="line">body&#123;</span><br><span class="line">    line-height: $baseLineHeight; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译后的css代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    line-height:1.5;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>sass 的默认变量一般是用来设置默认值，然后根据需求来覆盖的，覆盖的方式也很简单，只需要在默认变量==之前==重新声明下变量即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$baseLineHeight: 2;</span><br><span class="line">$baseLineHeight: 1.5 !default;</span><br><span class="line">body&#123;</span><br><span class="line">    line-height: $baseLineHeight; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译后的css代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    line-height:2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可以看出现在编译后的 line-height 为 2，而不是我们默认的 1.5。默认变量的价值在进行组件化开发的时候会非常有用。</p>
-<h2 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//SCSS</span><br><span class="line">$color: orange !default;//定义全局变量(在选择器、函数、混合宏...的外面定义的变量为全局变量)</span><br><span class="line">.block &#123;</span><br><span class="line">  color: $color;//调用全局变量</span><br><span class="line">&#125;</span><br><span class="line">em &#123;</span><br><span class="line">  $color: red;//定义局部变量</span><br><span class="line">  a &#123;</span><br><span class="line">    color: $color;//调用局部变量</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">span &#123;</span><br><span class="line">  color: $color;//调用全局变量</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>css 的结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//CSS</span><br><span class="line">.block &#123;</span><br><span class="line">  color: orange;</span><br><span class="line">&#125;</span><br><span class="line">em a &#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line">span &#123;</span><br><span class="line">  color: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>只有满足所有下述标准时方可创建新变量：<br>1.该值至少重复出现了两次；<br>2.该值至少可能会被更新一次；<br>3.该值所有的表现都与变量有关（非巧合）。</p>
+            <p><a href="http://www.jianshu.com/p/09ffac7a3b2c" target="_blank" rel="noopener">简书地址</a></p>
 
           
         
@@ -438,7 +419,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/06-vfor的key/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/34-解决ios时间戳格式错误/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -457,7 +438,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/06-vfor的key/" itemprop="url">06-vfor的key</a></h1>
+                <a class="post-title-link" href="/2018/05/03/34-解决ios时间戳格式错误/" itemprop="url">34-解决ios时间戳格式错误</a></h1>
         
 
         <div class="post-meta">
@@ -469,7 +450,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
                 2018-05-03
               </time>
             
@@ -492,8 +473,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-08-vue/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-08-vue</span>
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
                   </a>
                 </span>
 
@@ -531,8 +512,18 @@
       
         
           
-            <p>为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 key 属性。理想的 key 值是每项都有的且唯一的 id。</p>
-<p>建议尽可能在使用 v-for 时提供 key，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性能上的提升。</p>
+            <p><a href="http://blog.csdn.net/weixin_35955795/article/details/71178643" target="_blank" rel="noopener">参考链接1</a></p>
+<p><a href="http://blog.csdn.net/u013184759/article/details/51984080" target="_blank" rel="noopener">参考链接2</a></p>
+<p><a href="http://blog.csdn.net/pkueecser/article/details/53140999" target="_blank" rel="noopener">参考链接3</a></p>
+<p>To make your question easier your problem is with:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Date(&apos;2014-02-18 15:00:48&apos;)</span><br></pre></td></tr></table></figure>
+<p>This work okay in chrome but not in safari. The mdn talks about ECMAScript 5 ISO-8601 format support says:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alternatively, the date/time string may be in ISO 8601 format. For example, &quot;2011-10-10&quot; (just date) or &quot;2011-10-10T14:48:00&quot; (date and time) can be passed and parsed.</span><br></pre></td></tr></table></figure>
+<p>If you include T it works:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Date(&apos;2014-02-18T15:00:48&apos;)</span><br></pre></td></tr></table></figure>
+<p>==You can use new<br> Date(‘2014-02-18T15:00:48’.replace(/\s/, ‘T’)).==</p>
+<p>If you handle a lot of cases like this I will recommend using moment which seems to handle this case very well with or without T: parsing from string. Additionally your whole example is easier with momentjs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var minutes = moment().diff(&quot;2014-02-18 15:00:48&quot;, &apos;minutes&apos;);</span><br></pre></td></tr></table></figure>
 
           
         
@@ -581,7 +572,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-入门指南/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/12-布尔值/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -600,7 +591,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/01-入门指南/" itemprop="url">01-入门指南</a></h1>
+                <a class="post-title-link" href="/2018/05/03/12-布尔值/" itemprop="url">12-布尔值</a></h1>
         
 
         <div class="post-meta">
@@ -612,7 +603,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
                 2018-05-03
               </time>
             
@@ -635,8 +626,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-09-gulp/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-09-gulp</span>
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
                   </a>
                 </span>
 
@@ -674,22 +665,13 @@
       
         
           
-            <ol>
-<li><p>全局安装 gulp：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --global gulp</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>作为项目的开发依赖（devDependencies）安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev gulp</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在项目根目录下创建一个名为 gulpfile.js 的文件：</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&apos;gulp&apos;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;default&apos;, function() &#123;</span><br><span class="line">  // 将你的默认的任务代码放在这</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>运行 gulp：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gulp</span><br></pre></td></tr></table></figure>
-<p>默认的名为 default 的任务（task）将会被运行，在这里，这个任务并未做任何事情。</p>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var falseObject = new Boolean(false);</span><br><span class="line">var result = falseObject &amp;&amp; true;</span><br><span class="line">console.log(result); //true</span><br><span class="line">var falseValue = false;</span><br><span class="line">result = falseValue &amp;&amp; true;</span><br><span class="line">console.log(result); //false</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，我们使用 false 值创建了一个 Boolean 对象。然后，将这个对象与基本类型值 true 构成了逻辑与表达式。在布尔运算中， false &amp;&amp; true 等于 false 。可是，示例中的这行代码是对 falseObject 而不是对它的值（ false ）进行求值。前面讨论过，==布尔表达式中的所有对象都会被转换为 true== ，因此 falseObject 对象在布尔表达式中代表的是 true 。结果， true &amp;&amp; true 当然就等于 true 了。</p>
+<p><strong>基本类型与引用类型的布尔值还有两个区别</strong>。  </p>
+<p>首先， typeof 操作符对基本类型返回 “boolean” ，而对引用类型返回 “object” 。</p>
+<p>其次，由于 Boolean 对象是 Boolean 类型的实例，所以使用 instanceof 操作符测试 Boolean 对象会返回 true ，而测试基本类型的布尔值则返回 false 。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alert(typeof falseObject); //object</span><br><span class="line">alert(typeof falseValue); //boolean</span><br><span class="line">alert(falseObject instanceof Boolean); //true</span><br><span class="line">alert(falseValue instanceof Boolean); //false</span><br></pre></td></tr></table></figure>
+<p>理解基本类型的布尔值与 Boolean 对象之间的区别非常重要——当然，我们的建议是永远不要使用 Boolean 对象。</p>
 
           
         
@@ -738,7 +720,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-扩展运算符失效问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/58-自定义事件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -757,7 +739,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/01-扩展运算符失效问题/" itemprop="url">01-扩展运算符失效问题</a></h1>
+                <a class="post-title-link" href="/2018/05/03/58-自定义事件/" itemprop="url">58-自定义事件</a></h1>
         
 
         <div class="post-meta">
@@ -769,7 +751,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
                 2018-05-03
               </time>
             
@@ -792,8 +774,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-08-vue/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-08-vue</span>
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
                   </a>
                 </span>
 
@@ -831,160 +813,7 @@
       
         
           
-            <p>想要使用…map啥啥啥的话，你需要transform-object-rest-spread。</p>
-<p>npm装一个<code>babel-plugin-transform-object-rest-spread</code>，之后在package.json或其他调用babel的地方加上transform-object-rest-spread，类似这样：</p>
-<pre><code>&quot;babel&quot;: {
-    &quot;presets&quot;: [&quot;es2015&quot;],
-    &quot;plugins&quot;: [ &quot;transform-object-rest-spread&quot;]
-}
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/01-简介/" itemprop="url">01-简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-07-scss</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Sass-和-SCSS-有什么区别？"><a href="#Sass-和-SCSS-有什么区别？" class="headerlink" title="Sass 和 SCSS 有什么区别？"></a>Sass 和 SCSS 有什么区别？</h2><p>Sass 和 SCSS 其实是同一种东西，我们平时都称之为 Sass，两者之间不同之处有以下两点：</p>
-<ol>
-<li>文件扩展名不同，Sass 是以“.sass”后缀为扩展名，而 SCSS 是以“.scss”后缀为扩展名</li>
-<li>语法书写方式不同，Sass 是以严格的缩进式语法规则来书写，不带大括号({})和分号( ; )，而 SCSS 的语法书写和我们的 CSS 语法书写方式非常类似。</li>
-</ol>
-<h3 id="Sass-和-CSS-写法有差别："><a href="#Sass-和-CSS-写法有差别：" class="headerlink" title="Sass 和 CSS 写法有差别："></a>Sass 和 CSS 写法有差别：</h3><p>Sass 和 CSS 写法的确存在一定的差异，由于 Sass 是基于 Ruby 写出来，所以其延续了 Ruby 的书写规范。在书写 Sass 时不带有大括号和分号，其主要是依靠严格的缩进方式来控制的</p>
-<h3 id="SCSS-和-CSS-写法无差别："><a href="#SCSS-和-CSS-写法无差别：" class="headerlink" title="SCSS 和 CSS 写法无差别："></a>SCSS 和 CSS 写法无差别：</h3><p>SCSS 和 CSS 写法无差别，这也是 Sass 后来越来越受大众喜欢原因之一。==简单点说，把你现有的“.css”文件直接修改成“.scss”即可使用。==</p>
+            <p><a href="https://codepen.io/fengdou/pen/mxqXNy?editors=1100" target="_blank" rel="noopener">link</a></p>
 
           
         
@@ -1033,7 +862,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-组件样式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/33-pre标签/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -1052,7 +881,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/01-组件样式/" itemprop="url">01-组件样式</a></h1>
+                <a class="post-title-link" href="/2018/05/03/33-pre标签/" itemprop="url">33-pre标签</a></h1>
         
 
         <div class="post-meta">
@@ -1064,7 +893,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
                 2018-05-03
               </time>
             
@@ -1087,316 +916,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-12-微信小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-12-微信小程序</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-组件样式"><a href="#1-组件样式" class="headerlink" title="1.组件样式"></a>1.组件样式</h1><p>组件对应 wxss 文件的样式，只对组件wxml内的节点生效。编写组件样式时，需要注意以下几点：</p>
-<ul>
-<li>组件和引用组件的页面不能使用id选择器（#a）、属性选择器（[a]）和标签名选择器，请改用class选择器。</li>
-<li>组件和引用组件的页面中使用后代选择器（.a .b）在一些极端情况下会有非预期的表现，如遇，请避免使用。</li>
-<li>子元素选择器（.a&gt;.b）只能用于 view 组件与其子节点之间，用于其他组件可能导致非预期的情况。</li>
-<li>继承样式，如 font 、 color ，会从组件外继承到组件内。</li>
-<li>除继承样式外， app.wxss 中的样式、组件所在页面的的样式对自定义组件无效。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#a &#123; &#125; /* 在组件中不能使用 */</span><br><span class="line">[a] &#123; &#125; /* 在组件中不能使用 */</span><br><span class="line">button &#123; &#125; /* 在组件中不能使用 */</span><br><span class="line">.a &gt; .b &#123; &#125; /* 除非 .a 是 view 组件节点，否则不一定会生效 */</span><br></pre></td></tr></table></figure>
-<p>除此以外，组件可以指定它所在节点的默认样式，使用 :host 选择器（需要包含基础库 1.7.2 或更高版本的开发者工具支持）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* 组件 custom-component.wxss */</span><br><span class="line">:host &#123;</span><br><span class="line">  color: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 页面的 WXML --&gt;</span><br><span class="line">&lt;custom-component&gt;这段文本是黄色的&lt;/custom-component&gt;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-Ruby安装的坑/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/02-Ruby安装的坑/" itemprop="url">02-Ruby安装的坑</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-07-scss</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="SASS与Compass的安装"><a href="#SASS与Compass的安装" class="headerlink" title="SASS与Compass的安装"></a>SASS与Compass的安装</h2><p>SASS在Windows操作系统内依赖于Ruby环境，因此在安装SASS之前：</p>
-<p>1、需要先安装Ruby。Ruby现阶段的安装与一般应用程序安装没有太大区别，环境变量等由安装程序自行设置。</p>
-<p>2、Ruby环境内有个包管理器——GEM，它类似于Nodejs下的NPM，它随着Ruby一起被安装，因此不需要额外安装。</p>
-<p>3、换<a href="http://gems.ruby-china.org/" target="_blank" rel="noopener">RubyGems 镜像- Ruby China像</a></p>
-<p>请尽可能用比较新的 RubyGems 版本，建议 2.6.x 以上。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ gem update --system # 这里请翻墙一下</span><br><span class="line">$ gem -v</span><br><span class="line">2.6.3</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/</span><br><span class="line">$ gem sources -l</span><br><span class="line">https://gems.ruby-china.org</span><br><span class="line"># 确保只有 gems.ruby-china.org</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果遇到 SSL 证书问题，你又无法解决，请直接用 <a href="http://gems.ruby-china.org" target="_blank" rel="noopener">http://gems.ruby-china.org</a> 避免 SSL 的问题。</p>
-</blockquote>
-<p>4、请注意，务必先安装SASS，再安装Compass，并且后者对前者版本存在依赖，如果你安装的SASS不是Compass要求的版本，会导致Compass安装不成功。</p>
-<p>5、scss更新</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem update sass</span><br></pre></td></tr></table></figure>
-<p>6、scss卸载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem uninstall sass</span><br></pre></td></tr></table></figure></p>
-<p><strong>参考:</strong></p>
-<p><a href="http://blog.csdn.net/bluefish1990/article/details/21093349" target="_blank" rel="noopener">http://blog.csdn.net/bluefish1990/article/details/21093349</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-webapck/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/02-webapck/" itemprop="url">02-webapck</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-08-vue/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-08-vue</span>
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
                   </a>
                 </span>
 
@@ -1435,7 +956,450 @@
         
           
             <blockquote>
-<p><a href="http://blog.csdn.net/hongchh/article/details/55113751" target="_blank" rel="noopener">CSDN博客链接</a></p>
+<p><a href="http://www.zcfy.cc/article/383" target="_blank" rel="noopener">参考链接</a></p>
+</blockquote>
+<h2 id="折行"><a href="#折行" class="headerlink" title="折行"></a>折行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pre &#123;</span><br><span class="line">  white-space: pre-wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>pre-wrap    保留空白符序列，但是正常地进行换行。</p>
+<p>pre-line    合并空白符序列，但是保留换行符。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/13-npm安装版本/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/13-npm安装版本/" itemprop="url">13-npm安装版本</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-00-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-00-基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>npm 采用语义版本管理软件包。所谓语义版本，就是指版本号为a.b.c的形式，其中a是大版本号，b是小版本号，c是补丁号。</p>
+<p>一个软件发布的时候，默认就是1.0.0版。如果以后发布补丁，就增加最后一位数字，比如1.0.1；如果增加新功能，且不影响原有的功能，就增加中间的数字（即小版本号），比如1.1.0；如果引入的变化，破坏了向后兼容性，就增加第一位数字（即大版本号），比如2.0.0。</p>
+<p>npm 允许使用特殊符号，指定所要使用的版本范围，假定当前版本是1.0.4</p>
+<ul>
+<li>只接受补丁包：1.0 或者 1.0.x 或者 ~1.0.4</li>
+<li>只接受小版本和补丁包：1 或者 1.x 或者 ^1.0.4</li>
+<li>接受所有更新：* or x</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">~2.2.1 // 接受2.2.1，不接受2.3.0</span><br><span class="line">^2.2.1 // 接受2.2.1和2.3.0</span><br><span class="line"></span><br><span class="line">~2.2 // 接受2.2.0和2.2.1，不接受2.3.0</span><br><span class="line">^2.2 // 接受2.2.0、2.2.1和2.3.0</span><br><span class="line"></span><br><span class="line">~2 // 接受2.0.0、2.1.0、2.2.0、2.2.1和2.3.0</span><br><span class="line">^2 // 接受2.0.0、2.1.0、2.2.0、2.2.1和2.3.0</span><br></pre></td></tr></table></figure>
+<p>还可以使用数学运算符（比如&gt;, &lt;, =, &gt;= or &lt;=等），指定版本范围</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;2.1</span><br><span class="line">1.0.0 - 1.2.0</span><br><span class="line">&gt;1.0.0-alpha</span><br><span class="line">&gt;=1.0.0-rc.0 &lt;1.0.1</span><br><span class="line">^2 &lt;2.2 || &gt; 2.3</span><br></pre></td></tr></table></figure>
+<p>注意，如果使用连字号，它的两端必须有空格。如果不带空格，会被 npm 理解成预发布的 tag，比如1.0.0-rc.1。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/32-提前声明/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/32-提前声明/" itemprop="url">32-提前声明</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	alert(a)   //function a()&#123; alert(10) &#125;</span><br><span class="line">	a();      //10</span><br><span class="line">	var a = 3;  </span><br><span class="line"></span><br><span class="line">	function a() &#123;</span><br><span class="line">	    alert(10)</span><br><span class="line">	&#125;</span><br><span class="line">	alert(a)  //3</span><br><span class="line">	a = 6;    </span><br><span class="line">	a();     //报错</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>==这里第三行 var a=3 会执行；==</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/48-XSS攻击/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/48-XSS攻击/" itemprop="url">48-XSS攻击</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p> <a href="https://www.cnblogs.com/lovesong/p/5199623.html" target="_blank" rel="noopener">XSS攻击</a></p>
 </blockquote>
 
           
@@ -1485,7 +1449,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-wepy使用sass配置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/57-观察者模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -1504,7 +1468,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/02-wepy使用sass配置/" itemprop="url">02-wepy使用sass配置</a></h1>
+                <a class="post-title-link" href="/2018/05/03/57-观察者模式/" itemprop="url">57-观察者模式</a></h1>
         
 
         <div class="post-meta">
@@ -1516,7 +1480,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
                 2018-05-03
               </time>
             
@@ -1539,8 +1503,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-12-微信小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-12-微信小程序</span>
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
                   </a>
                 </span>
 
@@ -1578,10 +1542,8 @@
       
         
           
-            <p><a href="https://github.com/Tencent/wepy/issues/938" target="_blank" rel="noopener">link</a></p>
-<p>wepy.confing.js 取消注释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sass: &#123;</span><br><span class="line">      outputStyle: &apos;compressed&apos;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure></p>
-<p>安装 compilers</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install node-sass -D</span><br><span class="line">npm install wepy-compiler-sass@1.3.12 --save</span><br></pre></td></tr></table></figure>
+            <p><a href="https://blog.csdn.net/q1056843325/article/details/53353850" target="_blank" rel="noopener">link</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">var Event = (function()&#123;</span><br><span class="line">    var list = &#123;&#125;,</span><br><span class="line">        listen,</span><br><span class="line">        trigger,</span><br><span class="line">        remove;</span><br><span class="line">    listen = function(key,fn)&#123; //监听事件函数</span><br><span class="line">        if(!list[key])&#123;</span><br><span class="line">            list[key] = []; //如果事件列表中还没有key值命名空间，创建</span><br><span class="line">        &#125;</span><br><span class="line">        list[key].push(fn); //将回调函数推入对象的“键”对应的“值”回调数组</span><br><span class="line">    &#125;;</span><br><span class="line">    trigger = function()&#123; //触发事件函数</span><br><span class="line">        var key = Array.prototype.shift.call(arguments); //第一个参数指定“键”</span><br><span class="line">        msg = list[key];</span><br><span class="line">        if(!msg || msg.length === 0)&#123;</span><br><span class="line">            return false; //如果回调数组不存在或为空则返回false</span><br><span class="line">        &#125;</span><br><span class="line">        for(var i = 0; i &lt; msg.length; i++)&#123;</span><br><span class="line">            msg[i].apply(this, arguments); //循环回调数组执行回调函数</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    remove = function(key, fn)&#123; //移除事件函数</span><br><span class="line">        var msg = list[key];</span><br><span class="line">        if(!msg)&#123;</span><br><span class="line">            return false; //事件不存在直接返回false</span><br><span class="line">        &#125;</span><br><span class="line">        if(!fn)&#123;</span><br><span class="line">            delete list[key]; //如果没有后续参数，则删除整个回调数组</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            for(var i = 0; i &lt; msg.length; i++)&#123;</span><br><span class="line">                if(fn === msg[i])&#123;</span><br><span class="line">                    msg.splice(i, 1); //删除特定回调数组中的回调函数</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    return &#123;</span><br><span class="line">        listen: listen,</span><br><span class="line">        trigger: trigger,</span><br><span class="line">        remove: remove</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line">var fn = function(data)&#123;</span><br><span class="line">    console.log(data + &apos;的推送消息：xxxxxx......&apos;);</span><br><span class="line">&#125;</span><br><span class="line">Event.listen(&apos;某公众号&apos;, fn);</span><br><span class="line">Event.trigger(&apos;某公众号&apos;, &apos;2016.11.26&apos;);</span><br><span class="line">Event.remove(&apos;某公众号&apos;, fn);</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1630,7 +1592,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-分支/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/13-且或问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -1649,7 +1611,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/02-分支/" itemprop="url">02-分支</a></h1>
+                <a class="post-title-link" href="/2018/05/03/13-且或问题/" itemprop="url">13-且或问题</a></h1>
         
 
         <div class="post-meta">
@@ -1661,7 +1623,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
                 2018-05-03
               </time>
             
@@ -1684,8 +1646,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-10-git/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-10-git</span>
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
                   </a>
                 </span>
 
@@ -1723,23 +1685,14 @@
       
         
           
-            <p>创建并新建分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b dev</span><br><span class="line">Switched to a new branch &apos;dev&apos;</span><br></pre></td></tr></table></figure></p>
-<p>用git branch命令查看当前分支：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* dev</span><br><span class="line">  master</span><br></pre></td></tr></table></figure>
-<p>切换回master分支：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">Switched to branch &apos;master&apos;</span><br></pre></td></tr></table></figure>
-<p>把dev分支的工作成果合并到master分支上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git merge dev</span><br><span class="line">Updating d17efd8..fec145a</span><br><span class="line">Fast-forward</span><br><span class="line"> readme.txt |    1 +</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br></pre></td></tr></table></figure>
-<p>删除dev分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d dev</span><br><span class="line">Deleted branch dev (was fec145a).</span><br></pre></td></tr></table></figure>
-<p>小结<br>Git鼓励大量使用分支：</p>
-<p>查看分支：<code>git branch</code></p>
-<p>创建分支：<code>git branch &lt;name&gt;</code></p>
-<p>切换分支：<code>git checkout &lt;name&gt;</code></p>
-<p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code></p>
-<p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
-<p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
-<p>最后记得推送</p>
+            <p>&amp;&amp;和||在JQuery源代码内尤为使用广泛，由于本人没有系统的学习js，所以只能粗略的自我理解出来，希望大家指点下。<br>粗略理解如下：</p>
+<ul>
+<li><p>a() &amp;&amp; b() :如果执行a()后返回true，则执行b()并返回b的值；如果执行a()后返回false，则整个表达式返回a()的值，b()不执行；</p>
+</li>
+<li><p>a() || b() :如果执行a()后返回true，则整个表达式返回a()的值，b()不执行；如果执行a()后返回false，则执行b()并返回b()的值；</p>
+</li>
+</ul>
+<p>&amp;&amp; 优先级高于 ||</p>
 
           
         
@@ -1779,7 +1732,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 

@@ -103,7 +103,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="静修-个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/page/16/index.html">
 <meta property="og:site_name" content="静修-个人博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -136,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/page/16/"/>
 
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/04-语法风格变量/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/17-a标签去掉高亮/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -296,7 +296,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/04-语法风格变量/" itemprop="url">04-语法风格变量</a></h1>
+                <a class="post-title-link" href="/2018/05/03/17-a标签去掉高亮/" itemprop="url">17-a标签去掉高亮</a></h1>
         
 
         <div class="post-meta">
@@ -308,7 +308,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T11:38:11+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
                 2018-05-03
               </time>
             
@@ -331,8 +331,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-07-scss</span>
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
                   </a>
                 </span>
 
@@ -370,26 +370,8 @@
       
         
           
-            <h2 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h2><p>SCSS 是 Sass 的新语法格式，从外形上来判断他和 CSS 长得几乎是一模一样，代码都包裹在一对大括号里，并且==末尾结束处都有一个分号==。其文件名格式常常以“.scss”为扩展名。</p>
-<p>1.嵌套输出方式 nested<br>2.展开输出方式 expanded<br>3.紧凑输出方式 compact<br>4.压缩输出方式 compressed</p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>Sass 的变量包括三个部分：<br>1.声明变量的符号“$”<br>2.变量名称<br>3.赋予变量的值</p>
-<h2 id="普通变量与默认变量"><a href="#普通变量与默认变量" class="headerlink" title="普通变量与默认变量"></a>普通变量与默认变量</h2><h3 id="普通变量"><a href="#普通变量" class="headerlink" title="普通变量"></a>普通变量</h3><p>定义之后可以在全局范围内使用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$fontSize: 12px;</span><br><span class="line">body&#123;</span><br><span class="line">    font-size:$fontSize;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译后的css代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    font-size:12px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="默认变量"><a href="#默认变量" class="headerlink" title="默认变量"></a>默认变量</h3><p>sass 的默认变量仅需要在值后面加上 !default 即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$baseLineHeight:1.5 !default;</span><br><span class="line">body&#123;</span><br><span class="line">    line-height: $baseLineHeight; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译后的css代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    line-height:1.5;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>sass 的默认变量一般是用来设置默认值，然后根据需求来覆盖的，覆盖的方式也很简单，只需要在默认变量==之前==重新声明下变量即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$baseLineHeight: 2;</span><br><span class="line">$baseLineHeight: 1.5 !default;</span><br><span class="line">body&#123;</span><br><span class="line">    line-height: $baseLineHeight; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译后的css代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    line-height:2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可以看出现在编译后的 line-height 为 2，而不是我们默认的 1.5。默认变量的价值在进行组件化开发的时候会非常有用。</p>
-<h2 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//SCSS</span><br><span class="line">$color: orange !default;//定义全局变量(在选择器、函数、混合宏...的外面定义的变量为全局变量)</span><br><span class="line">.block &#123;</span><br><span class="line">  color: $color;//调用全局变量</span><br><span class="line">&#125;</span><br><span class="line">em &#123;</span><br><span class="line">  $color: red;//定义局部变量</span><br><span class="line">  a &#123;</span><br><span class="line">    color: $color;//调用局部变量</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">span &#123;</span><br><span class="line">  color: $color;//调用全局变量</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>css 的结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//CSS</span><br><span class="line">.block &#123;</span><br><span class="line">  color: orange;</span><br><span class="line">&#125;</span><br><span class="line">em a &#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line">span &#123;</span><br><span class="line">  color: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>只有满足所有下述标准时方可创建新变量：<br>1.该值至少重复出现了两次；<br>2.该值至少可能会被更新一次；<br>3.该值所有的表现都与变量有关（非巧合）。</p>
+            <p>a标签默认点击的时候会有个高亮的背景色，要把这个去掉只需要给a标签设置css样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-tap-highlight-color:rgba(0,0,0,0);</span><br></pre></td></tr></table></figure>
 
           
         
@@ -438,7 +420,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/06-vfor的key/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/27-padding百分比/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -457,7 +439,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/06-vfor的key/" itemprop="url">06-vfor的key</a></h1>
+                <a class="post-title-link" href="/2018/05/03/27-padding百分比/" itemprop="url">27-padding百分比</a></h1>
         
 
         <div class="post-meta">
@@ -469,7 +451,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
                 2018-05-03
               </time>
             
@@ -492,8 +474,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-08-vue/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-08-vue</span>
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
                   </a>
                 </span>
 
@@ -531,768 +513,17 @@
       
         
           
-            <p>为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 key 属性。理想的 key 值是每项都有的且唯一的 id。</p>
-<p>建议尽可能在使用 v-for 时提供 key，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性能上的提升。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-入门指南/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/01-入门指南/" itemprop="url">01-入门指南</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-09-gulp/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-09-gulp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>全局安装 gulp：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --global gulp</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>作为项目的开发依赖（devDependencies）安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev gulp</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在项目根目录下创建一个名为 gulpfile.js 的文件：</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&apos;gulp&apos;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;default&apos;, function() &#123;</span><br><span class="line">  // 将你的默认的任务代码放在这</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>运行 gulp：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gulp</span><br></pre></td></tr></table></figure>
-<p>默认的名为 default 的任务（task）将会被运行，在这里，这个任务并未做任何事情。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-扩展运算符失效问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/01-扩展运算符失效问题/" itemprop="url">01-扩展运算符失效问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-08-vue/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-08-vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>想要使用…map啥啥啥的话，你需要transform-object-rest-spread。</p>
-<p>npm装一个<code>babel-plugin-transform-object-rest-spread</code>，之后在package.json或其他调用babel的地方加上transform-object-rest-spread，类似这样：</p>
-<pre><code>&quot;babel&quot;: {
-    &quot;presets&quot;: [&quot;es2015&quot;],
-    &quot;plugins&quot;: [ &quot;transform-object-rest-spread&quot;]
-}
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/01-简介/" itemprop="url">01-简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-07-scss</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Sass-和-SCSS-有什么区别？"><a href="#Sass-和-SCSS-有什么区别？" class="headerlink" title="Sass 和 SCSS 有什么区别？"></a>Sass 和 SCSS 有什么区别？</h2><p>Sass 和 SCSS 其实是同一种东西，我们平时都称之为 Sass，两者之间不同之处有以下两点：</p>
-<ol>
-<li>文件扩展名不同，Sass 是以“.sass”后缀为扩展名，而 SCSS 是以“.scss”后缀为扩展名</li>
-<li>语法书写方式不同，Sass 是以严格的缩进式语法规则来书写，不带大括号({})和分号( ; )，而 SCSS 的语法书写和我们的 CSS 语法书写方式非常类似。</li>
-</ol>
-<h3 id="Sass-和-CSS-写法有差别："><a href="#Sass-和-CSS-写法有差别：" class="headerlink" title="Sass 和 CSS 写法有差别："></a>Sass 和 CSS 写法有差别：</h3><p>Sass 和 CSS 写法的确存在一定的差异，由于 Sass 是基于 Ruby 写出来，所以其延续了 Ruby 的书写规范。在书写 Sass 时不带有大括号和分号，其主要是依靠严格的缩进方式来控制的</p>
-<h3 id="SCSS-和-CSS-写法无差别："><a href="#SCSS-和-CSS-写法无差别：" class="headerlink" title="SCSS 和 CSS 写法无差别："></a>SCSS 和 CSS 写法无差别：</h3><p>SCSS 和 CSS 写法无差别，这也是 Sass 后来越来越受大众喜欢原因之一。==简单点说，把你现有的“.css”文件直接修改成“.scss”即可使用。==</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-组件样式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/01-组件样式/" itemprop="url">01-组件样式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-12-微信小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-12-微信小程序</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-组件样式"><a href="#1-组件样式" class="headerlink" title="1.组件样式"></a>1.组件样式</h1><p>组件对应 wxss 文件的样式，只对组件wxml内的节点生效。编写组件样式时，需要注意以下几点：</p>
+            <h2 id="1-padding百分比"><a href="#1-padding百分比" class="headerlink" title="1.padding百分比"></a>1.padding百分比</h2><p>问题：当margin-top、padding-top的值是百分比时，分别是如何计算的？ </p>
 <ul>
-<li>组件和引用组件的页面不能使用id选择器（#a）、属性选择器（[a]）和标签名选择器，请改用class选择器。</li>
-<li>组件和引用组件的页面中使用后代选择器（.a .b）在一些极端情况下会有非预期的表现，如遇，请避免使用。</li>
-<li>子元素选择器（.a&gt;.b）只能用于 view 组件与其子节点之间，用于其他组件可能导致非预期的情况。</li>
-<li>继承样式，如 font 、 color ，会从组件外继承到组件内。</li>
-<li>除继承样式外， app.wxss 中的样式、组件所在页面的的样式对自定义组件无效。</li>
+<li>A 相对父级元素的height，相对自身的height </li>
+<li>B 相对最近父级块级元素的height，相对自身的height </li>
+<li>C 相对父级元素的width，相对自身的width </li>
+<li>D 相对最近父级块级元素的width，相对最近父级块级元素的width</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#a &#123; &#125; /* 在组件中不能使用 */</span><br><span class="line">[a] &#123; &#125; /* 在组件中不能使用 */</span><br><span class="line">button &#123; &#125; /* 在组件中不能使用 */</span><br><span class="line">.a &gt; .b &#123; &#125; /* 除非 .a 是 view 组件节点，否则不一定会生效 */</span><br></pre></td></tr></table></figure>
-<p>除此以外，组件可以指定它所在节点的默认样式，使用 :host 选择器（需要包含基础库 1.7.2 或更高版本的开发者工具支持）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* 组件 custom-component.wxss */</span><br><span class="line">:host &#123;</span><br><span class="line">  color: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 页面的 WXML --&gt;</span><br><span class="line">&lt;custom-component&gt;这段文本是黄色的&lt;/custom-component&gt;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-Ruby安装的坑/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/02-Ruby安装的坑/" itemprop="url">02-Ruby安装的坑</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-07-scss</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="SASS与Compass的安装"><a href="#SASS与Compass的安装" class="headerlink" title="SASS与Compass的安装"></a>SASS与Compass的安装</h2><p>SASS在Windows操作系统内依赖于Ruby环境，因此在安装SASS之前：</p>
-<p>1、需要先安装Ruby。Ruby现阶段的安装与一般应用程序安装没有太大区别，环境变量等由安装程序自行设置。</p>
-<p>2、Ruby环境内有个包管理器——GEM，它类似于Nodejs下的NPM，它随着Ruby一起被安装，因此不需要额外安装。</p>
-<p>3、换<a href="http://gems.ruby-china.org/" target="_blank" rel="noopener">RubyGems 镜像- Ruby China像</a></p>
-<p>请尽可能用比较新的 RubyGems 版本，建议 2.6.x 以上。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ gem update --system # 这里请翻墙一下</span><br><span class="line">$ gem -v</span><br><span class="line">2.6.3</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/</span><br><span class="line">$ gem sources -l</span><br><span class="line">https://gems.ruby-china.org</span><br><span class="line"># 确保只有 gems.ruby-china.org</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果遇到 SSL 证书问题，你又无法解决，请直接用 <a href="http://gems.ruby-china.org" target="_blank" rel="noopener">http://gems.ruby-china.org</a> 避免 SSL 的问题。</p>
-</blockquote>
-<p>4、请注意，务必先安装SASS，再安装Compass，并且后者对前者版本存在依赖，如果你安装的SASS不是Compass要求的版本，会导致Compass安装不成功。</p>
-<p>5、scss更新</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem update sass</span><br></pre></td></tr></table></figure>
-<p>6、scss卸载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem uninstall sass</span><br></pre></td></tr></table></figure></p>
-<p><strong>参考:</strong></p>
-<p><a href="http://blog.csdn.net/bluefish1990/article/details/21093349" target="_blank" rel="noopener">http://blog.csdn.net/bluefish1990/article/details/21093349</a></p>
+<p>可以对元素的margin设置百分数，百分数是相对于父元素的width计算，不管是margin-top/margin-bottom还是margin-left/margin-right。（padding同理）</p>
+<p>如果没有为元素声明width，在这种情况下，元素框的总宽度包括外边距取决于父元素的width，这样可能得到“流式”页面，即元素的外边距会扩大或缩小以适应父元素的实际大小。如果对这个文档设置样式，使其元素使用百分数外边距，当用户修改浏览窗口的宽度时，外边距会随之扩大或缩小。</p>
+<h1 id="2-css中如何规定某一元素高度等于其宽度"><a href="#2-css中如何规定某一元素高度等于其宽度" class="headerlink" title="2.css中如何规定某一元素高度等于其宽度"></a>2.css中如何规定某一元素高度等于其宽度</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">#container &#123;</span><br><span class="line">    width: 80%;</span><br><span class="line">    height: 500px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.attr &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    height: 0;</span><br><span class="line">    padding-bottom: 50%;</span><br><span class="line">    background-color: #008b57;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;div id=&apos;container&apos;&gt;</span><br><span class="line">    &lt;div class=&apos;attr&apos;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p><a href="https://codepen.io/fengdou/pen/EENawx" target="_blank" rel="noopener">codepen</a></p>
 
           
         
@@ -1341,7 +572,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-webapck/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/16-background背景位置四个参数有兼容性问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -1360,7 +591,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/02-webapck/" itemprop="url">02-webapck</a></h1>
+                <a class="post-title-link" href="/2018/05/03/16-background背景位置四个参数有兼容性问题/" itemprop="url">16-background背景位置四个参数有兼容性问题</a></h1>
         
 
         <div class="post-meta">
@@ -1372,7 +603,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
                 2018-05-03
               </time>
             
@@ -1395,8 +626,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-08-vue/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-08-vue</span>
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
                   </a>
                 </span>
 
@@ -1434,9 +665,156 @@
       
         
           
-            <blockquote>
-<p><a href="http://blog.csdn.net/hongchh/article/details/55113751" target="_blank" rel="noopener">CSDN博客链接</a></p>
-</blockquote>
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/28-重绘和回流/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/28-重绘和回流/" itemprop="url">28-重绘和回流</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://www.css88.com/archives/4996" target="_blank" rel="noopener">link</a></p>
+<p>回流与重绘</p>
+<ol>
+<li><p>当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)。每个页面至少需要一次回流，就是在页面第一次加载的时候。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树，完成回流后，浏览器会重新绘制受影响的部分到屏幕中，该过程成为重绘。</p>
+</li>
+<li><p>当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如background-color。则就叫称为重绘。</p>
+</li>
+</ol>
+<p>注意：回流必将引起重绘，而重绘不一定会引起回流。</p>
 
           
         
@@ -1485,7 +863,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-wepy使用sass配置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/15-弹性布局小坑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -1504,7 +882,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/02-wepy使用sass配置/" itemprop="url">02-wepy使用sass配置</a></h1>
+                <a class="post-title-link" href="/2018/05/03/15-弹性布局小坑/" itemprop="url">15-弹性布局小坑</a></h1>
         
 
         <div class="post-meta">
@@ -1516,7 +894,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
                 2018-05-03
               </time>
             
@@ -1539,8 +917,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-12-微信小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-12-微信小程序</span>
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
                   </a>
                 </span>
 
@@ -1578,10 +956,8 @@
       
         
           
-            <p><a href="https://github.com/Tencent/wepy/issues/938" target="_blank" rel="noopener">link</a></p>
-<p>wepy.confing.js 取消注释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sass: &#123;</span><br><span class="line">      outputStyle: &apos;compressed&apos;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure></p>
-<p>安装 compilers</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install node-sass -D</span><br><span class="line">npm install wepy-compiler-sass@1.3.12 --save</span><br></pre></td></tr></table></figure>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	display: none;</span><br><span class="line">display: flex;</span><br></pre></td></tr></table></figure>
+<p>二者一齐出现时，display弹性布局要在后面才不会被覆盖掉。</p>
 
           
         
@@ -1630,7 +1006,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-分支/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/30-em的大小/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -1649,7 +1025,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/02-分支/" itemprop="url">02-分支</a></h1>
+                <a class="post-title-link" href="/2018/05/03/30-em的大小/" itemprop="url">30-em的大小</a></h1>
         
 
         <div class="post-meta">
@@ -1661,7 +1037,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
                 2018-05-03
               </time>
             
@@ -1684,8 +1060,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-10-git/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-10-git</span>
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
                   </a>
                 </span>
 
@@ -1723,23 +1099,643 @@
       
         
           
-            <p>创建并新建分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b dev</span><br><span class="line">Switched to a new branch &apos;dev&apos;</span><br></pre></td></tr></table></figure></p>
-<p>用git branch命令查看当前分支：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* dev</span><br><span class="line">  master</span><br></pre></td></tr></table></figure>
-<p>切换回master分支：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">Switched to branch &apos;master&apos;</span><br></pre></td></tr></table></figure>
-<p>把dev分支的工作成果合并到master分支上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git merge dev</span><br><span class="line">Updating d17efd8..fec145a</span><br><span class="line">Fast-forward</span><br><span class="line"> readme.txt |    1 +</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br></pre></td></tr></table></figure>
-<p>删除dev分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d dev</span><br><span class="line">Deleted branch dev (was fec145a).</span><br></pre></td></tr></table></figure>
-<p>小结<br>Git鼓励大量使用分支：</p>
-<p>查看分支：<code>git branch</code></p>
-<p>创建分支：<code>git branch &lt;name&gt;</code></p>
-<p>切换分支：<code>git checkout &lt;name&gt;</code></p>
-<p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code></p>
-<p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
-<p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
-<p>最后记得推送</p>
+            <h2 id="CSS-中相对长度-rem-和-em-如何区别"><a href="#CSS-中相对长度-rem-和-em-如何区别" class="headerlink" title="CSS 中相对长度 rem 和 em 如何区别"></a>CSS 中相对长度 rem 和 em 如何区别</h2><p>做为相对长度单位的俩个活宝，</p>
+<p>都是以倍数关系定长度，只是参照物不一样，这里就事例分析两者的区别： </p>
+<p>1，em 的参照倍数对象为其自身字体大小，font-size;如果没有向上继承； </p>
+<p>2，rem的参照倍数对象为根元素html</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/29-解决ios手机页面overflow scroll滑动很卡的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/29-解决ios手机页面overflow scroll滑动很卡的问题/" itemprop="url">29-解决ios手机页面overflow scroll滑动很卡的问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在移动端html中经常出现横向/纵向滚动的效果,但是在iPhone中滚动速度很慢,感觉不流畅,有种卡卡的感觉,但是在安卓设备上没有这种感觉;</p>
+<p>要解决这个问题很简单:</p>
+<p>一行代码搞定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-overflow-scrolling : touch;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/14-解决textarea光标初始位置没有在最左上角的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/14-解决textarea光标初始位置没有在最左上角的问题/" itemprop="url">14-解决textarea光标初始位置没有在最左上角的问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><textarea></textarea>之间不能有空格</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/05-媒体查询/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/05-媒体查询/" itemprop="url">05-媒体查询</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>首先来看一个简单的实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;screen and (max-width: 600px)&quot; href=&quot;small.css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/* 超小屏幕（手机，小于 768px） */</span><br><span class="line">/* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） */</span><br><span class="line"></span><br><span class="line">/* 小屏幕（平板，大于等于 768px） */</span><br><span class="line">@media (min-width: @screen-sm-min) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line">/* 中等屏幕（桌面显示器，大于等于 992px） */</span><br><span class="line">@media (min-width: @screen-md-min) &#123; ... &#125;</span><br><span class="line"></span><br><span class="line">/* 大屏幕（大桌面显示器，大于等于 1200px） */</span><br><span class="line">@media (min-width: @screen-lg-min) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="页面中引入媒体类型方法也有多种："><a href="#页面中引入媒体类型方法也有多种：" class="headerlink" title="页面中引入媒体类型方法也有多种："></a>页面中引入媒体类型方法也有多种：</h2><p>1、link方法引入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../css/print.css&quot; media=&quot;print&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>2、xml方式引入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml-stylesheet rel=&quot;stylesheet&quot; media=&quot;screen&quot; href=&quot;css/style.css&quot; ？&gt;</span><br></pre></td></tr></table></figure></p>
+<p>3、@import方式引入</p>
+<p>@import引入有两种方式，一种是在样式文件中通过@import调用别一个样式文件；另一种方法是在<head></head>中的<style>…</style>中引入，单这种使用方法在ie6-7都不被支持 如</p>
+<p>样式文件中调用另一个样式文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@import url(&quot;css/reset.css&quot;) screen;</span><br><span class="line">   @import url(&quot;css/print.css&quot;) print;</span><br></pre></td></tr></table></figure>
+<p>在<head></head>中的<style>…</style>中调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">	@import url(&quot;css/style.css&quot;) all;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">  &lt;/head&gt;</span><br></pre></td></tr></table></figure>
+<p>4、@media引入</p>
+<p>这种引入方式和@import是一样的，也有两种方式：</p>
+<p>样式文件中使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media screen&#123;</span><br><span class="line">     选择器&#123;</span><br><span class="line">	属性：属性值；</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>在<head>&gt;/head&gt;中的<style>…</style>中调用：</head></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">	@media screen&#123;</span><br><span class="line">           选择器&#123;</span><br><span class="line">	     属性：属性值；</span><br><span class="line">	   &#125;</span><br><span class="line">	&#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &lt;/head&gt;</span><br></pre></td></tr></table></figure>
+<p>以上几种方法都有其各自的利弊，在实际应用中我建议使用第一种和第四种，因为这两种方法是在项目制作中是常用的方法，对于他们的具体区别，我就不说了，想了解的大家可以去找度娘或Ｇ爸，他们能帮你解决。</p>
+<h2 id="二、媒体特性（Media-Query）"><a href="#二、媒体特性（Media-Query）" class="headerlink" title="二、媒体特性（Media Query）"></a>二、媒体特性（Media Query）</h2><p>下面我们一起来看看Media Queries的具体使用方式</p>
+<p>一、最大宽度Max Width</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;screen and (max-width:600px)&quot; href=&quot;small.css&quot; type=&quot;text/css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>==上面表示的是：当屏幕小于或等于600px时，将采用small.css样式来渲染Web页面。==</p>
+<p>二、最小宽度Min Width</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;screen and (min-width:900px)&quot; href=&quot;big.css&quot; type=&quot;text/css&quot;  /&gt;</span><br></pre></td></tr></table></figure>
+<p>==上面表示的是：当屏幕大于或等于900px时，将采用big.css样式来渲染Web页面==。</p>
+<p>三、多个Media Queries使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;screen and (min-width:600px) and (max-width:900px)&quot; href=&quot;style.css&quot; type=&quot;text/css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>Media Query可以结合多个媒体查询，换句话说，一个Media Query可以包含0到多个表达式，表达式又可以包含0到多个关键字，以及一种Media Type。正如上面的其表示的是当屏幕在600px-900px之间时采用style.css样式来渲染web页面。</p>
+<p>四、设备屏幕的输出宽度Device Width</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;screen and (max-device-width: 480px)&quot; href=&quot;iphone.css&quot; type=&quot;text/css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>上面的代码指的是iphone.css样式适用于最大设备宽度为480px，比如说iPhone上的显示，这里的max-device-width所指的是设备的实际分辨率，也就是指可视面积分辨率</p>
+<p>五、iPhone4</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;only screen and (-webkit-min-device-pixel-ratio: 2)&quot; type=&quot;text/css&quot; href=&quot;iphone4.css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>上面的样式是专门针对iPhone4的移动设备写的。</p>
+<p>六、iPad</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;all and (orientation:portrait)&quot; href=&quot;portrait.css&quot; type=&quot;text/css&quot; /&gt; </span><br><span class="line">  &lt;link rel=&quot;stylesheet&quot; media=&quot;all and (orientation:landscape)&quot; href=&quot;landscape.css&quot;  type=&quot;text/css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>在大数情况下，移动设备iPad上的Safari和在iPhone上的是相同的，只是他们不同之处是iPad声明了不同的方向，比如说上面的例子，在纵向(portrait)时采用portrait.css来渲染页面；在横向（landscape）时采用landscape.css来渲染页面。</p>
+<p>七、android</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*240px的宽度*/</span><br><span class="line">  &lt;link rel=&quot;stylesheet&quot; media=&quot;only screen and (max-device-width:240px)&quot; href=&quot;android240.css&quot; type=&quot;text/css&quot; /&gt;</span><br><span class="line">  /*360px的宽度*/</span><br><span class="line">  &lt;link rel=&quot;stylesheet&quot; media=&quot;only screen and (min-device-width:241px) and (max-device-width:360px)&quot; href=&quot;android360.css&quot; type=&quot;text/css&quot; /&gt;</span><br><span class="line">  /*480px的宽度*/</span><br><span class="line">  &lt;link rel=&quot;stylesheet&quot; media=&quot;only screen and (min-device-width:361px) and (max-device-width:480px)&quot; href=&quot;android480.css&quot; type=&quot;text/css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>我们可以使用media query为android手机在不同分辨率提供特定样式，这样就可以解决屏幕分辨率的不同给android手机的页面重构问题。</p>
+<p>八、not关键字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;not print and (max-width: 1200px)&quot; href=&quot;print.css&quot; type=&quot;text/css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>not关键字是用来排除某种制定的媒体类型，换句话来说就是用于排除符合表达式的设备。</p>
+<p>九、only关键字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;only screen and (max-device-width:240px)&quot; href=&quot;android240.css&quot; type=&quot;text/css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>only用来定某种特定的媒体类型，可以用来排除不支持媒体查询的浏览器。其实only很多时候是用来对那些不支持Media Query但却支持Media Type的设备隐藏样式表的。其主要有：支持媒体特性（Media Queries）的设备，正常调用样式，此时就当only不存在；对于不支持媒体特性(Media Queries)但又支持媒体类型(Media Type)的设备，这样就会不读了样式，因为其先读only而不是screen；另外不支持Media Qqueries的浏览器，不论是否支持only，样式都不会被采用。</p>
+<p>十、其他</p>
+<p>在Media Query中如果没有明确指定Media Type，那么其默认为all，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; media=&quot;(min-width: 701px) and (max-width: 900px)&quot; href=&quot;medium.css&quot; type=&quot;text/css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>另外还有使用逗号（，）被用来表示并列或者表示或，如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot; media=&quot;handheld and (max-width:480px), screen and (min-width:960px)&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>上面代码中style.css样式被用在宽度小于或等于480px的手持设备上，或者被用于屏幕宽度大于或等于960px的设备上。</p>
+<p>关于Media Query的使用这一节就介绍到此，最后总体规纳一下其功能，个人认为就是一句话：Media Queries能在不同的条件下使用不同的样式，使用页面达到不同的渲染效果。下一节将会针对Media<br>Queries介绍几个实例，如果感兴趣的朋友记得观注本站的更新。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/06-字体/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/06-字体/" itemprop="url">06-字体</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>黑体：SimHei </li>
+<li>宋体：SimSun </li>
+<li>新宋体：NSimSun </li>
+<li>仿宋：FangSong </li>
+<li>楷体：KaiTi </li>
+<li>仿宋_GB2312：FangSong_GB2312 </li>
+<li>楷体_GB2312：KaiTi_GB2312  </li>
+<li>微软雅黑体：Microsoft YaHei</li>
+</ul>
 
           
         
@@ -1779,7 +1775,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 

@@ -103,7 +103,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="静修-个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/page/8/index.html">
 <meta property="og:site_name" content="静修-个人博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -136,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/page/8/"/>
 
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/04-语法风格变量/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/52-js隐式类型转换/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -296,7 +296,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/04-语法风格变量/" itemprop="url">04-语法风格变量</a></h1>
+                <a class="post-title-link" href="/2018/05/03/52-js隐式类型转换/" itemprop="url">52-js隐式类型转换</a></h1>
         
 
         <div class="post-meta">
@@ -308,7 +308,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T11:38:11+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
                 2018-05-03
               </time>
             
@@ -331,1072 +331,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-07-scss</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h2><p>SCSS 是 Sass 的新语法格式，从外形上来判断他和 CSS 长得几乎是一模一样，代码都包裹在一对大括号里，并且==末尾结束处都有一个分号==。其文件名格式常常以“.scss”为扩展名。</p>
-<p>1.嵌套输出方式 nested<br>2.展开输出方式 expanded<br>3.紧凑输出方式 compact<br>4.压缩输出方式 compressed</p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>Sass 的变量包括三个部分：<br>1.声明变量的符号“$”<br>2.变量名称<br>3.赋予变量的值</p>
-<h2 id="普通变量与默认变量"><a href="#普通变量与默认变量" class="headerlink" title="普通变量与默认变量"></a>普通变量与默认变量</h2><h3 id="普通变量"><a href="#普通变量" class="headerlink" title="普通变量"></a>普通变量</h3><p>定义之后可以在全局范围内使用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$fontSize: 12px;</span><br><span class="line">body&#123;</span><br><span class="line">    font-size:$fontSize;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译后的css代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    font-size:12px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="默认变量"><a href="#默认变量" class="headerlink" title="默认变量"></a>默认变量</h3><p>sass 的默认变量仅需要在值后面加上 !default 即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$baseLineHeight:1.5 !default;</span><br><span class="line">body&#123;</span><br><span class="line">    line-height: $baseLineHeight; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译后的css代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    line-height:1.5;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>sass 的默认变量一般是用来设置默认值，然后根据需求来覆盖的，覆盖的方式也很简单，只需要在默认变量==之前==重新声明下变量即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$baseLineHeight: 2;</span><br><span class="line">$baseLineHeight: 1.5 !default;</span><br><span class="line">body&#123;</span><br><span class="line">    line-height: $baseLineHeight; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译后的css代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    line-height:2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可以看出现在编译后的 line-height 为 2，而不是我们默认的 1.5。默认变量的价值在进行组件化开发的时候会非常有用。</p>
-<h2 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//SCSS</span><br><span class="line">$color: orange !default;//定义全局变量(在选择器、函数、混合宏...的外面定义的变量为全局变量)</span><br><span class="line">.block &#123;</span><br><span class="line">  color: $color;//调用全局变量</span><br><span class="line">&#125;</span><br><span class="line">em &#123;</span><br><span class="line">  $color: red;//定义局部变量</span><br><span class="line">  a &#123;</span><br><span class="line">    color: $color;//调用局部变量</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">span &#123;</span><br><span class="line">  color: $color;//调用全局变量</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>css 的结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//CSS</span><br><span class="line">.block &#123;</span><br><span class="line">  color: orange;</span><br><span class="line">&#125;</span><br><span class="line">em a &#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line">span &#123;</span><br><span class="line">  color: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>只有满足所有下述标准时方可创建新变量：<br>1.该值至少重复出现了两次；<br>2.该值至少可能会被更新一次；<br>3.该值所有的表现都与变量有关（非巧合）。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/06-vfor的key/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/06-vfor的key/" itemprop="url">06-vfor的key</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-08-vue/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-08-vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 key 属性。理想的 key 值是每项都有的且唯一的 id。</p>
-<p>建议尽可能在使用 v-for 时提供 key，除非遍历输出的 DOM 内容非常简单，或者是刻意依赖默认行为以获取性能上的提升。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-入门指南/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/01-入门指南/" itemprop="url">01-入门指南</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-09-gulp/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-09-gulp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>全局安装 gulp：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --global gulp</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>作为项目的开发依赖（devDependencies）安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev gulp</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在项目根目录下创建一个名为 gulpfile.js 的文件：</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&apos;gulp&apos;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;default&apos;, function() &#123;</span><br><span class="line">  // 将你的默认的任务代码放在这</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>运行 gulp：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gulp</span><br></pre></td></tr></table></figure>
-<p>默认的名为 default 的任务（task）将会被运行，在这里，这个任务并未做任何事情。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-扩展运算符失效问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/01-扩展运算符失效问题/" itemprop="url">01-扩展运算符失效问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-08-vue/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-08-vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>想要使用…map啥啥啥的话，你需要transform-object-rest-spread。</p>
-<p>npm装一个<code>babel-plugin-transform-object-rest-spread</code>，之后在package.json或其他调用babel的地方加上transform-object-rest-spread，类似这样：</p>
-<pre><code>&quot;babel&quot;: {
-    &quot;presets&quot;: [&quot;es2015&quot;],
-    &quot;plugins&quot;: [ &quot;transform-object-rest-spread&quot;]
-}
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/01-简介/" itemprop="url">01-简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-07-scss</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Sass-和-SCSS-有什么区别？"><a href="#Sass-和-SCSS-有什么区别？" class="headerlink" title="Sass 和 SCSS 有什么区别？"></a>Sass 和 SCSS 有什么区别？</h2><p>Sass 和 SCSS 其实是同一种东西，我们平时都称之为 Sass，两者之间不同之处有以下两点：</p>
-<ol>
-<li>文件扩展名不同，Sass 是以“.sass”后缀为扩展名，而 SCSS 是以“.scss”后缀为扩展名</li>
-<li>语法书写方式不同，Sass 是以严格的缩进式语法规则来书写，不带大括号({})和分号( ; )，而 SCSS 的语法书写和我们的 CSS 语法书写方式非常类似。</li>
-</ol>
-<h3 id="Sass-和-CSS-写法有差别："><a href="#Sass-和-CSS-写法有差别：" class="headerlink" title="Sass 和 CSS 写法有差别："></a>Sass 和 CSS 写法有差别：</h3><p>Sass 和 CSS 写法的确存在一定的差异，由于 Sass 是基于 Ruby 写出来，所以其延续了 Ruby 的书写规范。在书写 Sass 时不带有大括号和分号，其主要是依靠严格的缩进方式来控制的</p>
-<h3 id="SCSS-和-CSS-写法无差别："><a href="#SCSS-和-CSS-写法无差别：" class="headerlink" title="SCSS 和 CSS 写法无差别："></a>SCSS 和 CSS 写法无差别：</h3><p>SCSS 和 CSS 写法无差别，这也是 Sass 后来越来越受大众喜欢原因之一。==简单点说，把你现有的“.css”文件直接修改成“.scss”即可使用。==</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-组件样式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/01-组件样式/" itemprop="url">01-组件样式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-12-微信小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-12-微信小程序</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-组件样式"><a href="#1-组件样式" class="headerlink" title="1.组件样式"></a>1.组件样式</h1><p>组件对应 wxss 文件的样式，只对组件wxml内的节点生效。编写组件样式时，需要注意以下几点：</p>
-<ul>
-<li>组件和引用组件的页面不能使用id选择器（#a）、属性选择器（[a]）和标签名选择器，请改用class选择器。</li>
-<li>组件和引用组件的页面中使用后代选择器（.a .b）在一些极端情况下会有非预期的表现，如遇，请避免使用。</li>
-<li>子元素选择器（.a&gt;.b）只能用于 view 组件与其子节点之间，用于其他组件可能导致非预期的情况。</li>
-<li>继承样式，如 font 、 color ，会从组件外继承到组件内。</li>
-<li>除继承样式外， app.wxss 中的样式、组件所在页面的的样式对自定义组件无效。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#a &#123; &#125; /* 在组件中不能使用 */</span><br><span class="line">[a] &#123; &#125; /* 在组件中不能使用 */</span><br><span class="line">button &#123; &#125; /* 在组件中不能使用 */</span><br><span class="line">.a &gt; .b &#123; &#125; /* 除非 .a 是 view 组件节点，否则不一定会生效 */</span><br></pre></td></tr></table></figure>
-<p>除此以外，组件可以指定它所在节点的默认样式，使用 :host 选择器（需要包含基础库 1.7.2 或更高版本的开发者工具支持）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* 组件 custom-component.wxss */</span><br><span class="line">:host &#123;</span><br><span class="line">  color: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 页面的 WXML --&gt;</span><br><span class="line">&lt;custom-component&gt;这段文本是黄色的&lt;/custom-component&gt;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-Ruby安装的坑/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/02-Ruby安装的坑/" itemprop="url">02-Ruby安装的坑</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-07-scss</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="SASS与Compass的安装"><a href="#SASS与Compass的安装" class="headerlink" title="SASS与Compass的安装"></a>SASS与Compass的安装</h2><p>SASS在Windows操作系统内依赖于Ruby环境，因此在安装SASS之前：</p>
-<p>1、需要先安装Ruby。Ruby现阶段的安装与一般应用程序安装没有太大区别，环境变量等由安装程序自行设置。</p>
-<p>2、Ruby环境内有个包管理器——GEM，它类似于Nodejs下的NPM，它随着Ruby一起被安装，因此不需要额外安装。</p>
-<p>3、换<a href="http://gems.ruby-china.org/" target="_blank" rel="noopener">RubyGems 镜像- Ruby China像</a></p>
-<p>请尽可能用比较新的 RubyGems 版本，建议 2.6.x 以上。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ gem update --system # 这里请翻墙一下</span><br><span class="line">$ gem -v</span><br><span class="line">2.6.3</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/</span><br><span class="line">$ gem sources -l</span><br><span class="line">https://gems.ruby-china.org</span><br><span class="line"># 确保只有 gems.ruby-china.org</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果遇到 SSL 证书问题，你又无法解决，请直接用 <a href="http://gems.ruby-china.org" target="_blank" rel="noopener">http://gems.ruby-china.org</a> 避免 SSL 的问题。</p>
-</blockquote>
-<p>4、请注意，务必先安装SASS，再安装Compass，并且后者对前者版本存在依赖，如果你安装的SASS不是Compass要求的版本，会导致Compass安装不成功。</p>
-<p>5、scss更新</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem update sass</span><br></pre></td></tr></table></figure>
-<p>6、scss卸载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem uninstall sass</span><br></pre></td></tr></table></figure></p>
-<p><strong>参考:</strong></p>
-<p><a href="http://blog.csdn.net/bluefish1990/article/details/21093349" target="_blank" rel="noopener">http://blog.csdn.net/bluefish1990/article/details/21093349</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-webapck/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/02-webapck/" itemprop="url">02-webapck</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-08-vue/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-08-vue</span>
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
                   </a>
                 </span>
 
@@ -1435,7 +371,7 @@
         
           
             <blockquote>
-<p><a href="http://blog.csdn.net/hongchh/article/details/55113751" target="_blank" rel="noopener">CSDN博客链接</a></p>
+<p><a href="https://www.cnblogs.com/chenmeng0818/p/5954215.html" target="_blank" rel="noopener">link</a> <a href="https://www.jianshu.com/p/0f1e3ff14537" target="_blank" rel="noopener">link2</a></p>
 </blockquote>
 
           
@@ -1485,7 +421,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-wepy使用sass配置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/43-模块化两篇文章/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -1504,7 +440,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/02-wepy使用sass配置/" itemprop="url">02-wepy使用sass配置</a></h1>
+                <a class="post-title-link" href="/2018/05/03/43-模块化两篇文章/" itemprop="url">43-模块化两篇文章</a></h1>
         
 
         <div class="post-meta">
@@ -1516,7 +452,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
                 2018-05-03
               </time>
             
@@ -1539,8 +475,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-12-微信小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-12-微信小程序</span>
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
                   </a>
                 </span>
 
@@ -1578,10 +514,8 @@
       
         
           
-            <p><a href="https://github.com/Tencent/wepy/issues/938" target="_blank" rel="noopener">link</a></p>
-<p>wepy.confing.js 取消注释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sass: &#123;</span><br><span class="line">      outputStyle: &apos;compressed&apos;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure></p>
-<p>安装 compilers</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install node-sass -D</span><br><span class="line">npm install wepy-compiler-sass@1.3.12 --save</span><br></pre></td></tr></table></figure>
+            <p><a href="https://www.cnblogs.com/chenguangliang/p/5856701.html" target="_blank" rel="noopener">link1</a></p>
+<p><a href="https://seajs.github.io/seajs/docs/#intro" target="_blank" rel="noopener">sea.js</a></p>
 
           
         
@@ -1630,7 +564,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-分支/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/59-undefined跟null的关系/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -1649,7 +583,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/02-分支/" itemprop="url">02-分支</a></h1>
+                <a class="post-title-link" href="/2018/05/03/59-undefined跟null的关系/" itemprop="url">59-undefined跟null的关系</a></h1>
         
 
         <div class="post-meta">
@@ -1661,7 +595,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
                 2018-05-03
               </time>
             
@@ -1684,8 +618,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-10-git/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-10-git</span>
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
                   </a>
                 </span>
 
@@ -1723,23 +657,1059 @@
       
         
           
-            <p>创建并新建分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b dev</span><br><span class="line">Switched to a new branch &apos;dev&apos;</span><br></pre></td></tr></table></figure></p>
-<p>用git branch命令查看当前分支：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* dev</span><br><span class="line">  master</span><br></pre></td></tr></table></figure>
-<p>切换回master分支：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">Switched to branch &apos;master&apos;</span><br></pre></td></tr></table></figure>
-<p>把dev分支的工作成果合并到master分支上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git merge dev</span><br><span class="line">Updating d17efd8..fec145a</span><br><span class="line">Fast-forward</span><br><span class="line"> readme.txt |    1 +</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br></pre></td></tr></table></figure>
-<p>删除dev分支</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d dev</span><br><span class="line">Deleted branch dev (was fec145a).</span><br></pre></td></tr></table></figure>
-<p>小结<br>Git鼓励大量使用分支：</p>
-<p>查看分支：<code>git branch</code></p>
-<p>创建分支：<code>git branch &lt;name&gt;</code></p>
-<p>切换分支：<code>git checkout &lt;name&gt;</code></p>
-<p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code></p>
-<p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
-<p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
-<p>最后记得推送</p>
+            <p><a href="http://web.jobbole.com/92105/" target="_blank" rel="noopener">link</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trueundefined == null; //true</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/04-ref/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/04-ref/" itemprop="url">04-ref</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-05-react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var MyComponent = React.createClass(&#123;</span><br><span class="line">  handleClick: function() &#123;</span><br><span class="line">    alert(this.myTextInput.value);</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; ref=&#123;(ref) =&gt; this.myTextInput = ref&#125; /&gt;</span><br><span class="line">        &lt;input type=&quot;button&quot; value=&quot;Focus the text input&quot; onClick=&#123;this.handleClick&#125; /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;MyComponent /&gt;,</span><br><span class="line">  document.body</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>这里ref在设置的时候加上 ref={(ref)=&gt;this.myTextInput=ref}</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-引入方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/01-引入方式/" itemprop="url">01-引入方式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-05-react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="1-引入方式"><a href="#1-引入方式" class="headerlink" title="1. 引入方式:"></a>1. 引入方式:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">新版本需要注意的地方：</span><br><span class="line"></span><br><span class="line">1，js文件引用换成最新的</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react-dom.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">2，</span><br><span class="line">&lt;script type=&quot;text/jsx&quot;&gt; 换成 &lt;script type=&quot;text/babel&quot;&gt;</span><br><span class="line">3，  var tipE = React.findDOMNode(this.refs.tip);</span><br><span class="line">换成 var tipE = ReactDOM.findDOMNode(this.refs.tip);</span><br><span class="line">4,React.render 换成 ReactDOM.render</span><br></pre></td></tr></table></figure>
+<h5 id="2-单独引入jsx"><a href="#2-单独引入jsx" class="headerlink" title="2. 单独引入jsx"></a>2. 单独引入jsx</h5><p><code>&lt;script type=&quot;text/babel&quot; src=&quot;src/helloworld.js&quot;&gt;&lt;/script&gt;</code></p>
+<h5 id="3-demo"><a href="#3-demo" class="headerlink" title="3.demo"></a>3.demo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Hello React!&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;js/build/react.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/build/react-dom.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/build/browser.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;example&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script type=&quot;text/babel&quot; src=&quot;js/16-demo.jsx&quot;&gt; &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/42-reffer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/42-reffer/" itemprop="url">42-reffer</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="http://blog.csdn.net/flyingpig2016/article/details/53130912" target="_blank" rel="noopener">链接</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/08-面试题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/08-面试题/" itemprop="url">08-面试题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-00-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-00-基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<ol>
+<li>放在HTML里的哪一部分JavaScripts会在页面加载的时候被执行？</li>
+</ol>
+</blockquote>
+<p>  在HTML body部分中的JavaScripts会在页面加载的时候被执行。<br>在HTML head部分中的JavaScripts会在被调用的时候才执行。</p>
+<blockquote>
+<p>2.下面这个JS程序的输出是什么：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function Foo() &#123;</span><br><span class="line">    var i = 0;</span><br><span class="line">    return function() &#123;</span><br><span class="line">        console.log(i++);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var f1 = Foo(),</span><br><span class="line">    f2 = Foo();</span><br><span class="line">f1();</span><br><span class="line">f1();</span><br><span class="line">f2();</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>++<strong>0 1 2</strong>++</p>
+<blockquote>
+<p>3.权重 ：内联 权重1000 ， ID 选择器 权重：100， 类 伪类 属性选择器 权重：10 ，类型选择器 权重：1 除!important ，内联权重最大！</p>
+</blockquote>
+<blockquote>
+<p>3.hasOwnProperty.isPrototypeOf  </p>
+</blockquote>
+<p>hasOwnProperty： 是用来判断一个对象是否有你给出名称的属性或对象。不过需要注意的是，此方法无法检查该对象的原型链中是否具有该属性，该属性必须是对象本身的一个成员。<br>isPrototypeOf : 是用来判断要检查其原型链的对象是否存在于指定对象实例中，是则返回true，否则返回false。</p>
+<blockquote>
+<p>4.if(! “a” in window){<br>    var a = 1;<br>}<br>alert(a);<br>请问 a 的结果是什么？</p>
+</blockquote>
+<p>undefined</p>
+<blockquote>
+<p>5.状态码  </p>
+</blockquote>
+<p>HTTP状态码分类<br>1<strong> 信息，服务器收到请求，需要请求者继续执行操作<br>2</strong> 成功，操作被成功接收并处理<br>3<strong> 重定向，需要进一步的操作以完成请求<br>4</strong> 客户端错误，请求包含语法错误或无法完成请求<br>5** 服务器错误，服务器在处理请求的过程中发生了错 </p>
+<p>HTTP状态码列表<br><strong>200</strong> OK  请求成功。一般用于GET与POST请求<br><strong>301</strong> Moved Permanently   永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替<br><strong>302</strong> Found   临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI<br><strong>304</strong> Not Modified    未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源<br><strong>307</strong> Temporary Redirect  临时重定向。与302类似。使用GET请求重定向<br><strong>404</strong> Not Found   服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面<br><strong>500</strong> Internal Server Error   服务器内部错误，无法完成请求  </p>
+<blockquote>
+<ol start="6">
+<li>js七种数据类型：Sting  Object  null  undefined  Array  Boolean  Number<br>js五种基本类型：String Boolean Number null undefined<br>typeof六种返回格式：’string’  ‘number’  ‘object’  ‘function’  ‘boolean’  ‘undefined’</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>7.null == undefined 在 ===就不等了</p>
+</blockquote>
+<blockquote>
+<ol start="8">
+<li>在html中，帧元素（frameset）的优先级最高，表单元素比非表单元素的优先级要高。<br>表单元素包括：文本输入框，密码输入框，单选框，复选框，文本输入域，列表框等等；<br>非表单元素包括：连接（a），div,table,span等。<br>所有的html元素又可以根据其显示分成两类：有窗口元素以及无窗口元素。有窗口元素总是显示在无窗口元素的前面。<br>有窗口元素包括：select元素，object元素，以及frames元素等等。<br>无窗口元素：大部分html元素都是无窗口元素。  </li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="9">
+<li>第一次答的时候就不知道什么是文档流，然后查了下才知道；<br>在css的定位机制有三种，分别是1：文档流，2：浮动（float），3定位（position）<br>其中文档流的意义就是按照HTML里面的写法就是从上到下，从左到右的排版布局;<br>在4答案选项中的属性，float（浮动）和position（定位）了<br>A：position: absolute;<br>生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位；都绝对定位了，肯定脱离了文档流。。<br>B:position: fixed;<br>生成绝对定位的元素，相对于浏览器窗口进行定位;相对于浏览器了，也和正常顺序排下来没什么关系。。<br>C:position: relative;<br>生成相对定位的元素，相对于其正常位置进行定位。生成相对定位，也就是说还在原本的上下左右之间，上下左右的元素都不变，so这个没有能脱离文档流。。就这个了<br>D:float: left;都浮动出去了，还上哪保持原位置去。。</li>
+</ol>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/41-函数节流/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/41-函数节流/" itemprop="url">41-函数节流</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://www.cnblogs.com/fsjohnhuang/p/4147810.html" target="_blank" rel="noopener">link</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/56-改写console函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/56-改写console函数/" itemprop="url">56-改写console函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log=(function(log) &#123;</span><br><span class="line">	var i=0;</span><br><span class="line">	return function(str) &#123;</span><br><span class="line">		i++;</span><br><span class="line">		log.call(console,i+&quot;:&quot;+str)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)(console.log)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/51-正则例子/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/51-正则例子/" itemprop="url">51-正则例子</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="https://www.cnblogs.com/moqing/archive/2016/07/13/5665126.html" target="_blank" rel="noopener">link</a></p>
+</blockquote>
+<h2 id="1-js正则表达式-和-的区别"><a href="#1-js正则表达式-和-的区别" class="headerlink" title="1. js正则表达式(.+)和(.+?)的区别"></a>1. js正则表达式(.+)和(.+?)的区别</h2><p>?疑问号让.+的搜索模式从贪婪模式变成惰性模式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;aaa&lt;div style=&quot;font-color:red;&quot;&gt;123456&lt;/div&gt;bbb&apos;</span><br><span class="line"></span><br><span class="line">&lt;.+?&gt;会匹配&lt;div style=&quot;font-color:red;&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;.+&gt;会匹配&lt;div style=&quot;font-color:red;&quot;&gt;123456&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>要在浏览器测试结果的话，输入:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;aaa&lt;div style=&quot;font-color:red;&quot;&gt;123456&lt;/div&gt;bbb&apos;</span><br><span class="line"></span><br><span class="line">str.match(/&lt;.+?&gt;/);</span><br><span class="line"></span><br><span class="line">str.match(/&lt;.+&gt;/);</span><br></pre></td></tr></table></figure>
+<h2 id="2-js的正则表达式的正则前瞻-和非捕获性分组-有什么区别"><a href="#2-js的正则表达式的正则前瞻-和非捕获性分组-有什么区别" class="headerlink" title="2. js的正则表达式的正则前瞻(?=)和非捕获性分组(?:)有什么区别?"></a>2. js的正则表达式的正则前瞻(?=)和非捕获性分组(?:)有什么区别?</h2><p>(?=)会作为匹配校验，但不会出现在匹配结果字符串里面</p>
+<p>(?:)会作为匹配校验，并出现在匹配结果字符里面，它跟(…)不同的地方在于，不作为子匹配返回。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var data = &apos;windows 98 is ok&apos;;</span><br><span class="line">data.match(/windows (?=\d+)/);  // [&quot;windows &quot;]</span><br><span class="line">data.match(/windows (?:\d+)/);  // [&quot;windows 98&quot;]</span><br><span class="line">data.match(/windows (\d+)/);    // [&quot;windows 98&quot;, &quot;98&quot;]</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1779,7 +1749,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
