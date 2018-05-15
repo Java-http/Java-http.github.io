@@ -277,478 +277,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/06-win10搭建react-native/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/06-win10搭建react-native/" itemprop="url">06-win10搭建react-native</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-05-react</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p><a href="http://facebook.github.io/react-native/docs/getting-started.html" target="_blank" rel="noopener">官网链接</a> <a href="https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows" target="_blank" rel="noopener">stackoverflow</a><br>建议：结合官网文档（比较详细），准备科学上网软件</p>
-</blockquote>
-<h2 id="1-安装相应软件"><a href="#1-安装相应软件" class="headerlink" title="1 安装相应软件"></a>1 安装相应软件</h2><blockquote>
-<p>需要==Node==，==React Native==命令行界面，==Python2.7==，==JDK1.8==和==Android Studio==</p>
-</blockquote>
-<ul>
-<li>node 官网下载即可，版本8.9.3<ul>
-<li>需要常用npm包:==yarn== ==react-native-cli== </li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g react-native-cli yarn</span><br></pre></td></tr></table></figure>
-<ul>
-<li>python2.7</li>
-<li>JDK1.8 (可以下脱机版，配置下JAVA_HOME环境变量)</li>
-<li>安装Android Studio<ul>
-<li>下载并安装Android（建议不要装在C盘，占内存太大） Studio。提示您选择安装类型时，请选择“自定义”设置。确保选中以下所有项旁边的框：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Android SDK</span><br><span class="line">Android SDK Platform</span><br><span class="line">Performance (Intel ® HAXM)</span><br><span class="line">Android Virtual Device</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<p>安装完成后在SDK Manager里安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Google APIs</span><br><span class="line">Android SDK Platform 23</span><br><span class="line">Intel x86 Atom_64 System Image</span><br><span class="line">Google APIs Intel x86 Atom_64 System Image</span><br></pre></td></tr></table></figure></p>
-<p>“Android SDK Build-Tools” 选择 23.0.1 </p>
-<p>配置ANDROID_HOME环境变量</p>
-<p><img src="http://facebook.github.io/react-native/docs/assets/GettingStartedAndroidEnvironmentVariableANDROID_HOME.png" alt="image"></p>
-<h2 id="2-创建一个新的应用程序"><a href="#2-创建一个新的应用程序" class="headerlink" title="2 创建一个新的应用程序"></a>2 创建一个新的应用程序</h2><p>在文件夹里（随便的）右键 git bash </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native init AwesomeProject</span><br></pre></td></tr></table></figure>
-<h3 id="有个坑来了！"><a href="#有个坑来了！" class="headerlink" title="==有个坑来了！=="></a>==有个坑来了！==</h3><p>如果您使用Windows，请按以下方式运行命令，或者如果出现错误“无法找到条目文件index.android.js”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir android\app\src\main\assets</span><br><span class="line">react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res</span><br></pre></td></tr></table></figure>
-<h2 id="3-Android-Studio打开Android项目"><a href="#3-Android-Studio打开Android项目" class="headerlink" title="3 Android Studio打开Android项目"></a>3 Android Studio打开Android项目</h2><p><code>react-native init AwesomeProject</code>生成一个react-native项目，有一个android文件夹，用Android Studio打开。</p>
-<p>配置下adb环境变量。</p>
-<p><img src="https://note.youdao.com/yws/api/personal/file/3C0D6D7DA5E44C9AB3B0ABD918F292F4?method=download&amp;shareKey=20cf355feead66d299c2ac18db25b17a" alt="image"></p>
-<p>到这里应该结束了，一个正常可用的安卓项目生成完成！</p>
-<hr>
-<p>分割线：</p>
-<p>学习react-native之前，需要先了解原生js，es6，react.js，基本的node.js下载命令。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/25-按键/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/25-按键/" itemprop="url">25-按键</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>键盘事件拥有两个属性，keyCode和CharCode，他们之间有一些不一样之处。keyCode表示用户按下键的实际的编码，而charCode是指用户按下字符的编码。</p>
-<p><strong>IE下</strong></p>
-<p>keyCode：对于keypress事件，表示按下按键的Unicode字符；对于keydown/keyup 事件，表示按下按键的数字代码。无charCode属性。</p>
-<p><strong>DOM标准下</strong></p>
-<p>keyCode：表示按下按键的数字代码。</p>
-<p>charCode：按下按键的Unicode字符。</p>
-<h5 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h5><p>1.在keydown事件里面，事件包含了keyCode – 用户按下的按键的物理编码。</p>
-<p>2.在keypress里，keyCode包含了字符编码，即表示字符的ASCII码。这样的形式适用于所有的浏览器 – 除了火狐，它在keypress事件中的keyCode返回值为0。</p>
-<p>如果你想获取用户实际敲击的按钮，用keydown事件来获取事件对象，并获取keyCode值，这在所有浏览器都行的通。另一方面，如果你想获取用户输入的字符，那么就使用keypress来获取，然后获取charCode（火狐和safari）或是keyCode（其他浏览器）。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/06-匿名函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/06-匿名函数/" itemprop="url">06-匿名函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>Immediately-invoked Function Expression（IIFE，立即调用函数），简单的理解就是定义完成函数之后立即执行。<br>比较常见的三种写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// Crockford&apos;s preference - parens on the inside</span><br><span class="line">(function() &#123;</span><br><span class="line">  console.log(&apos;Welcome to the Internet. Please follow me.&apos;);</span><br><span class="line">&#125;());</span><br><span class="line"></span><br><span class="line">(function() &#123;</span><br><span class="line">  console.log(&apos;Welcome to the Internet. Please follow me.&apos;);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">!function() &#123;</span><br><span class="line">  console.log(&apos;Welcome to the Internet. Please follow me.&apos;);</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/19-函数声明和函数表达式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -895,7 +423,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/24-sessionStorage/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-React.Children/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -914,7 +442,176 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/24-sessionStorage/" itemprop="url">24-sessionStorage</a></h1>
+                <a class="post-title-link" href="/2018/05/03/02-React.Children/" itemprop="url">02-React.Children</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-05-react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>React.Children 是顶层API之一，为处理 this.props.childrenb 这个封闭的数据结构提供了有用的工具。</p>
+</blockquote>
+<blockquote>
+<p>this.props 对象的属性与组件的属性一一对应，但是有一个例外，就是 this.props.children 属性。它表示组件的所有子节点。</p>
+</blockquote>
+<h5 id="1-React-Children-map"><a href="#1-React-Children-map" class="headerlink" title="1.React.Children.map"></a>1.React.Children.map</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">object React.Children.map(object children, function fn [, object context])</span><br><span class="line"></span><br><span class="line">使用方法：</span><br><span class="line">React.Children.map(this.props.children, function (child) &#123;</span><br><span class="line">    return &lt;li&gt;&#123;child&#125;&lt;/li&gt;;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">其他方法</span><br><span class="line">this.props.children.forEach(function (child) &#123;</span><br><span class="line">    return &lt;li&gt;&#123;child&#125;&lt;/li&gt;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>在每一个直接子级（包含在 children 参数中的）上调用 fn 函数，此函数中的 this 指向 上下文。如果 children 是一个内嵌的对象或者数组，它将被遍历：不会传入容器对象到 fn 中。如果 children 参数是 null 或者 undefined，那么返回 null 或者 undefined 而不是一个空对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/jsx&quot;&gt;</span><br><span class="line">  var NotesList = React.createClass(&#123;</span><br><span class="line">    render: function() &#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;ol&gt;</span><br><span class="line">          &#123;</span><br><span class="line">            React.Children.map(this.props.children, function (child) &#123;</span><br><span class="line">                    return &lt;li&gt;&#123;child&#125;&lt;/li&gt;;</span><br><span class="line">                &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">        &lt;/ol&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  React.render(</span><br><span class="line">    &lt;NotesList&gt;</span><br><span class="line">      &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">      &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">    &lt;/NotesList&gt;,</span><br><span class="line">    document.body</span><br><span class="line">  );</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>这里需要注意， <code>this.props.children</code> 的值有三种可能：如果当前组件没有子节点，它就是 <code>undefined</code> ;如果有一个子节点，数据类型是 <code>object</code> ；如果有多个子节点，数据类型就是 <code>array</code> 。所以，处理 <code>this.props.children</code> 的时候要小心。<br>React 提供一个工具方法 <code>React.Children</code>来处理 <code>this.props.children</code> 。我们可以用 <code>React.Children.map</code> 来遍历子节点，而不用担心 <code>this.props.children</code> 的数据类型是 undefined 还是 object。</p>
+<p>传入如下ReactElement：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;NotesList&gt;</span><br><span class="line">   &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">   &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">&lt;/NotesList&gt;</span><br><span class="line">//返回两个子节点</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;&lt;/NotesList&gt;</span><br><span class="line">//返回undefined</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;null&lt;/NotesList&gt;</span><br><span class="line">//返回null</span><br></pre></td></tr></table></figure>
+<h5 id="2、React-Children-forEach"><a href="#2、React-Children-forEach" class="headerlink" title="2、React.Children.forEach"></a>2、React.Children.forEach</h5><blockquote>
+<p>React.Children.forEach(object children, function fn [, object context])</p>
+</blockquote>
+<p>类似于 React.Children.map()，但是不返回对象。</p>
+<h5 id="3、React-Children-count"><a href="#3、React-Children-count" class="headerlink" title="3、React.Children.count"></a>3、React.Children.count</h5><blockquote>
+<p>number React.Children.count(object children)</p>
+</blockquote>
+<p>返回 children 当中的组件总数，和传递给 map 或者 forEach 的回调函数的调用次数一致。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">render: function() &#123;</span><br><span class="line">    console.log(React.Children.count(this.props.children)); //2</span><br><span class="line"></span><br><span class="line">    return (</span><br><span class="line">      &lt;ol&gt;</span><br><span class="line">        &#123;</span><br><span class="line">          this.props.children.forEach(function (child) &#123;</span><br><span class="line">              return &lt;li&gt;&#123;child&#125;&lt;/li&gt;</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &lt;/ol&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>不同的ReactElement，输出count值:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;NotesList&gt;</span><br><span class="line">    &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">    &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">&lt;/NotesList&gt;</span><br><span class="line">console.log(React.Children.count(this.props.children)); //2</span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;&lt;/NotesList&gt;</span><br><span class="line">console.log(React.Children.count(this.props.children)); //0</span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;null&lt;/NotesList&gt;</span><br><span class="line">console.log(React.Children.count(this.props.children)); //1</span><br></pre></td></tr></table></figure>
+<h5 id="4、React-Children-only"><a href="#4、React-Children-only" class="headerlink" title="4、React.Children.only"></a>4、React.Children.only</h5><blockquote>
+<p>object React.Children.only(object children)</p>
+</blockquote>
+<p>返回 children 中 <strong>仅有的子级</strong>。否则抛出异常。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(React.Children.only(this.props.children[0])); </span><br><span class="line">//输出对象this.props.children[0]</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/26-JSON转换的坑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/26-JSON转换的坑/" itemprop="url">26-JSON转换的坑</a></h1>
         
 
         <div class="post-meta">
@@ -988,11 +685,9 @@
       
         
           
-            <ul>
-<li>sessionStorage生命周期为当前窗口或标签页，一旦窗口或标签页被永久关闭了，那么所有通过sessionStorage存储的数据也就被清空了。</li>
-<li>不同浏览器无法共享localStorage或sessionStorage中的信息。相同浏览器的不同页面间可以共享相同的localStorage（页面属于相同域名和端口），但是不同页面或标签页间==无法共享==sessionStorage的信息。这里需要注意的是，页面及标签页仅指顶级窗口，如果一个标签页包含多个iframe标签且他们属于同源页面，那么他们之间是可以共享sessionStorage的。 ==要理解共享的意思==</li>
-<li>打开的新页面的sessionStorage是通过原网页的sessionStroage复制传递过来的，也可以理解为新网页的sessionStorage是原网页的sessionStorage的复制出来的独立体，每个网页的sessionStorage都是一个独立的，不共享。==一旦一个网页的sessionStorage发生变化，另外一个页面的sessionStorage不受影响。==</li>
-</ul>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.parse(&apos;[&#123;&quot;start&quot;:&quot;D&quot;,&quot;id&quot;:&quot;&quot;&#125;]&apos;)</span><br></pre></td></tr></table></figure>
+<p>==<strong>要把单引号写在双引号外面</strong>==</p>
+<p><a href="http://blog.csdn.net/shareus/article/details/50429006" target="_blank" rel="noopener">CSDN博客链接</a></p>
 
           
         
@@ -1330,7 +1025,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/23-返回并刷新/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/54-面试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -1349,7 +1044,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/23-返回并刷新/" itemprop="url">23-返回并刷新</a></h1>
+                <a class="post-title-link" href="/2018/05/03/54-面试/" itemprop="url">54-面试</a></h1>
         
 
         <div class="post-meta">
@@ -1423,8 +1118,203 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.location.href=document.referrer;</span><br></pre></td></tr></table></figure>
-<p>解决history在某些机型不兼容的情况</p>
+            <ul>
+<li><p><a href="https://juejin.im/post/5a7e9063f265da4e732ec32b" target="_blank" rel="noopener">前端菜鸟帝都一月面试记</a></p>
+</li>
+<li><p><a href="https://github.com/Xing-Chuan/blog/blob/master/works/Web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93-2017-05.md" target="_blank" rel="noopener">Web前端面试总结_2017.07</a></p>
+</li>
+<li><p><a href="http://cherryblog.site/Front-interview.html" target="_blank" rel="noopener">前端面试</a></p>
+</li>
+<li><p><a href="http://www.cnblogs.com/beidan/p/5285742.html" target="_blank" rel="noopener">阿里前端笔试题目</a></p>
+</li>
+<li><p><a href="https://www.cnblogs.com/yugege/p/6526215.html" target="_blank" rel="noopener">记一次前端面试经历</a></p>
+</li>
+<li><p><a href="https://juejin.im/entry/5a39ef2e518825696f7e245f" target="_blank" rel="noopener">关于BFC的一篇很好的文章</a></p>
+</li>
+<li><p><a href="http://www.cnblogs.com/hl-520/p/5753075.html" target="_blank" rel="noopener">圣杯布局</a> – <a href="http://www.cnblogs.com/hl-520/p/5753075.html" target="_blank" rel="noopener">双飞翼布局</a></p>
+</li>
+<li><p><a href="https://www.imooc.com/article/20319" target="_blank" rel="noopener">我遇到的前端面试题2017</a></p>
+</li>
+<li><a href="http://www.jackpu.com/nian-hou-fu-xi-zhi-nan/" target="_blank" rel="noopener">2018面试</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/06-win10搭建react-native/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/06-win10搭建react-native/" itemprop="url">06-win10搭建react-native</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-05-react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="http://facebook.github.io/react-native/docs/getting-started.html" target="_blank" rel="noopener">官网链接</a> <a href="https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows" target="_blank" rel="noopener">stackoverflow</a><br>建议：结合官网文档（比较详细），准备科学上网软件</p>
+</blockquote>
+<h2 id="1-安装相应软件"><a href="#1-安装相应软件" class="headerlink" title="1 安装相应软件"></a>1 安装相应软件</h2><blockquote>
+<p>需要==Node==，==React Native==命令行界面，==Python2.7==，==JDK1.8==和==Android Studio==</p>
+</blockquote>
+<ul>
+<li>node 官网下载即可，版本8.9.3<ul>
+<li>需要常用npm包:==yarn== ==react-native-cli== </li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g react-native-cli yarn</span><br></pre></td></tr></table></figure>
+<ul>
+<li>python2.7</li>
+<li>JDK1.8 (可以下脱机版，配置下JAVA_HOME环境变量)</li>
+<li>安装Android Studio<ul>
+<li>下载并安装Android（建议不要装在C盘，占内存太大） Studio。提示您选择安装类型时，请选择“自定义”设置。确保选中以下所有项旁边的框：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Android SDK</span><br><span class="line">Android SDK Platform</span><br><span class="line">Performance (Intel ® HAXM)</span><br><span class="line">Android Virtual Device</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>安装完成后在SDK Manager里安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Google APIs</span><br><span class="line">Android SDK Platform 23</span><br><span class="line">Intel x86 Atom_64 System Image</span><br><span class="line">Google APIs Intel x86 Atom_64 System Image</span><br></pre></td></tr></table></figure></p>
+<p>“Android SDK Build-Tools” 选择 23.0.1 </p>
+<p>配置ANDROID_HOME环境变量</p>
+<p><img src="http://facebook.github.io/react-native/docs/assets/GettingStartedAndroidEnvironmentVariableANDROID_HOME.png" alt="image"></p>
+<h2 id="2-创建一个新的应用程序"><a href="#2-创建一个新的应用程序" class="headerlink" title="2 创建一个新的应用程序"></a>2 创建一个新的应用程序</h2><p>在文件夹里（随便的）右键 git bash </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native init AwesomeProject</span><br></pre></td></tr></table></figure>
+<h3 id="有个坑来了！"><a href="#有个坑来了！" class="headerlink" title="==有个坑来了！=="></a>==有个坑来了！==</h3><p>如果您使用Windows，请按以下方式运行命令，或者如果出现错误“无法找到条目文件index.android.js”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir android\app\src\main\assets</span><br><span class="line">react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res</span><br></pre></td></tr></table></figure>
+<h2 id="3-Android-Studio打开Android项目"><a href="#3-Android-Studio打开Android项目" class="headerlink" title="3 Android Studio打开Android项目"></a>3 Android Studio打开Android项目</h2><p><code>react-native init AwesomeProject</code>生成一个react-native项目，有一个android文件夹，用Android Studio打开。</p>
+<p>配置下adb环境变量。</p>
+<p><img src="https://note.youdao.com/yws/api/personal/file/3C0D6D7DA5E44C9AB3B0ABD918F292F4?method=download&amp;shareKey=20cf355feead66d299c2ac18db25b17a" alt="image"></p>
+<p>到这里应该结束了，一个正常可用的安卓项目生成完成！</p>
+<hr>
+<p>分割线：</p>
+<p>学习react-native之前，需要先了解原生js，es6，react.js，基本的node.js下载命令。</p>
 
           
         
@@ -1637,7 +1527,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/60-函数柯里化/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/25-按键/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -1656,7 +1546,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/60-函数柯里化/" itemprop="url">60-函数柯里化</a></h1>
+                <a class="post-title-link" href="/2018/05/03/25-按键/" itemprop="url">25-按键</a></h1>
         
 
         <div class="post-meta">
@@ -1730,8 +1620,161 @@
       
         
           
-            <p><a href="http://www.zhangxinxu.com/wordpress/2013/02/js-currying/" target="_blank" rel="noopener">link</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function fn() &#123;</span><br><span class="line">	var _arg=[].slice.call(arguments);</span><br><span class="line">	return function() &#123;</span><br><span class="line">		if(arguments.length==0)&#123;</span><br><span class="line">			return _arg.reduce((a,b)=&gt;a+b);</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			return fn.apply(null,_arg.concat([].slice.call(arguments)));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <p>键盘事件拥有两个属性，keyCode和CharCode，他们之间有一些不一样之处。keyCode表示用户按下键的实际的编码，而charCode是指用户按下字符的编码。</p>
+<p><strong>IE下</strong></p>
+<p>keyCode：对于keypress事件，表示按下按键的Unicode字符；对于keydown/keyup 事件，表示按下按键的数字代码。无charCode属性。</p>
+<p><strong>DOM标准下</strong></p>
+<p>keyCode：表示按下按键的数字代码。</p>
+<p>charCode：按下按键的Unicode字符。</p>
+<h5 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h5><p>1.在keydown事件里面，事件包含了keyCode – 用户按下的按键的物理编码。</p>
+<p>2.在keypress里，keyCode包含了字符编码，即表示字符的ASCII码。这样的形式适用于所有的浏览器 – 除了火狐，它在keypress事件中的keyCode返回值为0。</p>
+<p>如果你想获取用户实际敲击的按钮，用keydown事件来获取事件对象，并获取keyCode值，这在所有浏览器都行的通。另一方面，如果你想获取用户输入的字符，那么就使用keypress来获取，然后获取charCode（火狐和safari）或是keyCode（其他浏览器）。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/24-sessionStorage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/24-sessionStorage/" itemprop="url">24-sessionStorage</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>sessionStorage生命周期为当前窗口或标签页，一旦窗口或标签页被永久关闭了，那么所有通过sessionStorage存储的数据也就被清空了。</li>
+<li>不同浏览器无法共享localStorage或sessionStorage中的信息。相同浏览器的不同页面间可以共享相同的localStorage（页面属于相同域名和端口），但是不同页面或标签页间==无法共享==sessionStorage的信息。这里需要注意的是，页面及标签页仅指顶级窗口，如果一个标签页包含多个iframe标签且他们属于同源页面，那么他们之间是可以共享sessionStorage的。 ==要理解共享的意思==</li>
+<li>打开的新页面的sessionStorage是通过原网页的sessionStroage复制传递过来的，也可以理解为新网页的sessionStorage是原网页的sessionStorage的复制出来的独立体，每个网页的sessionStorage都是一个独立的，不共享。==一旦一个网页的sessionStorage发生变化，另外一个页面的sessionStorage不受影响。==</li>
+</ul>
 
           
         
@@ -1817,7 +1860,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">188</span>
+                <span class="site-state-item-count">190</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

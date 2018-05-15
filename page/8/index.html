@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/52-js隐式类型转换/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-引入方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -296,7 +296,292 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/52-js隐式类型转换/" itemprop="url">52-js隐式类型转换</a></h1>
+                <a class="post-title-link" href="/2018/05/03/01-引入方式/" itemprop="url">01-引入方式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-05-react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="1-引入方式"><a href="#1-引入方式" class="headerlink" title="1. 引入方式:"></a>1. 引入方式:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">新版本需要注意的地方：</span><br><span class="line"></span><br><span class="line">1，js文件引用换成最新的</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react-dom.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">2，</span><br><span class="line">&lt;script type=&quot;text/jsx&quot;&gt; 换成 &lt;script type=&quot;text/babel&quot;&gt;</span><br><span class="line">3，  var tipE = React.findDOMNode(this.refs.tip);</span><br><span class="line">换成 var tipE = ReactDOM.findDOMNode(this.refs.tip);</span><br><span class="line">4,React.render 换成 ReactDOM.render</span><br></pre></td></tr></table></figure>
+<h5 id="2-单独引入jsx"><a href="#2-单独引入jsx" class="headerlink" title="2. 单独引入jsx"></a>2. 单独引入jsx</h5><p><code>&lt;script type=&quot;text/babel&quot; src=&quot;src/helloworld.js&quot;&gt;&lt;/script&gt;</code></p>
+<h5 id="3-demo"><a href="#3-demo" class="headerlink" title="3.demo"></a>3.demo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Hello React!&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;js/build/react.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/build/react-dom.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/build/browser.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;example&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script type=&quot;text/babel&quot; src=&quot;js/16-demo.jsx&quot;&gt; &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/04-js冒泡排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/04-js冒泡排序/" itemprop="url">04-js冒泡排序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    function sort (arr) &#123;</span><br><span class="line">        for (var i = 0;i&lt;arr.length;i++) &#123;</span><br><span class="line">            for (var j = 0; j &lt; arr.length-i-1; j++) &#123;</span><br><span class="line">                if (arr[j]&gt;arr[j+1]) &#123;</span><br><span class="line">                    var temp=arr[j];</span><br><span class="line">                    arr[j]=arr[j+1];</span><br><span class="line">                    arr[j+1]=temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line">    var arr=[2,5,3,1,7,8,78,89];</span><br><span class="line">    sort(arr);</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/45-Javascript中递归造成的堆栈溢出及解决方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/45-Javascript中递归造成的堆栈溢出及解决方案/" itemprop="url">45-Javascript中递归造成的堆栈溢出及解决方案</a></h1>
         
 
         <div class="post-meta">
@@ -371,8 +656,13 @@
         
           
             <blockquote>
-<p><a href="https://www.cnblogs.com/chenmeng0818/p/5954215.html" target="_blank" rel="noopener">link</a> <a href="https://www.jianshu.com/p/0f1e3ff14537" target="_blank" rel="noopener">link2</a></p>
+<p><a href="https://www.cnblogs.com/cuew1987/p/4122856.html" target="_blank" rel="noopener">博客园</a> </p>
 </blockquote>
+<p>关于堆栈的溢出问题，在Javascript日常开发中很常见，Google了下，相关问题还是比较多的。本文旨在描述如何解决此类问题。 首先看一个实例(当然你可以使用更容易的方式实现，这里我们仅探讨递归)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function isEven (num) &#123;</span><br><span class="line">    if (num === 0) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    if (num === 1) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    return isEven(Math.abs(num) - 2);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">//Outputs: true</span><br><span class="line">console.log(isEven(10));</span><br><span class="line"> </span><br><span class="line">//Outputs: false</span><br><span class="line">console.log(isEven(9));</span><br></pre></td></tr></table></figure>
+<p>当我们把参数改成10000时，运行下例会发生堆栈溢出：<code>//Outputs: Uncaught RangeError: Maximum call stack size exceeded</code></p>
+<h2 id="使用闭包："><a href="#使用闭包：" class="headerlink" title="使用闭包："></a>使用闭包：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function isEven (num) &#123;</span><br><span class="line">    if (num === 0) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    if (num === 1) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    return function() &#123;</span><br><span class="line">        return isEven(Math.abs(num) - 2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//Outputs: true</span><br><span class="line">console.log(isEven(4)()());</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">function isEven(n) &#123;</span><br><span class="line">    /**</span><br><span class="line">     * [isEvenInner 递归]</span><br><span class="line">     * @param  &#123;[type]&#125;  num [description]</span><br><span class="line">     * @return &#123;Boolean&#125;     [description]</span><br><span class="line">     */</span><br><span class="line">    function isEvenInner (n) &#123;</span><br><span class="line">        if (n === 0) &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        if (n === 1) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        return function() &#123;</span><br><span class="line">            return isEvenInner(Math.abs(n) - 2);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    /**</span><br><span class="line">     * [trampoline 迭代]</span><br><span class="line">     * @param  &#123;[type]&#125; func [description]</span><br><span class="line">     * @param  &#123;[type]&#125; arg  [description]</span><br><span class="line">     * @return &#123;[type]&#125;      [description]</span><br><span class="line">     */</span><br><span class="line">    function trampoline (func, arg) &#123;</span><br><span class="line">        var value = func(arg);</span><br><span class="line"> </span><br><span class="line">        while(typeof value === &quot;function&quot;) &#123;</span><br><span class="line">            value = value();</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        return value;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    return trampoline.bind(null, isEvenInner)(n);</span><br><span class="line">&#125;</span><br><span class="line">//Outputs: true</span><br><span class="line">console.log(isEven(10000));</span><br><span class="line"> </span><br><span class="line">//Outputs: false</span><br><span class="line">console.log(isEven(10001));</span><br></pre></td></tr></table></figure>
 
           
         
@@ -421,7 +711,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/43-模块化两篇文章/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/40-offsetleft-offsetTop-offsetParent的兼容性问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -440,7 +730,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/43-模块化两篇文章/" itemprop="url">43-模块化两篇文章</a></h1>
+                <a class="post-title-link" href="/2018/05/03/40-offsetleft-offsetTop-offsetParent的兼容性问题/" itemprop="url">40-offsetleft、offsetTop、offsetParent的兼容性问题</a></h1>
         
 
         <div class="post-meta">
@@ -514,8 +804,588 @@
       
         
           
-            <p><a href="https://www.cnblogs.com/chenguangliang/p/5856701.html" target="_blank" rel="noopener">link1</a></p>
-<p><a href="https://seajs.github.io/seajs/docs/#intro" target="_blank" rel="noopener">sea.js</a></p>
+            <h2 id="先来看看offsetParent返回的是什么值"><a href="#先来看看offsetParent返回的是什么值" class="headerlink" title="先来看看offsetParent返回的是什么值"></a>先来看看offsetParent返回的是什么值</h2><p>ele.offsetParent返回的是ele元素最近的并且是定位过(relative,absolute)的父元素，如果没有父元素或者是父元素中没有一个是定位过的，返回值就是body元素</p>
+<h2 id="ele-offsetLeft和ele-offsetTop取值问题，分多种情况："><a href="#ele-offsetLeft和ele-offsetTop取值问题，分多种情况：" class="headerlink" title="ele.offsetLeft和ele.offsetTop取值问题，分多种情况："></a>ele.offsetLeft和ele.offsetTop取值问题，分多种情况：</h2><p>如果ele是body的直接子元素，返回值则是ele距离body左侧或顶部的距离<br>如果ele不是body的直接子元素，在父元素进行定位(relative,absolute)的情况下，各浏览器返回值都是ele距离父元素左侧或者是顶部的距离（唯一的区别就是chrome没有把边框计算进去，IE,firefox都计算进去了）<br>如果ele不是body的直接子元素，父元素也没有进行定位的情况下，各浏览器返回的直接是ele元素距body的距离</p>
+<p>从上面可以看出offsetLeft、offsetTop返回的值就是ele到offsetParent的距离，这个offsetParent是什么元素要看ele的父元素有没有进行定位（relative、absolute）</p>
+<p><a href="https://www.cnblogs.com/diantao/p/5264229.html" target="_blank" rel="noopener">参考链接</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/58-自定义事件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/58-自定义事件/" itemprop="url">58-自定义事件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://codepen.io/fengdou/pen/mxqXNy?editors=1100" target="_blank" rel="noopener">link</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/46-函数式编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/46-函数式编程/" itemprop="url">46-函数式编程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/21714695" target="_blank" rel="noopener">JavaScript函数式编程（一）</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/21926955" target="_blank" rel="noopener">JavaScript函数式编程（二）</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/05-props/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/05-props/" itemprop="url">05-props</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-05-react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://note.youdao.com/yws/api/personal/file/WEB3ddb7cacaaec1bb44e5e680398d91fdb?method=getImage&amp;cstk=CmY5rVpJ" alt="image"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/53-reduce用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/53-reduce用法/" itemprop="url">53-reduce用法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-叠加"><a href="#1-叠加" class="headerlink" title="1.叠加"></a>1.叠加</h2><blockquote>
+<p>reduce方法有两个参数，第一个参数是一个callback，用于针对数组项的操作；第二个参数则是传入的初始值，这个初始值用于单个数组项的操作。需要注意的是，reduce方法返回值并不是数组，而是形如初始值的经过叠加处理后的操作。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var items = [10, 120, 1000];</span><br><span class="line"></span><br><span class="line">// our reducer function</span><br><span class="line">var reducer = function add(sumSoFar, item) &#123; return sumSoFar + item; &#125;;</span><br><span class="line"></span><br><span class="line">// do the job</span><br><span class="line">var total = items.reduce(reducer, 0);</span><br><span class="line"></span><br><span class="line">console.log(total); // 1130</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var items = [10, 120, 1000];</span><br><span class="line"></span><br><span class="line">// our reducer function</span><br><span class="line">var reducer = function add(sumSoFar, item) &#123;</span><br><span class="line">  sumSoFar.sum = sumSoFar.sum + item;</span><br><span class="line">  return sumSoFar; //注意要return </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// do the job</span><br><span class="line">var total = items.reduce(reducer, &#123;sum: 0&#125;);</span><br><span class="line"></span><br><span class="line">console.log(total); // &#123;sum:1130&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-转化对象"><a href="#2-转化对象" class="headerlink" title="2.转化对象"></a>2.转化对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const calendarTypeOptions = [</span><br><span class="line">  &#123; key: &apos;CN&apos;, display_name: &apos;China&apos; &#125;,</span><br><span class="line">  &#123; key: &apos;US&apos;, display_name: &apos;USA&apos; &#125;,</span><br><span class="line">  &#123; key: &apos;JP&apos;, display_name: &apos;Japan&apos; &#125;,</span><br><span class="line">  &#123; key: &apos;EU&apos;, display_name: &apos;Eurozone&apos; &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">// arr to obj ,such as &#123; CN : &quot;China&quot;, US : &quot;USA&quot; &#125;</span><br><span class="line">const calendarTypeKeyValue = calendarTypeOptions.reduce((acc, cur) =&gt; &#123;</span><br><span class="line">  acc[cur.key] = cur.display_name</span><br><span class="line">  return acc</span><br><span class="line">&#125;, &#123;&#125;)</span><br></pre></td></tr></table></figure>
 
           
         
@@ -707,7 +1577,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/04-ref/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/44-谷歌浏览器remote调试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -726,294 +1596,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/04-ref/" itemprop="url">04-ref</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-05-react</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var MyComponent = React.createClass(&#123;</span><br><span class="line">  handleClick: function() &#123;</span><br><span class="line">    alert(this.myTextInput.value);</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; ref=&#123;(ref) =&gt; this.myTextInput = ref&#125; /&gt;</span><br><span class="line">        &lt;input type=&quot;button&quot; value=&quot;Focus the text input&quot; onClick=&#123;this.handleClick&#125; /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;MyComponent /&gt;,</span><br><span class="line">  document.body</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<p>这里ref在设置的时候加上 ref={(ref)=&gt;this.myTextInput=ref}</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/01-引入方式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/01-引入方式/" itemprop="url">01-引入方式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-05-react</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="1-引入方式"><a href="#1-引入方式" class="headerlink" title="1. 引入方式:"></a>1. 引入方式:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">新版本需要注意的地方：</span><br><span class="line"></span><br><span class="line">1，js文件引用换成最新的</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react-dom.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">2，</span><br><span class="line">&lt;script type=&quot;text/jsx&quot;&gt; 换成 &lt;script type=&quot;text/babel&quot;&gt;</span><br><span class="line">3，  var tipE = React.findDOMNode(this.refs.tip);</span><br><span class="line">换成 var tipE = ReactDOM.findDOMNode(this.refs.tip);</span><br><span class="line">4,React.render 换成 ReactDOM.render</span><br></pre></td></tr></table></figure>
-<h5 id="2-单独引入jsx"><a href="#2-单独引入jsx" class="headerlink" title="2. 单独引入jsx"></a>2. 单独引入jsx</h5><p><code>&lt;script type=&quot;text/babel&quot; src=&quot;src/helloworld.js&quot;&gt;&lt;/script&gt;</code></p>
-<h5 id="3-demo"><a href="#3-demo" class="headerlink" title="3.demo"></a>3.demo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Hello React!&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;js/build/react.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/build/react-dom.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/build/browser.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;example&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script type=&quot;text/babel&quot; src=&quot;js/16-demo.jsx&quot;&gt; &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/42-reffer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/42-reffer/" itemprop="url">42-reffer</a></h1>
+                <a class="post-title-link" href="/2018/05/03/44-谷歌浏览器remote调试/" itemprop="url">44-谷歌浏览器remote调试</a></h1>
         
 
         <div class="post-meta">
@@ -1087,630 +1670,7 @@
       
         
           
-            <blockquote>
-<p><a href="http://blog.csdn.net/flyingpig2016/article/details/53130912" target="_blank" rel="noopener">链接</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/08-面试题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/08-面试题/" itemprop="url">08-面试题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-00-基础/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-00-基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<ol>
-<li>放在HTML里的哪一部分JavaScripts会在页面加载的时候被执行？</li>
-</ol>
-</blockquote>
-<p>  在HTML body部分中的JavaScripts会在页面加载的时候被执行。<br>在HTML head部分中的JavaScripts会在被调用的时候才执行。</p>
-<blockquote>
-<p>2.下面这个JS程序的输出是什么：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function Foo() &#123;</span><br><span class="line">    var i = 0;</span><br><span class="line">    return function() &#123;</span><br><span class="line">        console.log(i++);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var f1 = Foo(),</span><br><span class="line">    f2 = Foo();</span><br><span class="line">f1();</span><br><span class="line">f1();</span><br><span class="line">f2();</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>++<strong>0 1 2</strong>++</p>
-<blockquote>
-<p>3.权重 ：内联 权重1000 ， ID 选择器 权重：100， 类 伪类 属性选择器 权重：10 ，类型选择器 权重：1 除!important ，内联权重最大！</p>
-</blockquote>
-<blockquote>
-<p>3.hasOwnProperty.isPrototypeOf  </p>
-</blockquote>
-<p>hasOwnProperty： 是用来判断一个对象是否有你给出名称的属性或对象。不过需要注意的是，此方法无法检查该对象的原型链中是否具有该属性，该属性必须是对象本身的一个成员。<br>isPrototypeOf : 是用来判断要检查其原型链的对象是否存在于指定对象实例中，是则返回true，否则返回false。</p>
-<blockquote>
-<p>4.if(! “a” in window){<br>    var a = 1;<br>}<br>alert(a);<br>请问 a 的结果是什么？</p>
-</blockquote>
-<p>undefined</p>
-<blockquote>
-<p>5.状态码  </p>
-</blockquote>
-<p>HTTP状态码分类<br>1<strong> 信息，服务器收到请求，需要请求者继续执行操作<br>2</strong> 成功，操作被成功接收并处理<br>3<strong> 重定向，需要进一步的操作以完成请求<br>4</strong> 客户端错误，请求包含语法错误或无法完成请求<br>5** 服务器错误，服务器在处理请求的过程中发生了错 </p>
-<p>HTTP状态码列表<br><strong>200</strong> OK  请求成功。一般用于GET与POST请求<br><strong>301</strong> Moved Permanently   永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替<br><strong>302</strong> Found   临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI<br><strong>304</strong> Not Modified    未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源<br><strong>307</strong> Temporary Redirect  临时重定向。与302类似。使用GET请求重定向<br><strong>404</strong> Not Found   服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面<br><strong>500</strong> Internal Server Error   服务器内部错误，无法完成请求  </p>
-<blockquote>
-<ol start="6">
-<li>js七种数据类型：Sting  Object  null  undefined  Array  Boolean  Number<br>js五种基本类型：String Boolean Number null undefined<br>typeof六种返回格式：’string’  ‘number’  ‘object’  ‘function’  ‘boolean’  ‘undefined’</li>
-</ol>
-</blockquote>
-<blockquote>
-<p>7.null == undefined 在 ===就不等了</p>
-</blockquote>
-<blockquote>
-<ol start="8">
-<li>在html中，帧元素（frameset）的优先级最高，表单元素比非表单元素的优先级要高。<br>表单元素包括：文本输入框，密码输入框，单选框，复选框，文本输入域，列表框等等；<br>非表单元素包括：连接（a），div,table,span等。<br>所有的html元素又可以根据其显示分成两类：有窗口元素以及无窗口元素。有窗口元素总是显示在无窗口元素的前面。<br>有窗口元素包括：select元素，object元素，以及frames元素等等。<br>无窗口元素：大部分html元素都是无窗口元素。  </li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="9">
-<li>第一次答的时候就不知道什么是文档流，然后查了下才知道；<br>在css的定位机制有三种，分别是1：文档流，2：浮动（float），3定位（position）<br>其中文档流的意义就是按照HTML里面的写法就是从上到下，从左到右的排版布局;<br>在4答案选项中的属性，float（浮动）和position（定位）了<br>A：position: absolute;<br>生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位；都绝对定位了，肯定脱离了文档流。。<br>B:position: fixed;<br>生成绝对定位的元素，相对于浏览器窗口进行定位;相对于浏览器了，也和正常顺序排下来没什么关系。。<br>C:position: relative;<br>生成相对定位的元素，相对于其正常位置进行定位。生成相对定位，也就是说还在原本的上下左右之间，上下左右的元素都不变，so这个没有能脱离文档流。。就这个了<br>D:float: left;都浮动出去了，还上哪保持原位置去。。</li>
-</ol>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/41-函数节流/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/41-函数节流/" itemprop="url">41-函数节流</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://www.cnblogs.com/fsjohnhuang/p/4147810.html" target="_blank" rel="noopener">link</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/56-改写console函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/56-改写console函数/" itemprop="url">56-改写console函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log=(function(log) &#123;</span><br><span class="line">	var i=0;</span><br><span class="line">	return function(str) &#123;</span><br><span class="line">		i++;</span><br><span class="line">		log.call(console,i+&quot;:&quot;+str)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)(console.log)</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/51-正则例子/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/51-正则例子/" itemprop="url">51-正则例子</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p><a href="https://www.cnblogs.com/moqing/archive/2016/07/13/5665126.html" target="_blank" rel="noopener">link</a></p>
-</blockquote>
-<h2 id="1-js正则表达式-和-的区别"><a href="#1-js正则表达式-和-的区别" class="headerlink" title="1. js正则表达式(.+)和(.+?)的区别"></a>1. js正则表达式(.+)和(.+?)的区别</h2><p>?疑问号让.+的搜索模式从贪婪模式变成惰性模式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;aaa&lt;div style=&quot;font-color:red;&quot;&gt;123456&lt;/div&gt;bbb&apos;</span><br><span class="line"></span><br><span class="line">&lt;.+?&gt;会匹配&lt;div style=&quot;font-color:red;&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;.+&gt;会匹配&lt;div style=&quot;font-color:red;&quot;&gt;123456&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p>要在浏览器测试结果的话，输入:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;aaa&lt;div style=&quot;font-color:red;&quot;&gt;123456&lt;/div&gt;bbb&apos;</span><br><span class="line"></span><br><span class="line">str.match(/&lt;.+?&gt;/);</span><br><span class="line"></span><br><span class="line">str.match(/&lt;.+&gt;/);</span><br></pre></td></tr></table></figure>
-<h2 id="2-js的正则表达式的正则前瞻-和非捕获性分组-有什么区别"><a href="#2-js的正则表达式的正则前瞻-和非捕获性分组-有什么区别" class="headerlink" title="2. js的正则表达式的正则前瞻(?=)和非捕获性分组(?:)有什么区别?"></a>2. js的正则表达式的正则前瞻(?=)和非捕获性分组(?:)有什么区别?</h2><p>(?=)会作为匹配校验，但不会出现在匹配结果字符串里面</p>
-<p>(?:)会作为匹配校验，并出现在匹配结果字符里面，它跟(…)不同的地方在于，不作为子匹配返回。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var data = &apos;windows 98 is ok&apos;;</span><br><span class="line">data.match(/windows (?=\d+)/);  // [&quot;windows &quot;]</span><br><span class="line">data.match(/windows (?:\d+)/);  // [&quot;windows 98&quot;]</span><br><span class="line">data.match(/windows (\d+)/);    // [&quot;windows 98&quot;, &quot;98&quot;]</span><br></pre></td></tr></table></figure>
-
           
         
       
@@ -1795,7 +1755,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">188</span>
+                <span class="site-state-item-count">190</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

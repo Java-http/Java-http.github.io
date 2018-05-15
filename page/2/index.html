@@ -277,6 +277,164 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-分支/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/02-分支/" itemprop="url">02-分支</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-10-git/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-10-git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>创建并新建分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b dev</span><br><span class="line">Switched to a new branch &apos;dev&apos;</span><br></pre></td></tr></table></figure></p>
+<p>用git branch命令查看当前分支：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* dev</span><br><span class="line">  master</span><br></pre></td></tr></table></figure>
+<p>切换回master分支：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">Switched to branch &apos;master&apos;</span><br></pre></td></tr></table></figure>
+<p>把dev分支的工作成果合并到master分支上：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git merge dev</span><br><span class="line">Updating d17efd8..fec145a</span><br><span class="line">Fast-forward</span><br><span class="line"> readme.txt |    1 +</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br></pre></td></tr></table></figure>
+<p>删除dev分支</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d dev</span><br><span class="line">Deleted branch dev (was fec145a).</span><br></pre></td></tr></table></figure>
+<p>小结<br>Git鼓励大量使用分支：</p>
+<p>查看分支：<code>git branch</code></p>
+<p>创建分支：<code>git branch &lt;name&gt;</code></p>
+<p>切换分支：<code>git checkout &lt;name&gt;</code></p>
+<p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code></p>
+<p>合并某分支到当前分支：<code>git merge &lt;name&gt;</code></p>
+<p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
+<p>最后记得推送</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-工具方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -712,6 +870,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/03-sass配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/03-sass配置/" itemprop="url">03-sass配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-08-vue/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-08-vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>本人于17年8月8日进行的测试。在使用 webpack + vue 的时候，webpack 的 的配置文件中对于 vue 的配置，只需要在 module 中写： { text: /.vue$/, loader: ‘vue-loader’ } 即可，无需配置 option，在安装了 node-sass 和 sass-loader 2个包的情况下 .vue 的 style 写成 <style lang="scss"> </style>，编译的时候会自动应用 sass-loader 进行编译。</p>
+</blockquote>
+<h1 id="只要安装-安装-node-sass-和-sass-loader-就行"><a href="#只要安装-安装-node-sass-和-sass-loader-就行" class="headerlink" title="只要安装 安装 node-sass 和 sass-loader 就行"></a>只要安装 安装 node-sass 和 sass-loader 就行</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/03-browser-sync/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -868,150 +1170,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/03-sass配置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/03-sass配置/" itemprop="url">03-sass配置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-08-vue/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-08-vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>本人于17年8月8日进行的测试。在使用 webpack + vue 的时候，webpack 的 的配置文件中对于 vue 的配置，只需要在 module 中写： { text: /.vue$/, loader: ‘vue-loader’ } 即可，无需配置 option，在安装了 node-sass 和 sass-loader 2个包的情况下 .vue 的 style 写成 <style lang="scss"> </style>，编译的时候会自动应用 sass-loader 进行编译。</p>
-</blockquote>
-<h1 id="只要安装-安装-node-sass-和-sass-loader-就行"><a href="#只要安装-安装-node-sass-和-sass-loader-就行" class="headerlink" title="只要安装 安装 node-sass 和 sass-loader 就行"></a>只要安装 安装 node-sass 和 sass-loader 就行</h1>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/03-回退版本/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1114,158 +1272,6 @@
 </ol>
 <p>6.远程回退版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f -u origin master（如果是别的分支名称就用别的名称，比如 prod dev）</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/03-编译/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/03-编译/" itemprop="url">03-编译</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-07-scss</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Sass-命令编译-命令终端输入："><a href="#Sass-命令编译-命令终端输入：" class="headerlink" title="[Sass]命令编译,命令终端输入："></a>[Sass]命令编译,命令终端输入：</h2><p>单文件编译：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass &lt;要编译的Sass文件路径&gt;/style.scss:&lt;要输出CSS文件路径&gt;/style.css</span><br></pre></td></tr></table></figure></p>
-<p>多文件编译：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass sass/:css/</span><br></pre></td></tr></table></figure>
-<p>缺点及解决方法：<br>启“watch”功能，这样只要你的代码进行任保修改，都能自动监测到代码的变化，并且给你直接编译出来：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass --watch &lt;要编译的Sass文件路径&gt;/style.scss:&lt;要输出CSS文件路径&gt;/style.css</span><br></pre></td></tr></table></figure>
-<h2 id="Sass-GUI-界面工具编译"><a href="#Sass-GUI-界面工具编译" class="headerlink" title="[Sass]GUI 界面工具编译"></a>[Sass]GUI 界面工具编译</h2><p>•Koala (<a href="http://www.w3cplus.com/preprocessor/sass-gui-tool-koala.html" target="_blank" rel="noopener">http://www.w3cplus.com/preprocessor/sass-gui-tool-koala.html</a>)<br>•CodeKit (<a href="http://www.w3cplus.com/preprocessor/sass-gui-tool-codekit.html" target="_blank" rel="noopener">http://www.w3cplus.com/preprocessor/sass-gui-tool-codekit.html</a>)</p>
-<h2 id="Sass-自动化编译"><a href="#Sass-自动化编译" class="headerlink" title="[Sass]自动化编译"></a>[Sass]自动化编译</h2><h3 id="grunt"><a href="#grunt" class="headerlink" title="grunt:"></a>grunt:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">module.exports = function(grunt) &#123;</span><br><span class="line">    grunt.initConfig(&#123;</span><br><span class="line">        pkg: grunt.file.readJSON(&apos;package.json&apos;),</span><br><span class="line">        sass: &#123;</span><br><span class="line">            dist: &#123;</span><br><span class="line">                files: &#123;</span><br><span class="line">                    &apos;style/style.css&apos; : &apos;sass/style.scss&apos;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        watch: &#123;</span><br><span class="line">            css: &#123;</span><br><span class="line">                files: &apos;**/*.scss&apos;,</span><br><span class="line">                tasks: [&apos;sass&apos;]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    grunt.loadNpmTasks(&apos;grunt-contrib-sass&apos;);</span><br><span class="line">    grunt.loadNpmTasks(&apos;grunt-contrib-watch&apos;);</span><br><span class="line">    grunt.registerTask(&apos;default&apos;,[&apos;watch&apos;]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="gulp"><a href="#gulp" class="headerlink" title="gulp:"></a>gulp:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&apos;gulp&apos;);</span><br><span class="line">var sass = require(&apos;gulp-sass&apos;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;sass&apos;, function () &#123;</span><br><span class="line">    gulp.src(&apos;./scss/*.scss&apos;)</span><br><span class="line">        .pipe(sass())</span><br><span class="line">        .pipe(gulp.dest(&apos;./css&apos;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;watch&apos;, function() &#123;</span><br><span class="line">    gulp.watch(&apos;scss/*.scss&apos;, [&apos;sass&apos;]);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;default&apos;, [&apos;sass&apos;,&apos;watch&apos;]);</span><br></pre></td></tr></table></figure>
-<h2 id="Sass-常见的编译错误"><a href="#Sass-常见的编译错误" class="headerlink" title="[Sass]常见的编译错误"></a>[Sass]常见的编译错误</h2><p>在编译 Sass 代码时常常会碰到一些错误，让编译失败。这样的错误有系统造成的也有人为造成的，但大部分都是人为过失引起编译失败。</p>
-<p>而最为常见的一个错误就是字符编译引起的。在Sass的编译的过程中，是不是支持“GBK”编码的。所以在创建 Sass 文件时，就需要将文件编码设置为“utf-8”。</p>
-<p>另外一个错误就是路径中的中文字符引起的。建议在项目中文件命名或者文件目录命名不要使用中文字符。而至于人为失误造成的编译失败，在编译过程中都会有具体的说明，大家可以根据编译器提供的错误信息进行对应的修改。</p>
 
           
         
@@ -1469,6 +1475,158 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/03-编译/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/03-编译/" itemprop="url">03-编译</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-07-scss</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Sass-命令编译-命令终端输入："><a href="#Sass-命令编译-命令终端输入：" class="headerlink" title="[Sass]命令编译,命令终端输入："></a>[Sass]命令编译,命令终端输入：</h2><p>单文件编译：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass &lt;要编译的Sass文件路径&gt;/style.scss:&lt;要输出CSS文件路径&gt;/style.css</span><br></pre></td></tr></table></figure></p>
+<p>多文件编译：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass sass/:css/</span><br></pre></td></tr></table></figure>
+<p>缺点及解决方法：<br>启“watch”功能，这样只要你的代码进行任保修改，都能自动监测到代码的变化，并且给你直接编译出来：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass --watch &lt;要编译的Sass文件路径&gt;/style.scss:&lt;要输出CSS文件路径&gt;/style.css</span><br></pre></td></tr></table></figure>
+<h2 id="Sass-GUI-界面工具编译"><a href="#Sass-GUI-界面工具编译" class="headerlink" title="[Sass]GUI 界面工具编译"></a>[Sass]GUI 界面工具编译</h2><p>•Koala (<a href="http://www.w3cplus.com/preprocessor/sass-gui-tool-koala.html" target="_blank" rel="noopener">http://www.w3cplus.com/preprocessor/sass-gui-tool-koala.html</a>)<br>•CodeKit (<a href="http://www.w3cplus.com/preprocessor/sass-gui-tool-codekit.html" target="_blank" rel="noopener">http://www.w3cplus.com/preprocessor/sass-gui-tool-codekit.html</a>)</p>
+<h2 id="Sass-自动化编译"><a href="#Sass-自动化编译" class="headerlink" title="[Sass]自动化编译"></a>[Sass]自动化编译</h2><h3 id="grunt"><a href="#grunt" class="headerlink" title="grunt:"></a>grunt:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">module.exports = function(grunt) &#123;</span><br><span class="line">    grunt.initConfig(&#123;</span><br><span class="line">        pkg: grunt.file.readJSON(&apos;package.json&apos;),</span><br><span class="line">        sass: &#123;</span><br><span class="line">            dist: &#123;</span><br><span class="line">                files: &#123;</span><br><span class="line">                    &apos;style/style.css&apos; : &apos;sass/style.scss&apos;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        watch: &#123;</span><br><span class="line">            css: &#123;</span><br><span class="line">                files: &apos;**/*.scss&apos;,</span><br><span class="line">                tasks: [&apos;sass&apos;]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    grunt.loadNpmTasks(&apos;grunt-contrib-sass&apos;);</span><br><span class="line">    grunt.loadNpmTasks(&apos;grunt-contrib-watch&apos;);</span><br><span class="line">    grunt.registerTask(&apos;default&apos;,[&apos;watch&apos;]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="gulp"><a href="#gulp" class="headerlink" title="gulp:"></a>gulp:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&apos;gulp&apos;);</span><br><span class="line">var sass = require(&apos;gulp-sass&apos;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;sass&apos;, function () &#123;</span><br><span class="line">    gulp.src(&apos;./scss/*.scss&apos;)</span><br><span class="line">        .pipe(sass())</span><br><span class="line">        .pipe(gulp.dest(&apos;./css&apos;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;watch&apos;, function() &#123;</span><br><span class="line">    gulp.watch(&apos;scss/*.scss&apos;, [&apos;sass&apos;]);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;default&apos;, [&apos;sass&apos;,&apos;watch&apos;]);</span><br></pre></td></tr></table></figure>
+<h2 id="Sass-常见的编译错误"><a href="#Sass-常见的编译错误" class="headerlink" title="[Sass]常见的编译错误"></a>[Sass]常见的编译错误</h2><p>在编译 Sass 代码时常常会碰到一些错误，让编译失败。这样的错误有系统造成的也有人为造成的，但大部分都是人为过失引起编译失败。</p>
+<p>而最为常见的一个错误就是字符编译引起的。在Sass的编译的过程中，是不是支持“GBK”编码的。所以在创建 Sass 文件时，就需要将文件编码设置为“utf-8”。</p>
+<p>另外一个错误就是路径中的中文字符引起的。建议在项目中文件命名或者文件目录命名不要使用中文字符。而至于人为失误造成的编译失败，在编译过程中都会有具体的说明，大家可以根据编译器提供的错误信息进行对应的修改。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/04-package.json与gulpfile.js/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1564,153 +1722,6 @@
           
             <h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;website&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;&#125;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;browser-sync&quot;: &quot;^2.18.8&quot;,</span><br><span class="line">    &quot;gulp&quot;: &quot;^3.9.1&quot;,</span><br><span class="line">    &quot;gulp-autoprefixer&quot;: &quot;^3.1.1&quot;,</span><br><span class="line">    &quot;gulp-cache&quot;: &quot;^0.4.6&quot;,</span><br><span class="line">    &quot;gulp-clean&quot;: &quot;^0.3.2&quot;,</span><br><span class="line">    &quot;gulp-clean-css&quot;: &quot;^3.0.3&quot;,</span><br><span class="line">    &quot;gulp-copy&quot;: &quot;^1.0.0&quot;,</span><br><span class="line">    &quot;gulp-htmlmin&quot;: &quot;^3.0.0&quot;,</span><br><span class="line">    &quot;gulp-if&quot;: &quot;^2.0.2&quot;,</span><br><span class="line">    &quot;gulp-imagemin&quot;: &quot;^3.1.1&quot;,</span><br><span class="line">    &quot;gulp-load-plugins&quot;: &quot;^1.5.0&quot;,</span><br><span class="line">    &quot;gulp-minify-css&quot;: &quot;^1.2.4&quot;,</span><br><span class="line">    &quot;gulp-uglify&quot;: &quot;^2.0.1&quot;,</span><br><span class="line">    &quot;gulp-useref&quot;: &quot;^3.1.2&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;author&quot;: &quot;&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="gulpfile-js"><a href="#gulpfile-js" class="headerlink" title="gulpfile.js"></a>gulpfile.js</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&apos;gulp&apos;);	</span><br><span class="line">var $ = require(&apos;gulp-load-plugins&apos;)();</span><br><span class="line"></span><br><span class="line">var browserSync = require(&apos;browser-sync&apos;).create();</span><br><span class="line"></span><br><span class="line">// 一步到位</span><br><span class="line">gulp.task(&apos;useref&apos;, function() &#123;</span><br><span class="line">  return gulp.src(&apos;app/*.html&apos;)</span><br><span class="line"> 	// .pipe($.htmlmin(&#123;removeComments: true&#125;)) //这个不能放在useref之前</span><br><span class="line"> 	.pipe($.useref())</span><br><span class="line">	.pipe($.if(&apos;*.js&apos;, $.uglify()))</span><br><span class="line">	.pipe($.if(&apos;*.css&apos;, $.cleanCss(&#123; compatibility: &apos;ie9&apos; &#125;)))</span><br><span class="line">	.pipe($.if(&apos;*.css&apos;, $.autoprefixer()))</span><br><span class="line">	.pipe(gulp.dest(&apos;dist&apos;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// htmlmin</span><br><span class="line">gulp.task(&apos;htmlmin&apos;,[&apos;useref&apos;], function() &#123;</span><br><span class="line">    gulp.src(&apos;dist/*.html&apos;)</span><br><span class="line">    .pipe($.htmlmin(&#123;removeComments: true&#125;))</span><br><span class="line">    .pipe(gulp.dest(&apos;dist&apos;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//压缩图片</span><br><span class="line">gulp.task(&apos;imagemin&apos;, function()&#123;</span><br><span class="line">    gulp.src(&apos;app/img/**/*&apos;)</span><br><span class="line">        .pipe($.imagemin())</span><br><span class="line">        // .pipe($.cache($.imagemin()))</span><br><span class="line">        .pipe(gulp.dest(&apos;dist/img&apos;))</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 复制文件</span><br><span class="line">gulp.task(&apos;copy&apos;, function() &#123;</span><br><span class="line">	gulp.src([&apos;app/*&apos;,&apos;!app/*.html&apos;])</span><br><span class="line">	  	.pipe(gulp.dest(&apos;dist&apos;))</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 删除</span><br><span class="line">gulp.task(&apos;clean&apos;, function() &#123;</span><br><span class="line">	gulp.src(&apos;dist&apos;)</span><br><span class="line">	  .pipe($.clean());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 静态服务器</span><br><span class="line">gulp.task(&apos;browser-sync&apos;, function() &#123;</span><br><span class="line">    var files = [</span><br><span class="line">	    &apos;**/*.html&apos;,</span><br><span class="line">	    &apos;**/*.css&apos;,</span><br><span class="line">	    &apos;**/*.js&apos;</span><br><span class="line">    ];</span><br><span class="line">    browserSync.init(files,&#123;</span><br><span class="line">        server: &#123;</span><br><span class="line">            baseDir: &quot;./&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">// 监听</span><br><span class="line">gulp.task(&apos;watch&apos;, [&apos;browser-sync&apos;], function() &#123;</span><br><span class="line">	gulp.watch([&apos;app/*.html&apos;,&apos;app/**/*.js&apos;,&apos;app/**/*.css&apos;], [&apos;htmlmin&apos;]);</span><br><span class="line">	gulp.watch([&apos;app/*&apos;,&apos;!app/*.html&apos;], [&apos;copy&apos;]);</span><br><span class="line">	gulp.watch([&apos;app/img/**/*&apos;],[&apos;imagemin&apos;]);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;default&apos;,[&apos;htmlmin&apos;,&apos;imagemin&apos;,&apos;copy&apos;]);</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/04-指令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/04-指令/" itemprop="url">04-指令</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-06-Angular/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-06-Angular</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">## 事件指令</span><br><span class="line">- ng-click/dblclick</span><br><span class="line">- ng-mousedown/up</span><br><span class="line">- ng-mouseenter/leave</span><br><span class="line">- ng-mousemove/over/out</span><br><span class="line">- ng-mousemove/over/out</span><br><span class="line">- ng-mousemove/over/out</span><br><span class="line">- ng-mousemove/over/out</span><br><span class="line">- ng-selected</span><br><span class="line">- ng-change</span><br><span class="line">- ng-copy</span><br><span class="line">- ng-cut</span><br><span class="line">- ng-cut</span><br><span class="line"></span><br><span class="line">## angularJs的指令</span><br><span class="line"></span><br><span class="line">- ng-disabled</span><br><span class="line">    - 服务 $interval</span><br><span class="line">- ng-readonly</span><br><span class="line">- ng-checked</span><br><span class="line">- ng-value</span><br><span class="line"></span><br><span class="line">## 指令·显示优化</span><br><span class="line">- ng-bind</span><br></pre></td></tr></table></figure>
-<p></p><p ng-bind="text"></p><p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对比:</span><br></pre></td></tr></table></figure></p>
-<p><input ng-vlaue="text"><input><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ng-bind-template</span><br><span class="line">- ng-bind-html</span><br><span class="line">    -需要引入 angular-sanitize.min.js 模块 </span><br><span class="line">- ng-cloak : 通过css样式显示优化</span><br><span class="line">- ng-non-bindable : 要显示&#123;&#123;&#125;&#125;</span><br><span class="line"></span><br><span class="line">## 指令·原生扩展</span><br><span class="line">&gt; ng-attr-xx=&quot;&#123;&#123;值&#125;&#125;&quot; 记得加&#123;&#123;&#125;&#125;</span><br><span class="line">- ng-class</span><br><span class="line">- ng-style</span><br><span class="line">- ng-href</span><br><span class="line">- ng-src</span><br><span class="line">- ng-attr-xx</span><br><span class="line"></span><br><span class="line">## 指令·显示隐藏</span><br><span class="line">- ng-show</span><br><span class="line">- ng-hide</span><br><span class="line">- ng-if</span><br><span class="line">- ng-switch</span><br><span class="line">    - on</span><br><span class="line">    - ng-switch-default</span><br><span class="line">    - ng-switch-when</span><br><span class="line">- ng-open</span><br><span class="line"></span><br><span class="line">## 指令</span><br><span class="line">- ng-init</span><br></pre></td></tr></table></figure></p>
-<p>$scope.arr=[[1,2],[3,4]]</p>
-<p><div><br>    <ul ng-repeat="outer in arr" ng-init="outerIndex=$index"><br>        <li ng-repeat="inner in outer" ng-init="innerIndex=$index"><br>            -<br>        </li><br>    </ul><br></div><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">- ng-include</span><br><span class="line">- ng-include</span><br><span class="line">    - ng-model-options</span><br><span class="line">        -  updateOn</span><br><span class="line"> </span><br><span class="line">- ng-controller</span><br><span class="line">    - as</span><br><span class="line">    </span><br><span class="line">## 标签指令</span><br><span class="line"></span><br><span class="line">- a</span><br><span class="line">- &lt;select&gt;</span><br><span class="line">    - ng-options</span><br><span class="line">        - for in</span><br></pre></td></tr></table></figure></p>
-<p><select ng-options="data.name for data in datas" ng-model="datas"></select><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 表单验证</span><br><span class="line"></span><br><span class="line">- $valid</span><br><span class="line">- $invalid</span><br><span class="line">- $pristine</span><br><span class="line">- $dirty</span><br><span class="line">- $error</span><br><span class="line">&gt; name的方式进行查找 要写ng-model</span><br><span class="line"></span><br><span class="line">- required </span><br><span class="line">- ng-minlength</span><br><span class="line">- ng-maxlength</span><br><span class="line">- ng-pattern</span><br><span class="line"></span><br><span class="line">**class**</span><br><span class="line">- .ng-valid&#123;&#125; </span><br><span class="line">- .ng-invalid&#123;&#125; </span><br><span class="line">- .ng-pristine&#123;&#125; </span><br><span class="line">- .ng-dirty&#123;&#125;</span><br><span class="line"></span><br><span class="line">## 自定义指令</span><br><span class="line"></span><br><span class="line">- angular.module</span><br><span class="line">    - controller</span><br><span class="line">    - run</span><br><span class="line">    - filter</span><br><span class="line">    - directive</span><br><span class="line">        - restrict的四种定义方式:E A C M 区分大小写,可以自由组合</span><br><span class="line">        - template</span><br><span class="line">        - templateUrl // 需要在服务器环境,而且是相对与主html文件位置,而不是基于引入的js文件</span><br><span class="line">        - replace</span><br><span class="line">        - scope:&#123;</span><br><span class="line">			id:&apos;@&apos;,</span><br><span class="line">			data:&apos;=&apos;,</span><br><span class="line">            fn:&apos;&amp;&apos;</span><br><span class="line">		&#125;,</span><br><span class="line">        - link: function (scope, iElement, iAttrs) &#123;...&#125;</span><br><span class="line">        - transclude:分发</span><br><span class="line">        - controller:&#123;this.name=xxx&#125;</span><br><span class="line">        - require: ^ ?</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -1939,7 +1950,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">188</span>
+                <span class="site-state-item-count">190</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

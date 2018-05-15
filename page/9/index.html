@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-React.Children/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/09-浅析CSS属性之中经常出现的百分比/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -296,7 +296,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/02-React.Children/" itemprop="url">02-React.Children</a></h1>
+                <a class="post-title-link" href="/2018/05/03/09-浅析CSS属性之中经常出现的百分比/" itemprop="url">09-浅析CSS 属性之中经常出现的百分比</a></h1>
         
 
         <div class="post-meta">
@@ -331,8 +331,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-05-react</span>
+                  <a href="/categories/前端-00-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-00-基础</span>
                   </a>
                 </span>
 
@@ -371,33 +371,176 @@
         
           
             <blockquote>
-<p>React.Children 是顶层API之一，为处理 this.props.childrenb 这个封闭的数据结构提供了有用的工具。</p>
+<p>百分比单位 </p>
+</blockquote>
+<p>乘以包含块的宽度 margin, padding, left, right, text-indent, width, max-width, min-width </p>
+<p>乘以包含块的高度 top, bottom, height, max-height, min-height </p>
+<p>关于包含块（containing block）的概念，不能简单地理解成是父元素。如果是静态定位和相对定位，包含块一般就是其父元素。但是对于绝对定位的元素，包含块应该是离它最近的 position 为 absolute、relative、或者 fixed 的祖先元素。对固定定位的元素，它的包含块是视口（viewport）。具体可以参考 W3Help。 </p>
+<blockquote>
+<p>乘以元素的字体大小 line-height </p>
 </blockquote>
 <blockquote>
-<p>this.props 对象的属性与组件的属性一一对应，但是有一个例外，就是 this.props.children 属性。它表示组件的所有子节点。</p>
+<p>乘以元素的行高 vertical-align </p>
 </blockquote>
-<h5 id="1-React-Children-map"><a href="#1-React-Children-map" class="headerlink" title="1.React.Children.map"></a>1.React.Children.map</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">object React.Children.map(object children, function fn [, object context])</span><br><span class="line"></span><br><span class="line">使用方法：</span><br><span class="line">React.Children.map(this.props.children, function (child) &#123;</span><br><span class="line">    return &lt;li&gt;&#123;child&#125;&lt;/li&gt;;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">其他方法</span><br><span class="line">this.props.children.forEach(function (child) &#123;</span><br><span class="line">    return &lt;li&gt;&#123;child&#125;&lt;/li&gt;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>在每一个直接子级（包含在 children 参数中的）上调用 fn 函数，此函数中的 this 指向 上下文。如果 children 是一个内嵌的对象或者数组，它将被遍历：不会传入容器对象到 fn 中。如果 children 参数是 null 或者 undefined，那么返回 null 或者 undefined 而不是一个空对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/jsx&quot;&gt;</span><br><span class="line">  var NotesList = React.createClass(&#123;</span><br><span class="line">    render: function() &#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;ol&gt;</span><br><span class="line">          &#123;</span><br><span class="line">            React.Children.map(this.props.children, function (child) &#123;</span><br><span class="line">                    return &lt;li&gt;&#123;child&#125;&lt;/li&gt;;</span><br><span class="line">                &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">        &lt;/ol&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  React.render(</span><br><span class="line">    &lt;NotesList&gt;</span><br><span class="line">      &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">      &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">    &lt;/NotesList&gt;,</span><br><span class="line">    document.body</span><br><span class="line">  );</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>这里需要注意， <code>this.props.children</code> 的值有三种可能：如果当前组件没有子节点，它就是 <code>undefined</code> ;如果有一个子节点，数据类型是 <code>object</code> ；如果有多个子节点，数据类型就是 <code>array</code> 。所以，处理 <code>this.props.children</code> 的时候要小心。<br>React 提供一个工具方法 <code>React.Children</code>来处理 <code>this.props.children</code> 。我们可以用 <code>React.Children.map</code> 来遍历子节点，而不用担心 <code>this.props.children</code> 的数据类型是 undefined 还是 object。</p>
-<p>传入如下ReactElement：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;NotesList&gt;</span><br><span class="line">   &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">   &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">&lt;/NotesList&gt;</span><br><span class="line">//返回两个子节点</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;&lt;/NotesList&gt;</span><br><span class="line">//返回undefined</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;null&lt;/NotesList&gt;</span><br><span class="line">//返回null</span><br></pre></td></tr></table></figure>
-<h5 id="2、React-Children-forEach"><a href="#2、React-Children-forEach" class="headerlink" title="2、React.Children.forEach"></a>2、React.Children.forEach</h5><blockquote>
-<p>React.Children.forEach(object children, function fn [, object context])</p>
+<blockquote>
+<p>背景定位中的百分比 background-position 分别设置水平方向和垂直方向上的两个值，如果使用百分比，那么百分比值会同时应用于元素和图像。例如 50% 50% 会把图片的（50%, 50%）这一点与框的（50%, 50%）处对齐，相当于设置了 center center。同理 0% 0% 相当于 left top，100% 100% 相当于 right bottom。 </p>
 </blockquote>
-<p>类似于 React.Children.map()，但是不返回对象。</p>
-<h5 id="3、React-Children-count"><a href="#3、React-Children-count" class="headerlink" title="3、React.Children.count"></a>3、React.Children.count</h5><blockquote>
-<p>number React.Children.count(object children)</p>
+<p>字体大小中的百分比 font-size 中的百分比值应该乘以元素所继承到的字体大小，也就是父元素的字体大小。 </p>
+<p>其他字体单位 既然说到了字体大小，顺便八一八其他的字体单位吧，有些可能平时并不会用，但是了解一下也没有坏处。有两个相对单位是：</p>
+<p>em——相当于当前的字体高度，称作“全身方框”（em square）。如果在 font-size 上使用这个单位，应该乘以父元素的字体大小。用在 font-size 之外的属性上，则应该乘以元素自身的字体大小。 ex——相当于字体中的”x”的高度。 以下是绝对单位： </p>
+<p>in——英寸（inch），相当于 2.54cm。   cm——厘米（centimeter）。 mm——毫米（millimeter）。 pt——磅（point）。1pt 相当于 1in 的 1/72。 pc——皮卡（pica）。1pc = 12pt。 px——像素（pixel unit）。1px = 0.75pt。 </p>
+<blockquote>
+<p>百分比的继承 </p>
 </blockquote>
-<p>返回 children 当中的组件总数，和传递给 map 或者 forEach 的回调函数的调用次数一致。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">render: function() &#123;</span><br><span class="line">    console.log(React.Children.count(this.props.children)); //2</span><br><span class="line"></span><br><span class="line">    return (</span><br><span class="line">      &lt;ol&gt;</span><br><span class="line">        &#123;</span><br><span class="line">          this.props.children.forEach(function (child) &#123;</span><br><span class="line">              return &lt;li&gt;&#123;child&#125;&lt;/li&gt;</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &lt;/ol&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>不同的ReactElement，输出count值:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;NotesList&gt;</span><br><span class="line">    &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">    &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">&lt;/NotesList&gt;</span><br><span class="line">console.log(React.Children.count(this.props.children)); //2</span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;&lt;/NotesList&gt;</span><br><span class="line">console.log(React.Children.count(this.props.children)); //0</span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;null&lt;/NotesList&gt;</span><br><span class="line">console.log(React.Children.count(this.props.children)); //1</span><br></pre></td></tr></table></figure>
-<h5 id="4、React-Children-only"><a href="#4、React-Children-only" class="headerlink" title="4、React.Children.only"></a>4、React.Children.only</h5><blockquote>
-<p>object React.Children.only(object children)</p>
+<p>如果某个元素设置了百分比的属性，则后代元素继承的是计算后的值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p &#123; font-size: 10px &#125; p &#123; line-height: 120% &#125; / 120% of &apos;font-size&apos; / 那么p的子元素继承到的值是 line-height: 12px，而不是 line-height: 120%。</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/03-BOM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/03-BOM/" itemprop="url">03-BOM</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h4><h6 id="1"><a href="#1" class="headerlink" title="1"></a>1</h6><blockquote>
+<p>可视区尺寸:alert( document.documentElement.clientHeight );  </p>
 </blockquote>
-<p>返回 children 中 <strong>仅有的子级</strong>。否则抛出异常。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(React.Children.only(this.props.children[0])); </span><br><span class="line">//输出对象this.props.children[0]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>窗口内容高度:document.body.offsetHeight</p>
+</blockquote>
+<p>document.body是DOM中Document对象里的body节点， document.documentElement是文档对象根节点(html)的引用。</p>
 
           
         
@@ -599,7 +742,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/09-浅析CSS属性之中经常出现的百分比/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/03-事件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -618,7 +761,149 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/09-浅析CSS属性之中经常出现的百分比/" itemprop="url">09-浅析CSS 属性之中经常出现的百分比</a></h1>
+                <a class="post-title-link" href="/2018/05/03/03-事件/" itemprop="url">03-事件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-05-react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var  Hello= React.createClass(&#123;</span><br><span class="line">	getInitialState() &#123;</span><br><span class="line">	    return &#123;</span><br><span class="line">	        name:&quot;name1&quot;  </span><br><span class="line">	    &#125;;</span><br><span class="line">	&#125;,</span><br><span class="line">	//这里直接写事件名称就可以了</span><br><span class="line">	handleClick:function(i)&#123;</span><br><span class="line">		alert(i);</span><br><span class="line">	&#125;,</span><br><span class="line">    render:function() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">            	&lt;input type=&quot;text&quot;/&gt;</span><br><span class="line">            	&lt;input type=&quot;button&quot; value=&quot;按钮&quot; onClick=&#123;this.handleClick.bind(this,1)&#125; /&gt;</span><br><span class="line">            	//这里传入参数可以用bind函数</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">ReactDOM.render(&lt;Hello&gt;&lt;/Hello&gt;,document.body);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/08-面试题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/08-面试题/" itemprop="url">08-面试题</a></h1>
         
 
         <div class="post-meta">
@@ -693,895 +978,49 @@
         
           
             <blockquote>
-<p>百分比单位 </p>
+<ol>
+<li>放在HTML里的哪一部分JavaScripts会在页面加载的时候被执行？</li>
+</ol>
 </blockquote>
-<p>乘以包含块的宽度 margin, padding, left, right, text-indent, width, max-width, min-width </p>
-<p>乘以包含块的高度 top, bottom, height, max-height, min-height </p>
-<p>关于包含块（containing block）的概念，不能简单地理解成是父元素。如果是静态定位和相对定位，包含块一般就是其父元素。但是对于绝对定位的元素，包含块应该是离它最近的 position 为 absolute、relative、或者 fixed 的祖先元素。对固定定位的元素，它的包含块是视口（viewport）。具体可以参考 W3Help。 </p>
+<p>  在HTML body部分中的JavaScripts会在页面加载的时候被执行。<br>在HTML head部分中的JavaScripts会在被调用的时候才执行。</p>
 <blockquote>
-<p>乘以元素的字体大小 line-height </p>
+<p>2.下面这个JS程序的输出是什么：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function Foo() &#123;</span><br><span class="line">    var i = 0;</span><br><span class="line">    return function() &#123;</span><br><span class="line">        console.log(i++);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var f1 = Foo(),</span><br><span class="line">    f2 = Foo();</span><br><span class="line">f1();</span><br><span class="line">f1();</span><br><span class="line">f2();</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>++<strong>0 1 2</strong>++</p>
+<blockquote>
+<p>3.权重 ：内联 权重1000 ， ID 选择器 权重：100， 类 伪类 属性选择器 权重：10 ，类型选择器 权重：1 除!important ，内联权重最大！</p>
 </blockquote>
 <blockquote>
-<p>乘以元素的行高 vertical-align </p>
+<p>3.hasOwnProperty.isPrototypeOf  </p>
+</blockquote>
+<p>hasOwnProperty： 是用来判断一个对象是否有你给出名称的属性或对象。不过需要注意的是，此方法无法检查该对象的原型链中是否具有该属性，该属性必须是对象本身的一个成员。<br>isPrototypeOf : 是用来判断要检查其原型链的对象是否存在于指定对象实例中，是则返回true，否则返回false。</p>
+<blockquote>
+<p>4.if(! “a” in window){<br>    var a = 1;<br>}<br>alert(a);<br>请问 a 的结果是什么？</p>
+</blockquote>
+<p>undefined</p>
+<blockquote>
+<p>5.状态码  </p>
+</blockquote>
+<p>HTTP状态码分类<br>1<strong> 信息，服务器收到请求，需要请求者继续执行操作<br>2</strong> 成功，操作被成功接收并处理<br>3<strong> 重定向，需要进一步的操作以完成请求<br>4</strong> 客户端错误，请求包含语法错误或无法完成请求<br>5** 服务器错误，服务器在处理请求的过程中发生了错 </p>
+<p>HTTP状态码列表<br><strong>200</strong> OK  请求成功。一般用于GET与POST请求<br><strong>301</strong> Moved Permanently   永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替<br><strong>302</strong> Found   临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI<br><strong>304</strong> Not Modified    未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源<br><strong>307</strong> Temporary Redirect  临时重定向。与302类似。使用GET请求重定向<br><strong>404</strong> Not Found   服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面<br><strong>500</strong> Internal Server Error   服务器内部错误，无法完成请求  </p>
+<blockquote>
+<ol start="6">
+<li>js七种数据类型：Sting  Object  null  undefined  Array  Boolean  Number<br>js五种基本类型：String Boolean Number null undefined<br>typeof六种返回格式：’string’  ‘number’  ‘object’  ‘function’  ‘boolean’  ‘undefined’</li>
+</ol>
 </blockquote>
 <blockquote>
-<p>背景定位中的百分比 background-position 分别设置水平方向和垂直方向上的两个值，如果使用百分比，那么百分比值会同时应用于元素和图像。例如 50% 50% 会把图片的（50%, 50%）这一点与框的（50%, 50%）处对齐，相当于设置了 center center。同理 0% 0% 相当于 left top，100% 100% 相当于 right bottom。 </p>
+<p>7.null == undefined 在 ===就不等了</p>
 </blockquote>
-<p>字体大小中的百分比 font-size 中的百分比值应该乘以元素所继承到的字体大小，也就是父元素的字体大小。 </p>
-<p>其他字体单位 既然说到了字体大小，顺便八一八其他的字体单位吧，有些可能平时并不会用，但是了解一下也没有坏处。有两个相对单位是：</p>
-<p>em——相当于当前的字体高度，称作“全身方框”（em square）。如果在 font-size 上使用这个单位，应该乘以父元素的字体大小。用在 font-size 之外的属性上，则应该乘以元素自身的字体大小。 ex——相当于字体中的”x”的高度。 以下是绝对单位： </p>
-<p>in——英寸（inch），相当于 2.54cm。   cm——厘米（centimeter）。 mm——毫米（millimeter）。 pt——磅（point）。1pt 相当于 1in 的 1/72。 pc——皮卡（pica）。1pc = 12pt。 px——像素（pixel unit）。1px = 0.75pt。 </p>
 <blockquote>
-<p>百分比的继承 </p>
+<ol start="8">
+<li>在html中，帧元素（frameset）的优先级最高，表单元素比非表单元素的优先级要高。<br>表单元素包括：文本输入框，密码输入框，单选框，复选框，文本输入域，列表框等等；<br>非表单元素包括：连接（a），div,table,span等。<br>所有的html元素又可以根据其显示分成两类：有窗口元素以及无窗口元素。有窗口元素总是显示在无窗口元素的前面。<br>有窗口元素包括：select元素，object元素，以及frames元素等等。<br>无窗口元素：大部分html元素都是无窗口元素。  </li>
+</ol>
 </blockquote>
-<p>如果某个元素设置了百分比的属性，则后代元素继承的是计算后的值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p &#123; font-size: 10px &#125; p &#123; line-height: 120% &#125; / 120% of &apos;font-size&apos; / 那么p的子元素继承到的值是 line-height: 12px，而不是 line-height: 120%。</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/40-offsetleft-offsetTop-offsetParent的兼容性问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/40-offsetleft-offsetTop-offsetParent的兼容性问题/" itemprop="url">40-offsetleft、offsetTop、offsetParent的兼容性问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="先来看看offsetParent返回的是什么值"><a href="#先来看看offsetParent返回的是什么值" class="headerlink" title="先来看看offsetParent返回的是什么值"></a>先来看看offsetParent返回的是什么值</h2><p>ele.offsetParent返回的是ele元素最近的并且是定位过(relative,absolute)的父元素，如果没有父元素或者是父元素中没有一个是定位过的，返回值就是body元素</p>
-<h2 id="ele-offsetLeft和ele-offsetTop取值问题，分多种情况："><a href="#ele-offsetLeft和ele-offsetTop取值问题，分多种情况：" class="headerlink" title="ele.offsetLeft和ele.offsetTop取值问题，分多种情况："></a>ele.offsetLeft和ele.offsetTop取值问题，分多种情况：</h2><p>如果ele是body的直接子元素，返回值则是ele距离body左侧或顶部的距离<br>如果ele不是body的直接子元素，在父元素进行定位(relative,absolute)的情况下，各浏览器返回值都是ele距离父元素左侧或者是顶部的距离（唯一的区别就是chrome没有把边框计算进去，IE,firefox都计算进去了）<br>如果ele不是body的直接子元素，父元素也没有进行定位的情况下，各浏览器返回的直接是ele元素距body的距离</p>
-<p>从上面可以看出offsetLeft、offsetTop返回的值就是ele到offsetParent的距离，这个offsetParent是什么元素要看ele的父元素有没有进行定位（relative、absolute）</p>
-<p><a href="https://www.cnblogs.com/diantao/p/5264229.html" target="_blank" rel="noopener">参考链接</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/50-深拷贝/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/50-深拷贝/" itemprop="url">50-深拷贝</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var cloneObj = function(obj)&#123;</span><br><span class="line">    var str, newobj = obj.constructor === Array ? [] : &#123;&#125;;</span><br><span class="line">    if(typeof obj !== &apos;object&apos;)&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125; else if(window.JSON)&#123;</span><br><span class="line">        str = JSON.stringify(obj), //系列化对象</span><br><span class="line">        newobj = JSON.parse(str); //还原</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        for(var i in obj)&#123;</span><br><span class="line">            newobj[i] = typeof obj[i] === &apos;object&apos; ? </span><br><span class="line">            cloneObj(obj[i]) : obj[i]; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return newobj;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">作者：青笠</span><br><span class="line">链接：https://www.zhihu.com/question/23031215/answer/31944721</span><br><span class="line">来源：知乎</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/39-new的作用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/39-new的作用/" itemprop="url">39-new 的作用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var Func=function()&#123;  </span><br><span class="line">&#125;;  </span><br><span class="line">var func=new Func ();</span><br></pre></td></tr></table></figure>
-<p>new共经过了4几个阶段</p>
-<p>1、创建一个空对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">varobj=new Object();</span><br></pre></td></tr></table></figure></p>
-<p>2、设置原型链</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.__proto__= Func.prototype;</span><br></pre></td></tr></table></figure>
-<p>3、让Func中的this指向obj，并执行Func的函数体。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var result =Func.call(obj);</span><br></pre></td></tr></table></figure>
-<p>4、判断Func的返回值类型：</p>
-<p>如果是值类型，返回obj。如果是引用类型，就返回这个引用类型的对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (typeof(result) == &quot;object&quot;)&#123;  </span><br><span class="line">  func=result;  </span><br><span class="line">&#125;  </span><br><span class="line">else&#123;  </span><br><span class="line">    func=obj;;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/05-props/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/05-props/" itemprop="url">05-props</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-05-react</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://note.youdao.com/yws/api/personal/file/WEB3ddb7cacaaec1bb44e5e680398d91fdb?method=getImage&amp;cstk=CmY5rVpJ" alt="image"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/10-with语句/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/10-with语句/" itemprop="url">10-with语句</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">with(document.forms[0])&#123;</span><br><span class="line">       name.value = &quot;lee king&quot;;</span><br><span class="line">       address.value = &quot;Peking&quot;;</span><br><span class="line">       zipcode.value = &quot;10000&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>===</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.forms[0].name.value = &quot;lee king&quot;;</span><br><span class="line">document.forms[0].address.value = &quot;Peking&quot;;</span><br><span class="line">document.forms[0].zipcode.value = &quot;10000&quot;;</span><br></pre></td></tr></table></figure>
-<p>js的解释器需要检查with块中的变量是否属于with包含的对象，这将使with语句执行速度大大下降，并且导致js语句很难被优化。为了兼顾速度与代码量可以找到一个比较折衷的方案：</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/38-固定屏幕不滚动/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/38-固定屏幕不滚动/" itemprop="url">38-固定屏幕不滚动</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// 阻止屏幕滚动</span><br><span class="line">window.Common.TOP_stopBodyScroll=0;</span><br><span class="line">window.Common.stopBodyScroll=function (isFixed) &#123;</span><br><span class="line">    if (isFixed) &#123;</span><br><span class="line">        window.Common.TOP_stopBodyScroll = window.scrollY</span><br><span class="line">    </span><br><span class="line">        document.body.style.position = &apos;fixed&apos;</span><br><span class="line">        document.body.style.top = -window.Common.TOP_stopBodyScroll + &apos;px&apos;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        document.body.style.position = &apos;&apos;</span><br><span class="line">        document.body.style.top = &apos;&apos;</span><br><span class="line">    </span><br><span class="line">        window.scrollTo(0, window.Common.TOP_stopBodyScroll) // 回到原先的top</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">作者：连城</span><br><span class="line">链接：https://juejin.im/post/5a27cad56fb9a045186a9d94</span><br><span class="line">来源：掘金</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol start="9">
+<li>第一次答的时候就不知道什么是文档流，然后查了下才知道；<br>在css的定位机制有三种，分别是1：文档流，2：浮动（float），3定位（position）<br>其中文档流的意义就是按照HTML里面的写法就是从上到下，从左到右的排版布局;<br>在4答案选项中的属性，float（浮动）和position（定位）了<br>A：position: absolute;<br>生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位；都绝对定位了，肯定脱离了文档流。。<br>B:position: fixed;<br>生成绝对定位的元素，相对于浏览器窗口进行定位;相对于浏览器了，也和正常顺序排下来没什么关系。。<br>C:position: relative;<br>生成相对定位的元素，相对于其正常位置进行定位。生成相对定位，也就是说还在原本的上下左右之间，上下左右的元素都不变，so这个没有能脱离文档流。。就这个了<br>D:float: left;都浮动出去了，还上哪保持原位置去。。</li>
+</ol>
+</blockquote>
 
           
         
@@ -1832,6 +1271,590 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/34-解决ios时间戳格式错误/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/34-解决ios时间戳格式错误/" itemprop="url">34-解决ios时间戳格式错误</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://blog.csdn.net/weixin_35955795/article/details/71178643" target="_blank" rel="noopener">参考链接1</a></p>
+<p><a href="http://blog.csdn.net/u013184759/article/details/51984080" target="_blank" rel="noopener">参考链接2</a></p>
+<p><a href="http://blog.csdn.net/pkueecser/article/details/53140999" target="_blank" rel="noopener">参考链接3</a></p>
+<p>To make your question easier your problem is with:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Date(&apos;2014-02-18 15:00:48&apos;)</span><br></pre></td></tr></table></figure>
+<p>This work okay in chrome but not in safari. The mdn talks about ECMAScript 5 ISO-8601 format support says:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alternatively, the date/time string may be in ISO 8601 format. For example, &quot;2011-10-10&quot; (just date) or &quot;2011-10-10T14:48:00&quot; (date and time) can be passed and parsed.</span><br></pre></td></tr></table></figure>
+<p>If you include T it works:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Date(&apos;2014-02-18T15:00:48&apos;)</span><br></pre></td></tr></table></figure>
+<p>==You can use new<br> Date(‘2014-02-18T15:00:48’.replace(/\s/, ‘T’)).==</p>
+<p>If you handle a lot of cases like this I will recommend using moment which seems to handle this case very well with or without T: parsing from string. Additionally your whole example is easier with momentjs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var minutes = moment().diff(&quot;2014-02-18 15:00:48&quot;, &apos;minutes&apos;);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/42-reffer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/42-reffer/" itemprop="url">42-reffer</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="http://blog.csdn.net/flyingpig2016/article/details/53130912" target="_blank" rel="noopener">链接</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/10-with语句/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/10-with语句/" itemprop="url">10-with语句</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">with(document.forms[0])&#123;</span><br><span class="line">       name.value = &quot;lee king&quot;;</span><br><span class="line">       address.value = &quot;Peking&quot;;</span><br><span class="line">       zipcode.value = &quot;10000&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>===</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.forms[0].name.value = &quot;lee king&quot;;</span><br><span class="line">document.forms[0].address.value = &quot;Peking&quot;;</span><br><span class="line">document.forms[0].zipcode.value = &quot;10000&quot;;</span><br></pre></td></tr></table></figure>
+<p>js的解释器需要检查with块中的变量是否属于with包含的对象，这将使with语句执行速度大大下降，并且导致js语句很难被优化。为了兼顾速度与代码量可以找到一个比较折衷的方案：</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/56-改写console函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/56-改写console函数/" itemprop="url">56-改写console函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log=(function(log) &#123;</span><br><span class="line">	var i=0;</span><br><span class="line">	return function(str) &#123;</span><br><span class="line">		i++;</span><br><span class="line">		log.call(console,i+&quot;:&quot;+str)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)(console.log)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1882,7 +1905,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">188</span>
+                <span class="site-state-item-count">190</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

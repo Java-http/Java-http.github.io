@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/17-a标签去掉高亮/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/18-垂直居中兼容方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -296,7 +296,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/17-a标签去掉高亮/" itemprop="url">17-a标签去掉高亮</a></h1>
+                <a class="post-title-link" href="/2018/05/03/18-垂直居中兼容方法/" itemprop="url">18-垂直居中兼容方法</a></h1>
         
 
         <div class="post-meta">
@@ -370,8 +370,7 @@
       
         
           
-            <p>a标签默认点击的时候会有个高亮的背景色，要把这个去掉只需要给a标签设置css样式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-tap-highlight-color:rgba(0,0,0,0);</span><br></pre></td></tr></table></figure>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">position: fixed;</span><br><span class="line">top: 50%;</span><br><span class="line">left: 50%;</span><br><span class="line">transform: translate3d(-50%, -50%, 0) scale(1);</span><br></pre></td></tr></table></figure>
 
           
         
@@ -420,7 +419,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/27-padding百分比/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/26-BFC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -439,7 +438,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/27-padding百分比/" itemprop="url">27-padding百分比</a></h1>
+                <a class="post-title-link" href="/2018/05/03/26-BFC/" itemprop="url">26-BFC</a></h1>
         
 
         <div class="post-meta">
@@ -513,17 +512,33 @@
       
         
           
-            <h2 id="1-padding百分比"><a href="#1-padding百分比" class="headerlink" title="1.padding百分比"></a>1.padding百分比</h2><p>问题：当margin-top、padding-top的值是百分比时，分别是如何计算的？ </p>
-<ul>
-<li>A 相对父级元素的height，相对自身的height </li>
-<li>B 相对最近父级块级元素的height，相对自身的height </li>
-<li>C 相对父级元素的width，相对自身的width </li>
-<li>D 相对最近父级块级元素的width，相对最近父级块级元素的width</li>
+            <blockquote>
+<p><a href="https://juejin.im/entry/5a39ef2e518825696f7e245f" target="_blank" rel="noopener">链接</a></p>
+</blockquote>
+<h2 id="1-BFC布局规则："><a href="#1-BFC布局规则：" class="headerlink" title="1.BFC布局规则："></a>1.BFC布局规则：</h2><ul>
+<li>内部的Box会在垂直方向，一个接一个地放置。<br>-Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠</li>
+<li>每个元素的margin box的左边， 与包含块border - - box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
+<li>BFC的区域不会与float box重叠。</li>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
+<li>计算BFC的高度时，浮动元素也参与计算</li>
 </ul>
-<p>可以对元素的margin设置百分数，百分数是相对于父元素的width计算，不管是margin-top/margin-bottom还是margin-left/margin-right。（padding同理）</p>
-<p>如果没有为元素声明width，在这种情况下，元素框的总宽度包括外边距取决于父元素的width，这样可能得到“流式”页面，即元素的外边距会扩大或缩小以适应父元素的实际大小。如果对这个文档设置样式，使其元素使用百分数外边距，当用户修改浏览窗口的宽度时，外边距会随之扩大或缩小。</p>
-<h1 id="2-css中如何规定某一元素高度等于其宽度"><a href="#2-css中如何规定某一元素高度等于其宽度" class="headerlink" title="2.css中如何规定某一元素高度等于其宽度"></a>2.css中如何规定某一元素高度等于其宽度</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">#container &#123;</span><br><span class="line">    width: 80%;</span><br><span class="line">    height: 500px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.attr &#123;</span><br><span class="line">    width: 50%;</span><br><span class="line">    height: 0;</span><br><span class="line">    padding-bottom: 50%;</span><br><span class="line">    background-color: #008b57;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;div id=&apos;container&apos;&gt;</span><br><span class="line">    &lt;div class=&apos;attr&apos;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p><a href="https://codepen.io/fengdou/pen/EENawx" target="_blank" rel="noopener">codepen</a></p>
+<h2 id="二、哪些元素会生成BFC"><a href="#二、哪些元素会生成BFC" class="headerlink" title="二、哪些元素会生成BFC?"></a>二、哪些元素会生成BFC?</h2><ul>
+<li>根元素</li>
+<li>float属性不为none</li>
+<li>position为absolute或fixed</li>
+<li>display为inline-block, table-cell, table-caption, flex, inline-flex</li>
+<li>overflow不为visible</li>
+</ul>
+<h2 id="三、BFC的作用及原理"><a href="#三、BFC的作用及原理" class="headerlink" title="三、BFC的作用及原理"></a>三、BFC的作用及原理</h2><ul>
+<li><ol>
+<li>自适应两栏布局</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>清除内部浮动</li>
+</ol>
+</li>
+</ul>
 
           
         
@@ -572,7 +587,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/16-background背景位置四个参数有兼容性问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/29-解决ios手机页面overflow scroll滑动很卡的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -591,7 +606,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/16-background背景位置四个参数有兼容性问题/" itemprop="url">16-background背景位置四个参数有兼容性问题</a></h1>
+                <a class="post-title-link" href="/2018/05/03/29-解决ios手机页面overflow scroll滑动很卡的问题/" itemprop="url">29-解决ios手机页面overflow scroll滑动很卡的问题</a></h1>
         
 
         <div class="post-meta">
@@ -665,7 +680,156 @@
       
         
           
+            <p>在移动端html中经常出现横向/纵向滚动的效果,但是在iPhone中滚动速度很慢,感觉不流畅,有种卡卡的感觉,但是在安卓设备上没有这种感觉;</p>
+<p>要解决这个问题很简单:</p>
+<p>一行代码搞定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-overflow-scrolling : touch;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/30-em的大小/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/30-em的大小/" itemprop="url">30-em的大小</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="CSS-中相对长度-rem-和-em-如何区别"><a href="#CSS-中相对长度-rem-和-em-如何区别" class="headerlink" title="CSS 中相对长度 rem 和 em 如何区别"></a>CSS 中相对长度 rem 和 em 如何区别</h2><p>做为相对长度单位的俩个活宝，</p>
+<p>都是以倍数关系定长度，只是参照物不一样，这里就事例分析两者的区别： </p>
+<p>1，em 的参照倍数对象为其自身字体大小，font-size;如果没有向上继承； </p>
+<p>2，rem的参照倍数对象为根元素html</p>
+
           
         
       
@@ -863,6 +1027,290 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/17-a标签去掉高亮/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/17-a标签去掉高亮/" itemprop="url">17-a标签去掉高亮</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>a标签默认点击的时候会有个高亮的背景色，要把这个去掉只需要给a标签设置css样式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-tap-highlight-color:rgba(0,0,0,0);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/16-background背景位置四个参数有兼容性问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/16-background背景位置四个参数有兼容性问题/" itemprop="url">16-background背景位置四个参数有兼容性问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/15-弹性布局小坑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -958,438 +1406,6 @@
           
             <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	display: none;</span><br><span class="line">display: flex;</span><br></pre></td></tr></table></figure>
 <p>二者一齐出现时，display弹性布局要在后面才不会被覆盖掉。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/30-em的大小/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/30-em的大小/" itemprop="url">30-em的大小</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-01-切图CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="CSS-中相对长度-rem-和-em-如何区别"><a href="#CSS-中相对长度-rem-和-em-如何区别" class="headerlink" title="CSS 中相对长度 rem 和 em 如何区别"></a>CSS 中相对长度 rem 和 em 如何区别</h2><p>做为相对长度单位的俩个活宝，</p>
-<p>都是以倍数关系定长度，只是参照物不一样，这里就事例分析两者的区别： </p>
-<p>1，em 的参照倍数对象为其自身字体大小，font-size;如果没有向上继承； </p>
-<p>2，rem的参照倍数对象为根元素html</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/29-解决ios手机页面overflow scroll滑动很卡的问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/29-解决ios手机页面overflow scroll滑动很卡的问题/" itemprop="url">29-解决ios手机页面overflow scroll滑动很卡的问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-01-切图CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在移动端html中经常出现横向/纵向滚动的效果,但是在iPhone中滚动速度很慢,感觉不流畅,有种卡卡的感觉,但是在安卓设备上没有这种感觉;</p>
-<p>要解决这个问题很简单:</p>
-<p>一行代码搞定</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-overflow-scrolling : touch;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/14-解决textarea光标初始位置没有在最左上角的问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/14-解决textarea光标初始位置没有在最左上角的问题/" itemprop="url">14-解决textarea光标初始位置没有在最左上角的问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:05:30+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-01-切图CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><textarea></textarea>之间不能有空格</p>
 
           
         
@@ -1633,7 +1649,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/06-字体/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/12-外边距合并/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -1652,7 +1668,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/06-字体/" itemprop="url">06-字体</a></h1>
+                <a class="post-title-link" href="/2018/05/03/12-外边距合并/" itemprop="url">12-外边距合并</a></h1>
         
 
         <div class="post-meta">
@@ -1726,16 +1742,25 @@
       
         
           
-            <ul>
-<li>黑体：SimHei </li>
-<li>宋体：SimSun </li>
-<li>新宋体：NSimSun </li>
-<li>仿宋：FangSong </li>
-<li>楷体：KaiTi </li>
-<li>仿宋_GB2312：FangSong_GB2312 </li>
-<li>楷体_GB2312：KaiTi_GB2312  </li>
-<li>微软雅黑体：Microsoft YaHei</li>
-</ul>
+            <blockquote>
+<p>块的顶部外边距和底部外边距有时被组合(折叠)为单个外边距，其大小是组合到其中的最大外边距，这种行为称为外边距塌陷(margin collapsing)，有的地方翻译为外边距合并。</p>
+</blockquote>
+<p>发生外边距塌陷的三种基本情况:</p>
+<h2 id="1-相邻的兄弟姐妹元素"><a href="#1-相邻的兄弟姐妹元素" class="headerlink" title="1.相邻的兄弟姐妹元素"></a>1.相邻的兄弟姐妹元素</h2><p>毗邻的两个兄弟元素之间的外边距会塌陷（除非后者兄弟姐妹需要清除过去的浮动）。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p style=&quot;margin-bottom: 30px;&quot;&gt;这个段落的下外边距被合并...&lt;/p&gt;</span><br><span class="line">&lt;p style=&quot;margin-top: 20px;&quot;&gt;...这个段落的上外边距被合并。&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>可以发现这两个段落中间的距离，不是 ”上面段落的下边距“ 与 ”下面段落的上边距“ 的 求和 ，而是两者中的较大者（在此示例中为30px）。</p>
+<h2 id="2-块级父元素与其第一个-最后一个子元素"><a href="#2-块级父元素与其第一个-最后一个子元素" class="headerlink" title="2.块级父元素与其第一个/最后一个子元素"></a>2.块级父元素与其第一个/最后一个子元素</h2><p>如果块级父元素中，不存在上边框、上内补、inline content、 清除浮动 这四条属性（对于上边框和上内补，也可以说，当上边距及上内补宽度为0时），那么这个块级元素和其第一个子元素的上边距就可以说”挨到了一起“。此时这个块级父元素和其第一个子元素就会发生 上外边距合并 现象，换句话说，此时这个父元素对外展现出来的外边距将直接变成这个父元素和其第一个子元素的margin-top的较大者。</p>
+<p>类似的，若块级父元素的 margin-bottom 与它的最后一个子元素的margin-bottom 之间没有父元素的 border、padding、inline content、height、min-height、 max-height 分隔时，就会发生 下外边距合并 现象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> &lt;div style=&quot;background: red&quot;&gt;</span><br><span class="line">	&lt;div style=&quot;width: 100px;height: 100px;border:1px solid #000;margin-top:100px;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-空块元素"><a href="#3-空块元素" class="headerlink" title="3.空块元素"></a>3.空块元素</h2><p>如果存在一个空的块级元素，其 border、padding、inline content、height、min-height 都不存在。那么此时它的上下边距中间将没有任何阻隔，此时它的上下外边距将会合并。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;p style=&quot;margin-bottom: 0px;&quot;&gt;这个段落的和下面段落的距离将为20px&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;div style=&quot;margin-top: 20px; margin-bottom: 20px;&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;p style=&quot;margin-top: 0px;&quot;&gt;这个段落的和上面段落的距离将为20px&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>当以上情形同时出现时，外边距合并会更加复杂（会比较两个以上外边距来最终计算出真实的边距值）。</p>
+<p>即使外边距为0，这些规则也仍旧生效。因此，无论父元素的外边距是否为0，第一个或者最后一个子元素的外边距会被父元素的外边距”截断”(根据上面的规则)，在负外边距的情况下，合并后的外边距为最大正外边距与最小负外边距之和。</p>
+<p>当有负边距存在时，合并后的外边距将是最大正边距加上最小负边距（即负边距中绝对值最大的一个）。</p>
+<p>如两个兄弟元素，上面的元素的下边距为 20px ，下面的元素的上边距为 -20px ，那么发生外边距合并后，这两个元素的实际距离将变成 0px 。</p>
+<blockquote>
+<p>浮动 及 绝对定位 元素外边距不会合并。</p>
+</blockquote>
 
           
         
@@ -1821,7 +1846,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">188</span>
+                <span class="site-state-item-count">190</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
