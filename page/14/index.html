@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/19-函数声明和函数表达式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/34-解决ios时间戳格式错误/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -296,7 +296,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/19-函数声明和函数表达式/" itemprop="url">19-函数声明和函数表达式</a></h1>
+                <a class="post-title-link" href="/2018/05/03/34-解决ios时间戳格式错误/" itemprop="url">34-解决ios时间戳格式错误</a></h1>
         
 
         <div class="post-meta">
@@ -370,11 +370,18 @@
       
         
           
-            <h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><ol>
-<li>函数表达式可以直接后面加括号执行，而函数声明是不可以的</li>
-<li>函数声明可以被提前解析出来的，函数表达式没有变量提升</li>
-<li>对于var a=function aaa(){}最好不要，火狐会报错</li>
-</ol>
+            <p><a href="http://blog.csdn.net/weixin_35955795/article/details/71178643" target="_blank" rel="noopener">参考链接1</a></p>
+<p><a href="http://blog.csdn.net/u013184759/article/details/51984080" target="_blank" rel="noopener">参考链接2</a></p>
+<p><a href="http://blog.csdn.net/pkueecser/article/details/53140999" target="_blank" rel="noopener">参考链接3</a></p>
+<p>To make your question easier your problem is with:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Date(&apos;2014-02-18 15:00:48&apos;)</span><br></pre></td></tr></table></figure>
+<p>This work okay in chrome but not in safari. The mdn talks about ECMAScript 5 ISO-8601 format support says:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alternatively, the date/time string may be in ISO 8601 format. For example, &quot;2011-10-10&quot; (just date) or &quot;2011-10-10T14:48:00&quot; (date and time) can be passed and parsed.</span><br></pre></td></tr></table></figure>
+<p>If you include T it works:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Date(&apos;2014-02-18T15:00:48&apos;)</span><br></pre></td></tr></table></figure>
+<p>==You can use new<br> Date(‘2014-02-18T15:00:48’.replace(/\s/, ‘T’)).==</p>
+<p>If you handle a lot of cases like this I will recommend using moment which seems to handle this case very well with or without T: parsing from string. Additionally your whole example is easier with momentjs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var minutes = moment().diff(&quot;2014-02-18 15:00:48&quot;, &apos;minutes&apos;);</span><br></pre></td></tr></table></figure>
 
           
         
@@ -423,7 +430,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/02-React.Children/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/36-caller和callee的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="静修">
@@ -442,176 +449,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/03/02-React.Children/" itemprop="url">02-React.Children</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-05-react</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>React.Children 是顶层API之一，为处理 this.props.childrenb 这个封闭的数据结构提供了有用的工具。</p>
-</blockquote>
-<blockquote>
-<p>this.props 对象的属性与组件的属性一一对应，但是有一个例外，就是 this.props.children 属性。它表示组件的所有子节点。</p>
-</blockquote>
-<h5 id="1-React-Children-map"><a href="#1-React-Children-map" class="headerlink" title="1.React.Children.map"></a>1.React.Children.map</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">object React.Children.map(object children, function fn [, object context])</span><br><span class="line"></span><br><span class="line">使用方法：</span><br><span class="line">React.Children.map(this.props.children, function (child) &#123;</span><br><span class="line">    return &lt;li&gt;&#123;child&#125;&lt;/li&gt;;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">其他方法</span><br><span class="line">this.props.children.forEach(function (child) &#123;</span><br><span class="line">    return &lt;li&gt;&#123;child&#125;&lt;/li&gt;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>在每一个直接子级（包含在 children 参数中的）上调用 fn 函数，此函数中的 this 指向 上下文。如果 children 是一个内嵌的对象或者数组，它将被遍历：不会传入容器对象到 fn 中。如果 children 参数是 null 或者 undefined，那么返回 null 或者 undefined 而不是一个空对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/jsx&quot;&gt;</span><br><span class="line">  var NotesList = React.createClass(&#123;</span><br><span class="line">    render: function() &#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;ol&gt;</span><br><span class="line">          &#123;</span><br><span class="line">            React.Children.map(this.props.children, function (child) &#123;</span><br><span class="line">                    return &lt;li&gt;&#123;child&#125;&lt;/li&gt;;</span><br><span class="line">                &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">        &lt;/ol&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  React.render(</span><br><span class="line">    &lt;NotesList&gt;</span><br><span class="line">      &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">      &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">    &lt;/NotesList&gt;,</span><br><span class="line">    document.body</span><br><span class="line">  );</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>这里需要注意， <code>this.props.children</code> 的值有三种可能：如果当前组件没有子节点，它就是 <code>undefined</code> ;如果有一个子节点，数据类型是 <code>object</code> ；如果有多个子节点，数据类型就是 <code>array</code> 。所以，处理 <code>this.props.children</code> 的时候要小心。<br>React 提供一个工具方法 <code>React.Children</code>来处理 <code>this.props.children</code> 。我们可以用 <code>React.Children.map</code> 来遍历子节点，而不用担心 <code>this.props.children</code> 的数据类型是 undefined 还是 object。</p>
-<p>传入如下ReactElement：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;NotesList&gt;</span><br><span class="line">   &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">   &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">&lt;/NotesList&gt;</span><br><span class="line">//返回两个子节点</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;&lt;/NotesList&gt;</span><br><span class="line">//返回undefined</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;null&lt;/NotesList&gt;</span><br><span class="line">//返回null</span><br></pre></td></tr></table></figure>
-<h5 id="2、React-Children-forEach"><a href="#2、React-Children-forEach" class="headerlink" title="2、React.Children.forEach"></a>2、React.Children.forEach</h5><blockquote>
-<p>React.Children.forEach(object children, function fn [, object context])</p>
-</blockquote>
-<p>类似于 React.Children.map()，但是不返回对象。</p>
-<h5 id="3、React-Children-count"><a href="#3、React-Children-count" class="headerlink" title="3、React.Children.count"></a>3、React.Children.count</h5><blockquote>
-<p>number React.Children.count(object children)</p>
-</blockquote>
-<p>返回 children 当中的组件总数，和传递给 map 或者 forEach 的回调函数的调用次数一致。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">render: function() &#123;</span><br><span class="line">    console.log(React.Children.count(this.props.children)); //2</span><br><span class="line"></span><br><span class="line">    return (</span><br><span class="line">      &lt;ol&gt;</span><br><span class="line">        &#123;</span><br><span class="line">          this.props.children.forEach(function (child) &#123;</span><br><span class="line">              return &lt;li&gt;&#123;child&#125;&lt;/li&gt;</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &lt;/ol&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>不同的ReactElement，输出count值:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;NotesList&gt;</span><br><span class="line">    &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">    &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">&lt;/NotesList&gt;</span><br><span class="line">console.log(React.Children.count(this.props.children)); //2</span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;&lt;/NotesList&gt;</span><br><span class="line">console.log(React.Children.count(this.props.children)); //0</span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;null&lt;/NotesList&gt;</span><br><span class="line">console.log(React.Children.count(this.props.children)); //1</span><br></pre></td></tr></table></figure>
-<h5 id="4、React-Children-only"><a href="#4、React-Children-only" class="headerlink" title="4、React.Children.only"></a>4、React.Children.only</h5><blockquote>
-<p>object React.Children.only(object children)</p>
-</blockquote>
-<p>返回 children 中 <strong>仅有的子级</strong>。否则抛出异常。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(React.Children.only(this.props.children[0])); </span><br><span class="line">//输出对象this.props.children[0]</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/26-JSON转换的坑/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/26-JSON转换的坑/" itemprop="url">26-JSON转换的坑</a></h1>
+                <a class="post-title-link" href="/2018/05/03/36-caller和callee的区别/" itemprop="url">36- caller和callee的区别</a></h1>
         
 
         <div class="post-meta">
@@ -685,800 +523,7 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.parse(&apos;[&#123;&quot;start&quot;:&quot;D&quot;,&quot;id&quot;:&quot;&quot;&#125;]&apos;)</span><br></pre></td></tr></table></figure>
-<p>==<strong>要把单引号写在双引号外面</strong>==</p>
-<p><a href="http://blog.csdn.net/shareus/article/details/50429006" target="_blank" rel="noopener">CSDN博客链接</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/20-this/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/20-this/" itemprop="url">20-this</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>this： 指的是调用 当前 方法（函数）的那个对象</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div onclick=&quot;    this     fn1();      &quot;&gt;&lt;/div&gt;     fn1(); 里的 this 指的是 window</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function fn1()&#123;</span><br><span class="line">	// this</span><br><span class="line">&#125;</span><br><span class="line">// fn1();			this =&gt; window</span><br><span class="line">// oDiv.onclick = fn1;			this =&gt; oDiv</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">oDiv.onclick = function ()&#123;</span><br><span class="line">	fn1();					fn1() 里的this =&gt; window</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/21-回到顶部兼容/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/21-回到顶部兼容/" itemprop="url">21-回到顶部兼容</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;.fixed-top&apos;).click(function() &#123;</span><br><span class="line">    $(document.body).animate(&#123;scrollTop:0&#125;, 600);</span><br><span class="line">    $(document.documentElement).animate(&#123;scrollTop:0&#125;, 600);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/54-面试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/54-面试/" itemprop="url">54-面试</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><p><a href="https://juejin.im/post/5a7e9063f265da4e732ec32b" target="_blank" rel="noopener">前端菜鸟帝都一月面试记</a></p>
-</li>
-<li><p><a href="https://github.com/Xing-Chuan/blog/blob/master/works/Web%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93-2017-05.md" target="_blank" rel="noopener">Web前端面试总结_2017.07</a></p>
-</li>
-<li><p><a href="http://cherryblog.site/Front-interview.html" target="_blank" rel="noopener">前端面试</a></p>
-</li>
-<li><p><a href="http://www.cnblogs.com/beidan/p/5285742.html" target="_blank" rel="noopener">阿里前端笔试题目</a></p>
-</li>
-<li><p><a href="https://www.cnblogs.com/yugege/p/6526215.html" target="_blank" rel="noopener">记一次前端面试经历</a></p>
-</li>
-<li><p><a href="https://juejin.im/entry/5a39ef2e518825696f7e245f" target="_blank" rel="noopener">关于BFC的一篇很好的文章</a></p>
-</li>
-<li><p><a href="http://www.cnblogs.com/hl-520/p/5753075.html" target="_blank" rel="noopener">圣杯布局</a> – <a href="http://www.cnblogs.com/hl-520/p/5753075.html" target="_blank" rel="noopener">双飞翼布局</a></p>
-</li>
-<li><p><a href="https://www.imooc.com/article/20319" target="_blank" rel="noopener">我遇到的前端面试题2017</a></p>
-</li>
-<li><a href="http://www.jackpu.com/nian-hou-fu-xi-zhi-nan/" target="_blank" rel="noopener">2018面试</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/06-win10搭建react-native/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/06-win10搭建react-native/" itemprop="url">06-win10搭建react-native</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-05-react</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p><a href="http://facebook.github.io/react-native/docs/getting-started.html" target="_blank" rel="noopener">官网链接</a> <a href="https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows" target="_blank" rel="noopener">stackoverflow</a><br>建议：结合官网文档（比较详细），准备科学上网软件</p>
-</blockquote>
-<h2 id="1-安装相应软件"><a href="#1-安装相应软件" class="headerlink" title="1 安装相应软件"></a>1 安装相应软件</h2><blockquote>
-<p>需要==Node==，==React Native==命令行界面，==Python2.7==，==JDK1.8==和==Android Studio==</p>
-</blockquote>
-<ul>
-<li>node 官网下载即可，版本8.9.3<ul>
-<li>需要常用npm包:==yarn== ==react-native-cli== </li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g react-native-cli yarn</span><br></pre></td></tr></table></figure>
-<ul>
-<li>python2.7</li>
-<li>JDK1.8 (可以下脱机版，配置下JAVA_HOME环境变量)</li>
-<li>安装Android Studio<ul>
-<li>下载并安装Android（建议不要装在C盘，占内存太大） Studio。提示您选择安装类型时，请选择“自定义”设置。确保选中以下所有项旁边的框：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Android SDK</span><br><span class="line">Android SDK Platform</span><br><span class="line">Performance (Intel ® HAXM)</span><br><span class="line">Android Virtual Device</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<p>安装完成后在SDK Manager里安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Google APIs</span><br><span class="line">Android SDK Platform 23</span><br><span class="line">Intel x86 Atom_64 System Image</span><br><span class="line">Google APIs Intel x86 Atom_64 System Image</span><br></pre></td></tr></table></figure></p>
-<p>“Android SDK Build-Tools” 选择 23.0.1 </p>
-<p>配置ANDROID_HOME环境变量</p>
-<p><img src="http://facebook.github.io/react-native/docs/assets/GettingStartedAndroidEnvironmentVariableANDROID_HOME.png" alt="image"></p>
-<h2 id="2-创建一个新的应用程序"><a href="#2-创建一个新的应用程序" class="headerlink" title="2 创建一个新的应用程序"></a>2 创建一个新的应用程序</h2><p>在文件夹里（随便的）右键 git bash </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">react-native init AwesomeProject</span><br></pre></td></tr></table></figure>
-<h3 id="有个坑来了！"><a href="#有个坑来了！" class="headerlink" title="==有个坑来了！=="></a>==有个坑来了！==</h3><p>如果您使用Windows，请按以下方式运行命令，或者如果出现错误“无法找到条目文件index.android.js”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir android\app\src\main\assets</span><br><span class="line">react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res</span><br></pre></td></tr></table></figure>
-<h2 id="3-Android-Studio打开Android项目"><a href="#3-Android-Studio打开Android项目" class="headerlink" title="3 Android Studio打开Android项目"></a>3 Android Studio打开Android项目</h2><p><code>react-native init AwesomeProject</code>生成一个react-native项目，有一个android文件夹，用Android Studio打开。</p>
-<p>配置下adb环境变量。</p>
-<p><img src="https://note.youdao.com/yws/api/personal/file/3C0D6D7DA5E44C9AB3B0ABD918F292F4?method=download&amp;shareKey=20cf355feead66d299c2ac18db25b17a" alt="image"></p>
-<p>到这里应该结束了，一个正常可用的安卓项目生成完成！</p>
-<hr>
-<p>分割线：</p>
-<p>学习react-native之前，需要先了解原生js，es6，react.js，基本的node.js下载命令。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/22-js正则表达exec与match的区别说明/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="静修">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静修-个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/03/22-js正则表达exec与match的区别说明/" itemprop="url">22-js正则表达exec与match的区别说明</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
-                2018-05-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-02-js基础复习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1、exec是正则表达式的方法，而不是字符串的方法，它的参数才是字符串，如下所示："><a href="#1、exec是正则表达式的方法，而不是字符串的方法，它的参数才是字符串，如下所示：" class="headerlink" title="1、exec是正则表达式的方法，而不是字符串的方法，它的参数才是字符串，如下所示："></a>1、exec是正则表达式的方法，而不是字符串的方法，它的参数才是字符串，如下所示：</h2><p>如上定义 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var reg = new RegExp(&quot;abc&quot;) ; </span><br><span class="line">var str = &quot;3abc4，5abc6&quot;;</span><br><span class="line">reg.exec(str );</span><br></pre></td></tr></table></figure>
-<h2 id="2、match是字符串执行匹配正则表达式规则的方法，他的参数是正则表达，如"><a href="#2、match是字符串执行匹配正则表达式规则的方法，他的参数是正则表达，如" class="headerlink" title="2、match是字符串执行匹配正则表达式规则的方法，他的参数是正则表达，如"></a>2、match是字符串执行匹配正则表达式规则的方法，他的参数是正则表达，如</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var reg = new RegExp(&quot;abc&quot;) ; </span><br><span class="line">var str = &quot;3abc4,5abc6&quot;;</span><br><span class="line">str.match(reg);</span><br></pre></td></tr></table></figure>
-<h2 id="3、exec和match返回的都是数组；"><a href="#3、exec和match返回的都是数组；" class="headerlink" title="3、exec和match返回的都是数组；"></a>3、exec和match返回的都是数组；</h2><p>如果exec执行的正则表达式没有子表达式(小括号内的内容，如/abc(\s<em>)/中的(\s</em>) )，如果有匹配，就返回第一个匹配的字符串内容，此时的数组仅有一个元素，如果没有匹配返回null;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var reg = new RegExp(&quot;abc&quot;) ; </span><br><span class="line">var str = &quot;3abc4,5abc6&quot;;</span><br><span class="line">alert(reg.exec(str));</span><br><span class="line">alert(str.match(reg));</span><br></pre></td></tr></table></figure>
-<p>执行如上代码，你会发现两者内容均为一样：abc，</p>
-<h2 id="4、如果定义正则表达对象为全局匹配如"><a href="#4、如果定义正则表达对象为全局匹配如" class="headerlink" title="4、如果定义正则表达对象为全局匹配如:"></a>4、如果定义正则表达对象为全局匹配如:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var reg = new RegExp(&quot;abc&quot;,&quot;g&quot;) ; </span><br><span class="line">var str = &quot;3abc4,5abc6&quot;;</span><br><span class="line">alert(reg.exec(str));</span><br><span class="line">alert(str.match(reg));</span><br></pre></td></tr></table></figure>
-<p>==则为abc和abc,abc；因为match执行了全局匹配查询；而exec如果没有子表达式只会找到一个匹配的即返回。==</p>
-<h2 id="5、当表示中含有子表达式的情况："><a href="#5、当表示中含有子表达式的情况：" class="headerlink" title="5、当表示中含有子表达式的情况："></a>5、当表示中含有子表达式的情况：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var reg = new RegExp(&quot;a(bc)&quot;) ; </span><br><span class="line">var str = &quot;3abc4,5abc6&quot;;</span><br><span class="line">alert(reg.exec(str));</span><br><span class="line">alert(str.match(reg));</span><br></pre></td></tr></table></figure>
-<p>你会发现两者执行的结果都是：abc,bc; </p>
-<h2 id="6、当如果正则表达式对象定义为为全局匹配"><a href="#6、当如果正则表达式对象定义为为全局匹配" class="headerlink" title="6、当如果正则表达式对象定义为为全局匹配"></a>6、当如果正则表达式对象定义为为全局匹配</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var reg = new RegExp(&quot;a(bc)&quot;,&quot;g&quot;) ; </span><br><span class="line">var str = &quot;3abc4,5abc6&quot;;</span><br><span class="line">alert(reg.exec(str));//[&quot;abc&quot;, &quot;bc&quot;, index: 1, input: &quot;3abc4,5abc6&quot;]</span><br><span class="line">alert(str.match(reg));//[&quot;abc&quot;, &quot;abc&quot;]</span><br></pre></td></tr></table></figure>
-<p>则两者返回的结果是abc,bc和abc,abc,</p>
-<h2 id="总结为："><a href="#总结为：" class="headerlink" title="总结为："></a>总结为：</h2><ol>
-<li><p>当正则表达式无子表达式，并且定义为非全局匹配时，exec和match执行的结果是一样，均返回第一个匹配的字符串内容；</p>
-</li>
-<li><p>当正则表达式无子表达式，并且定义为全局匹配时，exec和match执行，做存在多处匹配内容，则match返回的是多个元素数组；</p>
-</li>
-<li><p>当正则表达式有子表示时，并且定义为非全局匹配，exec和match执行的结果是一样如上边的第5种情况；</p>
-</li>
-<li><p>当正则表达式有子表示时，并且定义为全局匹配，exec和match执行的结果不一样，此时match将忽略子表达式，只查找全匹配正则表达式并返回所有内容，如上第6种情况；</p>
-</li>
-</ol>
-<p>也就说，exec与全局是否定义无关系，而match则于全局相关联，当定义为非全局，两者执行结果相同</p>
+            <p><a href="http://blog.csdn.net/laijieyao/article/details/43404953" target="_blank" rel="noopener">CSDN博客</a></p>
 
           
         
@@ -1810,11 +855,872 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/33-pre标签/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/33-pre标签/" itemprop="url">33-pre标签</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="http://www.zcfy.cc/article/383" target="_blank" rel="noopener">参考链接</a></p>
+</blockquote>
+<h2 id="折行"><a href="#折行" class="headerlink" title="折行"></a>折行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pre &#123;</span><br><span class="line">  white-space: pre-wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>pre-wrap    保留空白符序列，但是正常地进行换行。</p>
+<p>pre-line    合并空白符序列，但是保留换行符。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/26-JSON转换的坑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/26-JSON转换的坑/" itemprop="url">26-JSON转换的坑</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSON.parse(&apos;[&#123;&quot;start&quot;:&quot;D&quot;,&quot;id&quot;:&quot;&quot;&#125;]&apos;)</span><br></pre></td></tr></table></figure>
+<p>==<strong>要把单引号写在双引号外面</strong>==</p>
+<p><a href="http://blog.csdn.net/shareus/article/details/50429006" target="_blank" rel="noopener">CSDN博客链接</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/27-3个或运算有问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/27-3个或运算有问题/" itemprop="url">27-3个或运算有问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/28-浏览器内核/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/28-浏览器内核/" itemprop="url">28-浏览器内核</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://www.cnblogs.com/wangtuda/p/3405495.html" target="_blank" rel="noopener">http://www.cnblogs.com/wangtuda/p/3405495.html</a></p>
+<p>国内大多数用户用360，QQ浏览器这些带有双核浏览器的国产浏览器，他们的极速模式套用谷歌浏览器的内核，兼容模式套用IE浏览器的内核blink。</p>
+<p>使用这些国产浏览器的极速模式一般情况下跟谷歌浏览器不会有大差异的。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/35-CMD和AMD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/35-CMD和AMD/" itemprop="url">35-CMD和AMD</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://www.jianshu.com/p/09ffac7a3b2c" target="_blank" rel="noopener">简书地址</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/03/32-提前声明/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/03/32-提前声明/" itemprop="url">32-提前声明</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+08:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	alert(a)   //function a()&#123; alert(10) &#125;</span><br><span class="line">	a();      //10</span><br><span class="line">	var a = 3;  </span><br><span class="line"></span><br><span class="line">	function a() &#123;</span><br><span class="line">	    alert(10)</span><br><span class="line">	&#125;</span><br><span class="line">	alert(a)  //3</span><br><span class="line">	a = 6;    </span><br><span class="line">	a();     //报错</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>==这里第三行 var a=3 会执行；==</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1860,7 +1766,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">190</span>
+                <span class="site-state-item-count">192</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
