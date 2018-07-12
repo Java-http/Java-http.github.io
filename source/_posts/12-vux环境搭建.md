@@ -1,6 +1,6 @@
 ---
 title: 12-vux环境搭建
-date: 2018-05-03 10:57:37
+date: 2018-06-03 10:57:37
 tags: 前端-08-vue
 categories: 前端-08-vue
 ---
@@ -189,6 +189,12 @@ export function removeToken() {
 
 > [参考链接](https://juejin.im/post/59bb864b5188257e7a427c09)
 
+- 安装`svg-sprite-loader`
+```
+cnpm i svg-sprite-loader -D
+```
+
+
 - 修改 /build/webpack.base.conf.js
 
 ```
@@ -234,6 +240,12 @@ icons
 index.js
 
 ```
+import Vue from 'vue'
+import SvgIcon from '@/components/SvgIcon'// svg组件
+
+// register globally
+Vue.component('svg-icon', SvgIcon)
+
 const requireAll = requireContext => requireContext.keys().map(requireContext)
 const req = require.context('./svg', false, /\.svg$/)
 requireAll(req)
@@ -252,5 +264,13 @@ requireAll(req)
   path: 'src/styles/theme.less' // 相对项目根目录路径
 }
 ```
+
+## 11 修改build生成项目中css，js引用路径
+
+在/config/index.js里找到 build.assetsPublicPath, 修改为 `assetsPublicPath: './',`
+
+## 12 修改host地址让局域网内的其他机器访问
+
+在 package.json 里找到 script.dev ,在后面添加上 `--host 0.0.0.0` 
 
 > 基本流程如上，后面写业务代码~
