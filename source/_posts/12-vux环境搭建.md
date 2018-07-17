@@ -1,6 +1,6 @@
 ---
 title: 12-vux环境搭建
-date: 2018-06-03 10:57:37
+date: 2018-07-16 10:57:37
 tags: 前端-08-vue
 categories: 前端-08-vue
 ---
@@ -65,9 +65,70 @@ const _import = require('./_import_' + process.env.NODE_ENV)
 
 ### 5.2 在src目录下新建一个api文件夹，写api，方便后期维护
 
+### 5.3 proxyTable解决跨域
+
+在/config/index.js文件dev.proxyTable里配置index.js,
+
+```
+    proxyTable: {
+      '/': {
+          target: 'http:www.xxx.com:8888',//target里的地址为目标地址
+          changeOrigin: true,
+          pathRewrite: {}
+      }
+    },
+```
+同时将 config文件夹下 dev.env.js 里 `BASE_API:`参数设置为空`''`
+
+
 ## 6.增加styles文件夹，写scss
 
-## 7.自动加载components组件
+### 6.1 公用样式写在src/styles/mixin.scss和src/styles/common.scss
+### 6.2 组件样式写在单文件scoped里，覆盖公用样式请用deep
+
+6.2.1 添加依赖
+
+```
+npm install sass-resources-loader --save-dev
+```
+6.2.2 修改build/utils.js
+
+```
+scss: generateLoaders('sass').concat(
+      {
+        loader: 'sass-resources-loader',
+        options: {
+          resources: path.resolve(__dirname, '../src/assets/your.scss')
+        }
+      }
+    )
+```
+### 6.3 开发前须知:
+
+```
+/**
+ * 开发前须知:
+ * 
+ * 1. rem 字体大小:(字体大小统一请用scss变量)
+ *  $sm: 0.32 rem => 12px 
+ *  $fz: 0.4 rem => 15px (目前暂以0.4rem为正文字体)
+ *  
+ * 2. common.scss主要为公用全局样式(请考虑类名的可读性,避免重复命名)
+ *  此项目尝试BEM命名规范,参考文章 https://blog.csdn.net/chenmoquan/article/details/17095465
+ *  
+ *  .block{} // .block 代表了更高级别的抽象或组件。
+ *  .block__element{} // .block__element 代表.block的后代，用于形成一个完整的.block的整体。
+ *  .block--modifier{} // .block--modifier代表.block的不同状态或不同版本。
+ *
+ * 
+ */
+```
+
+
+
+## ~~7.自动加载components组件~~
+
+> 视情况看设置不设置
 
 **/src/components/componentRegister.js**
 
@@ -272,5 +333,9 @@ requireAll(req)
 ## 12 修改host地址让局域网内的其他机器访问
 
 在 package.json 里找到 script.dev ,在后面添加上 `--host 0.0.0.0` 
+
+## 13 更改eslint规则
+
+参考 [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin/blob/master/.eslintrc.js)
 
 > 基本流程如上，后面写业务代码~
