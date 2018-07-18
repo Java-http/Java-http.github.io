@@ -120,6 +120,10 @@ scss: generateLoaders('sass').concat(
  *  .block__element{} // .block__element 代表.block的后代，用于形成一个完整的.block的整体。
  *  .block--modifier{} // .block--modifier代表.block的不同状态或不同版本。
  *
+ *  如需覆盖vux的样式，请叠加类名，如 `.yx-header.vux-header`(在组件增加一个class以增加优先级)
+ *
+ * 3. mixin.scss文件主要为变量文件，已提前全局引入，可在vue单文件里使用里面的变量
+ * 
  * 
  */
 ```
