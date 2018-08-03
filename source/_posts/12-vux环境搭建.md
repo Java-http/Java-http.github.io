@@ -109,9 +109,13 @@ scss: generateLoaders('sass').concat(
 /**
  * 开发前须知:
  * 
- * 1. rem 字体大小:(字体大小统一请用scss变量)
- *  $sm: 0.32 rem => 12px 
- *  $fz: 0.4 rem => 15px (目前暂以0.4rem为正文字体)
+ * 1. rem 字体大小:(字体大小统一请用scss变量,参考https://developers.weixin.qq.com/miniprogram/design/image/8Font.png)
+ *  $s: 0.34 rem => 12.75px (接近13px) (页面辅助信息，需弱化的内容，如链接，小按钮)
+ *  $xs: 0.37 rem => 13.8px(接近14px) (页面内次要描述信息，服务于首要信息并与之关联，如列表摘要)
+ *  $fz: 0.45 rem => 16.8px(接近17px) (目前暂以0.45rem为正文字体)
+ *  $sm: 0.48 rem => 18px (页面内大按钮字体,与按钮搭配使用)
+ *  $md: 0.53 rem => 19.8px(接近20px) (页面大标题，一般用于结果，空状态等信息单一页面)
+ *  $lg: 1.06 rem => 39.75px(接近40px) (只能为阿拉伯数字信息，如金额，时间等)
  *  
  * 2. common.scss主要为公用全局样式(请考虑类名的可读性,避免重复命名)
  *  此项目尝试BEM命名规范,参考文章 https://blog.csdn.net/chenmoquan/article/details/17095465
