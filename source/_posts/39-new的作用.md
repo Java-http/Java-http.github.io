@@ -3,6 +3,7 @@ title: 39-new 的作用
 date: 2018-05-03 10:28:37
 tags: 前端-02-js基础复习
 categories: 前端-02-js基础复习
+id : 1537686931330
 ---
 ```
 var Func=function(){  

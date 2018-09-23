@@ -3,6 +3,7 @@ title: 12-vux环境搭建
 date: 2018-07-16 10:57:37
 tags: 前端-08-vue
 categories: 前端-08-vue
+id : 1537686468129
 ---
 ## 1. 采用 vux2 模板
 

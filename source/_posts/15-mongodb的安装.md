@@ -3,6 +3,7 @@ title: 15-mongodb的安装
 date: 2018-05-03 10:28:37
 tags: 前端-00-基础
 categories: 前端-00-基础
+id : 1537686613301
 ---
 > [知乎](https://zhuanlan.zhihu.com/p/24926260)
 

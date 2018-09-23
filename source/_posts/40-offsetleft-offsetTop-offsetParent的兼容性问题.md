@@ -3,6 +3,7 @@ title: 40-offsetleft、offsetTop、offsetParent的兼容性问题
 date: 2018-05-03 10:28:37
 tags: 前端-02-js基础复习
 categories: 前端-02-js基础复习
+id : 1537686935001
 ---
 ## 先来看看offsetParent返回的是什么值
 ele.offsetParent返回的是ele元素最近的并且是定位过(relative,absolute)的父元素，如果没有父元素或者是父元素中没有一个是定位过的，返回值就是body元素

@@ -3,6 +3,7 @@ title: 12-angular控制器controller里获取不到ng-model的值，获取为und
 date: 2018-05-17 15:04:39
 tags: 前端-06-Angular
 categories: 前端-06-Angular
+id : 1537686464403
 ---
 > [博客园](https://www.cnblogs.com/xiaoli52qd/p/7245274.html)
 

@@ -3,6 +3,7 @@ title: 06-win10搭建react-native
 date: 2018-05-03 10:28:37
 tags: 前端-05-react
 categories: 前端-05-react
+id : 1537686210196
 ---
 > [官网链接](http://facebook.github.io/react-native/docs/getting-started.html) [stackoverflow](https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows)
 建议：结合官网文档（比较详细），准备科学上网软件

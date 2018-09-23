@@ -3,6 +3,7 @@ title: 04-centos7安装nginx
 date: 2018-07-06 16:25:33
 tags: 前端-13-Linux
 categories: 前端-13-Linux
+id : 1537686013229
 ---
 > [CentOS 7 下安装 Nginx_服务器应用_Linux公社-Linux系统门户网站](https://www.linuxidc.com/Linux/2016-09/134907.htm)
 ## 一. gcc 安装

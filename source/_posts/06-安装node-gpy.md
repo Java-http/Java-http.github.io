@@ -3,6 +3,7 @@ title: 06-安装node-gpy
 date: 2018-05-03 10:57:37
 tags: 前端-08-vue
 categories: 前端-08-vue
+id : 1537686223747
 ---
 这里我们只需要安装两个东西
 

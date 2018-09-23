@@ -3,6 +3,7 @@ title: 05-sublime配置
 date: 2018-05-03 10:57:37
 tags: 前端-07-scss
 categories: 前端-07-scss
+id : 1537686102120
 ---
 ## sublime配置
 1. 安装sass ,sass bulid(ctrl+b),sass beautify 插件

@@ -3,6 +3,7 @@ title: 08-vscode格式化vue
 date: 2018-05-03 10:57:37
 tags: 前端-08-vue
 categories: 前端-08-vue
+id : 1537686308690
 ---
 1. 安装 vetur
  

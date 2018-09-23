@@ -3,6 +3,7 @@ title: 03-安装oh-my-zsh
 date: 2018-09-14 14:26:35
 categories: 前端-14-Mac
 tags: 前端-14-Mac
+id : 1537685971763
 ---
 
 > [github地址](https://github.com/robbyrussell/oh-my-zsh)

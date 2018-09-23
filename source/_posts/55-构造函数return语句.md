@@ -3,6 +3,7 @@ title: 55-构造函数return语句
 date: 2018-05-03 10:28:37
 tags: 前端-02-js基础复习
 categories: 前端-02-js基础复习
+id : 1537687011545
 ---
 
 > [CSDN](http://blog.csdn.net/spicyboiledfish/article/details/70858565)

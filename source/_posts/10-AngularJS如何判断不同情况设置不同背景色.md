@@ -3,6 +3,7 @@ title: 10-AngularJS如何判断不同情况设置不同背景色
 date: 2018-05-03 10:57:37
 tags: 前端-06-Angular
 categories: 前端-06-Angular
+id : 1537686380947
 ---
 html代码：使用ng-style
 

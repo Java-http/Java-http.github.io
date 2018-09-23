@@ -3,6 +3,7 @@ title: 11-centos7安装git
 date: 2018-09-14 10:28:37
 tags: 前端-13-Linux
 categories: 前端-13-Linux
+id : 1537686424346
 ---
 
 ## 1.查看系统是否已经安装git

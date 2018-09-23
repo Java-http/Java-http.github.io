@@ -3,6 +3,7 @@ title: 15-sass的控制命令
 date: 2018-05-03 10:57:37
 tags: 前端-07-scss
 categories: 前端-07-scss
+id : 1537686617066
 ---
 ## @if 指令
 @if 指令是一个 SassScript，它可以根据条件来处理样式块，如果条件为 true 返回一个样式块，反之 false 返回另一个样式块。在 Sass 中除了 @if 之，还可以配合 @else if 和 @else 一起使用。

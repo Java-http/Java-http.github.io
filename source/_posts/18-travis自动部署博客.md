@@ -3,6 +3,7 @@ title: 18-travis自动部署博客
 date: 2018-06-19 09:51:21
 tags: 前端-00-基础
 categories: 前端-00-基础
+id : 1537686704586
 ---
 > [参考链接](https://www.jianshu.com/p/e6852a547f4c)
 

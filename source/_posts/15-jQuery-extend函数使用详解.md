@@ -3,6 +3,7 @@ title: 15-jQuery.extend函数使用详解
 date: 2018-05-15 16:26:58
 categories: 前端-03-jQuery
 tags: 前端-03-jQuery
+id : 1537686609346
 ---
 
 ##  一、Jquery的扩展方法原型是:

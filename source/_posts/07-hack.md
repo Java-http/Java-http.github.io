@@ -3,6 +3,7 @@ title: 07-hack
 date: 2018-05-03 10:05:30
 categories: 前端-01-切图CSS
 tags: 前端-01-切图CSS
+id : 1537686254460
 ---
 IE6 css hack:
 

@@ -3,6 +3,7 @@ title: 09-JavaScript获取AngularJS的$scope对象
 date: 2018-05-03 10:57:37
 tags: 前端-06-Angular
 categories: 前端-06-Angular
+id : 1537686340235
 ---
 ## 方法1：通过App对象查找 
 

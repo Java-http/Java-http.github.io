@@ -3,6 +3,7 @@ title: 06-babel
 date: 2018-05-03 10:28:37
 tags: 前端-00-基础
 categories: 前端-00-基础
+id : 1537686168978
 ---
 ##### webstorm 配置 es6
 1.  `cnpm install --save-dev babel-cli `

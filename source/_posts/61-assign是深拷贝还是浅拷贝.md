@@ -3,6 +3,7 @@ title: 61-assign是深拷贝还是浅拷贝
 date: 2018-05-15 16:27:40
 tags: 前端-02-js基础复习
 categories: 前端-02-js基础复习
+id : 1537687046040
 ---
 > [CSDN博客](https://blog.csdn.net/lpf1215/article/details/77856971)
 ## 1.仅仅merge根属性

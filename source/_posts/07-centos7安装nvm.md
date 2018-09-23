@@ -3,6 +3,7 @@ title: 07-centos7安装nvm
 date: 2018-07-06 16:27:25
 tags: 前端-13-Linux
 categories: 前端-13-Linux
+id : 1537686246723
 ---
 > [nvm github](https://github.com/creationix/nvm)
 

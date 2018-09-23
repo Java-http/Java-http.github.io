@@ -3,6 +3,7 @@ title: 27-padding百分比
 date: 2018-05-03 10:05:30
 categories: 前端-01-切图CSS
 tags: 前端-01-切图CSS
+id : 1537686830932
 ---
 ## 1.padding百分比
 问题：当margin-top、padding-top的值是百分比时，分别是如何计算的？ 

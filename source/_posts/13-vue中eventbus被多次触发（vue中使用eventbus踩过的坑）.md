@@ -3,6 +3,7 @@ title: 13-vue中eventbus被多次触发（vue中使用eventbus踩过的坑）
 date: 2018-07-06 16:01:26
 tags: 前端-08-vue
 categories: 前端-08-vue
+id : 1537686565184
 ---
 > [简书地址](https://www.jianshu.com/p/fde85549e3b0)
 

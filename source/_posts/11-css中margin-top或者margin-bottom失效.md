@@ -3,6 +3,7 @@ title: 11-css中margin-top或者margin-bottom失效
 date: 2018-05-03 10:05:30
 categories: 前端-01-切图CSS
 tags: 前端-01-切图CSS
+id : 1537686430970
 ---
 css中margin-top是设置容器的外间距了距离了，但有朋友会发现div嵌套后，margin-top或者margin-bottom失效了，下面来看看此问题解决办法。
 

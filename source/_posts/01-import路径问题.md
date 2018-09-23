@@ -3,6 +3,7 @@ title: 01-import路径问题
 date: 2018-05-03 09:31:35
 categories: 前端-04-es6
 tags: 前端-04-es6
+id: 1537685175752
 ---
 ```
 import { lastName as surname } from './profile';

@@ -3,6 +3,7 @@ title: 05-安装gulp-sass
 date: 2018-05-03 10:57:37
 tags: 前端-09-gulp
 categories: 前端-09-gulp
+id : 1537686120799
 ---
 2、进入项目根目录，安装
 执行语句：`cnpm install --save-dev node-sass`
