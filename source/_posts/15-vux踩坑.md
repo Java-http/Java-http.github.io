@@ -1,11 +1,10 @@
 ---
 title: 15-vux踩坑
-date: 2018-09-14 10:28:37
+date: 2018-09-23 15:47:02
 tags: 前端-08-vue
 categories: 前端-08-vue
 id : 1537686621065
 ---
-
 > 本文不仅限于vux组件，包括项目中遇到的一些问题记录
 ## 1. AlertModule 组件
 
@@ -103,3 +102,29 @@ Vue.prototype.throttle = throttle
 ## 5. 手机侧滑插件
 
 采用插件[sideout.](https://github.com/Mango/slideout)
+
+## 6. 判断浏览器内核
+
+请查看 [Browser.js](https://github.com/mumuy/browser/blob/master/Browser.js)
+
+## 7. 上拉下滑插件
+
+本项目使用 [better-scroll](https://ustbhuangyi.github.io/better-scroll/doc/zh-hans/),封装从 cube-ui的 [Scroll](https://didi.github.io/cube-ui/#/zh-CN/docs/quick-start) 组件，api可查看[文档](https://didi.github.io/cube-ui/#/zh-CN/docs/quick-start)
+
+
+bs有个问题，在手机uc浏览器，手机safria浏览器，底部栏会遮挡底部内容
+```
+      _calculateMinHeight() {
+        if (this.$refs.listWrapper) {
+          this.$refs.listWrapper.style.minHeight = this.pullDownRefresh || this.pullUpLoad ? `${getRect(this.$refs.wrapper).height + 1}px` : 0
+        }
+        /* 给 UC，safira浏览器增加 padding-bottom，防止底部栏遮挡内容 */
+        var _navigator = typeof navigator !== 'undefined' ? navigator : {}
+        var u = _navigator.userAgent || {}
+        var isUC = u.indexOf('UC') > -1 || u.indexOf(' UBrowser') > -1
+        // var Safari = u.indexOf('Safari') > -1
+        if (isUC) {
+          this.$refs.listWrapper.style.paddingBottom = '50px'
+        }
+      },
+```
