@@ -83,8 +83,8 @@ deploy:
 # 搜索
 ## Docs: http://theme-next.iissnan.com/third-party-services.html
 algolia:
-  applicationID: 'LL7PV2K5E1'
-  apiKey: '3099d09841fa20fbbb6e02be2240839d'
+  applicationID: 'ON53N4VTIJ'
+  apiKey: '5d906b40edb561e5ed49fa3b12164e62'
   adminApiKey: ''
   indexName: 'hexo'
   chunkSize: 5000

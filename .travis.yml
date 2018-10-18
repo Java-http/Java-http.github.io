@@ -10,7 +10,7 @@ install:
 - npm install
 script:
 - hexo clean
-- export HEXO_ALGOLIA_INDEXING_KEY=3099d09841fa20fbbb6e02be2240839d
+- export HEXO_ALGOLIA_INDEXING_KEY=5d906b40edb561e5ed49fa3b12164e62
 - hexo algolia
 - hexo generate
 after_success:
