@@ -18,4 +18,4 @@ id : 1538099094626
 6. z-index: 0：z-index为0或auto的定位元素， 这些元素形成了新的层叠上下文；
 7. 正z-index值：z-index 为正的定位元素，正的越大层叠等级越高；
 
-![image](https://segmentfault.com/img/bVbgakw?w=768&h=383)
+![image](https://image.zhangxinxu.com/image/blog/201601/2016-01-07_235108.png)
