@@ -1,9 +1,9 @@
 ---
 title: 12-vux环境搭建
-date: 2018-07-16 10:57:37
+date: 2018-11-28 11:53:47
 tags: 前端-08-vue
 categories: 前端-08-vue
-id : 1537686468129
+id : 1543377229562
 ---
 ## 1. 采用 vux2 模板
 
@@ -72,14 +72,17 @@ const _import = require('./_import_' + process.env.NODE_ENV)
 
 ```
     proxyTable: {
-      '/': {
-          target: 'http:www.xxx.com:8888',//target里的地址为目标地址
+      '/yxAPI': {
+          //target: 'http://172.16.1.165:8087', //target里的地址为目标地址
+          target: 'http://bq.yonxin.com', //target里的地址为目标地址
           changeOrigin: true,
-          pathRewrite: {}
+          pathRewrite: {
+            "^/yxAPI":""
+          }
       }
     },
 ```
-同时将 config文件夹下 dev.env.js 里 `BASE_API:`参数设置为空`''`
+同时将 config文件夹下 dev.env.js 里 `BASE_API:`参数设置为`'"/yxAPI"'`
 
 
 ## 6.增加styles文件夹，写scss
