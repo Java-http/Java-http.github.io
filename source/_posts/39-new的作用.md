@@ -5,6 +5,7 @@ tags: 前端-02-js基础复习
 categories: 前端-02-js基础复习
 id : 1537686931330
 ---
+## 1.
 ```
 var Func=function(){  
 };  
@@ -39,3 +40,19 @@ else{
     func=obj;;  
 }  
 ```
+## 2.第二种解析
+
+
+```
+function create() {
+  let obj = {}
+  let Con = [].shift.call(arguments)
+  obj.__proto__ = Con.prototype
+  let result = Con.apply(obj, arguments)
+  return result instanceof Object ? result : obj
+}
+```
+
+Arguments对象有一个callee 属性，可以获取当前函数，这个属性在arguments的第一个位置 ，所以 [].shift.call(arguments) 将arguments转为数组后调用shift, 拿到第一个元素 callee
+
+> [参考链接](https://juejin.im/post/5c1bbc16e51d4552e01a0114)

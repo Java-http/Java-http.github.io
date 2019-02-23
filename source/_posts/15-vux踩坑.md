@@ -1,10 +1,11 @@
 ---
 title: 15-vux踩坑
-date: 2018-09-23 15:47:02
+date: 2019-02-23 17:45:45
 tags: 前端-08-vue
 categories: 前端-08-vue
 id : 1537686621065
 ---
+> 本文不仅限于vux组件，包括项目中遇到的一些问题记录
 > 本文不仅限于vux组件，包括项目中遇到的一些问题记录
 ## 1. AlertModule 组件
 
@@ -67,22 +68,27 @@ this.$yxToast('请输入您的手机号码')
 
 ## 3. 防抖函数
 
-**main.js入口引入**
+`vux`自带防抖函数，简单包装在工具函数js里`src/utils`
 
 ```
-/* ----------  引入防抖函数  ----------*/
-import { throttle } from 'vux'
-Vue.prototype.throttle = throttle
+import { dateFormat, debounce as vuxDebounce } from 'vux'
 
-/* ----------  引入防抖函数 end  ----------*/
+// 防抖
+export function throttle(fn, time) {
+  return vuxDebounce(fn, time, {
+    'leading': true,
+    'trailing': false
+  })
+}
 ```
-**引用**
+使用方法：
+```
+// 上拉加载
+onPullingUp: throttle(function() {
+  this.SearchOranizations()
+}, 2000),
+```
 
-```
-@click.native="throttle(sendVerifyCode,2000)()"
-```
-
-注意后面加个()
 
 ## 3. 验证插件
 
@@ -127,4 +133,19 @@ bs有个问题，在手机uc浏览器，手机safria浏览器，底部栏会遮�
           this.$refs.listWrapper.style.paddingBottom = '50px'
         }
       },
+```
+## 8.upload图片上传组件
+
+由于vux没有图片上传组件，故采用`ube-ui`的upload组件,并简单封装一下。
+
+
+```
+  <yx-upload
+    v-model="value" // 图片链接，上传1张用字符串，多张用字符串数组
+    @file-error="fileError"
+    @file-success="fileSuccess"
+    folderName="companyInsert"
+    :maxSize="2*1024*1024"
+    :amount="1">
+  </yx-upload>
 ```
