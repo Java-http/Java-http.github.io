@@ -1,6 +1,6 @@
 ---
 title: 73-promise注意小点
-date: 2019-01-02 08:43:50
+date: 2019-03-28 08:47:44
 tags: 前端-02-js基础复习
 categories: 前端-02-js基础复习
 id : 1546390195053
@@ -72,3 +72,22 @@ c()
 
 > - [csdn](https://blog.csdn.net/fundebug/article/details/78212439)
 > - [如何优雅处理前端异常？](https://zhuanlan.zhihu.com/p/51800345)
+
+## 3. 中断或取消Promise链的可行方案
+
+当新对象保持“pending”状态时，原Promise链将会中止执行。
+
+```
+Promise.resolve()
+    .then(() => {
+        console.log('[onFulfilled_1]');
+        return new Promise(()=>{}); // 返回“pending”状态的Promise对象
+    })
+    .then(() => {                   // 后续的函数不会被调用
+        console.log('[onFulfilled_2]');
+    })
+    .catch(err => {
+        console.log('[catch]', err);
+    });
+// => [onFulfilled_1]
+```
