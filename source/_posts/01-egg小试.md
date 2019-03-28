@@ -5,7 +5,6 @@ tags: 前端-16-Node
 categories: 前端-16-Node
 id : 1553734461076
 ---
-
 ## 1 eslint规则修改
 
 在win10上面开发，报了一条eslint规则报错
@@ -196,7 +195,13 @@ exports.sequelize = {
     },
   });
 ```
+## 8 centos7部署部分
 
+> 请参考我另外几篇笔记
+
+- [centos7安装nvm](https://java-http.github.io/1537686246723/)
+- [centos7安装git](https://java-http.github.io/1553736263078/)
+- [centos7安装mysql](https://java-http.github.io/1553734534741/)
 
 > 参考链接  
 > [segmentfault-Sequelize 字段下划线转驼峰](https://segmentfault.com/q/1010000014181331)  
