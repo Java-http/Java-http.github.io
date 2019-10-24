@@ -66,7 +66,7 @@ react-native bundle --platform android --dev false --entry-file index.js --bundl
 
 配置下adb环境变量。
 
-![image](https://note.youdao.com/yws/api/personal/file/3C0D6D7DA5E44C9AB3B0ABD918F292F4?method=download&shareKey=20cf355feead66d299c2ac18db25b17a)
+![image](http://note.youdao.com/yws/api/personal/file/3C0D6D7DA5E44C9AB3B0ABD918F292F4?method=download&shareKey=20cf355feead66d299c2ac18db25b17a)
 
 到这里应该结束了，一个正常可用的安卓项目生成完成！
 

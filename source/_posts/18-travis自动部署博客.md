@@ -11,14 +11,14 @@ id : 1537686704586
 
 打开[travis-ci主页](https://travis-ci.org/)，选择右上角的 `Sign in with Github`, 使用你的 Github账号登录，进入你的accounts页面：
 
-![image](https://note.youdao.com/yws/api/personal/file/A8E0659E3DC94DF4A845BA98148D2F04?method=download&shareKey=51f244762ce2f5cd2c81dcb9216cd417)
+![image](http://note.youdao.com/yws/api/personal/file/A8E0659E3DC94DF4A845BA98148D2F04?method=download&shareKey=51f244762ce2f5cd2c81dcb9216cd417)
 
 
 选择你要使用travis-ci构建的Github repository, 这里我开启的是： `Java-http.github.io`
 
 点击进入`setting`，点击右下角的`More options`
 
-![image](https://note.youdao.com/yws/api/personal/file/15E51A4477E844DCBA429CD688829643?method=download&shareKey=27e3cc72f49243544d2bf7b257a670bd)
+![image](http://note.youdao.com/yws/api/personal/file/15E51A4477E844DCBA429CD688829643?method=download&shareKey=27e3cc72f49243544d2bf7b257a670bd)
 
 , 做一些设置，如：只有存在.travis.yml文件时才会触发自动build。
 

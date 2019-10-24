@@ -256,7 +256,7 @@ export function removeToken() {
 > 8.2 8.3见项目代码
 
 ### 8.4 登录状态验证流程说明
-![image](https://note.youdao.com/yws/api/personal/file/7334D4F451454A6EA7E2384C14E9545E?method=download&shareKey=8de88e7c323634abfd8a42000cb1a19e)
+![image](http://note.youdao.com/yws/api/personal/file/7334D4F451454A6EA7E2384C14E9545E?method=download&shareKey=8de88e7c323634abfd8a42000cb1a19e)
 
 ## 9 封装SVG Icon组件
 

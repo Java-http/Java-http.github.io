@@ -10,7 +10,7 @@ id : 1567239277848
 
 > 以下来自stackoverflow的解释：
 > 
-> [What's the difference between “super()” and “super(props)” in React when using es6 classes?](https://note.youdao.com/)
+> [What's the difference between “super()” and “super(props)” in React when using es6 classes?](http://note.youdao.com/)
 
 不加`props`
 

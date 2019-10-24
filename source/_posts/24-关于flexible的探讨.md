@@ -59,13 +59,13 @@ div{width:200px;height:200px}
 ```
 在苹果下会缩放，
 
-![image](https://note.youdao.com/yws/api/personal/file/9A6144377A344070891DCCD33E58F0FE?method=download&shareKey=524aef53df20da4f5205d72e18ad0dce)
+![image](http://note.youdao.com/yws/api/personal/file/9A6144377A344070891DCCD33E58F0FE?method=download&shareKey=524aef53df20da4f5205d72e18ad0dce)
 
-[查看原图](https://note.youdao.com/yws/api/personal/file/9A6144377A344070891DCCD33E58F0FE?method=download&shareKey=524aef53df20da4f5205d72e18ad0dce)
+[查看原图](http://note.youdao.com/yws/api/personal/file/9A6144377A344070891DCCD33E58F0FE?method=download&shareKey=524aef53df20da4f5205d72e18ad0dce)
 
-![image](https://note.youdao.com/yws/api/personal/file/FBE90B463E0C4E6FA14BEA8058C0FB44?method=download&shareKey=e5483dad08878615f35c4228b79ab6d5)
+![image](http://note.youdao.com/yws/api/personal/file/FBE90B463E0C4E6FA14BEA8058C0FB44?method=download&shareKey=e5483dad08878615f35c4228b79ab6d5)
 
-[查看原图](https://note.youdao.com/yws/api/personal/file/FBE90B463E0C4E6FA14BEA8058C0FB44?method=download&shareKey=e5483dad08878615f35c4228b79ab6d5)
+[查看原图](http://note.youdao.com/yws/api/personal/file/FBE90B463E0C4E6FA14BEA8058C0FB44?method=download&shareKey=e5483dad08878615f35c4228b79ab6d5)
 
 我们需要对不同dpr下做适配
 
@@ -124,9 +124,9 @@ div {
 
 [查看原图](https://sfault-image.b0.upaiyun.com/197/317/197317187-5a1791b0935fc)
 
-![image](https://note.youdao.com/yws/api/personal/file/A2C6B885732D412A8CD0806423F9479F?method=download&shareKey=b8d7231c12f62e781ddb654d855bfa2c)
+![image](http://note.youdao.com/yws/api/personal/file/A2C6B885732D412A8CD0806423F9479F?method=download&shareKey=b8d7231c12f62e781ddb654d855bfa2c)
 
-[查看原图](https://note.youdao.com/yws/api/personal/file/A2C6B885732D412A8CD0806423F9479F?method=download&shareKey=b8d7231c12f62e781ddb654d855bfa2c)
+[查看原图](http://note.youdao.com/yws/api/personal/file/A2C6B885732D412A8CD0806423F9479F?method=download&shareKey=b8d7231c12f62e781ddb654d855bfa2c)
 
 > 参考[网上链接1](http://www.jianshu.com/p/7e63f5a32636) [网上链接2](https://github.com/Mmzer/think/issues/3#onepx)
 

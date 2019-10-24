@@ -35,7 +35,7 @@ $("body").on("click",function(e){
   console.log($(this))
 })
 ```
-![image](https://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/4FF13ECE52824F68AAC6743822FD4B94/11803)
+![image](http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/4FF13ECE52824F68AAC6743822FD4B94/11803)
 
  
  ## 2 代理事件时
@@ -49,5 +49,5 @@ $("body").on("click",".a",function(e){
 })
 ```
  
- ![image](https://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/5F4607BAB33147569CBDEBEF164807EA/11810)
+ ![image](http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/5F4607BAB33147569CBDEBEF164807EA/11810)
  

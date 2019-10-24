@@ -50,7 +50,7 @@ sudo systemctl start docker
 ```
 yum -y list java*
 ```
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/C0B2343F83374FA5A7C337DD551FB8E8/14680](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/C0B2343F83374FA5A7C337DD551FB8E8/14680)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/C0B2343F83374FA5A7C337DD551FB8E8/14680](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/C0B2343F83374FA5A7C337DD551FB8E8/14680)
 
 2、这里我们选择`java-1.8.0-openjdk-devel.x86_64`
 
@@ -71,7 +71,7 @@ export JRE_HOME
 export PATH
 export CLASSPATH
 ```
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E22D7DCD3ADA4509919DCAB1CAD87984/14689](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E22D7DCD3ADA4509919DCAB1CAD87984/14689)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E22D7DCD3ADA4509919DCAB1CAD87984/14689](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E22D7DCD3ADA4509919DCAB1CAD87984/14689)
 
 > 图中圆圈目录可能不一致,具体请看电脑安装目录
 
@@ -123,31 +123,31 @@ docker logs <docker-container-name>
 
 浏览 `http://服务器ip:8080` 
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CC3383824BAF4C9A9DE222275305BFDB/14767](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CC3383824BAF4C9A9DE222275305BFDB/14767)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CC3383824BAF4C9A9DE222275305BFDB/14767](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CC3383824BAF4C9A9DE222275305BFDB/14767)
 
 然后到命令窗口打印出log信息并复制密码
 
 ```
 docker logs jenkins
 ```
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CDF9CFEC6ECA48B9AF5E3BA84CA11FBF/14774](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CDF9CFEC6ECA48B9AF5E3BA84CA11FBF/14774)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CDF9CFEC6ECA48B9AF5E3BA84CA11FBF/14774](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CDF9CFEC6ECA48B9AF5E3BA84CA11FBF/14774)
 
 在 **解锁Jenkins** 页面, 粘贴该密码到 **管理员密码****输入框并点击 **继续**
 
 ### 3.2 安装插件
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4472B62AA72D4252A86C594B15DD0698/14788](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4472B62AA72D4252A86C594B15DD0698/14788)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4472B62AA72D4252A86C594B15DD0698/14788](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4472B62AA72D4252A86C594B15DD0698/14788)
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E207FF95AE3F4557AFED3CBB94A8B547/14792](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E207FF95AE3F4557AFED3CBB94A8B547/14792)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E207FF95AE3F4557AFED3CBB94A8B547/14792](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E207FF95AE3F4557AFED3CBB94A8B547/14792)
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0F3348EAE06B4DF2814AC311E22FB7B1/14800](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0F3348EAE06B4DF2814AC311E22FB7B1/14800)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0F3348EAE06B4DF2814AC311E22FB7B1/14800](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0F3348EAE06B4DF2814AC311E22FB7B1/14800)
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/1F1A381E1C3C4760BF4974C731155DC7/14807](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/1F1A381E1C3C4760BF4974C731155DC7/14807)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/1F1A381E1C3C4760BF4974C731155DC7/14807](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/1F1A381E1C3C4760BF4974C731155DC7/14807)
 
 ## 4 Coding新建个node项目
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/EB5EFCD8E79C43FFBE699F72F862CACA/14817](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/EB5EFCD8E79C43FFBE699F72F862CACA/14817)
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/AAE394A5A5014DEA881AD9C9EA46A225/14893](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/AAE394A5A5014DEA881AD9C9EA46A225/14893)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/EB5EFCD8E79C43FFBE699F72F862CACA/14817](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/EB5EFCD8E79C43FFBE699F72F862CACA/14817)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/AAE394A5A5014DEA881AD9C9EA46A225/14893](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/AAE394A5A5014DEA881AD9C9EA46A225/14893)
 
 Jenkinsfile
 ```
@@ -185,11 +185,11 @@ pipeline {
 
 ## 5 在Jenkins中创建流水线项目
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6D73387FC18746A4B483AD433A39A20C/14828](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6D73387FC18746A4B483AD433A39A20C/14828)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6D73387FC18746A4B483AD433A39A20C/14828](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6D73387FC18746A4B483AD433A39A20C/14828)
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4DAEFC03CE6549B08D26D4E9908A9CC7/14831](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4DAEFC03CE6549B08D26D4E9908A9CC7/14831)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4DAEFC03CE6549B08D26D4E9908A9CC7/14831](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4DAEFC03CE6549B08D26D4E9908A9CC7/14831)
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/384E51CBC6BC4D6DAD91FC71AC4925FC/14835](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/384E51CBC6BC4D6DAD91FC71AC4925FC/14835)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/384E51CBC6BC4D6DAD91FC71AC4925FC/14835](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/384E51CBC6BC4D6DAD91FC71AC4925FC/14835)
 
 > 轮询SCM：只要SVN或Git中数据有更新，则执行构建任务  
 >  
@@ -204,7 +204,7 @@ pipeline {
 
 ###  流水线选项
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6C33A4AB86B74ACAA7EA10C37F8C5581/14878](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6C33A4AB86B74ACAA7EA10C37F8C5581/14878)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6C33A4AB86B74ACAA7EA10C37F8C5581/14878](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6C33A4AB86B74ACAA7EA10C37F8C5581/14878)
 
 1. 在**定义**，选择 `Pipeline script from SCM` 选项。此选项指示`Jenkins`从源代码管理（SCM）仓库获取你的流水线， 这里的仓库就是你clone到本地的Git仓库
 2. 在 `SCM` 域中，选择 `Git`
@@ -213,17 +213,17 @@ pipeline {
 
     全局凭证这里你可以通过密码登录,也可以通过`ssh`登录,这里我选择`ssh`,git仓库ssh设置就不在这里赘述了
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/FF0BD3379B184032885812853983DBD4/14874](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/FF0BD3379B184032885812853983DBD4/14874)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/FF0BD3379B184032885812853983DBD4/14874](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/FF0BD3379B184032885812853983DBD4/14874)
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/BCEB060A102D4111A3D74625B88F8BF8/14876](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/BCEB060A102D4111A3D74625B88F8BF8/14876)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/BCEB060A102D4111A3D74625B88F8BF8/14876](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/BCEB060A102D4111A3D74625B88F8BF8/14876)
 
 ### 最后保存
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/8CC4A881FBE44BF18927BBA5510DA50D/14887](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/8CC4A881FBE44BF18927BBA5510DA50D/14887)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/8CC4A881FBE44BF18927BBA5510DA50D/14887](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/8CC4A881FBE44BF18927BBA5510DA50D/14887)
 
 ## 6 查看效果
 
-![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0FF63A247671451CAD15BD3752CAC2C6/14896](https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0FF63A247671451CAD15BD3752CAC2C6/14896)
+![https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0FF63A247671451CAD15BD3752CAC2C6/14896](http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0FF63A247671451CAD15BD3752CAC2C6/14896)
 
 总体操作下来还是比较顺利的,网上也有很多类似的文章.生成 `dist`目录后,其实还需要运行`scp`命令发送到另外一台服务器部署,有兴趣大家可以去了解下.
 

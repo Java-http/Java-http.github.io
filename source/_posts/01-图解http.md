@@ -18,7 +18,7 @@ id : 1553735719353
 - 网络层
 - 数据链路层
 
-![image](https://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/0FFFFFF4301C46069D77D34D160F7C05/12889)
+![image](http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/0FFFFFF4301C46069D77D34D160F7C05/12889)
 
 利用 TCP/IP 协议族进行网络通信时，会通过分层顺序与对信。**发送端从应用层往下走，接收端则往应用层往**
 
@@ -36,7 +36,7 @@ IP 协议的作用是把各种数据包传送给对方。而要保证确实传�
 发送端首先发送一个带 SYN 标志的数据包给对方。接收端收到后，
 回传一个带有 SYN/ACK 标志的数据包以示传达确认信息。最后，发送端再回传一个带 ACK 标志的数据包，代表“握手”结束。
 
-![image](https://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/1EE9531AC8354885A8287A270F773276/12902)
+![image](http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/1EE9531AC8354885A8287A270F773276/12902)
 
 ## 2.1 持久连接
 
@@ -49,12 +49,12 @@ IP 协议的作用是把各种数据包传送给对方。而要保证确实传�
 
 ## 6.1 HTTP 请求报文
 
-![image](https://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/C8116E9DC4924E5BBCA00A3EDB03388A/12934)
+![image](http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/C8116E9DC4924E5BBCA00A3EDB03388A/12934)
 
 ## 6.2 HTTP 响应报文
 
 在响应中，HTTP 报文由 HTTP 版本、状态码（数字和原因短语）、HTTP 首部字段 3 部分构成
-![image](https://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/585625065B754EB9B0B37B1DDD2EEA0F/12940)
+![image](http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/585625065B754EB9B0B37B1DDD2EEA0F/12940)
 
 ## 6.3 HTTP 首部字段根据实际用途被分为以下 4 种类型
 
@@ -142,7 +142,7 @@ Cookie  | 服务器接收到的Cookie信息 |  请求首部字段
 
 通常，HTTP 直接和 TCP 通信。当使用 SSL时，则演变成先和 SSL通信，再由 SSL和 TCP 通信了。简言之，所谓 HTTPS，其实就是身披SSL协议这层外壳的 HTTP
 
-![image](https://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/E5FCAD5BEA324A2A950805988F9557EB/13026)
+![image](http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/E5FCAD5BEA324A2A950805988F9557EB/13026)
 
 SSL是独立于 HTTP 的协议，所以不光是 HTTP 协议，其他运行在应用层的 SMTP 和 Telnet 等协议均可配合 SSL协议使用。可以说 SSL是当今世界上应用最为广泛的网络安全技术
 
