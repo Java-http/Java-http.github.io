@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="前端-06-Angular,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="工具方法angular.bind描述： 上下文，函数以及参数动态绑定，返回值为绑定之后的函数. 其中args是可选的动态参数，self在fn中使用this调用。 使用方法： 1angular.bind(self,fn,args ); angular.bootstrap描述： 此方法用于手动加载angularjs模板(官方翻译：注意基于端到端的测试不能使用此功能来引导手动加载，他们必须使用ngapp">
+<meta name="keywords" content="前端-06-Angular">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02-工具方法">
+<meta property="og:url" content="https://java-http.github.io/1537685890702/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:description" content="工具方法angular.bind描述： 上下文，函数以及参数动态绑定，返回值为绑定之后的函数. 其中args是可选的动态参数，self在fn中使用this调用。 使用方法： 1angular.bind(self,fn,args ); angular.bootstrap描述： 此方法用于手动加载angularjs模板(官方翻译：注意基于端到端的测试不能使用此功能来引导手动加载，他们必须使用ngapp">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-31T10:38:28.717Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="02-工具方法">
+<meta name="twitter:description" content="工具方法angular.bind描述： 上下文，函数以及参数动态绑定，返回值为绑定之后的函数. 其中args是可选的动态参数，self在fn中使用this调用。 使用方法： 1angular.bind(self,fn,args ); angular.bootstrap描述： 此方法用于手动加载angularjs模板(官方翻译：注意基于端到端的测试不能使用此功能来引导手动加载，他们必须使用ngapp">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'ON53N4VTIJ',
+      apiKey: '5d906b40edb561e5ed49fa3b12164e62',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索文章","hits_empty":"抱歉，没有找到结果关于: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://java-http.github.io/1537685890702/">
+
+
+
+
+
+  <title>02-工具方法 | 静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537685890702/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">02-工具方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+00:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-06-Angular/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-06-Angular</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="工具方法"><a href="#工具方法" class="headerlink" title="工具方法"></a>工具方法</h2><h3 id="angular-bind"><a href="#angular-bind" class="headerlink" title="angular.bind"></a>angular.bind</h3><p>描述：</p>
+<p>上下文，函数以及参数动态绑定，返回值为绑定之后的函数. 其中args是可选的动态参数，self在fn中使用this调用。</p>
+<p>使用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.bind(self,fn,args );</span><br></pre></td></tr></table></figure>
+<h3 id="angular-bootstrap"><a href="#angular-bootstrap" class="headerlink" title="angular.bootstrap"></a>angular.bootstrap</h3><p>描述：</p>
+<p>此方法用于手动加载angularjs模板<br>(官方翻译：注意基于端到端的测试不能使用此功能来引导手动加载，他们必须使用ngapp。 angularjs会检测这个模板是否被浏览器加载或者加载多次并且在控制台给出警告在加载其他模块的时候，这防止了奇怪的结果，在实际应用中，angularjs在尝试其它的多个实例来研究DOM)。</p>
+<p>使用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.bootstrap(element, [modules], [config]);</span><br></pre></td></tr></table></figure>
+<h3 id="angular-copy"><a href="#angular-copy" class="headerlink" title="angular.copy"></a>angular.copy</h3><p>描述：</p>
+<p>复制一个对象或者一个数组（好吧，万物皆对象，数组也是一个对象）。<br>如果省略了destination，一个新的对象或数组将会被创建出来；<br>如果提供了destination，则source对象中的所有元素和属性都会被复制到destination中；<br>如果source不是对象或数组（例如是null或undefined）, 则返回source；<br>如果source和destination类型不一致，则会抛出异常。<br>注意：这个是单纯复制覆盖，不是类似继承</p>
+<p>使用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.copy(source, [destination]);</span><br></pre></td></tr></table></figure>
+<p>返回值：</p>
+<p>返回复制或更新后的对象</p>
+<h3 id="angular-element"><a href="#angular-element" class="headerlink" title="angular.element"></a>angular.element</h3><p>描述：</p>
+<p>包裹着一部分DOM element或者是HTML字符串，把它作为一个jQuery元素来处理。（类似于jQuery的选择器啦） 如果jQuery被引入了，则angular.element就可以看作是jQuery选择器，选择的对象可以使用jQuery的函数；如果jQuery不可用，angular.element只能接受HTML字符串或者DOM元素为参数，选择的元素只可以调用Angular中嵌入的精简版的jQuery library（名为: “jQuery lite” or “jqLite”).<br>注意: 所有被Angular引用的元素都是jQuery或者jqLite对象，不是原始的DOM元素了。</p>
+<p>返回值：</p>
+<p>jQuery对象或者jqLite对象</p>
+<blockquote>
+<p>补充：</p>
+</blockquote>
+<h4 id="jqLite支持的jQuery函数有："><a href="#jqLite支持的jQuery函数有：" class="headerlink" title="jqLite支持的jQuery函数有："></a>jqLite支持的jQuery函数有：</h4><ul>
+<li>addClass()</li>
+<li>append()</li>
+<li>attr()</li>
+<li>bind()</li>
+<li>children()</li>
+<li>clone()</li>
+<li>contents()</li>
+<li>css()</li>
+<li>data()</li>
+<li>detach()</li>
+<li>empty()</li>
+<li>eq()</li>
+<li>find()</li>
+<li>hasClass()</li>
+<li>html()</li>
+<li>next()</li>
+<li>on()</li>
+<li>off()</li>
+<li>one()</li>
+<li>parent()</li>
+<li>prepend()</li>
+<li>prop()</li>
+<li>ready()</li>
+<li>remove()</li>
+<li>removeAttr()</li>
+<li>removeClass()</li>
+<li>removeData()</li>
+<li>replaceWith()</li>
+<li>triggerHandler()</li>
+<li>unbind()</li>
+<li>val()</li>
+<li>wrap()</li>
+</ul>
+<p>angular还提供了一下额外的方法和事情（有无jQuery都适用）<br>事件：</p>
+<p>$destroy: 当jqLite/jQuery DOM对象被销毁是促发。 </p>
+<p><strong>方法：</strong> </p>
+<ul>
+<li>controller(name)</li>
+<li>injector()</li>
+<li>injector()</li>
+<li>scope()</li>
+<li>isolatescope()</li>
+<li>inheriteddata()</li>
+</ul>
+<h3 id="angular-equals"><a href="#angular-equals" class="headerlink" title="angular.equals"></a>angular.equals</h3><p><strong>描述：</strong></p>
+<p>比较两个值或者两个对象是不是相等。还支持值的类型，正则表达式和数组的比较。两个值或对象被认为是相等的前提条件是以下的情况至少能满足一项：</p>
+<ul>
+<li>两个值或者对象能通过=== （恒等） 的比较</li>
+<li>两个值或者对象是同样类型，并且他们的属性都能通过angular.equals的比较</li>
+<li>两个值都是NaN</li>
+<li>两个值代表两个同样的正则表达式，例如angular.equals(‘/abc/‘, ‘/abc/‘)</li>
+</ul>
+<p><strong>使用方法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.equals(o1, o2)</span><br></pre></td></tr></table></figure>
+<p><strong>返回值：</strong></p>
+<p>boolean(如果相等返回True)</p>
+<h3 id="angular-forEach"><a href="#angular-forEach" class="headerlink" title="angular.forEach"></a>angular.forEach</h3><p><strong>描述：</strong></p>
+<p>循环对obj对象的每个元素调用iterator, obj对象可以是一个Object或一个Array. Iterator函数调用方法: iterator(value, key, obj), 其中obj是被迭代对象，key是obj的property key或者是数组的index，value就是相应的值啦.</p>
+<p><strong>使用方法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.forEach(obj, iterator, [context])</span><br></pre></td></tr></table></figure>
+<h3 id="angular-fromJson"><a href="#angular-fromJson" class="headerlink" title="angular.fromJson"></a>angular.fromJson</h3><p><strong>描述：</strong></p>
+<p>把Json字符串转为对象</p>
+<p><strong>使用方法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.fromJson(json);</span><br></pre></td></tr></table></figure>
+<h3 id="angular-toJson"><a href="#angular-toJson" class="headerlink" title="angular.toJson"></a>angular.toJson</h3><p><strong>描述：</strong></p>
+<p>把对象转为Json字符串</p>
+<p><strong>使用方法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.toJson(obj, pretty);</span><br></pre></td></tr></table></figure>
+<h3 id="angular-identity"><a href="#angular-identity" class="headerlink" title="angular.identity"></a>angular.identity</h3><p><strong>描述：</strong></p>
+<p>返回它第一参数的函数. 此函数多用于函数是编程.</p>
+<p><strong>使用方法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.identity(value);</span><br></pre></td></tr></table></figure>
+<p><strong>返回值：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">value</span><br></pre></td></tr></table></figure>
+<h3 id="angular-extend"><a href="#angular-extend" class="headerlink" title="angular.extend"></a>angular.extend</h3><p><strong>描述：</strong></p>
+<p>复制src对象中的属性去dst对象中. 支持多个src对象. 如果你不想改变一个对象，你可以把dst设为空对象{}: var object = angular.extend({}, object1, object2). 注意: angular.extend不支持递归复制.</p>
+<p><strong>使用方法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.extend(dst, src);</span><br></pre></td></tr></table></figure>
+<p><strong>返回值：</strong></p>
+<p>对dst的引用</p>
+<h3 id="angular-injector"><a href="#angular-injector" class="headerlink" title="angular.injector"></a>angular.injector</h3><p><strong>描述：</strong></p>
+<p>创建一个injector对象, 调用injector对象的方法可以获得angular的service, 或者用来做依赖注入.</p>
+<p><strong>使用方法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.injector(modules, [strictDi])</span><br></pre></td></tr></table></figure>
+<p><strong>返回值：</strong></p>
+<p>Injector对象</p>
+<h3 id="angular-lowercase"><a href="#angular-lowercase" class="headerlink" title="angular.lowercase"></a>angular.lowercase</h3><p><strong>描述：</strong></p>
+<p>将指定的字符串转换为小写。</p>
+<p><strong>使用方法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.lowercase(string);</span><br></pre></td></tr></table></figure>
+<h3 id="angular-uppercase"><a href="#angular-uppercase" class="headerlink" title="angular.uppercase"></a>angular.uppercase</h3><p><strong>描述：</strong></p>
+<p>将指定的字符串转换为大写。</p>
+<p><strong>使用方法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">angular.uppercase(string);</span><br></pre></td></tr></table></figure>
+<h3 id="angular-isArray"><a href="#angular-isArray" class="headerlink" title="angular.isArray"></a>angular.isArray</h3><h3 id="angular-isDate"><a href="#angular-isDate" class="headerlink" title="angular.isDate"></a>angular.isDate</h3><h3 id="angular-isDefined"><a href="#angular-isDefined" class="headerlink" title="angular.isDefined"></a>angular.isDefined</h3><h3 id="angular-isUndefined"><a href="#angular-isUndefined" class="headerlink" title="angular.isUndefined"></a>angular.isUndefined</h3><h3 id="angular-isFunction"><a href="#angular-isFunction" class="headerlink" title="angular.isFunction"></a>angular.isFunction</h3><h3 id="angular-isNumber"><a href="#angular-isNumber" class="headerlink" title="angular.isNumber"></a>angular.isNumber</h3><h3 id="angular-isObject"><a href="#angular-isObject" class="headerlink" title="angular.isObject"></a>angular.isObject</h3><h3 id="angular-isString"><a href="#angular-isString" class="headerlink" title="angular.isString"></a>angular.isString</h3><h3 id="angular-isElement"><a href="#angular-isElement" class="headerlink" title="angular.isElement"></a>angular.isElement</h3><h3 id="…"><a href="#…" class="headerlink" title="…"></a>…</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端-06-Angular/" rel="tag"><i class="fa fa-tag"></i> 前端-06-Angular</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/1537685896948/" rel="next" title="02-核心方法">
+                <i class="fa fa-chevron-left"></i> 02-核心方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/1537685860075/" rel="prev" title="02-分支">
+                02-分支 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="静修">
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">322</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工具方法"><span class="nav-number">1.</span> <span class="nav-text">工具方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-bind"><span class="nav-number">1.1.</span> <span class="nav-text">angular.bind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-bootstrap"><span class="nav-number">1.2.</span> <span class="nav-text">angular.bootstrap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-copy"><span class="nav-number">1.3.</span> <span class="nav-text">angular.copy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-element"><span class="nav-number">1.4.</span> <span class="nav-text">angular.element</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jqLite支持的jQuery函数有："><span class="nav-number">1.4.1.</span> <span class="nav-text">jqLite支持的jQuery函数有：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-equals"><span class="nav-number">1.5.</span> <span class="nav-text">angular.equals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-forEach"><span class="nav-number">1.6.</span> <span class="nav-text">angular.forEach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-fromJson"><span class="nav-number">1.7.</span> <span class="nav-text">angular.fromJson</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-toJson"><span class="nav-number">1.8.</span> <span class="nav-text">angular.toJson</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-identity"><span class="nav-number">1.9.</span> <span class="nav-text">angular.identity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-extend"><span class="nav-number">1.10.</span> <span class="nav-text">angular.extend</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-injector"><span class="nav-number">1.11.</span> <span class="nav-text">angular.injector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-lowercase"><span class="nav-number">1.12.</span> <span class="nav-text">angular.lowercase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-uppercase"><span class="nav-number">1.13.</span> <span class="nav-text">angular.uppercase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-isArray"><span class="nav-number">1.14.</span> <span class="nav-text">angular.isArray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-isDate"><span class="nav-number">1.15.</span> <span class="nav-text">angular.isDate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-isDefined"><span class="nav-number">1.16.</span> <span class="nav-text">angular.isDefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-isUndefined"><span class="nav-number">1.17.</span> <span class="nav-text">angular.isUndefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-isFunction"><span class="nav-number">1.18.</span> <span class="nav-text">angular.isFunction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-isNumber"><span class="nav-number">1.19.</span> <span class="nav-text">angular.isNumber</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-isObject"><span class="nav-number">1.20.</span> <span class="nav-text">angular.isObject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-isString"><span class="nav-number">1.21.</span> <span class="nav-text">angular.isString</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-isElement"><span class="nav-number">1.22.</span> <span class="nav-text">angular.isElement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#…"><span class="nav-number">1.23.</span> <span class="nav-text">…</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="前端-16-Node,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="1 eslint规则修改在win10上面开发，报了一条eslint规则报错 在.eslintrc文件 rules 里面 配置 &amp;quot;linebreak-style&amp;quot;: [0 ,&amp;quot;error&amp;quot;, &amp;quot;windows&amp;quot;], //允许windows开发环境  此外，在mac平台下，vscode的eslint自动校验不起作用，安装npm i eslin">
+<meta name="keywords" content="前端-16-Node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01-egg小试">
+<meta property="og:url" content="https://java-http.github.io/1553734461076/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:description" content="1 eslint规则修改在win10上面开发，报了一条eslint规则报错 在.eslintrc文件 rules 里面 配置 &amp;quot;linebreak-style&amp;quot;: [0 ,&amp;quot;error&amp;quot;, &amp;quot;windows&amp;quot;], //允许windows开发环境  此外，在mac平台下，vscode的eslint自动校验不起作用，安装npm i eslin">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-31T10:38:28.717Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="01-egg小试">
+<meta name="twitter:description" content="1 eslint规则修改在win10上面开发，报了一条eslint规则报错 在.eslintrc文件 rules 里面 配置 &amp;quot;linebreak-style&amp;quot;: [0 ,&amp;quot;error&amp;quot;, &amp;quot;windows&amp;quot;], //允许windows开发环境  此外，在mac平台下，vscode的eslint自动校验不起作用，安装npm i eslin">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'ON53N4VTIJ',
+      apiKey: '5d906b40edb561e5ed49fa3b12164e62',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索文章","hits_empty":"抱歉，没有找到结果关于: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://java-http.github.io/1553734461076/">
+
+
+
+
+
+  <title>01-egg小试 | 静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1553734461076/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">01-egg小试</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-28T09:35:02+00:00">
+                2019-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-16-Node/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-16-Node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-eslint规则修改"><a href="#1-eslint规则修改" class="headerlink" title="1 eslint规则修改"></a>1 eslint规则修改</h2><p>在win10上面开发，报了一条eslint规则报错</p>
+<p>在<code>.eslintrc</code>文件 <code>rules</code> 里面 配置 <code>&quot;linebreak-style&quot;: [0 ,&quot;error&quot;, &quot;windows&quot;]</code>, //允许windows开发环境</p>
+<blockquote>
+<p>此外，在mac平台下，vscode的eslint自动校验不起作用，安装<code>npm i eslint-plugin-html -D</code>即可</p>
+</blockquote>
+<h2 id="2-如何在vscode调试代码"><a href="#2-如何在vscode调试代码" class="headerlink" title="2 如何在vscode调试代码"></a>2 如何在vscode调试代码</h2><p>官方提供的eggjs插件在vscode中debug配置好像有点问题，启动不起来，百度搜了一个配置如下：</p>
+<p>按F5启动即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// .vscode/launch.json</span><br><span class="line">&#123;</span><br><span class="line">  &quot;version&quot;: &quot;0.2.0&quot;,</span><br><span class="line">  &quot;configurations&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;name&quot;: &quot;Launch Egg&quot;,</span><br><span class="line">      &quot;type&quot;: &quot;node&quot;,</span><br><span class="line">      &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">      &quot;cwd&quot;: &quot;$&#123;workspaceRoot&#125;&quot;,</span><br><span class="line">      &quot;runtimeExecutable&quot;: &quot;npm&quot;,</span><br><span class="line">      &quot;windows&quot;: &#123; &quot;runtimeExecutable&quot;: &quot;npm.cmd&quot; &#125;,</span><br><span class="line">      &quot;runtimeArgs&quot;: [ &quot;run&quot;, &quot;debug&quot; ],</span><br><span class="line">      &quot;console&quot;: &quot;integratedTerminal&quot;,</span><br><span class="line">      &quot;protocol&quot;: &quot;auto&quot;,</span><br><span class="line">      &quot;restart&quot;: true,</span><br><span class="line">      &quot;port&quot;: 9999</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-使用egg-redis如何存储其他类型的数据"><a href="#3-使用egg-redis如何存储其他类型的数据" class="headerlink" title="3 使用egg-redis如何存储其他类型的数据"></a>3 使用egg-redis如何存储其他类型的数据</h2><p>偷懒请使用 JSON.stringify ~，另外Redis 现在也支持 JSON 格式了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">await app.redis.set(&apos;foo&apos;, &#123; aaaa: 123, bbbb: &apos;123&apos; &#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="4-token鉴权"><a href="#4-token鉴权" class="headerlink" title="4 token鉴权"></a>4 token鉴权</h2><blockquote>
+<p><a href="https://segmentfault.com/a/1190000017248226" target="_blank" rel="noopener">参考</a></p>
+</blockquote>
+<p>中间件代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;</span><br><span class="line">const fs = require(&apos;fs&apos;)</span><br><span class="line">const path = require(&apos;path&apos;)</span><br><span class="line">const jwt = require(&apos;jsonwebtoken&apos;) //引入jsonwebtoken</span><br><span class="line"></span><br><span class="line">module.exports = (options, app) =&gt; &#123;</span><br><span class="line">  return async function userInterceptor(ctx, next) &#123;</span><br><span class="line">    let authToken = ctx.header.authorization // 获取header里的authorization</span><br><span class="line">    if (authToken) &#123;</span><br><span class="line">      const res = verifyToken(authToken) // 解密获取的Token</span><br><span class="line">      if (!(res.id &amp;&amp; res.username)) &#123;</span><br><span class="line">        ctx.body = &#123; code: 402, msg: &apos;登录状态已过期&apos; &#125;</span><br><span class="line">      &#125; else&#123;</span><br><span class="line">        await next()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      ctx.body = &#123; code: 401, msg: &apos;请登陆后再进行操作&apos; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 解密，验证</span><br><span class="line">function verifyToken(token) &#123;</span><br><span class="line">  let res = &apos;&apos;</span><br><span class="line">  try &#123;</span><br><span class="line">    const result = jwt.verify(token, &apos;myfirsteggdemo&apos;) || &#123;&#125;</span><br><span class="line">    const &#123; exp &#125; = result,</span><br><span class="line">      current = Math.floor(Date.now() / 1000)</span><br><span class="line">    if (current &lt;= exp) res = result.data || &#123;&#125;</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    console.log(e)</span><br><span class="line">  &#125;</span><br><span class="line">  return res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生成token"><a href="#生成token" class="headerlink" title="生成token"></a>生成token</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const loginToken=function(data, expires = 7200) &#123;</span><br><span class="line">  const exp = Math.floor(Date.now() / 1000) + expires</span><br><span class="line">  const token = jwt.sign(&#123; data, exp &#125;, &apos;myfirsteggdemo&apos;)</span><br><span class="line">  return &#123;token,expire:exp&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-egg-validate验证参数"><a href="#6-egg-validate验证参数" class="headerlink" title="6 egg-validate验证参数"></a>6 egg-validate验证参数</h2><h2 id="6-1-application-x-www-form-urlencoded"><a href="#6-1-application-x-www-form-urlencoded" class="headerlink" title="6.1 application/x-www-form-urlencoded"></a>6.1 <del>application/x-www-form-urlencoded</del></h2><p>一般传参<code>content-type</code>为<code>application/x-www-form-urlencoded</code>,这样参数值为数字时，传到后台是字符类型，需要做个转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// config/config.default.js</span><br><span class="line">exports.validate = &#123;</span><br><span class="line">  convert: true,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">this.ctx.validate(&#123;</span><br><span class="line">  type: &#123; type: &apos;string&apos; &#125;,</span><br><span class="line">  img_address: &#123; type: &apos;string&apos; &#125;,</span><br><span class="line">  img_link: &#123; type: &apos;string&apos; &#125;,</span><br><span class="line">  img_title: &#123; type: &apos;string&apos; &#125;,</span><br><span class="line">  order: &#123; type: &apos;number&apos; &#125;, // 本来传过来是字符，现在设置type为number，这里会默认转换为数字再做验证</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-application-x-www-form-urlencoded由于并不能很好地解析嵌套数据的类型，后面content-type设置为’application-json’-postman测试请用raw"><a href="#6-2-application-x-www-form-urlencoded由于并不能很好地解析嵌套数据的类型，后面content-type设置为’application-json’-postman测试请用raw" class="headerlink" title="6.2 application/x-www-form-urlencoded由于并不能很好地解析嵌套数据的类型，后面content-type设置为’application/json’,postman测试请用raw"></a>6.2 <code>application/x-www-form-urlencoded</code>由于并不能很好地解析嵌套数据的类型，后面<code>content-type</code>设置为’application/json’,postman测试请用raw</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">this.ctx.validate(&#123;</span><br><span class="line">  title: &#123; type: &apos;string&apos; &#125;,</span><br><span class="line">  date: &#123; type: &apos;number&apos; &#125;,</span><br><span class="line">  introduce: &#123; type: &apos;string&apos; &#125;,</span><br><span class="line">  cover_img: &#123; type: &apos;string&apos; &#125;,</span><br><span class="line">  source: &#123; type: &apos;string&apos; &#125;,</span><br><span class="line">  content: &#123; type: &apos;string&apos; &#125;,</span><br><span class="line">  label: &#123;</span><br><span class="line">    type: &apos;array&apos;,</span><br><span class="line">    itemType: &apos;string&apos;,</span><br><span class="line">    default: [],</span><br><span class="line">    required: false,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="7-数据库操作"><a href="#7-数据库操作" class="headerlink" title="7 数据库操作"></a>7 数据库操作</h2><p>由于<code>egg-mysql</code>提供的功能较为简单，egg提供了另外一种方案<code>Sequelize</code>，</p>
+<p>安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save egg-sequelize mysql2</span><br></pre></td></tr></table></figure></p>
+<p>在 config/plugin.js 中引入 egg-sequelize 插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">exports.sequelize = &#123;</span><br><span class="line">  enable: true,</span><br><span class="line">  package: &apos;egg-sequelize&apos;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>在 <code>config/config.default.js</code> 中编写 <code>sequelize</code> 配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">config.sequelize = &#123;</span><br><span class="line">  dialect: &apos;mysql&apos;,</span><br><span class="line">  host: &apos;127.0.0.1&apos;,</span><br><span class="line">  port: 3306,</span><br><span class="line">  username: &apos;用户名&apos;,</span><br><span class="line">  password: &apos;数据库密码&apos;,</span><br><span class="line">  database: &apos;learn&apos;,</span><br><span class="line">  define: &#123;</span><br><span class="line">    underscored: true, // 字段以下划线（_）来分割（默认是驼峰命名风格），underscored:true 只适用于createAt updateAt字段（这两个字段是Sequelize自动添加的），其他字段没有作用。</span><br><span class="line">    freezeTableName: true, // 禁止sequelize更改表名为复数</span><br><span class="line">    timestamps: false, // 默认情况下，Sequelize会将createdAt和updatedAt属性添加到您的模型中,个人选择在此关掉</span><br><span class="line">  &#125;,</span><br><span class="line">  hooks: &#123;</span><br><span class="line">    beforeDefine: attributes =&gt; &#123;</span><br><span class="line">      Object.keys(attributes).forEach(key =&gt; &#123;</span><br><span class="line">        if (typeof attributes[key] !== &apos;function&apos;) &#123;</span><br><span class="line">          attributes[key].field = decamelize(key);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  timezone: &apos;+08:00&apos;, // sequelize默认时区要调整为东八区</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>由于mysql推荐命名为小写字母+下划线，接口使用驼峰命名法，需要做一个转换，官方并没有提供配置，这里找了issue上提供的一个方法，加上<code>hooks</code></p>
+<p>使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const User = app.model.define(&apos;user&apos;, &#123;</span><br><span class="line">  ...</span><br><span class="line">  userAge: &#123; //由于加上hook设置后，这里会自动加上field对应user-age</span><br><span class="line">    type: INTEGER,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="8-centos7部署部分"><a href="#8-centos7部署部分" class="headerlink" title="8 centos7部署部分"></a>8 centos7部署部分</h2><blockquote>
+<p>请参考我另外几篇笔记</p>
+</blockquote>
+<ul>
+<li><a href="https://java-http.github.io/1537686246723/">centos7安装nvm</a></li>
+<li><a href="https://java-http.github.io/1553736263078/">centos7安装git</a></li>
+<li><a href="https://java-http.github.io/1553734534741/">centos7安装mysql</a></li>
+</ul>
+<blockquote>
+<p>参考链接<br><a href="https://segmentfault.com/q/1010000014181331" target="_blank" rel="noopener">segmentfault-Sequelize 字段下划线转驼峰</a><br><a href="https://github.com/sequelize/sequelize/issues/6423" target="_blank" rel="noopener">sequelize issues</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端-16-Node/" rel="tag"><i class="fa fa-tag"></i> 前端-16-Node</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/1553735719353/" rel="next" title="01-图解http">
+                <i class="fa fa-chevron-left"></i> 01-图解http
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/1554633816463/" rel="prev" title="02-你不知道的js上册">
+                02-你不知道的js上册 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="静修">
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">322</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-eslint规则修改"><span class="nav-number">1.</span> <span class="nav-text">1 eslint规则修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-如何在vscode调试代码"><span class="nav-number">2.</span> <span class="nav-text">2 如何在vscode调试代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-使用egg-redis如何存储其他类型的数据"><span class="nav-number">3.</span> <span class="nav-text">3 使用egg-redis如何存储其他类型的数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-token鉴权"><span class="nav-number">4.</span> <span class="nav-text">4 token鉴权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成token"><span class="nav-number">5.</span> <span class="nav-text">生成token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-egg-validate验证参数"><span class="nav-number">6.</span> <span class="nav-text">6 egg-validate验证参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-application-x-www-form-urlencoded"><span class="nav-number">7.</span> <span class="nav-text">6.1 application/x-www-form-urlencoded</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-application-x-www-form-urlencoded由于并不能很好地解析嵌套数据的类型，后面content-type设置为’application-json’-postman测试请用raw"><span class="nav-number">7.1.</span> <span class="nav-text">6.2 application/x-www-form-urlencoded由于并不能很好地解析嵌套数据的类型，后面content-type设置为’application/json’,postman测试请用raw</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-数据库操作"><span class="nav-number">8.</span> <span class="nav-text">7 数据库操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-centos7部署部分"><span class="nav-number">9.</span> <span class="nav-text">8 centos7部署部分</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="前端-02-js基础复习,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="第一部分1 typeof 有一个特殊的安全防范机制要为某个缺失的功能写 polyfill,如何避免重复声明变量？ 使用 typeof 判断  123if (typeof atob === &amp;quot;undefined&amp;quot;) &amp;#123; atob = function() &amp;#123; /*..*/ &amp;#125;;&amp;#125;  如果要为某个缺失的功能写polyfill（即衬垫代码或者补">
+<meta name="keywords" content="前端-02-js基础复习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="03-你不知道的js中册">
+<meta property="og:url" content="https://java-http.github.io/1560593779888/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:description" content="第一部分1 typeof 有一个特殊的安全防范机制要为某个缺失的功能写 polyfill,如何避免重复声明变量？ 使用 typeof 判断  123if (typeof atob === &amp;quot;undefined&amp;quot;) &amp;#123; atob = function() &amp;#123; /*..*/ &amp;#125;;&amp;#125;  如果要为某个缺失的功能写polyfill（即衬垫代码或者补">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-31T10:38:28.717Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="03-你不知道的js中册">
+<meta name="twitter:description" content="第一部分1 typeof 有一个特殊的安全防范机制要为某个缺失的功能写 polyfill,如何避免重复声明变量？ 使用 typeof 判断  123if (typeof atob === &amp;quot;undefined&amp;quot;) &amp;#123; atob = function() &amp;#123; /*..*/ &amp;#125;;&amp;#125;  如果要为某个缺失的功能写polyfill（即衬垫代码或者补">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'ON53N4VTIJ',
+      apiKey: '5d906b40edb561e5ed49fa3b12164e62',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索文章","hits_empty":"抱歉，没有找到结果关于: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://java-http.github.io/1560593779888/">
+
+
+
+
+
+  <title>03-你不知道的js中册 | 静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1560593779888/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">03-你不知道的js中册</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-15T18:16:17+00:00">
+                2019-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h1><h2 id="1-typeof-有一个特殊的安全防范机制"><a href="#1-typeof-有一个特殊的安全防范机制" class="headerlink" title="1 typeof 有一个特殊的安全防范机制"></a>1 typeof 有一个特殊的安全防范机制</h2><h3 id="要为某个缺失的功能写-polyfill-如何避免重复声明变量？"><a href="#要为某个缺失的功能写-polyfill-如何避免重复声明变量？" class="headerlink" title="要为某个缺失的功能写 polyfill,如何避免重复声明变量？"></a>要为某个缺失的功能写 polyfill,如何避免重复声明变量？</h3><ol>
+<li>使用 typeof 判断</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (typeof atob === &quot;undefined&quot;) &#123;</span><br><span class="line"> atob = function() &#123; /*..*/ &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果要为某个缺失的功能写polyfill（即衬垫代码或者补充代码，用来补充当前运行环境中缺失的功能），一般不会用 var atob 来声明变量 atob。如果在 if 语句中使用 var atob，声明会被提升（hoisted，参见《你不知道的<br>JavaScript（上卷）》1中的“作用域和闭包”部分）到作用域（即当前脚本或函数的作用域）的最顶层，即使 if 条件不成立也是如此（因为 atob 全局变量已经存在）。在有些浏览器中，对于一些特殊的内建全局变量（通常称为“宿主对象”，host object），这样的重复声明会报错。去掉 var 则可以防止声明被提升</p>
+</blockquote>
+<ol start="2">
+<li>检查所有全局变量是否是全局对象的属性，浏览器中的全局对象是 window。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (window.DEBUG) &#123;</span><br><span class="line"> // ..</span><br><span class="line">&#125;</span><br><span class="line">if (!window.atob) &#123;</span><br><span class="line"> // ..</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>还有一些人喜欢使用“依赖注入”（dependency injection）设计模式，就是将依赖通过参数显式地传递到函数中，</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function doSomethingCool(FeatureXYZ) &#123;</span><br><span class="line"> var helper = FeatureXYZ ||</span><br><span class="line"> function() &#123; /*.. default feature ..*/ &#125;;</span><br><span class="line"> var val = helper();</span><br><span class="line"> // ..</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-值"><a href="#2-值" class="headerlink" title="2 值"></a>2 值</h2><h3 id="2-1-怎样来判断-0-1-0-2-和-0-3-是否相等"><a href="#2-1-怎样来判断-0-1-0-2-和-0-3-是否相等" class="headerlink" title="2.1 怎样来判断 0.1 + 0.2 和 0.3 是否相等?"></a>2.1 怎样来判断 0.1 + 0.2 和 0.3 是否相等?</h3><p>最常见的方法是设置一个误差范围值，通常称为“机器精度”（machine epsilon），对 JavaScript 的数字来说，这个值通常是 2^-52 (2.220446049250313e-16)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function numbersCloseEnoughToEqual(n1,n2) &#123;</span><br><span class="line"> return Math.abs( n1 - n2 ) &lt; Number.EPSILON;</span><br><span class="line">&#125;</span><br><span class="line">var a = 0.1 + 0.2;</span><br><span class="line">var b = 0.3;</span><br><span class="line">numbersCloseEnoughToEqual( a, b ); // true</span><br><span class="line">numbersCloseEnoughToEqual( 0.0000001, 0.0000002 ); // false</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Number.EPSILON 为ES6 新增</p>
+</blockquote>
+<h3 id="2-2-整数检测"><a href="#2-2-整数检测" class="headerlink" title="2.2 整数检测"></a>2.2 整数检测</h3><p>可以使用 ES6 中的 <code>Number.isInteger(..)</code> 方法</p>
+<h3 id="2-3-按惯例我们用-void-0-来获得-undefined"><a href="#2-3-按惯例我们用-void-0-来获得-undefined" class="headerlink" title="2.3 按惯例我们用 void 0 来获得 undefined"></a>2.3 按惯例我们用 void 0 来获得 undefined</h3><p>虽然undefined在现在主流的绝大部分浏览器的全局作用域上面都是不能更改了,但是在函数作用域或者块级作用域下面还是能被重写的,当然绝大部分人应该都不会去干这种傻事,但是还是用viod 0吧,这样可以以防万一,同时也更像一个老司机的代码啊</p>
+<blockquote>
+<p><a href="https://juejin.im/post/5cc58a72e51d456e845b4289?utm_source=gold_browser_extension" target="_blank" rel="noopener">掘金-JS中的null和undefined,undefined为啥用void 0代替?</a></p>
+</blockquote>
+<h3 id="2-4-很多-JavaScript-程序都可能存在-NaN-方面的问题，所以我们应该尽量使用-Number-isNaN-这样可靠的方法，无论是系统内置还是-polyfill。"><a href="#2-4-很多-JavaScript-程序都可能存在-NaN-方面的问题，所以我们应该尽量使用-Number-isNaN-这样可靠的方法，无论是系统内置还是-polyfill。" class="headerlink" title="2.4 很多 JavaScript 程序都可能存在 NaN 方面的问题，所以我们应该尽量使用 Number.isNaN(..)这样可靠的方法，无论是系统内置还是 polyfill。"></a>2.4 很多 JavaScript 程序都可能存在 NaN 方面的问题，所以我们应该尽量使用 Number.isNaN(..)这样可靠的方法，无论是系统内置还是 polyfill。</h3><h3 id="2-5-特殊等式"><a href="#2-5-特殊等式" class="headerlink" title="2.5 特殊等式"></a>2.5 特殊等式</h3><p>ES6 中新加入了一个工具方法 Object.is(..)来判断两个值是否绝对相等，可以用来处理上述所有的特殊情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 2 / &quot;foo&quot;;</span><br><span class="line">var b = -3 * 0;</span><br><span class="line">Object.is( a, NaN ); // true</span><br><span class="line">Object.is( b, -0 ); // true</span><br><span class="line">Object.is( b, 0 ); // false</span><br></pre></td></tr></table></figure>
+<h3 id="2-6-值和引用"><a href="#2-6-值和引用" class="headerlink" title="2.6 值和引用"></a>2.6 值和引用</h3><p>简单值（即标量基本类型值，scalar primitive）总是通过值复制的方式来赋值 / 传递，包括<br>null、undefined、字符串、数字、布尔和 ES6 中的 symbol。</p>
+<p>复合值（compound value）——对象（包括数组和封装对象）和函数，则总是通过引用复制的方式来赋值 / 传递。</p>
+<h2 id="3-原生函数"><a href="#3-原生函数" class="headerlink" title="3 原生函数"></a>3 原生函数</h2><h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = new String( &quot;abc&quot; );</span><br><span class="line">typeof a; // 是&quot;object&quot;，不是&quot;String&quot;</span><br><span class="line">a instanceof String; // true</span><br><span class="line">Object.prototype.toString.call( a ); // &quot;[object String]&quot;</span><br></pre></td></tr></table></figure>
+<p>通过构造函数（如 new String(“abc”)）创建出来的是封装了基本类型值（如 “abc”）的封装对象。</p>
+<p>封 装 对 象（object wrapper） 扮 演 着 十 分 重 要 的 角 色。 由 于 基 本 类 型 值 没 有.length和 .toString()这样的属性和方法，需要通过封装对象才能访问，此时 JavaScript 会自动为基本类型值包装（box 或者 wrap）一个封装对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;abc&quot;;</span><br><span class="line">a.length; // 3</span><br><span class="line">a.toUpperCase(); // &quot;AB</span><br></pre></td></tr></table></figure>
+<p>一般情况下，我们不需要直接使用封装对象。最好的办法是让 JavaScript引擎自己决定什么时候应该使用封装对象。换句话说，就是应该优先考虑使用 “abc” 和 42 这样的基本类型值，而非 new String(“abc”) 和 newNumber(42)。</p>
+<h3 id="3-2-内部属性-Class"><a href="#3-2-内部属性-Class" class="headerlink" title="3.2 内部属性 [[Class]]"></a>3.2 内部属性 [[Class]]</h3><p>所有 typeof 返回值为 “object”的对象（如数组）都包含一个内部属性[[Class]]（我们可以把它看作一个内部的分类，而非传统的面向对象意义上的类）。这个属性无法直接访问，一般通过 Object.prototype.toString(..) 来查看。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.toString.call( [1,2,3] );</span><br><span class="line">// &quot;[object Array]&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="4-强制类型转换"><a href="#4-强制类型转换" class="headerlink" title="4 强制类型转换"></a>4 强制类型转换</h2><p>将值从一种类型转换为另一种类型通常称为类型转换（type casting），这是显式的情况；隐式的情况称为强制类型转换（coercion）。</p>
+<p>也可以这样来区分：类型转换发生在静态类型语言的编译阶段，而强制类型转换则发生在动态类型语言的运行时（runtime）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 42;</span><br><span class="line">var b = a + &quot;&quot;; // 隐式强制类型转换</span><br><span class="line">var c = String( a ); // 显式强制类型转换</span><br></pre></td></tr></table></figure>
+<h3 id="4-1-JSON-stringify"><a href="#4-1-JSON-stringify" class="headerlink" title="4.1 JSON.stringify"></a>4.1 JSON.stringify</h3><p>JSON.stringify(..) 在对象中遇到undefined、function 和 symbol时会自动将其忽略，在数组中则会返回 null（以保证单元位置不变）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">JSON.stringify( undefined ); // undefined</span><br><span class="line">JSON.stringify( function()&#123;&#125; ); // undefined</span><br><span class="line">JSON.stringify(</span><br><span class="line"> [1,undefined,function()&#123;&#125;,4]</span><br><span class="line">); // &quot;[1,null,null,4]&quot;</span><br><span class="line">JSON.stringify(</span><br><span class="line"> &#123; a:2, b:function()&#123;&#125; &#125;</span><br><span class="line">); // &quot;&#123;&quot;a&quot;:2&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-和-的作用-了解"><a href="#4-2-和-的作用-了解" class="headerlink" title="4.2 ~ 和 ~~ 的作用 (了解)"></a>4.2 ~ 和 ~~ 的作用 (了解)</h3><p>~x 大致等同于 -(x+1)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~42; // -(42+1) ==&gt; -43</span><br></pre></td></tr></table></figure>
+<p>~~x 能将值截除为一个 32 位整数，x | 0 也可以，而且看起来还更简洁</p>
+<h3 id="4-3-parseInt"><a href="#4-3-parseInt" class="headerlink" title="4.3 parseInt"></a>4.3 parseInt</h3><p>ES5 之前的 parseInt(..) 有一个坑导致了很多 bug。即如果没有第二个参数来指定转换的<br>基数（又称为 radix），parseInt(..) 会根据字符串的第一个字符来自行决定基数</p>
+<p>将第二个参数设置为 10，即可避免这个问题：</p>
+<blockquote>
+<p>从 ES5 开始 parseInt(..) 默认转换为十进制数，除非另外指定。如果你的代码需要在 ES5<br>之前的环境运行，请记得将第二个参数设置为 10</p>
+</blockquote>
+<h3 id="4-4-a-“”（隐式）和前面的-String-a-（显式）之间有一个细微的差别"><a href="#4-4-a-“”（隐式）和前面的-String-a-（显式）之间有一个细微的差别" class="headerlink" title="4.4 a + “”（隐式）和前面的 String(a)（显式）之间有一个细微的差别"></a>4.4 a + “”（隐式）和前面的 String(a)（显式）之间有一个细微的差别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;</span><br><span class="line"> valueOf: function() &#123; return 42; &#125;,</span><br><span class="line"> toString: function() &#123; return 4; &#125;</span><br><span class="line">&#125;;</span><br><span class="line">a + &quot;&quot;; // &quot;42&quot;</span><br><span class="line">String( a ); // &quot;4</span><br></pre></td></tr></table></figure>
+<p>根据ToPrimitive 抽象操作规则，a + “” 会对 a 调用 valueOf() 方法，然后通过 ToString 抽象<br>操作将返回值转换为字符串。而 String(a) 则是直接调用 ToString()</p>
+<h2 id="5-语法"><a href="#5-语法" class="headerlink" title="5 语法"></a>5 语法</h2><h3 id="5-1-语句的结果值"><a href="#5-1-语句的结果值" class="headerlink" title="5.1 语句的结果值"></a>5.1 语句的结果值</h3><p>如果你用开发控制台（或者 JavaScript REPL——read/evaluate/print/loop 工具）调试过代<br>码，应该会看到很多语句的返回值显示为 undefined，只是你可能从未探究过其中的原因。<br>其实控制台中显示的就是语句的结果值。</p>
+<p>代码块的结果值就如同一个隐式的返回，即返回最后一个语句的结果值;</p>
+<h3 id="5-2-上下文规则"><a href="#5-2-上下文规则" class="headerlink" title="5.2 上下文规则"></a>5.2 上下文规则</h3><h4 id="1-标签"><a href="#1-标签" class="headerlink" title="1 标签"></a>1 标签</h4><p>但 foo: bar() 这样奇怪的语法：叫作“标签语句”。而 JavaScript 通过标签跳转能够实现 goto的部分功能。continue 和 break 语句都可以带一个标签，因此能够像 goto 那样进行跳转。</p>
+<h3 id="5-3-运算符优先级"><a href="#5-3-运算符优先级" class="headerlink" title="5.3 运算符优先级"></a>5.3 运算符优先级</h3><h4 id="1-amp-amp-运算符先于-执行"><a href="#1-amp-amp-运算符先于-执行" class="headerlink" title="1 &amp;&amp; 运算符先于 || 执行"></a>1 &amp;&amp; 运算符先于 || 执行</h4><p>false &amp;&amp; true || true 的执行顺序如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">false &amp;&amp; true || true; // true</span><br><span class="line">(false &amp;&amp; true) || true; // true</span><br></pre></td></tr></table></figure>
+<p>&amp;&amp; 先执行，然后是 ||。</p>
+<p><strong>&amp;&amp; 运算符先于 || 执行</strong></p>
+<h4 id="2-短路"><a href="#2-短路" class="headerlink" title="2 短路"></a>2 短路</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function doSomething(opts) &#123;</span><br><span class="line"> if (opts &amp;&amp; opts.cool) &#123;</span><br><span class="line"> // .. </span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function doSomething(opts) &#123;</span><br><span class="line"> if (opts.cache || primeCache()) &#123;</span><br><span class="line"> // .. </span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-amp-amp-运算符的优先级高于-，而-的优先级又高于-。"><a href="#3-amp-amp-运算符的优先级高于-，而-的优先级又高于-。" class="headerlink" title="3 &amp;&amp; 运算符的优先级高于 ||，而 || 的优先级又高于 ? :。"></a>3 &amp;&amp; 运算符的优先级高于 ||，而 || 的优先级又高于 ? :。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a &amp;&amp; b || c ? c || b ? a : c &amp;&amp; b : a</span><br><span class="line"></span><br><span class="line">(a &amp;&amp; b || c) ? (c || b) ? a : (c &amp;&amp; b) : a</span><br></pre></td></tr></table></figure>
+<h4 id="4-关联"><a href="#4-关联" class="headerlink" title="4 关联"></a>4 关联</h4><p>(1)</p>
+<p>a ? b : c ? d : e;</p>
+<p>它的组合顺序是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a ? b : (c ? d : e)。</span><br></pre></td></tr></table></figure>
+<p>(2)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a, b, c;</span><br><span class="line">a = b = c = 42;</span><br></pre></td></tr></table></figure>
+<p>它首先执行 c = 42，然后是 b = ..，最后是 a = ..。因为是右关联，所以它实际上是这样<br>来处理的：a = (b = (c = 42))。</p>
+<p>(3)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 42;</span><br><span class="line">var b = &quot;foo&quot;;</span><br><span class="line">var c = false;</span><br><span class="line">var d = a &amp;&amp; b || c ? c || b ? a : c &amp;&amp; b : a;</span><br><span class="line">d; // 42</span><br></pre></td></tr></table></figure>
+<p>分解如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">((a &amp;&amp; b) || c) ? ((c || b) ? a : (c &amp;&amp; b)) : a</span><br></pre></td></tr></table></figure>
+<h1 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h1><h2 id="1-省点回调"><a href="#1-省点回调" class="headerlink" title="1 省点回调"></a>1 省点回调</h2><p>为了更优雅地处理错误，有些 API设计提供了分离回调（一个用于成功通知，<br>一个用于出错通知）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function success(data) &#123; </span><br><span class="line"> console.log( data ); </span><br><span class="line">&#125; </span><br><span class="line">function failure(err) &#123; </span><br><span class="line"> console.error( err ); </span><br><span class="line">&#125; </span><br><span class="line">ajax( &quot;http://some.url.1&quot;, success, failure );</span><br></pre></td></tr></table></figure>
+<h2 id="2-Node-风格"><a href="#2-Node-风格" class="headerlink" title="2 Node 风格"></a>2 Node 风格</h2><p>还有一种常见的回调模式叫作“error-first 风格”（有时候也称为“Node 风格”，因为几乎<br>所有 Node.js API都采用这种风格），其中回调的第一个参数保留用作错误对象（如果有的话）。如果成功的话，这个参数就会被清空 / 置假（后续的参数就是成功数据）。如果产生了错误结果，那么第一个参数就会被置起 / 置真（通常就不会再传递其他结果）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function response(err,data) &#123; </span><br><span class="line"> // 出错？</span><br><span class="line"> if (err) &#123; </span><br><span class="line"> console.error( err ); </span><br><span class="line"> &#125; </span><br><span class="line"> // 否则认为成功</span><br><span class="line"> else &#123; </span><br><span class="line"> console.log( data ); </span><br><span class="line"> &#125; </span><br><span class="line">&#125; </span><br><span class="line">ajax( &quot;http://some.url.1&quot;, response );</span><br></pre></td></tr></table></figure>
+<h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><blockquote>
+<p><a href="https://segmentfault.com/a/1190000010765655" target="_blank" rel="noopener">实现 JavaScript 异步方法 Promise.all</a><br><a href="https://segmentfault.com/a/1190000012925872" target="_blank" rel="noopener">从浏览器多进程到JS单线程，JS运行机制最全面的一次梳理</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端-02-js基础复习/" rel="tag"><i class="fa fa-tag"></i> 前端-02-js基础复习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/1560593709530/" rel="next" title="02-phpstorm自动加上分号">
+                <i class="fa fa-chevron-left"></i> 02-phpstorm自动加上分号
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/1560593891019/" rel="prev" title="04-微信小程序踩坑2">
+                04-微信小程序踩坑2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="静修">
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">322</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一部分"><span class="nav-number">1.</span> <span class="nav-text">第一部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-typeof-有一个特殊的安全防范机制"><span class="nav-number">1.1.</span> <span class="nav-text">1 typeof 有一个特殊的安全防范机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要为某个缺失的功能写-polyfill-如何避免重复声明变量？"><span class="nav-number">1.1.1.</span> <span class="nav-text">要为某个缺失的功能写 polyfill,如何避免重复声明变量？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-值"><span class="nav-number">1.2.</span> <span class="nav-text">2 值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-怎样来判断-0-1-0-2-和-0-3-是否相等"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 怎样来判断 0.1 + 0.2 和 0.3 是否相等?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-整数检测"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 整数检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-按惯例我们用-void-0-来获得-undefined"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 按惯例我们用 void 0 来获得 undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-很多-JavaScript-程序都可能存在-NaN-方面的问题，所以我们应该尽量使用-Number-isNaN-这样可靠的方法，无论是系统内置还是-polyfill。"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4 很多 JavaScript 程序都可能存在 NaN 方面的问题，所以我们应该尽量使用 Number.isNaN(..)这样可靠的方法，无论是系统内置还是 polyfill。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-特殊等式"><span class="nav-number">1.2.5.</span> <span class="nav-text">2.5 特殊等式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-值和引用"><span class="nav-number">1.2.6.</span> <span class="nav-text">2.6 值和引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-原生函数"><span class="nav-number">1.3.</span> <span class="nav-text">3 原生函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-内部属性-Class"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 内部属性 [[Class]]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-强制类型转换"><span class="nav-number">1.4.</span> <span class="nav-text">4 强制类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-JSON-stringify"><span class="nav-number">1.4.1.</span> <span class="nav-text">4.1 JSON.stringify</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-和-的作用-了解"><span class="nav-number">1.4.2.</span> <span class="nav-text">4.2 ~ 和 ~~ 的作用 (了解)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-parseInt"><span class="nav-number">1.4.3.</span> <span class="nav-text">4.3 parseInt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-a-“”（隐式）和前面的-String-a-（显式）之间有一个细微的差别"><span class="nav-number">1.4.4.</span> <span class="nav-text">4.4 a + “”（隐式）和前面的 String(a)（显式）之间有一个细微的差别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-语法"><span class="nav-number">1.5.</span> <span class="nav-text">5 语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-语句的结果值"><span class="nav-number">1.5.1.</span> <span class="nav-text">5.1 语句的结果值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-上下文规则"><span class="nav-number">1.5.2.</span> <span class="nav-text">5.2 上下文规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-标签"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">1 标签</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-运算符优先级"><span class="nav-number">1.5.3.</span> <span class="nav-text">5.3 运算符优先级</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-amp-amp-运算符先于-执行"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">1 &amp;&amp; 运算符先于 || 执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-短路"><span class="nav-number">1.5.3.2.</span> <span class="nav-text">2 短路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-amp-amp-运算符的优先级高于-，而-的优先级又高于-。"><span class="nav-number">1.5.3.3.</span> <span class="nav-text">3 &amp;&amp; 运算符的优先级高于 ||，而 || 的优先级又高于 ? :。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-关联"><span class="nav-number">1.5.3.4.</span> <span class="nav-text">4 关联</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二部分"><span class="nav-number">2.</span> <span class="nav-text">第二部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-省点回调"><span class="nav-number">2.1.</span> <span class="nav-text">1 省点回调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Node-风格"><span class="nav-number">2.2.</span> <span class="nav-text">2 Node 风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#promise"><span class="nav-number">2.3.</span> <span class="nav-text">promise</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

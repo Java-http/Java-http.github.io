@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="前端-13-Linux,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="1 准备工作1.1 安装docker1、使用 sudo 或 root 权限登录 Centos。 2、确保 yum 包更新到最新。 1sudo yum update 3、安装一些必要的系统工具： 1sudo yum install -y yum-utils device-mapper-persistent-data lvm2 4、添加软件源信息(设置稳定的存储库信息)： 1sudo yum-conf">
+<meta name="keywords" content="前端-13-Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="17-CentOS7 安装 Jenkins">
+<meta property="og:url" content="https://java-http.github.io/1567239414120/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:description" content="1 准备工作1.1 安装docker1、使用 sudo 或 root 权限登录 Centos。 2、确保 yum 包更新到最新。 1sudo yum update 3、安装一些必要的系统工具： 1sudo yum install -y yum-utils device-mapper-persistent-data lvm2 4、添加软件源信息(设置稳定的存储库信息)： 1sudo yum-conf">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/C0B2343F83374FA5A7C337DD551FB8E8/14680">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E22D7DCD3ADA4509919DCAB1CAD87984/14689">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CC3383824BAF4C9A9DE222275305BFDB/14767">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CDF9CFEC6ECA48B9AF5E3BA84CA11FBF/14774">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4472B62AA72D4252A86C594B15DD0698/14788">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E207FF95AE3F4557AFED3CBB94A8B547/14792">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0F3348EAE06B4DF2814AC311E22FB7B1/14800">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/1F1A381E1C3C4760BF4974C731155DC7/14807">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/EB5EFCD8E79C43FFBE699F72F862CACA/14817">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/AAE394A5A5014DEA881AD9C9EA46A225/14893">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6D73387FC18746A4B483AD433A39A20C/14828">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4DAEFC03CE6549B08D26D4E9908A9CC7/14831">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/384E51CBC6BC4D6DAD91FC71AC4925FC/14835">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6C33A4AB86B74ACAA7EA10C37F8C5581/14878">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/FF0BD3379B184032885812853983DBD4/14874">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/BCEB060A102D4111A3D74625B88F8BF8/14876">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/8CC4A881FBE44BF18927BBA5510DA50D/14887">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0FF63A247671451CAD15BD3752CAC2C6/14896">
+<meta property="og:updated_time" content="2019-10-31T10:38:28.725Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="17-CentOS7 安装 Jenkins">
+<meta name="twitter:description" content="1 准备工作1.1 安装docker1、使用 sudo 或 root 权限登录 Centos。 2、确保 yum 包更新到最新。 1sudo yum update 3、安装一些必要的系统工具： 1sudo yum install -y yum-utils device-mapper-persistent-data lvm2 4、添加软件源信息(设置稳定的存储库信息)： 1sudo yum-conf">
+<meta name="twitter:image" content="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/C0B2343F83374FA5A7C337DD551FB8E8/14680">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'ON53N4VTIJ',
+      apiKey: '5d906b40edb561e5ed49fa3b12164e62',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索文章","hits_empty":"抱歉，没有找到结果关于: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://java-http.github.io/1567239414120/">
+
+
+
+
+
+  <title>17-CentOS7 安装 Jenkins | 静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1567239414120/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">17-CentOS7 安装 Jenkins</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-31T16:16:51+00:00">
+                2019-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-13-Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-13-Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1 准备工作"></a>1 准备工作</h2><h3 id="1-1-安装docker"><a href="#1-1-安装docker" class="headerlink" title="1.1 安装docker"></a>1.1 安装docker</h3><p>1、使用 sudo 或 root 权限登录 Centos。</p>
+<p>2、确保 yum 包更新到最新。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum update</span><br></pre></td></tr></table></figure>
+<p>3、安装一些必要的系统工具：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+<p>4、添加软件源信息(设置稳定的存储库信息)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<p>5、更新 yum 缓存：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum makecache fast</span><br></pre></td></tr></table></figure>
+<p>6、安装 Docker-ce：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y install docker-ce</span><br></pre></td></tr></table></figure>
+<p>7、启动 Docker 后台服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-yum安装jdk8"><a href="#1-2-yum安装jdk8" class="headerlink" title="1.2 yum安装jdk8"></a>1.2 yum安装jdk8</h3><p>1、查看yum源中是否有相关套件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y list java*</span><br></pre></td></tr></table></figure>
+<p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/C0B2343F83374FA5A7C337DD551FB8E8/14680" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/C0B2343F83374FA5A7C337DD551FB8E8/14680"></p>
+<p>2、这里我们选择<code>java-1.8.0-openjdk-devel.x86_64</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install java-1.8.0-openjdk-devel.x86_64</span><br></pre></td></tr></table></figure>
+<p>3、修改 <code>/etc/profile</code></p>
+<p>在文件最后输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># JAVA</span><br><span class="line">JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64</span><br><span class="line">JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export JAVA_HOME</span><br><span class="line">export JRE_HOME</span><br><span class="line">export PATH</span><br><span class="line">export CLASSPATH</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E22D7DCD3ADA4509919DCAB1CAD87984/14689" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E22D7DCD3ADA4509919DCAB1CAD87984/14689"></p>
+<blockquote>
+<p>图中圆圈目录可能不一致,具体请看电脑安装目录</p>
+</blockquote>
+<p>4、更新环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+<h2 id="2-安装Jenkins"><a href="#2-安装Jenkins" class="headerlink" title="2 安装Jenkins"></a>2 安装Jenkins</h2><h3 id="2-1-Docker安装"><a href="#2-1-Docker安装" class="headerlink" title="2.1 Docker安装"></a>2.1 Docker安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">  -u root \</span><br><span class="line">  --name jenkins \</span><br><span class="line">  -d \</span><br><span class="line">  -p 8080:8080 \</span><br><span class="line">  -p 50000:50000 \</span><br><span class="line">  -v /var/jenkins-data:/var/jenkins_home \</span><br><span class="line">  -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">  jenkinsci/blueocean</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>-d</code>表示在后台运行容器（即“分离”模式）并输出容器ID  </li>
+<li><code>-v /var/jenkins-data:/var/jenkins_home</code><br>表示映射容器中的<code>/var/jenkins_home</code> 目录到<code>/var/jenkins-data</code> 的volume,这样,我们就可以不用进入<code>docker</code>容器里面查看<code>jenkins_home</code>目录,直接在本机<code>/var/jenkins-data</code>查看该目录下的文件即可</li>
+<li><code>--name jenkins</code>将容器命名<code>jenkins</code>,方便后面操作容器</li>
+</ul>
+<p>启动完成后面请看-&gt; 第三步操作 安装向导</p>
+<h3 id="2-2-其他操作"><a href="#2-2-其他操作" class="headerlink" title="2.2 其他操作"></a>2.2 其他操作</h3><h4 id="访问Jenkins-Blue-Ocean-Docker容器"><a href="#访问Jenkins-Blue-Ocean-Docker容器" class="headerlink" title="访问Jenkins / Blue Ocean Docker容器"></a>访问Jenkins / Blue Ocean Docker容器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it jenkins bash</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里的<code>jenkins</code>就是上面<code>--name jenkins</code>的设置命名</p>
+</blockquote>
+<h4 id="通过Docker日志访问Jenkins控制台日志"><a href="#通过Docker日志访问Jenkins控制台日志" class="headerlink" title="通过Docker日志访问Jenkins控制台日志"></a>通过Docker日志访问Jenkins控制台日志</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs &lt;docker-container-name&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="3-安装向导"><a href="#3-安装向导" class="headerlink" title="3 安装向导"></a>3 安装向导</h2><h3 id="3-1-解锁-Jenkins"><a href="#3-1-解锁-Jenkins" class="headerlink" title="3.1 解锁 Jenkins"></a>3.1 解锁 Jenkins</h3><p>浏览 <code>http://服务器ip:8080</code> </p>
+<p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CC3383824BAF4C9A9DE222275305BFDB/14767" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CC3383824BAF4C9A9DE222275305BFDB/14767"></p>
+<p>然后到命令窗口打印出log信息并复制密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs jenkins</span><br></pre></td></tr></table></figure>
+<p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CDF9CFEC6ECA48B9AF5E3BA84CA11FBF/14774" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/CDF9CFEC6ECA48B9AF5E3BA84CA11FBF/14774"></p>
+<p>在 <strong>解锁Jenkins</strong> 页面, 粘贴该密码到 <strong>管理员密码**</strong>输入框并点击 <strong>继续</strong></p>
+<h3 id="3-2-安装插件"><a href="#3-2-安装插件" class="headerlink" title="3.2 安装插件"></a>3.2 安装插件</h3><p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4472B62AA72D4252A86C594B15DD0698/14788" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4472B62AA72D4252A86C594B15DD0698/14788"></p>
+<p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E207FF95AE3F4557AFED3CBB94A8B547/14792" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/E207FF95AE3F4557AFED3CBB94A8B547/14792"></p>
+<p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0F3348EAE06B4DF2814AC311E22FB7B1/14800" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0F3348EAE06B4DF2814AC311E22FB7B1/14800"></p>
+<p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/1F1A381E1C3C4760BF4974C731155DC7/14807" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/1F1A381E1C3C4760BF4974C731155DC7/14807"></p>
+<h2 id="4-Coding新建个node项目"><a href="#4-Coding新建个node项目" class="headerlink" title="4 Coding新建个node项目"></a>4 Coding新建个node项目</h2><p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/EB5EFCD8E79C43FFBE699F72F862CACA/14817" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/EB5EFCD8E79C43FFBE699F72F862CACA/14817"><br><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/AAE394A5A5014DEA881AD9C9EA46A225/14893" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/AAE394A5A5014DEA881AD9C9EA46A225/14893"></p>
+<p>Jenkinsfile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">pipeline &#123;</span><br><span class="line">    agent &#123;</span><br><span class="line">        docker &#123;</span><br><span class="line">            image &apos;node:10-alpine&apos; </span><br><span class="line">            args &apos;-p 3000:3000&apos; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    stages &#123;</span><br><span class="line">        stage(&apos;yarn&apos;) &#123; </span><br><span class="line">            steps &#123;</span><br><span class="line">                sh &apos;npm i -g yarn&apos; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        stage(&apos;taro&apos;) &#123; </span><br><span class="line">            steps &#123;</span><br><span class="line">                sh &apos;yarn global add @tarojs/cli@1.3.14&apos; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        stage(&apos;install&apos;) &#123; </span><br><span class="line">            steps &#123;</span><br><span class="line">                sh &apos;yarn&apos; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        stage(&apos;build&apos;) &#123; </span><br><span class="line">            steps &#123;</span><br><span class="line">                sh &apos;npm run build:h5&apos; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-在Jenkins中创建流水线项目"><a href="#5-在Jenkins中创建流水线项目" class="headerlink" title="5 在Jenkins中创建流水线项目"></a>5 在Jenkins中创建流水线项目</h2><p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6D73387FC18746A4B483AD433A39A20C/14828" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6D73387FC18746A4B483AD433A39A20C/14828"></p>
+<p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4DAEFC03CE6549B08D26D4E9908A9CC7/14831" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/4DAEFC03CE6549B08D26D4E9908A9CC7/14831"></p>
+<p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/384E51CBC6BC4D6DAD91FC71AC4925FC/14835" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/384E51CBC6BC4D6DAD91FC71AC4925FC/14835"></p>
+<blockquote>
+<p>轮询SCM：只要SVN或Git中数据有更新，则执行构建任务  </p>
+<p>构建语法说明：</p>
+<ol>
+<li>首先格式为：<code>* * * * *</code>（五个星）；</li>
+<li>第一个<code>*</code>表示分钟，取值<code>0~59</code><br>第二个<code>*</code>表示小时，取值<code>0~23</code><br>第三个<code>*</code>表示一个月的第几天，取值<code>1~31</code><br>第四个<code>*</code>表示第几月，取值<code>1~12</code><br>第五个<code>*</code>表示一周中的第几天，取值<code>0~7</code>，其中<code>0</code>和<code>7</code>代表的都是周日  </li>
+</ol>
+</blockquote>
+<h3 id="流水线选项"><a href="#流水线选项" class="headerlink" title="流水线选项"></a>流水线选项</h3><p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6C33A4AB86B74ACAA7EA10C37F8C5581/14878" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/6C33A4AB86B74ACAA7EA10C37F8C5581/14878"></p>
+<ol>
+<li>在<strong>定义</strong>，选择 <code>Pipeline script from SCM</code> 选项。此选项指示<code>Jenkins</code>从源代码管理（SCM）仓库获取你的流水线， 这里的仓库就是你clone到本地的Git仓库</li>
+<li>在 <code>SCM</code> 域中，选择 <code>Git</code></li>
+<li>在 <code>Repository URL</code> 域中，填写你本地仓库的 目录路径</li>
+<li><p>增加一个全局凭证</p>
+<p> 全局凭证这里你可以通过密码登录,也可以通过<code>ssh</code>登录,这里我选择<code>ssh</code>,git仓库ssh设置就不在这里赘述了</p>
+</li>
+</ol>
+<p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/FF0BD3379B184032885812853983DBD4/14874" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/FF0BD3379B184032885812853983DBD4/14874"></p>
+<p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/BCEB060A102D4111A3D74625B88F8BF8/14876" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/BCEB060A102D4111A3D74625B88F8BF8/14876"></p>
+<h3 id="最后保存"><a href="#最后保存" class="headerlink" title="最后保存"></a>最后保存</h3><p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/8CC4A881FBE44BF18927BBA5510DA50D/14887" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/8CC4A881FBE44BF18927BBA5510DA50D/14887"></p>
+<h2 id="6-查看效果"><a href="#6-查看效果" class="headerlink" title="6 查看效果"></a>6 查看效果</h2><p><img src="http://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0FF63A247671451CAD15BD3752CAC2C6/14896" alt="https://note.youdao.com/yws/public/resource/10af346fc09385ed240d403979698515/xmlnote/0FF63A247671451CAD15BD3752CAC2C6/14896"></p>
+<p>总体操作下来还是比较顺利的,网上也有很多类似的文章.生成 <code>dist</code>目录后,其实还需要运行<code>scp</code>命令发送到另外一台服务器部署,有兴趣大家可以去了解下.</p>
+<blockquote>
+<p><a href="https://www.runoob.com/docker/centos-docker-install.html" target="_blank" rel="noopener">菜鸟教程-Docker安装</a><br><a href="https://docs.docker.com/install/linux/docker-ce/centos/" target="_blank" rel="noopener">Docker官网-安装</a><br><a href="https://www.cnblogs.com/ryanlamp/p/9687741.html" target="_blank" rel="noopener">博客园-jdk安装</a><br><a href="https://jenkins.io/zh/doc/tutorials/build-a-node-js-and-react-app-with-npm/" target="_blank" rel="noopener">jenkins官网-安装node项目</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端-13-Linux/" rel="tag"><i class="fa fa-tag"></i> 前端-13-Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/1567239323425/" rel="next" title="100-js按位取反">
+                <i class="fa fa-chevron-left"></i> 100-js按位取反
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/1572516897324/" rel="prev" title="105-移动端input键盘落下，页面未落下">
+                105-移动端input键盘落下，页面未落下 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="静修">
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">322</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-准备工作"><span class="nav-number">1.</span> <span class="nav-text">1 准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-安装docker"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 安装docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-yum安装jdk8"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 yum安装jdk8</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装Jenkins"><span class="nav-number">2.</span> <span class="nav-text">2 安装Jenkins</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Docker安装"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 Docker安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-其他操作"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 其他操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#访问Jenkins-Blue-Ocean-Docker容器"><span class="nav-number">2.2.1.</span> <span class="nav-text">访问Jenkins / Blue Ocean Docker容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过Docker日志访问Jenkins控制台日志"><span class="nav-number">2.2.2.</span> <span class="nav-text">通过Docker日志访问Jenkins控制台日志</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装向导"><span class="nav-number">3.</span> <span class="nav-text">3 安装向导</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-解锁-Jenkins"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 解锁 Jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-安装插件"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 安装插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Coding新建个node项目"><span class="nav-number">4.</span> <span class="nav-text">4 Coding新建个node项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-在Jenkins中创建流水线项目"><span class="nav-number">5.</span> <span class="nav-text">5 在Jenkins中创建流水线项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#流水线选项"><span class="nav-number">5.1.</span> <span class="nav-text">流水线选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后保存"><span class="nav-number">5.2.</span> <span class="nav-text">最后保存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-查看效果"><span class="nav-number">6.</span> <span class="nav-text">6 查看效果</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

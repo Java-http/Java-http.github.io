@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="前端-15-读书笔记,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="1.1 3 项 WWW 构建技术分别是: 把SGML（StandardGeneralizedMarkupLanguage，标准通用标记语言）作为页面的文本标记语言的HTML（HyperTextMarkupLanguage，超文本标记语言）； 作为文档传递协议的HTTP； 指定文档所在地址的URL（UniformResourceLocator，统一资源定位符）。  1.2 TCP/IP 的分层管理">
+<meta name="keywords" content="前端-15-读书笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01-图解http">
+<meta property="og:url" content="https://java-http.github.io/1553735719353/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:description" content="1.1 3 项 WWW 构建技术分别是: 把SGML（StandardGeneralizedMarkupLanguage，标准通用标记语言）作为页面的文本标记语言的HTML（HyperTextMarkupLanguage，超文本标记语言）； 作为文档传递协议的HTTP； 指定文档所在地址的URL（UniformResourceLocator，统一资源定位符）。  1.2 TCP/IP 的分层管理">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/0FFFFFF4301C46069D77D34D160F7C05/12889">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/1EE9531AC8354885A8287A270F773276/12902">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/C8116E9DC4924E5BBCA00A3EDB03388A/12934">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/585625065B754EB9B0B37B1DDD2EEA0F/12940">
+<meta property="og:image" content="http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/E5FCAD5BEA324A2A950805988F9557EB/13026">
+<meta property="og:updated_time" content="2019-10-31T10:38:28.717Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="01-图解http">
+<meta name="twitter:description" content="1.1 3 项 WWW 构建技术分别是: 把SGML（StandardGeneralizedMarkupLanguage，标准通用标记语言）作为页面的文本标记语言的HTML（HyperTextMarkupLanguage，超文本标记语言）； 作为文档传递协议的HTTP； 指定文档所在地址的URL（UniformResourceLocator，统一资源定位符）。  1.2 TCP/IP 的分层管理">
+<meta name="twitter:image" content="http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/0FFFFFF4301C46069D77D34D160F7C05/12889">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'ON53N4VTIJ',
+      apiKey: '5d906b40edb561e5ed49fa3b12164e62',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索文章","hits_empty":"抱歉，没有找到结果关于: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://java-http.github.io/1553735719353/">
+
+
+
+
+
+  <title>01-图解http | 静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1553735719353/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">01-图解http</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-28T09:15:35+00:00">
+                2019-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-15-读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-15-读书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-1-3-项-WWW-构建技术分别是"><a href="#1-1-3-项-WWW-构建技术分别是" class="headerlink" title="1.1 3 项 WWW 构建技术分别是:"></a>1.1 3 项 WWW 构建技术分别是:</h2><ul>
+<li>把SGML（StandardGeneralizedMarkupLanguage，标准通用标记语言）作为页面的文本标记语言的HTML（HyperTextMarkupLanguage，超文本标记语言）；</li>
+<li>作为文档传递协议的HTTP；</li>
+<li>指定文档所在地址的URL（UniformResourceLocator，统一资源定位符）。</li>
+</ul>
+<h2 id="1-2-TCP-IP-的分层管理"><a href="#1-2-TCP-IP-的分层管理" class="headerlink" title="1.2 TCP/IP 的分层管理"></a>1.2 TCP/IP 的分层管理</h2><ul>
+<li>应用层：FTP、 DNS、HTTP </li>
+<li>传输层：TCP（传输控制协议）和 UDP（用户数据报<br>协议）</li>
+<li>网络层</li>
+<li>数据链路层</li>
+</ul>
+<p><img src="http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/0FFFFFF4301C46069D77D34D160F7C05/12889" alt="image"></p>
+<p>利用 TCP/IP 协议族进行网络通信时，会通过分层顺序与对信。<strong>发送端从应用层往下走，接收端则往应用层往</strong></p>
+<h2 id="1-3-IP-协议的作用"><a href="#1-3-IP-协议的作用" class="headerlink" title="1.3 IP 协议的作用"></a>1.3 IP 协议的作用</h2><p>IP 协议的作用是把各种数据包传送给对方。而要保证确实传送到对方<br>那里，则需要满足各类条件。其中两个重要的条件是:</p>
+<ul>
+<li><p>IP 地址:节点被分配到的地址，</p>
+</li>
+<li><p>MAC<br>地址（Media Access Control Address）:指网卡所属的固定<br>地址。</p>
+</li>
+</ul>
+<h2 id="1-4-TCP三次握手"><a href="#1-4-TCP三次握手" class="headerlink" title="1.4 TCP三次握手"></a>1.4 TCP三次握手</h2><p>发送端首先发送一个带 SYN 标志的数据包给对方。接收端收到后，<br>回传一个带有 SYN/ACK 标志的数据包以示传达确认信息。最后，发送端再回传一个带 ACK 标志的数据包，代表“握手”结束。</p>
+<p><img src="http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/1EE9531AC8354885A8287A270F773276/12902" alt="image"></p>
+<h2 id="2-1-持久连接"><a href="#2-1-持久连接" class="headerlink" title="2.1 持久连接"></a>2.1 持久连接</h2><p>为解决上述 TCP 连接的问题，HTTP/1.1 和一部分的 HTTP/1.0 想出了<strong>持久连接</strong>（HTTP Persistent Connections，也称为 HTTP keep-alive 或HTTP connection reuse）的方法。持久连接的特点是，<strong>只要任意一端没有明确提出断开连接，则保持 TCP 连接状态</strong>。</p>
+<h2 id="5-1-通信数据转发程序代理"><a href="#5-1-通信数据转发程序代理" class="headerlink" title="5.1 通信数据转发程序代理"></a>5.1 通信数据转发程序代理</h2><ul>
+<li>是否使用缓存：缓存代理</li>
+<li>是否会修改报文：透明代理、非透明代理</li>
+</ul>
+<h2 id="6-1-HTTP-请求报文"><a href="#6-1-HTTP-请求报文" class="headerlink" title="6.1 HTTP 请求报文"></a>6.1 HTTP 请求报文</h2><p><img src="http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/C8116E9DC4924E5BBCA00A3EDB03388A/12934" alt="image"></p>
+<h2 id="6-2-HTTP-响应报文"><a href="#6-2-HTTP-响应报文" class="headerlink" title="6.2 HTTP 响应报文"></a>6.2 HTTP 响应报文</h2><p>在响应中，HTTP 报文由 HTTP 版本、状态码（数字和原因短语）、HTTP 首部字段 3 部分构成<br><img src="http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/585625065B754EB9B0B37B1DDD2EEA0F/12940" alt="image"></p>
+<h2 id="6-3-HTTP-首部字段根据实际用途被分为以下-4-种类型"><a href="#6-3-HTTP-首部字段根据实际用途被分为以下-4-种类型" class="headerlink" title="6.3 HTTP 首部字段根据实际用途被分为以下 4 种类型"></a>6.3 HTTP 首部字段根据实际用途被分为以下 4 种类型</h2><ul>
+<li><p><strong>通用首部字段（General Header Fields）</strong>：</p>
+<p>  请求报文和响应报文两方都会使用的</p>
+</li>
+<li><p><strong>请求首部字段（Request Header Fields）</strong></p>
+<p>  从客户端向服务器端发送请求报文时使用的首部。补充了请求的附加内容、客户端信息、响应内容相关优先级等信息。</p>
+</li>
+<li><p><strong>响应首部字段（Response Header Fields）</strong></p>
+<p>  从服务器端向客户端返回响应报文时使用的首部。补充了响应的附加内容，也会要求客户端附加额外的内容信息。</p>
+</li>
+<li><p><strong>实体首部字段（Entity Header Fields）</strong></p>
+<p>  针对请求报文和响应报文的实体部分使用的首部。补充了资源内容更新时间等与实体有关的信息。</p>
+</li>
+</ul>
+<h2 id="6-4-Cache-Control中no-cache和no-store区别"><a href="#6-4-Cache-Control中no-cache和no-store区别" class="headerlink" title="6.4 Cache-Control中no-cache和no-store区别"></a>6.4 Cache-Control中no-cache和no-store区别</h2><p>从字面意思上很容易把 no-cache 误解成为不缓存，但事实上 no-cache 代表不缓<br>存过期的资源，缓存会向源服务器进行有效期确认后处理资源，也许称为 <code>do-notserve-from-cache-without-revalidation</code> 更合适。<code>no-store</code> 才是真正地不进行缓存，请<br>读者注意区别理解。</p>
+<h2 id="6-4-请求首部字段"><a href="#6-4-请求首部字段" class="headerlink" title="6.4 请求首部字段"></a>6.4 请求首部字段</h2><ul>
+<li><p>Host</p>
+<p> 请求被发送至服务器时，请求中的主机名会用IP地址直接替换解决。但如果这时，相同的 IP地址下部署运行着多个域名，那么服务器就会无法理解究竟是哪个域名对应的请求。因此，就需要使用首部字段Host来明确指出请求的主机名。若服务器未设定主机名，那直接发送一个空值即可。</p>
+</li>
+<li><p>If-xxx</p>
+<p>  形如 If-xxx 这种样式的请求首部字段，都可称为条件请求。服务器接收到附带条件的请求后，只有判断指定条件为真时，才会执行请求</p>
+</li>
+<li><p>If-Match</p>
+<p>  请求首部 If-Match 的使用表示这是一个条件请求。在请求方法为 <code>GET</code> 和 <code>HEAD</code> 的情况下，服务器仅在请求的资源满足此首部列出的 ETag 之一时才会返回资源。而对于 <code>PUT</code> 或其他非安全方法来说，只有在满足条件的情况下才可以将资源上传</p>
+</li>
+<li><p>If-Modified-Since</p>
+<p>  If-Modified-Since 用于确认代理或客户端拥有的本地资源的有效性。获取资源的更新日期时间，可通过确认首部字段 <code>Last-Modified</code> 来确定</p>
+</li>
+</ul>
+<h2 id="6-5-响应首部字段"><a href="#6-5-响应首部字段" class="headerlink" title="6.5 响应首部字段"></a>6.5 响应首部字段</h2><ul>
+<li><p>etag</p>
+<p>  <code>Etag</code>是属于<code>HTTP 1.1</code>属性，它是由服务器生成返回给前端，当你第一次发起HTTP请求时，服务器会返回一个Etag，并在你第二次发起同一个请求时，客户端会同时发送一个<code>If-None-Match</code>，而它的值就是<code>Etag</code>的值（此处由发起请求的客户端来设置）。然后，服务器会比对这个客服端发送过来的Etag是否与服务器的相同，</p>
+<p>  如果相同，就将<code>If-None-Match</code>的值设为<code>false</code>，返回状态为<code>304</code>，客户端继续使用本地缓存，不解析服务器返回的数据（这种场景服务器也不返回数据，因为服务器的数据没有变化嘛）如果不相同，就将<code>If-None-Match</code>的值设为<code>true</code>，返回状态为<code>200</code>，客户端重新解析服务器返回的数据</p>
+</li>
+</ul>
+<h2 id="6-6-实体首部字段"><a href="#6-6-实体首部字段" class="headerlink" title="6.6 实体首部字段"></a>6.6 实体首部字段</h2><ul>
+<li><p>Allow</p>
+<p>  首部字段 Allow 用于通知客户端能够支持 Request-URI 指定资源的所有 HTTP 方法。当服务器接收到不支持的 HTTP 方法时，会以状态码405 Method Not Allowed 作为响应返回。与此同时，还会把所有能支持的 HTTP 方法写入首部字段 Allow 后返回。</p>
+</li>
+<li><p>Content-Encoding</p>
+<p>  主要采用以下 4 种内容编码的方式。</p>
+<ul>
+<li>gzip</li>
+<li>compress</li>
+<li>deflate</li>
+<li>identity</li>
+</ul>
+</li>
+<li><p>Expires</p>
+<p> 当首部字段 Cache-Control 有指定 max-age 指令时，比起首部字段 Expires，会优先处理 max-age 指令。</p>
+</li>
+</ul>
+<h2 id="6-7-为-Cookie-服务的首部字段"><a href="#6-7-为-Cookie-服务的首部字段" class="headerlink" title="6.7 为 Cookie 服务的首部字段"></a>6.7 为 Cookie 服务的首部字段</h2><table>
+<thead>
+<tr>
+<th>首部字段名</th>
+<th>说明</th>
+<th>首部类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set-Cookie</td>
+<td>开始状态管理所使用的Cookie信息</td>
+<td>响应首部字段</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>服务器接收到的Cookie信息</td>
+<td>请求首部字段</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-1-HTTP-的缺点"><a href="#7-1-HTTP-的缺点" class="headerlink" title="7.1 HTTP 的缺点"></a>7.1 HTTP 的缺点</h2><ul>
+<li>通信使用明文（不加密），内容可能会被窃听</li>
+<li>不验证通信方的身份，因此有可能遭遇伪装</li>
+<li>无法证明报文的完整性，所以有可能已遭篡改：(中间人攻击)</li>
+</ul>
+<h2 id="7-2-HTTP-加密-认证-完整性保护-HTTPS"><a href="#7-2-HTTP-加密-认证-完整性保护-HTTPS" class="headerlink" title="7.2 HTTP+ 加密 + 认证 + 完整性保护=HTTPS"></a>7.2 HTTP+ 加密 + 认证 + 完整性保护=HTTPS</h2><p>通常，HTTP 直接和 TCP 通信。当使用 SSL时，则演变成先和 SSL通信，再由 SSL和 TCP 通信了。简言之，所谓 HTTPS，其实就是身披SSL协议这层外壳的 HTTP</p>
+<p><img src="http://note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/E5FCAD5BEA324A2A950805988F9557EB/13026" alt="image"></p>
+<p>SSL是独立于 HTTP 的协议，所以不光是 HTTP 协议，其他运行在应用层的 SMTP 和 Telnet 等协议均可配合 SSL协议使用。可以说 SSL是当今世界上应用最为广泛的网络安全技术</p>
+<h2 id="7-3-相互交换密钥的公开密钥加密技术"><a href="#7-3-相互交换密钥的公开密钥加密技术" class="headerlink" title="7.3 相互交换密钥的公开密钥加密技术"></a>7.3 相互交换密钥的公开密钥加密技术</h2><ul>
+<li><strong>共享密钥加密的困境</strong>：在互联网上转发密钥时，如果通信被监听那么密钥就可会落入攻击者之手，同时也就失去了加密的意义</li>
+<li><p><strong>使用两把密钥的公开密钥加密</strong>：</p>
+<p>  公开密钥加密使用一对非对称的密钥。一把叫做私有密钥（private key），另一把叫做公开密钥（public key）。顾名思义，私有密钥不能让其他任何人知道，而公开密钥则可以随意发布，任何人都可以获得</p>
+<p>  使用公开密钥加密方式，发送密文的一方使用对方的公开密钥进行加密处理，对方收到被加密的信息后，再使用自己的私有密钥进行解密。利用这种方式，不需要发送用来解密的私有密钥，也不必担心密钥被攻击者窃听而盗走</p>
+</li>
+</ul>
+<h2 id="7-4-HTTPS-采用混合加密机制"><a href="#7-4-HTTPS-采用混合加密机制" class="headerlink" title="7.4 HTTPS 采用混合加密机制"></a>7.4 HTTPS 采用混合加密机制</h2><p>HTTPS 采用共享密钥加密和公开密钥加密两者并用的混合加密机制。若密钥能够实现安全交换，那么有可能会考虑仅使用公开密钥加密来通信。但是公开密钥加密与共享密钥加密相比，其处理速度要慢。</p>
+<p>所以应充分利用两者各自的优势，将多种方法组合起来用于通信。在交换密钥环节使用公开密钥加密方式，之后的建立通信交换报文阶段则使用共享密钥加密方式。</p>
+<h2 id="8-补充"><a href="#8-补充" class="headerlink" title="8 补充"></a>8 补充</h2><blockquote>
+<p><a href="https://mp.weixin.qq.com/s/KwO5izk6j5uOC2KcHusIvA" target="_blank" rel="noopener">白话TCP为什么需要进行三次握手</a><br><a href="https://segmentfault.com/a/1190000011172823" target="_blank" rel="noopener">浅析HTTP/2的多路复用</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端-15-读书笔记/" rel="tag"><i class="fa fa-tag"></i> 前端-15-读书笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/1553734534741/" rel="next" title="14-centos7安装mysql">
+                <i class="fa fa-chevron-left"></i> 14-centos7安装mysql
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/1553734461076/" rel="prev" title="01-egg小试">
+                01-egg小试 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="静修">
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">322</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-3-项-WWW-构建技术分别是"><span class="nav-number">1.</span> <span class="nav-text">1.1 3 项 WWW 构建技术分别是:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-TCP-IP-的分层管理"><span class="nav-number">2.</span> <span class="nav-text">1.2 TCP/IP 的分层管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-IP-协议的作用"><span class="nav-number">3.</span> <span class="nav-text">1.3 IP 协议的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-TCP三次握手"><span class="nav-number">4.</span> <span class="nav-text">1.4 TCP三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-持久连接"><span class="nav-number">5.</span> <span class="nav-text">2.1 持久连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-通信数据转发程序代理"><span class="nav-number">6.</span> <span class="nav-text">5.1 通信数据转发程序代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-HTTP-请求报文"><span class="nav-number">7.</span> <span class="nav-text">6.1 HTTP 请求报文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-HTTP-响应报文"><span class="nav-number">8.</span> <span class="nav-text">6.2 HTTP 响应报文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-HTTP-首部字段根据实际用途被分为以下-4-种类型"><span class="nav-number">9.</span> <span class="nav-text">6.3 HTTP 首部字段根据实际用途被分为以下 4 种类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-Cache-Control中no-cache和no-store区别"><span class="nav-number">10.</span> <span class="nav-text">6.4 Cache-Control中no-cache和no-store区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-请求首部字段"><span class="nav-number">11.</span> <span class="nav-text">6.4 请求首部字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-5-响应首部字段"><span class="nav-number">12.</span> <span class="nav-text">6.5 响应首部字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-6-实体首部字段"><span class="nav-number">13.</span> <span class="nav-text">6.6 实体首部字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-7-为-Cookie-服务的首部字段"><span class="nav-number">14.</span> <span class="nav-text">6.7 为 Cookie 服务的首部字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-HTTP-的缺点"><span class="nav-number">15.</span> <span class="nav-text">7.1 HTTP 的缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-HTTP-加密-认证-完整性保护-HTTPS"><span class="nav-number">16.</span> <span class="nav-text">7.2 HTTP+ 加密 + 认证 + 完整性保护=HTTPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-相互交换密钥的公开密钥加密技术"><span class="nav-number">17.</span> <span class="nav-text">7.3 相互交换密钥的公开密钥加密技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-HTTPS-采用混合加密机制"><span class="nav-number">18.</span> <span class="nav-text">7.4 HTTPS 采用混合加密机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-补充"><span class="nav-number">19.</span> <span class="nav-text">8 补充</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

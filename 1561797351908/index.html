@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="前端-01-切图CSS,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="时隔两月,vscode prettier的设置已经更改,所以重新记录下  1 vscode安装插件prettier和stylelint1.1 下载地址 stylelint Prettier Formatter for Visual Studio Code  1.2 配置在 /.vscode/settings.json 增加配置,这样做是为了同步项目中的配置，当然，你可以在全局设置中设置  附带v">
+<meta name="keywords" content="前端-01-切图CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="37-vscode配置stylelint">
+<meta property="og:url" content="https://java-http.github.io/1561797351908/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:description" content="时隔两月,vscode prettier的设置已经更改,所以重新记录下  1 vscode安装插件prettier和stylelint1.1 下载地址 stylelint Prettier Formatter for Visual Studio Code  1.2 配置在 /.vscode/settings.json 增加配置,这样做是为了同步项目中的配置，当然，你可以在全局设置中设置  附带v">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2019/06/29/5d166774ed0c588040.gif">
+<meta property="og:updated_time" content="2019-10-31T10:38:28.725Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="37-vscode配置stylelint">
+<meta name="twitter:description" content="时隔两月,vscode prettier的设置已经更改,所以重新记录下  1 vscode安装插件prettier和stylelint1.1 下载地址 stylelint Prettier Formatter for Visual Studio Code  1.2 配置在 /.vscode/settings.json 增加配置,这样做是为了同步项目中的配置，当然，你可以在全局设置中设置  附带v">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/29/5d166774ed0c588040.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'ON53N4VTIJ',
+      apiKey: '5d906b40edb561e5ed49fa3b12164e62',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索文章","hits_empty":"抱歉，没有找到结果关于: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://java-http.github.io/1561797351908/">
+
+
+
+
+
+  <title>37-vscode配置stylelint | 静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1561797351908/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">37-vscode配置stylelint</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-29T16:35:48+00:00">
+                2019-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>时隔两月,vscode prettier的设置已经更改,所以重新记录下</p>
+</blockquote>
+<h2 id="1-vscode安装插件prettier和stylelint"><a href="#1-vscode安装插件prettier和stylelint" class="headerlink" title="1 vscode安装插件prettier和stylelint"></a>1 vscode安装插件prettier和stylelint</h2><h3 id="1-1-下载地址"><a href="#1-1-下载地址" class="headerlink" title="1.1 下载地址"></a>1.1 下载地址</h3><ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint&amp;ssr=false#review-details" target="_blank" rel="noopener">stylelint</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="noopener">Prettier Formatter for Visual Studio Code</a></li>
+</ul>
+<h3 id="1-2-配置"><a href="#1-2-配置" class="headerlink" title="1.2 配置"></a>1.2 配置</h3><p>在 <code>/.vscode/settings.json</code> 增加配置,这样做是为了同步项目中的配置，当然，你可以在全局设置中设置</p>
+<blockquote>
+<p>附带vscode eslint配置如下 <code>^_^</code></p>
+</blockquote>
+<p>settings.json：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// eslint 设置</span><br><span class="line">&quot;eslint.validate&quot;: [</span><br><span class="line">  &quot;html&quot;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;language&quot;: &quot;vue&quot;,</span><br><span class="line">    &quot;autoFix&quot;: true</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;language&quot;: &quot;javascript&quot;,</span><br><span class="line">    &quot;autoFix&quot;: true</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;language&quot;: &quot;javascriptreact&quot;,</span><br><span class="line">    &quot;autoFix&quot;: true</span><br><span class="line">  &#125;</span><br><span class="line">],</span><br><span class="line">&quot;eslint.autoFixOnSave&quot;: true,</span><br><span class="line">/* prettier配置遵循eslint规则 */</span><br><span class="line">&quot;prettier.jsxSingleQuote&quot;: true,</span><br><span class="line">&quot;prettier.semi&quot;: false,</span><br><span class="line"></span><br><span class="line">// stylelint配置</span><br><span class="line">&quot;stylelint.enable&quot;: true,</span><br><span class="line">&quot;css.validate&quot;: false,</span><br><span class="line">&quot;less.validate&quot;: false,</span><br><span class="line">&quot;scss.validate&quot;: false,</span><br><span class="line">&quot;[scss]&quot;: &#123;</span><br><span class="line">  &quot;editor.formatOnSave&quot;: true</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-项目安装相应依赖包"><a href="#2-项目安装相应依赖包" class="headerlink" title="2 项目安装相应依赖包"></a>2 项目安装相应依赖包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add --dev stylelint-config-prettier stylelint-prettier</span><br><span class="line"></span><br><span class="line">yarn add prettier --dev --exact</span><br></pre></td></tr></table></figure>
+<p>然后,在根目录加上<code>.stylelintrc.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  processors: [],</span><br><span class="line">  plugins: [],</span><br><span class="line">  extends: [&quot;stylelint-prettier/recommended&quot;],</span><br><span class="line">  rules: &#123;</span><br><span class="line">    // 取消某些规则如下:</span><br><span class="line">    &quot;unit-case&quot;: null,</span><br><span class="line">    &quot;rule-empty-line-before&quot;: null,</span><br><span class="line">    &quot;comment-empty-line-before&quot;: null,</span><br><span class="line">    &quot;declaration-block-trailing-semicolon&quot;: null,</span><br><span class="line">    &quot;selector-type-no-unknown&quot;: null</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>最后,加上忽略文件<code>.prettierignore</code>和<code>.prettierignore</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node_modules</span><br><span class="line">dist</span><br></pre></td></tr></table></figure>
+<p><strong>至此，设置完毕！~</strong></p>
+<p><img src="https://i.loli.net/2019/06/29/5d166774ed0c588040.gif" alt></p>
+<h2 id="3-taro项目单位PX大写自动格式化成小写问题"><a href="#3-taro项目单位PX大写自动格式化成小写问题" class="headerlink" title="3 taro项目单位PX大写自动格式化成小写问题"></a>3 taro项目单位PX大写自动格式化成小写问题</h2><p>在 <code>Taro</code> 中尺寸单位建议使用 <code>px</code>、 百分比 <code>%</code>，<code>Taro</code> 默认会对所有单位进行转换。当前忽略单个属性的最简单的方法，就是 <code>px</code> 单位使用大写字母<code>Px</code> or <code>PX</code>。</p>
+<p>由于我们之前已经设置<code>prettier</code>插件自动格式化<code>[scss]</code>文件，导致写<code>PX</code>会被自动格式化成小写<code>px</code></p>
+<p>如何避免这个问题，只要在上面写<code>/* prettier-ignore */</code>即可避免自动格式化成小写字母</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* prettier-ignore */</span><br><span class="line">height: 44PX;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考文章<br><a href="https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint&amp;ssr=false#review-details" target="_blank" rel="noopener">stylelint插件</a><br><a href="https://prettier.io/docs/en/integrating-with-linters.html" target="_blank" rel="noopener">文档-prettier与Linters集成</a><br><a href="https://juejin.im/post/5b4ffd1ef265da0f990d52e8" target="_blank" rel="noopener">掘金-css代码规范工具stylelint</a><br><a href="https://juejin.im/post/5c85fe6ff265da2d8410ba74" target="_blank" rel="noopener">掘金-VScode下搭配ESLint、TSLint、stylelint的代码检查配方</a><br><a href="https://juejin.im/post/5a791d566fb9a0634853400e" target="_blank" rel="noopener">掘金-vscode + prettier 专治代码洁癖（一）</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端-01-切图CSS/" rel="tag"><i class="fa fa-tag"></i> 前端-01-切图CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/1561797262994/" rel="next" title="36-vscode配置csscomb">
+                <i class="fa fa-chevron-left"></i> 36-vscode配置csscomb
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/1567237937554/" rel="prev" title="97-Object.create">
+                97-Object.create <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="静修">
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">322</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-vscode安装插件prettier和stylelint"><span class="nav-number">1.</span> <span class="nav-text">1 vscode安装插件prettier和stylelint</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-下载地址"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 下载地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-配置"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-项目安装相应依赖包"><span class="nav-number">2.</span> <span class="nav-text">2 项目安装相应依赖包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-taro项目单位PX大写自动格式化成小写问题"><span class="nav-number">3.</span> <span class="nav-text">3 taro项目单位PX大写自动格式化成小写问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

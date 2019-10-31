@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="静修-个人博客">
+<meta property="og:url" content="https://java-http.github.io/page/10/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="静修-个人博客">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'ON53N4VTIJ',
+      apiKey: '5d906b40edb561e5ed49fa3b12164e62',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索文章","hits_empty":"抱歉，没有找到结果关于: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://java-http.github.io/page/10/">
+
+
+
+
+
+  <title>静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1539825746123/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1539825746123/" itemprop="url">08-zsh环境变量</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T09:22:23+00:00">
+                2018-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-14-Mac/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-14-Mac</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Mac配置环境变量的地方"><a href="#Mac配置环境变量的地方" class="headerlink" title="Mac配置环境变量的地方"></a>Mac配置环境变量的地方</h1><h2 id="一、-etc-profile-（建议不修改这个文件-）"><a href="#一、-etc-profile-（建议不修改这个文件-）" class="headerlink" title="一、/etc/profile （建议不修改这个文件 ）"></a>一、/etc/profile （建议不修改这个文件 ）</h2><p>全局（公有）配置，不管是哪个用户，登录时都会读取该文件。</p>
+<h2 id="二、-etc-bashrc-（一般在这个文件中添加系统级环境变量）"><a href="#二、-etc-bashrc-（一般在这个文件中添加系统级环境变量）" class="headerlink" title="二、/etc/bashrc （一般在这个文件中添加系统级环境变量）"></a>二、/etc/bashrc （一般在这个文件中添加系统级环境变量）</h2><p>全局（公有）配置，bash shell执行时，不管是何种方式，都会读取此文件。</p>
+<h2 id="三、-bash-profile-（一般在这个文件中添加用户级环境变量）"><a href="#三、-bash-profile-（一般在这个文件中添加用户级环境变量）" class="headerlink" title="三、~/.bash_profile （一般在这个文件中添加用户级环境变量）"></a>三、~/.bash_profile （一般在这个文件中添加用户级环境变量）</h2><p>每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该文件仅仅执行一次!<br>但是有时在.bash_profile 文件中的环境变量并没有起到作用<br>这时可以查看使用的Mac OS X是什么样的Shell</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ echo $SHELL</span><br><span class="line">/bin/zsh</span><br></pre></td></tr></table></figure>
+<p>四、当mac上安装了zsh后，修改环境变量就需要在~/.zshrc中修改，比如加入代理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export http_prox=http://10.199.75.12:8080</span><br><span class="line">export https_proxy=http://10.199.75.12:8080</span><br></pre></td></tr></table></figure>
+<p>如果想要修改立即生效，需要执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1539825575235/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1539825575235/" itemprop="url">19-jq跳出each循环</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T09:19:39+00:00">
+                2018-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-03-jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-03-jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="jQuery中each的用法之退出循环和结束本次循环"><a href="#jQuery中each的用法之退出循环和结束本次循环" class="headerlink" title="jQuery中each的用法之退出循环和结束本次循环"></a>jQuery中each的用法之退出循环和结束本次循环</h2><p>jQuery中each类似于javascript的for循环 </p>
+<p>但不同于for循环的是在each里面不能使用break结束循环，也不能使用continue来结束本次循环，想要实现类似的功能就只能用return,</p>
+<p>break           用return false</p>
+<p>continue      用return ture</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1539825484090/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1539825484090/" itemprop="url">16-jq写插件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T09:18:14+00:00">
+                2018-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-03-jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-03-jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="https://www.cnblogs.com/freeliver54/p/4835728.html?tvd" target="_blank" rel="noopener">link</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1539825420740/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1539825420740/" itemprop="url">18-vue的事件传参</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T09:17:08+00:00">
+                2018-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-08-vue/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-08-vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="vue的事件传参"><a href="#vue的事件传参" class="headerlink" title="vue的事件传参"></a>vue的事件传参</h1><h2 id="1-Vue的-click-”doXX”-和-click-“doXX-”有什么区别？"><a href="#1-Vue的-click-”doXX”-和-click-“doXX-”有什么区别？" class="headerlink" title="1. Vue的@click=”doXX” 和 @click = “doXX()”有什么区别？"></a>1. Vue的@click=”doXX” 和 @click = “doXX()”有什么区别？</h2><p>不带括号会传进来一个事件对象，带括号的不会</p>
+<h2 id="2-子组件会将数据自动作为参数传给父组件的回调函数-可是如果我们想在回调函数传其他的参数值怎么传呢？"><a href="#2-子组件会将数据自动作为参数传给父组件的回调函数-可是如果我们想在回调函数传其他的参数值怎么传呢？" class="headerlink" title="2. 子组件会将数据自动作为参数传给父组件的回调函数,可是如果我们想在回调函数传其他的参数值怎么传呢？"></a>2. 子组件会将数据自动作为参数传给父组件的回调函数,可是如果我们想在回调函数传其他的参数值怎么传呢？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;json-editor @change=&quot;onSettingChange(arg，arguments)&quot;&gt;&lt;/json-editor&gt;</span><br></pre></td></tr></table></figure>
+<p>这样子组件传来的参数值可以通过<code>arguments</code>这个数组读取，多余的参数则按照一般的方式传值即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">onSettingChange：function （arg，data）&#123;</span><br><span class="line"></span><br><span class="line">    里面的arg是一般的传值，</span><br><span class="line">    </span><br><span class="line">    data[0]里面是子组件传过来的数据</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://blog.csdn.net/orq18810575870/article/details/82027539" target="_blank" rel="noopener">vue中自定义事件回调函数传参</a> <a href="https://www.zhihu.com/question/49533859" target="_blank" rel="noopener">知乎</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1539825335014/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1539825335014/" itemprop="url">07-mac安装java</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T09:15:45+00:00">
+                2018-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-14-Mac/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-14-Mac</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>上<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html" target="_blank" rel="noopener">官网</a>下载</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1538099094626/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1538099094626/" itemprop="url">32-CSS postion中z-index负值的应用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T09:44:52+00:00">
+                2018-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://blog.csdn.net/lihefei_coder/article/details/72869065" target="_blank" rel="noopener">CSDN</a><br><a href="https://juejin.im/post/5ba4efe36fb9a05cf52ac192" target="_blank" rel="noopener">掘金</a></p>
+<p>从层叠的底部开始，共有七种层叠顺序：</p>
+<ol>
+<li>背景和边框：形成层叠上下文的元素的背景和边框。</li>
+<li>负z-index值：层叠上下文内有着负z-index值的定位子元素，负的越大层叠等级越低；</li>
+<li>块级盒：文档流中块级、非定位子元素；</li>
+<li>浮动盒：非定位浮动元素；</li>
+<li>行内盒：文档流中行内、非定位子元素；</li>
+<li>z-index: 0：z-index为0或auto的定位元素， 这些元素形成了新的层叠上下文；</li>
+<li>正z-index值：z-index 为正的定位元素，正的越大层叠等级越高；</li>
+</ol>
+<p><img src="https://image.zhangxinxu.com/image/blog/201601/2016-01-07_235108.png" alt="image"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1538095950893/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1538095950893/" itemprop="url">22-用心前端命名规范探讨</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T08:52:40+00:00">
+                2018-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-00-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-00-基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="用心前端命名规范探讨"><a href="#用心前端命名规范探讨" class="headerlink" title="用心前端命名规范探讨"></a>用心前端命名规范探讨</h1><h2 id="一、命名规则（英文-直译）"><a href="#一、命名规则（英文-直译）" class="headerlink" title="一、命名规则（英文-直译）"></a>一、命名规则（英文-直译）</h2><h3 id="1、文件命名"><a href="#1、文件命名" class="headerlink" title="1、文件命名"></a>1、文件命名</h3><p>文件夹/文件的命名统一用小写<br>保证项目有良好的可移植性，可跨平台<br><a href="http://www.ruanyifeng.com/blog/2017/02/filename-should-be-lowercase.html" target="_blank" rel="noopener">相关参考</a></p>
+<h3 id="2、文件引用路径"><a href="#2、文件引用路径" class="headerlink" title="2、文件引用路径"></a>2、文件引用路径</h3><p>因为文件命名统一小写，引用也需要注意大小写问题</p>
+<h3 id="3、js变量"><a href="#3、js变量" class="headerlink" title="3、js变量"></a>3、js变量</h3><h4 id="3-1-变量"><a href="#3-1-变量" class="headerlink" title="3.1 变量"></a>3.1 变量</h4><p>命名方式：小驼峰</p>
+<p>命名规范：前缀名词</p>
+<p>命名建议：语义化</p>
+<p>案例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 友好</span><br><span class="line"></span><br><span class="line">let maxCount = 10; </span><br><span class="line"></span><br><span class="line">let tableTitle = &apos;LoginTable&apos;;</span><br><span class="line"></span><br><span class="line">// 不友好</span><br><span class="line"></span><br><span class="line">let setCount = 10;</span><br><span class="line"></span><br><span class="line">let getTitle = &apos;LoginTable&apos;;</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-2-常量"><a href="#3-2-常量" class="headerlink" title="3.2 常量"></a>3.2 常量</h4><p>命名方式：全部大写</p>
+<p>命名规范：使用大写字母和下划线来组合命名，下划线用以分割单词</p>
+<p>命名建议：语义化</p>
+<p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const MAX_COUNT = 10;</span><br><span class="line"></span><br><span class="line">const URL = &apos;http://www.foreverz.com&apos;;</span><br></pre></td></tr></table></figure>
+<h4 id="3-3-函数"><a href="#3-3-函数" class="headerlink" title="3.3 函数"></a>3.3 函数</h4><p>命名方式：小驼峰式命名法。</p>
+<p>命名规范：前缀应当为动词。</p>
+<p>命名建议：语义化</p>
+<p>可以参考如下的动作</p>
+<table>
+<thead>
+<tr>
+<th>动词</th>
+<th>含义</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>can</td>
+<td>判断是否可执行某个动作(权限)    函数返回一个布尔值。</td>
+<td>true：可执行；false：不可执行</td>
+</tr>
+<tr>
+<td>has</td>
+<td>判断是否含有某个值    函数返回一个布尔值。</td>
+<td>true：含有此值；false：不含有此值</td>
+</tr>
+<tr>
+<td>is</td>
+<td>判断是否为某个值    函数返回一个布尔值。</td>
+<td>true：为某个值；false：不为某个值</td>
+</tr>
+<tr>
+<td>get</td>
+<td>获取某个值</td>
+<td>函数返回一个非布尔值</td>
+</tr>
+<tr>
+<td>set</td>
+<td>设置某个值</td>
+<td>无返回值、返回是否设置成功或者返回链式对象</td>
+</tr>
+<tr>
+<td>load</td>
+<td>加载某些数据</td>
+<td>无返回值或者返回是否加载完成的结果</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 是否可阅读</span><br><span class="line">function canRead(): boolean &#123;</span><br><span class="line">  return true;</span><br><span class="line">&#125;</span><br><span class="line">// 获取名称</span><br><span class="line">function getName(): string &#123;</span><br><span class="line">  return this.name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-4-类、构造函数"><a href="#3-4-类、构造函数" class="headerlink" title="3.4 类、构造函数"></a>3.4 类、构造函数</h4><p>命名方式：大驼峰式命名法，首字母大写</p>
+<p>命名规范：前缀为名称。</p>
+<p>命名建议：语义化</p>
+<p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">  public name: string;</span><br><span class="line">  constructor(name) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">const person = new Person(&apos;mevyn&apos;);</span><br></pre></td></tr></table></figure>
+<p><strong>公共属性和方法</strong>：跟变量和函数的命名一样。</p>
+<p><strong>私有属性和方法</strong>：前缀为_(下划线)，后面跟公共属性和方法一样的命名方式。</p>
+<p>案例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">  private _name: string;</span><br><span class="line">  constructor() &#123; &#125;</span><br><span class="line">  // 公共方法</span><br><span class="line">  getName() &#123;</span><br><span class="line">    return this._name;</span><br><span class="line">  &#125;</span><br><span class="line">  // 公共方法</span><br><span class="line">  setName(name) &#123;</span><br><span class="line">    this._name = name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">const person = new Person();</span><br><span class="line">person.setName(&apos;mervyn&apos;);</span><br><span class="line">person.getName(); // -&gt;mervyn</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-5-css（class、id）命名规则BEM"><a href="#3-5-css（class、id）命名规则BEM" class="headerlink" title="3.5 css（class、id）命名规则BEM"></a>3.5 css（class、id）命名规则BEM</h4><p>（1）class命名使用BEM其实是块（block）、元素（element）、修饰符（modifier）的缩写，利用不同的区块，功能以及样式来给元素命名。这三个部分使用__与–连接（这里用两个而不是一个是为了留下用于块儿的命名）。<br>命名约定的模式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.block&#123;&#125;</span><br><span class="line">.block__element&#123;&#125;</span><br><span class="line">.block--modifier&#123;&#125;</span><br><span class="line"></span><br><span class="line">block 代表了更高级别的抽象或组件</span><br><span class="line">block__element 代表 block 的后代，用于形成一个完整的 block 的整体</span><br><span class="line">block--modifier代表 block 的不同状态或不同版本</span><br></pre></td></tr></table></figure>
+<p>（2）id一般不参与样式，命名的话使用驼峰，如果是给js调用钩子就需要设置为js_xxxx的方式</p>
+<h2 id="二、注释"><a href="#二、注释" class="headerlink" title="二、注释"></a>二、注释</h2><h3 id="1-单行注释"><a href="#1-单行注释" class="headerlink" title="1.单行注释"></a>1.单行注释</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 这个函数的执行条件，执行结果大概说明</span><br><span class="line">dosomthing()</span><br></pre></td></tr></table></figure>
+<h3 id="2-多行注释"><a href="#2-多行注释" class="headerlink" title="2.多行注释"></a>2.多行注释</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* xxxx  描述较多的时候可以使用多行注释</span><br><span class="line">* xxxx</span><br><span class="line">*/</span><br><span class="line">dosomthing();</span><br></pre></td></tr></table></figure>
+<h3 id="3-函数-方法-注释-参考jsdoc"><a href="#3-函数-方法-注释-参考jsdoc" class="headerlink" title="3.函数(方法)注释 参考jsdoc"></a>3.函数(方法)注释 参考<a href="http://www.css88.com/doc/jsdoc/about-commandline.html" target="_blank" rel="noopener">jsdoc</a></h3><table>
+<thead>
+<tr>
+<th>header 1</th>
+<th>header 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>row 1 col 1</td>
+<td>row 1 col 2</td>
+</tr>
+<tr>
+<td>row 2 col 1</td>
+<td>row 2 col 2</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>注释名</th>
+<th>语法</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@param</td>
+<td>@param 参数名 {参数类型} 描述信息</td>
+<td>描述参数的信息</td>
+<td>@param name {String} 传入名称</td>
+</tr>
+<tr>
+<td>@return @return {返回类型} 描述信息</td>
+<td>描述返回值的信息</td>
+<td>@return {Boolean}</td>
+<td>true:可执行;false:不可执行</td>
+</tr>
+<tr>
+<td>@author</td>
+<td>@author 作者信息 [附属信息：如邮箱、日期]</td>
+<td>描述此函数作者的信息</td>
+<td>@author 张三 2015/07/21</td>
+</tr>
+<tr>
+<td>@version</td>
+<td>@version XX.XX.XX</td>
+<td>描述此函数的版本号</td>
+<td>@version 1.0.3</td>
+</tr>
+<tr>
+<td>@example</td>
+<td>@example 示例代码</td>
+<td>演示函数的使用</td>
+<td>@example setTitle(‘测试’)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="三、组件"><a href="#三、组件" class="headerlink" title="三、组件"></a>三、组件</h2><p>组件一般情况下是可以拆成基础/ui部分和业务部分，基础组件一般是承载呈现，基础功能，不和业务耦合部分。<br>业务组件一般包含业务功能业务特殊数据等等</p>
+<h3 id="1-UI组件-基础组件"><a href="#1-UI组件-基础组件" class="headerlink" title="1 UI组件/基础组件"></a>1 UI组件/基础组件</h3><p>开发的时候注意可拓展性，支持数据传参进行渲染，支持插槽slot</p>
+<p>设置有mixin，mixin中放了基础信息和方法</p>
+<h3 id="2-容器组件"><a href="#2-容器组件" class="headerlink" title="2 容器组件"></a>2 容器组件</h3><p>和当前业务耦合性比较高，由多个基础组件组成，可承载当前页的业务接口请求和数据(vuex)</p>
+<h3 id="3-组件存放位置"><a href="#3-组件存放位置" class="headerlink" title="3 组件存放位置"></a>3 组件存放位置</h3><p>（1）ui组件存放在src/components/ 中<br>包含xxx.vue和 xxmixin.js 和 readme.md</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">xxx.vue 表示ui部分</span><br><span class="line">xxmixin.js 表示js部分</span><br><span class="line">readme.md 中描述组件的基本信息</span><br></pre></td></tr></table></figure>
+<h3 id="4-组件通讯"><a href="#4-组件通讯" class="headerlink" title="4 组件通讯"></a>4 组件通讯</h3><p>避免数据的分发源混乱，不建议使用eventBus控制数据，应使用props来和$emit来数据分发和传送</p>
+<p>同级组件的通讯一般会有一个中间容器组件作为桥梁</p>
+<p>容器组件作为数据的接受和分发点</p>
+<h2 id="四、codeReview"><a href="#四、codeReview" class="headerlink" title="四、codeReview"></a>四、codeReview</h2><h3 id="1-规则"><a href="#1-规则" class="headerlink" title="1 规则"></a>1 规则</h3><p>所有影响到以往流程的功能需求更改发版前都需要codeReview</p>
+<h3 id="2-执行者"><a href="#2-执行者" class="headerlink" title="2 执行者"></a>2 执行者</h3><p>初级程序员可由中级程序员的执行codeReview<br>中级程序员可由高级程序员执行codeReview<br>以此类推</p>
+<h3 id="3-反馈"><a href="#3-反馈" class="headerlink" title="3 反馈"></a>3 反馈</h3><p>每次codereView都需要有反馈，要对本次codeReview负责</p>
+<hr>
+<p>参考链接</p>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000016445088" target="_blank" rel="noopener">前端小团队建设</a></li>
+<li><a href="https://juejin.im/post/5b6ad6b0e51d4519171766e2?utm_source=gold_browser_extension" target="_blank" rel="noopener">[前端开发]–分享个人习惯的命名方式</a></li>
+<li><a href="http://www.runoob.com/w3cnote/front-end-standards.html" target="_blank" rel="noopener">一些前端书写规范建议</a></li>
+<li><a href="http://www.alloyteam.com/2011/10/css-on-team-naming/" target="_blank" rel="noopener">关于团队合作的css命名规范</a></li>
+<li><a href="https://juejin.im/post/599ececb5188252423583c27" target="_blank" rel="noopener">人人网FED-HTML/CSS/JS编码规范-</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1538095934940/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1538095934940/" itemprop="url">06-gulp报错日志</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T08:40:40+00:00">
+                2018-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-06-gulp/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-06-gulp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="https://blog.csdn.net/shu580231/article/details/79258296" target="_blank" rel="noopener">链接</a></p>
+</blockquote>
+<p>gulp有一个插件，gulp-util，用来打印日志，看具体什么地方出错了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/ 合并，压缩文件</span><br><span class="line">    gulp.task(&apos;scripts&apos;,[&apos;copy&apos;], function() &#123;</span><br><span class="line">        gulp.src(&apos;./dist/js/page/**/*.js&apos;)</span><br><span class="line">            .pipe(sourcemaps.init())</span><br><span class="line">            .pipe(uglify(&#123;</span><br><span class="line">                mangle:true,</span><br><span class="line">                compress: true</span><br><span class="line">            &#125;</span><br><span class="line">            ))</span><br><span class="line">            .on(&apos;error&apos;, function (err) &#123;</span><br><span class="line">                gutil.log(gutil.colors.red(&apos;[Error]&apos;), err.toString());</span><br><span class="line">            &#125;)</span><br><span class="line">            .pipe(sourcemaps.write(&apos;../maps&apos;))</span><br><span class="line">            .pipe(gulp.dest(&apos;./dist/js/page&apos;));</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537688683000/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1537688683000/" itemprop="url">用心前后端开发模式探讨</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-26T09:58:10+00:00">
+                2018-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-00-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-00-基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-基于后端MVC的传统架构"><a href="#1-基于后端MVC的传统架构" class="headerlink" title="1 基于后端MVC的传统架构"></a>1 基于后端MVC的传统架构</h1><p>由于公司的项目之前是MVC架构，前端项目写在view层，辅以后端的模版嵌套</p>
+<h2 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h2><ul>
+<li>项目由后端统筹，包括css，img，js等静态文件，布局模版，版本控制，便于后端理解</li>
+<li>有利于SE0</li>
+<li>适合PC端</li>
+<li>适合小型项目快速开发</li>
+</ul>
+<h2 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h2><ul>
+<li>不能做到前端模块化，需借助 sea.js 此类模块化js</li>
+<li>压缩，合并前端资源，需借助 gulp 等node构建工具</li>
+<li>冗余代码较多</li>
+</ul>
+<h1 id="2-前端工程化"><a href="#2-前端工程化" class="headerlink" title="2 前端工程化"></a>2 前端工程化</h1><blockquote>
+<p>以vue-cli搭建SPA的项目为例 </p>
+</blockquote>
+<h2 id="优点：-1"><a href="#优点：-1" class="headerlink" title="优点："></a>优点：</h2><p>作为目前流行的开发模式，有着下面的优点：</p>
+<ul>
+<li>模块化开发(js,css)</li>
+<li>组件化:传统项目更多是封装成插件使用</li>
+<li>更好的压缩合并前端资源</li>
+<li>方便使用es6等前沿技术开发</li>
+<li>适合手机应用开发</li>
+<li>更好的处理复杂应用</li>
+</ul>
+<h2 id="缺点：-1"><a href="#缺点：-1" class="headerlink" title="缺点："></a>缺点：</h2><ul>
+<li>需掌握的知识更多，对开发有技术要求</li>
+<li>单页SPA开发，不利于SEO搜索</li>
+</ul>
+<h1 id="3-前后端对接的一些注意点："><a href="#3-前后端对接的一些注意点：" class="headerlink" title="3 前后端对接的一些注意点："></a>3 前后端对接的一些注意点：</h1><h3 id="3-1-请求状态码："><a href="#3-1-请求状态码：" class="headerlink" title="3.1 请求状态码："></a>3.1 请求状态码：</h3><p>请求状态码需要统一，每个状态码需要明确代表什么意思，方便前端判断。</p>
+<p>比如：错误码的定义同HTTP请求状态码一样,对接者能通过系统定义的错误码,快速了解接口返回错误信息，方便排查错误原因。</p>
+<p>比如：在需要用户权限的系统中，如果判断该用户未登录或者登录状态丢失，可返回一个指定的状态码，方便前端请求拦截。</p>
+<h3 id="3-2-使用工具测试，推荐PostMan"><a href="#3-2-使用工具测试，推荐PostMan" class="headerlink" title="3.2 使用工具测试，推荐PostMan"></a>3.2 使用工具测试，推荐PostMan</h3><h3 id="3-3-token验证机制"><a href="#3-3-token验证机制" class="headerlink" title="3.3 token验证机制"></a>3.3 token验证机制</h3><p>用户验证机制，推荐用token验证。<br>关于token验证的过程，请看<a href="https://www.cnblogs.com/muziyun1992/p/6760931.html" target="_blank" rel="noopener">链接</a></p>
+<h3 id="3-4-遇到涉及安全的字段传递，需考虑签名匹配"><a href="#3-4-遇到涉及安全的字段传递，需考虑签名匹配" class="headerlink" title="3.4 遇到涉及安全的字段传递，需考虑签名匹配"></a>3.4 遇到涉及安全的字段传递，需考虑签名匹配</h3><h1 id="4-个人观点："><a href="#4-个人观点：" class="headerlink" title="4 个人观点："></a>4 个人观点：</h1><ul>
+<li>PC端项目重SE0,小型项目可采用第一种模式</li>
+<li>后台项目，手机端项目可采用第二种模式</li>
+</ul>
+<p>无论选择哪种模式，前期开发的时候，规范一定要先制定好，最好先写个共同开发准则</p>
+<hr>
+<p>参考链接</p>
+<ul>
+<li><a href="https://github.com/ruanyf/jstraining/blob/master/docs/history.md" target="_blank" rel="noopener">前端开发的历史和趋势-阮一峰</a></li>
+<li><a href="https://www.jianshu.com/p/1fe4d27ebcf1" target="_blank" rel="noopener">为什么要前后端分离？有什么优缺点？</a></li>
+<li><a href="https://segmentfault.com/a/1190000016226284" target="_blank" rel="noopener">前端工程化</a></li>
+<li><a href="https://juejin.im/post/5a2cf50651882510b27550ba" target="_blank" rel="noopener">再谈前后端分离</a></li>
+<li><a href="https://juejin.im/post/5a5dd832518825732472321b" target="_blank" rel="noopener">告别是为了彼此变得更好—SPA 前后端彻底分离的探索之路</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537688534488/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1537688534488/" itemprop="url">31-nth-of-type与nth-child</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-23T15:48:06+00:00">
+                2018-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="https://www.cnblogs.com/pssp/p/5991029.html" target="_blank" rel="noopener">彻底理解nth-child和nth-of-type的区别</a></p>
+<p><a href="https://www.zhangxinxu.com/wordpress/2011/06/css3%E9%80%89%E6%8B%A9%E5%99%A8nth-child%E5%92%8Cnth-of-type%E4%B9%8B%E9%97%B4%E7%9A%84%E5%B7%AE%E5%BC%82/" target="_blank" rel="noopener">CSS3选择器:nth-child和:nth-of-type之间的差异</a></p>
+</blockquote>
+<ul>
+<li><p>nth-child：按照个数来算。</p>
+</li>
+<li><p>nth-of-type： 按照类型来计算，如果是class那么碰到不同类型的，单独一类，符合条件的选中。</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="静修">
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">322</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

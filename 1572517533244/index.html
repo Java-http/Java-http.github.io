@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="前端-12-微信小程序,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="本文记录Taro开发H5项目中存在的一些问题,不局限于Taro本身,其他方面的问题也记录在此  1  设置镜像源mirror-config-chinamirror-config-china 会在 npm用户配置文件(~/.npmrc)写入一系列镜像配置,包括registry=https://registry.npmjs.org,如果你想切换到官方npm源,请用命令npm config set r">
+<meta name="keywords" content="前端-12-微信小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="05-Taro开发微信H5记录">
+<meta property="og:url" content="https://java-http.github.io/1572517533244/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:description" content="本文记录Taro开发H5项目中存在的一些问题,不局限于Taro本身,其他方面的问题也记录在此  1  设置镜像源mirror-config-chinamirror-config-china 会在 npm用户配置文件(~/.npmrc)写入一系列镜像配置,包括registry=https://registry.npmjs.org,如果你想切换到官方npm源,请用命令npm config set r">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://camo.githubusercontent.com/b3ec116d2d58ab81986773633ad49c8cb324c28a/68747470733a2f2f692e6c6f6c692e6e65742f323031392f30392f32342f76426d62616b736c4c4b41397453432e676966">
+<meta property="og:updated_time" content="2019-10-31T10:38:28.717Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="05-Taro开发微信H5记录">
+<meta name="twitter:description" content="本文记录Taro开发H5项目中存在的一些问题,不局限于Taro本身,其他方面的问题也记录在此  1  设置镜像源mirror-config-chinamirror-config-china 会在 npm用户配置文件(~/.npmrc)写入一系列镜像配置,包括registry=https://registry.npmjs.org,如果你想切换到官方npm源,请用命令npm config set r">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/b3ec116d2d58ab81986773633ad49c8cb324c28a/68747470733a2f2f692e6c6f6c692e6e65742f323031392f30392f32342f76426d62616b736c4c4b41397453432e676966">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'ON53N4VTIJ',
+      apiKey: '5d906b40edb561e5ed49fa3b12164e62',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索文章","hits_empty":"抱歉，没有找到结果关于: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://java-http.github.io/1572517533244/">
+
+
+
+
+
+  <title>05-Taro开发微信H5记录 | 静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1572517533244/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">05-Taro开发微信H5记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-31T18:25:36+00:00">
+                2019-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-12-微信小程序/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-12-微信小程序</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>本文记录Taro开发H5项目中存在的一些问题,不局限于Taro本身,其他方面的问题也记录在此</p>
+</blockquote>
+<h2 id="1-设置镜像源"><a href="#1-设置镜像源" class="headerlink" title="1  设置镜像源"></a>1  设置镜像源</h2><h3 id="mirror-config-china"><a href="#mirror-config-china" class="headerlink" title="mirror-config-china"></a>mirror-config-china</h3><p><a href="https://www.npmjs.com/package/mirror-config-china" target="_blank" rel="noopener">mirror-config-china</a> 会在 <code>npm</code>用户配置文件(<code>~/.npmrc</code>)写入一系列镜像配置,包括<code>registry=https://registry.npmjs.org</code>,<br>如果你想切换到官方npm源,请用命令<code>npm config set registry https://registry.npmjs.org</code></p>
+<blockquote>
+<p>如果你项目中用的<code>yarn</code>,那么<code>mirror-config-china</code>这个包好像就没啥用了,因为<code>yarn</code>修改配置是用的<code>.yarnrc</code>,而不是<code>.npmrc</code></p>
+</blockquote>
+<h2 id="2-内置环境变量"><a href="#2-内置环境变量" class="headerlink" title="2 内置环境变量"></a>2 内置环境变量</h2><h3 id="process-env-TARO-ENV"><a href="#process-env-TARO-ENV" class="headerlink" title="process.env.TARO_ENV"></a>process.env.TARO_ENV</h3><ul>
+<li><code>weapp</code></li>
+<li><code>swan</code></li>
+<li><code>alipay</code></li>
+<li><code>h5</code></li>
+<li><code>rn</code></li>
+<li><code>tt</code></li>
+<li><code>qq</code></li>
+<li><code>quickapp</code></li>
+</ul>
+<h2 id="3-小程序原生作用域获取"><a href="#3-小程序原生作用域获取" class="headerlink" title="3 小程序原生作用域获取"></a>3 小程序原生作用域获取</h2><p>一般我们需要获取 <code>Taro</code> 的页面和组件所对应的小程序原生页面和组件的实例，这个时候我们可以通过 <code>this.$scope</code> 就能访问到它们。</p>
+<blockquote>
+<p><a href="https://taro-docs.jd.com/taro/docs/relations.html" target="_blank" rel="noopener">官网文档</a></p>
+</blockquote>
+<h2 id="4-eslint调整"><a href="#4-eslint调整" class="headerlink" title="4 eslint调整"></a>4 eslint调整</h2><h3 id="4-1-项目调整"><a href="#4-1-项目调整" class="headerlink" title="4.1 项目调整"></a>4.1 项目调整</h3><p>主要将<code>config</code>以及mobx <code>componentWillReact</code> 加入顺序中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&quot;react/sort-comp&quot;: [</span><br><span class="line">  1,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;order&quot;: [</span><br><span class="line">      &quot;/^config$/&quot;,</span><br><span class="line">      &quot;static-methods&quot;,</span><br><span class="line">      &quot;lifecycle&quot;,</span><br><span class="line">      &quot;everything-else&quot;,</span><br><span class="line">      &quot;render&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;groups&quot;: &#123;</span><br><span class="line">      &quot;lifecycle&quot;: [</span><br><span class="line">        &quot;displayName&quot;,</span><br><span class="line">        &quot;propTypes&quot;,</span><br><span class="line">        &quot;contextTypes&quot;,</span><br><span class="line">        &quot;childContextTypes&quot;,</span><br><span class="line">        &quot;mixins&quot;,</span><br><span class="line">        &quot;statics&quot;,</span><br><span class="line">        &quot;defaultProps&quot;,</span><br><span class="line">        &quot;constructor&quot;,</span><br><span class="line">        &quot;getDefaultProps&quot;,</span><br><span class="line">        &quot;state&quot;,</span><br><span class="line">        &quot;getInitialState&quot;,</span><br><span class="line">        &quot;getChildContext&quot;,</span><br><span class="line">        &quot;getDerivedStateFromProps&quot;,</span><br><span class="line">        &quot;componentWillMount&quot;,</span><br><span class="line">        &quot;UNSAFE_componentWillMount&quot;,</span><br><span class="line">        &quot;componentWillReact&quot;,</span><br><span class="line">        &quot;componentDidMount&quot;,</span><br><span class="line">        &quot;componentWillReceiveProps&quot;,</span><br><span class="line">        &quot;UNSAFE_componentWillReceiveProps&quot;,</span><br><span class="line">        &quot;shouldComponentUpdate&quot;,</span><br><span class="line">        &quot;componentWillUpdate&quot;,</span><br><span class="line">        &quot;UNSAFE_componentWillUpdate&quot;,</span><br><span class="line">        &quot;getSnapshotBeforeUpdate&quot;,</span><br><span class="line">        &quot;componentDidUpdate&quot;,</span><br><span class="line">        &quot;componentDidCatch&quot;,</span><br><span class="line">        &quot;componentWillUnmount&quot;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-自定义eslint规则"><a href="#4-2-自定义eslint规则" class="headerlink" title="4.2 自定义eslint规则"></a>4.2 自定义eslint规则</h3><p>由于<code>Taro</code>里的组件都是开头大写字母，由此我们可以写一条<code>eslint</code>规则来自动转首字母大写。<br><a href="https://github.com/Java-http/eslint-plugin-linklink" target="_blank" rel="noopener">github地址</a></p>
+<p><img src="https://camo.githubusercontent.com/b3ec116d2d58ab81986773633ad49c8cb324c28a/68747470733a2f2f692e6c6f6c692e6e65742f323031392f30392f32342f76426d62616b736c4c4b41397453432e676966" alt="https://camo.githubusercontent.com/b3ec116d2d58ab81986773633ad49c8cb324c28a/68747470733a2f2f692e6c6f6c692e6e65742f323031392f30392f32342f76426d62616b736c4c4b41397453432e676966"></p>
+<h2 id="5-stylelint配置"><a href="#5-stylelint配置" class="headerlink" title="5 stylelint配置"></a>5 stylelint配置</h2><blockquote>
+<p><a href="https://note.youdao.com/ynoteshare1/index.html?id=e92e2d5a61bb90484372cc85a14165ae&amp;type=note" target="_blank" rel="noopener">参考我另外一篇文章</a></p>
+</blockquote>
+<h2 id="6-双向绑定设置"><a href="#6-双向绑定设置" class="headerlink" title="6 双向绑定设置"></a>6 双向绑定设置</h2><p>由于<code>Taro</code>不能像小程序<code>setData{&#39;a.b.c&#39;:value}</code>设置<code>key</code>数据路径的形式,这里写了一个方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">const mergeWith = require(&apos;./lodash.mergewith&apos;)</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * input绑定事件</span><br><span class="line"> *</span><br><span class="line"> * @example</span><br><span class="line"> * `onInput=&#123;handleInput.bind(this, &quot;a.b.c&quot;)&#125;`</span><br><span class="line"> *</span><br><span class="line"> * @tutorial https://github.com/NervJS/taro/issues/2642</span><br><span class="line"> */</span><br><span class="line">export function handleInput(keyName, event) &#123;</span><br><span class="line">  let value = event.detail.value</span><br><span class="line"></span><br><span class="line">  let arr = keyName.split(&quot;.&quot;)</span><br><span class="line">  let key = arr.shift()</span><br><span class="line">  let obj = this.state[key]</span><br><span class="line"></span><br><span class="line">  if(!arr.length)&#123;</span><br><span class="line">    this.setState(&#123; [key]: value &#125;)</span><br><span class="line">    return value</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  let reverseArr=arr.reverse()</span><br><span class="line">  let sourceObj=&#123;&#125;</span><br><span class="line">  let tmp=&#123;&#125;</span><br><span class="line">  for (let i = 0; i &lt; reverseArr.length; i++) &#123;</span><br><span class="line">    if(i==0)&#123;</span><br><span class="line">      tmp[arr[i]]=value</span><br><span class="line">      sourceObj=tmp</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      sourceObj=&#123;&#125;</span><br><span class="line">      sourceObj[arr[i]]=tmp</span><br><span class="line">      tmp=sourceObj</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * @see</span><br><span class="line">   * https://www.lodashjs.com/docs/latest#_mergewithobject-sources-customizer</span><br><span class="line">   * </span><br><span class="line">   */</span><br><span class="line">  function customizer(objValue, srcValue) &#123;</span><br><span class="line">    if(Array.isArray(objValue))&#123;</span><br><span class="line">      return srcValue</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  let re=mergeWith(&#123;&#125;,obj,sourceObj,customizer)</span><br><span class="line"></span><br><span class="line">  this.setState(&#123; [key]: re &#125;)</span><br><span class="line"></span><br><span class="line">  return value</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用方法:<code>onInput={handleInput.bind(this, &quot;a.b.c&quot;)}</code>,这样就可以设置<code>this.state.a.b.c</code>的值了</p>
+<h2 id="7-Taro更新问题"><a href="#7-Taro更新问题" class="headerlink" title="7 Taro更新问题"></a>7 Taro更新问题</h2><ol>
+<li><code>windows</code>系统建议使用管理员权限运行<code>cmd</code>窗口  </li>
+<li>建议 <code>npm i -g @tarojs/cli@latest</code> 更新,不使用 <code>taro update self(试过两次均不成功)</code></li>
+</ol>
+<h2 id="8-微信公众号相关问题"><a href="#8-微信公众号相关问题" class="headerlink" title="8 微信公众号相关问题"></a>8 微信公众号相关问题</h2><ol>
+<li><a href="http://note.youdao.com/noteshare?id=60d5bf4b2f1809886cc9bbaa94ff6f78&amp;sub=DF7FD923BD2D4926949719245FF9580E" target="_blank" rel="noopener">101-webpack怎么使用微信sdk</a></li>
+<li>微信公众号登录:跳转认证页时<code>redirect_uri</code>参数必须<code>encodeURIComponent</code>转码</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getAppId(showLoading).then(appid =&gt; &#123;</span><br><span class="line">  // redirect_uri参数必须encodeURIComponent转码</span><br><span class="line">  var url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=$&#123;appid&#125;&amp;redirect_uri=$&#123;encodeURIComponent(window.location.href)&#125;&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=$&#123;Math.floor(Math.random()*1000)&#125;#wechat_redirect`</span><br><span class="line">  window.location.replace(url)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="9-H5页面使用HOC-无法触发componentDidShow"><a href="#9-H5页面使用HOC-无法触发componentDidShow" class="headerlink" title="9 H5页面使用HOC,无法触发componentDidShow"></a>9 H5页面使用HOC,无法触发componentDidShow</h2><blockquote>
+<p>目前，在h5端实现HOC的componentDidShow会比较麻烦。由于router只触发了页面组件的componentDidShow，换句话说，只会触发最外层的组件的componentDidShow，所以需要手动在最外层高阶组件的componentDidShow中手动调用子组件对应的生命周期。<br>– <a href="https://github.com/NervJS/taro/issues/3537" target="_blank" rel="noopener">issues</a></p>
+</blockquote>
+<p><strong>HOC组件:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function title(iTitle=&apos;&apos;) &#123;</span><br><span class="line">  return function (WrappedComponent)&#123;</span><br><span class="line">    return class extends Component&#123;</span><br><span class="line">      static displayName=`title($&#123;WrappedComponent.displayName&#125;)`</span><br><span class="line"></span><br><span class="line">      componentDidShow()&#123;</span><br><span class="line">        tryToCall(this.wrappedRef.componentDidShow, this.wrappedRef)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      render()&#123;</span><br><span class="line">        return &lt;WrappedComponent ref=&#123;ref =&gt; &#123; this.wrappedRef = ref &#125;&#125; &#123;...this.props&#125; /&gt;</span><br><span class="line">      &#125; </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>tryToCall.js</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 尝试调用函数</span><br><span class="line"> * </span><br><span class="line"> * @param &#123;function&#125; func 调用的函数</span><br><span class="line"> * @param &#123;any&#125; ctx 调用上下文</span><br><span class="line"> * @param  &#123;...any&#125; args 函数调用参数</span><br><span class="line"> * @returns &#123;any&#125; returnValue</span><br><span class="line"> */</span><br><span class="line">export const tryToCall = (func, ctx = null, ...args) =&gt; &#123;</span><br><span class="line">  if (!func) return</span><br><span class="line">  if (ctx) &#123;</span><br><span class="line">    return func.apply(ctx, args)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    return func(...args)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意,如果使用了<code>Mobx</code>,请将HOC组件设置在最外层<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; @title(&quot;课程详情&quot;) // 请将HOC组件设置在最外层</span><br><span class="line">&gt; @inject(&apos;loginStore&apos;,&apos;userStore&apos;)</span><br><span class="line">&gt; @observer</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端-12-微信小程序/" rel="tag"><i class="fa fa-tag"></i> 前端-12-微信小程序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/1572517491549/" rel="next" title="10-git删除本地分支和删除远程分支">
+                <i class="fa fa-chevron-left"></i> 10-git删除本地分支和删除远程分支
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="静修">
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">322</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-设置镜像源"><span class="nav-number">1.</span> <span class="nav-text">1  设置镜像源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mirror-config-china"><span class="nav-number">1.1.</span> <span class="nav-text">mirror-config-china</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-内置环境变量"><span class="nav-number">2.</span> <span class="nav-text">2 内置环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#process-env-TARO-ENV"><span class="nav-number">2.1.</span> <span class="nav-text">process.env.TARO_ENV</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-小程序原生作用域获取"><span class="nav-number">3.</span> <span class="nav-text">3 小程序原生作用域获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-eslint调整"><span class="nav-number">4.</span> <span class="nav-text">4 eslint调整</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-项目调整"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 项目调整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-自定义eslint规则"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 自定义eslint规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-stylelint配置"><span class="nav-number">5.</span> <span class="nav-text">5 stylelint配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-双向绑定设置"><span class="nav-number">6.</span> <span class="nav-text">6 双向绑定设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Taro更新问题"><span class="nav-number">7.</span> <span class="nav-text">7 Taro更新问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-微信公众号相关问题"><span class="nav-number">8.</span> <span class="nav-text">8 微信公众号相关问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-H5页面使用HOC-无法触发componentDidShow"><span class="nav-number">9.</span> <span class="nav-text">9 H5页面使用HOC,无法触发componentDidShow</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

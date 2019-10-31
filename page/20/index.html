@@ -1,0 +1,2565 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="静修-个人博客">
+<meta property="og:url" content="https://java-http.github.io/page/20/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="静修-个人博客">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'ON53N4VTIJ',
+      apiKey: '5d906b40edb561e5ed49fa3b12164e62',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索文章","hits_empty":"抱歉，没有找到结果关于: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://java-http.github.io/page/20/">
+
+
+
+
+
+  <title>静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537686699529/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1537686699529/" itemprop="url">17-列表函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+00:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-07-scss</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>列表函数主要包括一些对列表参数的函数使用，主要包括以下几种：</p>
+<ul>
+<li>length($list)：返回一个列表的长度值；</li>
+<li>nth($list, $n)：返回一个列表中指定的某个标签值</li>
+<li>join($list1, $list2, [$separator])：将两个列给连接在一起，变成一个列表；</li>
+<li>append($list1, $val, [$separator])：将某个值放在列表的最后；</li>
+<li>zip($lists…)：将几个列表结合成一个多维的列表；</li>
+<li><p>index($list, $value)：返回一个值在列表中的位置值。</p>
+<p>列表函数中的每个函数都有其独特的作用与功能，接下来我们通过命令终端向大家展示每个列表函数的功能与使用。</p>
+</li>
+</ul>
+<h2 id="length-函数"><a href="#length-函数" class="headerlink" title="length()函数"></a>length()函数</h2><p>length() 函数主要用来返回一个列表中有几个值，简单点说就是返回列表清单中有多少个值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; length(10px)</span><br><span class="line">1</span><br><span class="line">&gt;&gt; length(10px 20px (border 1px solid) 2em)</span><br><span class="line">4</span><br><span class="line">&gt;&gt; length(border 1px solid)</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>==length() 函数中的列表参数之间使用空格隔开，不能使用逗号，否则函数将会出错：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; length(10px,20px,(border 1px solid),2em)</span><br><span class="line">SyntaxError: wrong number of arguments (4 for 1) for `length&apos;</span><br><span class="line">&gt;&gt; length(1,2px)</span><br><span class="line">SyntaxError: wrong number of arguments (2 for 1) for `length&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="nth-函数"><a href="#nth-函数" class="headerlink" title="nth()函数"></a>nth()函数</h2><p>语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nth($list,$n)</span><br></pre></td></tr></table></figure>
+<p>nth() 函数用来指定列表中某个位置的值。不过在 Sass 中，nth() 函数和其他语言不同，1 是指列表中的第一个标签值，2 是指列给中的第二个标签值，依此类推。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; nth(10px 20px 30px,1)</span><br><span class="line">10px</span><br><span class="line">&gt;&gt; nth((Helvetica,Arial,sans-serif),2)</span><br><span class="line">&quot;Arial&quot;</span><br><span class="line">&gt;&gt; nth((1px solid red) border-top green,1)</span><br><span class="line">(1px &quot;solid&quot; #ff0000)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注：在 nth($list,$n) 函数中的 $n 必须是大于 0 的整数：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; nth((1px solid red) border-top green 1 ,0)</span><br><span class="line">SyntaxError: List index 0 must be a non-zero integer for `nth&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="join-函数"><a href="#join-函数" class="headerlink" title="join()函数"></a>join()函数</h2><p>join() 函数是将两个列表连接合并成一个列表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; join(10px 20px, 30px 40px)</span><br><span class="line">(10px 20px 30px 40px)</span><br><span class="line">&gt;&gt; join((blue,red),(#abc,#def))</span><br><span class="line">(#0000ff, #ff0000, #aabbcc, #ddeeff)</span><br><span class="line">&gt;&gt; join((blue,red),(#abc #def))</span><br><span class="line">(#0000ff, #ff0000, #aabbcc, #ddeeff)</span><br></pre></td></tr></table></figure>
+<p>不过 join() ==只能将两个列表==连接成一个列表，如果直接连接两个以上的列表将会报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; join((blue red),(#abc, #def),(#dee #eff))</span><br><span class="line">SyntaxError: $separator: (#ddeeee #eeffff) is not a string for `join&apos;</span><br></pre></td></tr></table></figure>
+<p>但很多时候不只碰到两个列表连接成一个列表，这个时候就需要将多个 join() 函数合并在一起使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; join((blue red), join((#abc #def),(#dee #eff)))</span><br><span class="line">(#0000ff #ff0000 #aabbcc #ddeeff #ddeeee #eeffff)</span><br></pre></td></tr></table></figure>
+<p>在 join() 函数中还有一个很特别的参数 $separator，这个参数主要是用来给列表函数连接列表值是，使用的分隔符号，默认值为 auto。</p>
+<p>join() 函数中 $separator 除了默认值 auto 之外，还有 comma 和 space 两个值，其中 comma 值指定列表中的列表项值之间使用逗号（,）分隔，space 值指定列表中的列表项值之间使用空格（ ）分隔。</p>
+<p>在 join() 函数中除非明确指定了 $separator值，否则将会有多种情形发生：</p>
+<p>如果列表中的第一个列表中每个值之间使用的是逗号（,），那么 join() 函数合并的列表中每个列表项之间使用逗号,分隔：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; join((blue, red, #eff),(green orange))</span><br><span class="line">(#0000ff, #ff0000, #eeffff, #008000, #ffa500)</span><br></pre></td></tr></table></figure>
+<p>但当第一个列表中只有一个列表项，那么 join() 函数合并的列表项目中每个列表项目这间使用的分隔符号会根据第二个列表项中使用的，如果第二列表项中使用是,分隔，则使用逗号分隔；如果第二列项之间使用的空格符，则使用空格分隔：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; join(blue,(green, orange))</span><br><span class="line">(#0000ff, #008000, #ffa500)</span><br><span class="line">&gt;&gt; join(blue,(green orange))</span><br><span class="line">(#0000ff #008000 #ffa500)</span><br></pre></td></tr></table></figure>
+<p>如果列表中的第一个列表中每个值之间使用的是空格，那么 join() 函数合并的列表中每个列表项之间使用空格分隔：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; join((blue green),(red,orange))</span><br><span class="line">(#0000ff #008000 #ff0000 #ffa500)</span><br><span class="line">&gt;&gt; join((blue green),(red orange))</span><br><span class="line">(#0000ff #008000 #ff0000 #ffa500)</span><br></pre></td></tr></table></figure>
+<p>如果当两个列表中的列表项小于1时，将会以空格分隔：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; join(blue,red)</span><br><span class="line">(#0000ff #ff0000)</span><br></pre></td></tr></table></figure>
+<p>如此一来，会有多种情形发生，造成使用混乱的情形，如果你无法记得，什么时候会是用逗号分隔合并的列表项，什么时候是使用空格分隔合并 的列表项，在些建议大家使用 join() 函数合并列表项的时候就明确指定 $separator 参数，用来指定合并的列表中使用什么方式来分隔列表项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; join(blue,red,comma)</span><br><span class="line">(#0000ff, #ff0000)</span><br><span class="line">&gt;&gt; join(blue,red,space)</span><br><span class="line">(#0000ff #ff0000)</span><br><span class="line">&gt;&gt; join((blue green),(red,orange),comma)</span><br><span class="line">(#0000ff, #008000, #ff0000, #ffa500)</span><br><span class="line">&gt;&gt; join((blue green),(red,orange),space)</span><br><span class="line">(#0000ff #008000 #ff0000 #ffa500)</span><br><span class="line">&gt;&gt; join((blue, green),(red,orange),comma)</span><br><span class="line">(#0000ff, #008000, #ff0000, #ffa500)</span><br><span class="line">&gt;&gt; join((blue, green),(red,orange),space)</span><br><span class="line">(#0000ff #008000 #ff0000 #ffa500)</span><br><span class="line">&gt;&gt; join(blue,(red,orange),comma)</span><br><span class="line">(#0000ff, #ff0000, #ffa500)</span><br><span class="line">&gt;&gt; join(blue,(red,orange),space)</span><br><span class="line">(#0000ff #ff0000 #ffa500)</span><br><span class="line">&gt;&gt; join(blue,(red orange),comma)</span><br><span class="line">(#0000ff, #ff0000, #ffa500)</span><br><span class="line">&gt;&gt; join(blue,(red orange),space)</span><br><span class="line">(#0000ff #ff0000 #ffa500)</span><br></pre></td></tr></table></figure>
+<h2 id="append-函数"><a href="#append-函数" class="headerlink" title="append()函数"></a>append()函数</h2><p>append() 函数是用来将某个值插入到列表中，并且处于最末位。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; append(10px 20px ,30px)</span><br><span class="line">(10px 20px 30px)</span><br><span class="line">&gt;&gt; append((10px,20px),30px)</span><br><span class="line">(10px, 20px, 30px)</span><br><span class="line">&gt;&gt; append(green,red)</span><br><span class="line">(#008000 #ff0000)</span><br><span class="line">&gt;&gt; append(red,(green,blue))</span><br><span class="line">(#ff0000 (#008000, #0000ff))</span><br></pre></td></tr></table></figure>
+<p>如果没有明确的指定 $separator 参数值，其默认值是 auto。</p>
+<ul>
+<li>如果列表只有一个列表项时，那么插入进来的值将和原来的值会以空格的方式分隔。</li>
+<li>如果列表中列表项是以空格分隔列表项，那么插入进来的列表项也将以空格分隔；</li>
+<li>如果列表中列表项是以逗号分隔列表项，那么插入进来的列表项也将以逗号分隔。</li>
+</ul>
+<p>当然，在 append() 函数中，可以显示的设置 $separator 参数，</p>
+<ul>
+<li>如果取值为 comma 将会以逗号分隔列表项</li>
+<li>如果取值为 space 将会以空格分隔列表项</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; append((blue green),red,comma)</span><br><span class="line">(#0000ff, #008000, #ff0000)</span><br><span class="line">&gt;&gt; append((blue green),red,space)</span><br><span class="line">(#0000ff #008000 #ff0000)</span><br><span class="line">&gt;&gt; append((blue, green),red,comma)</span><br><span class="line">(#0000ff, #008000, #ff0000)</span><br><span class="line">&gt;&gt; append((blue, green),red,space)</span><br><span class="line">(#0000ff #008000 #ff0000)</span><br><span class="line">&gt;&gt; append(blue,red,comma)</span><br><span class="line">(#0000ff, #ff0000)</span><br><span class="line">&gt;&gt; append(blue,red,space)</span><br><span class="line">(#0000ff #ff0000)</span><br></pre></td></tr></table></figure>
+<h2 id="zip-函数"><a href="#zip-函数" class="headerlink" title="zip()函数"></a>zip()函数</h2><p>zip()函数将多个列表值转成一个多维的列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; zip(1px 2px 3px,solid dashed dotted,green blue red)</span><br><span class="line">((1px &quot;solid&quot; #008000), (2px &quot;dashed&quot; #0000ff), (3px &quot;dotted&quot; #ff0000))</span><br></pre></td></tr></table></figure>
+<h2 id="index-函数"><a href="#index-函数" class="headerlink" title="index()函数"></a>index()函数</h2><p>index() 函数类似于索引一样，主要让你找到某个值在列表中所处的位置。在 Sass 中，第一个值就是1，第二个值就是 2，依此类推：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; index(1px solid red, 1px)</span><br><span class="line">1</span><br><span class="line">&gt;&gt; index(1px solid red, solid)</span><br><span class="line">2</span><br><span class="line">&gt;&gt; index(1px solid red, red)</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<p>在 index() 函数中，如果指定的值不在列表中（没有找到相应的值），那么返回的值将是 false，相反就会返回对应的值在列表中所处的位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; index(1px solid red,dotted) //列表中没有找到 dotted</span><br><span class="line">false</span><br><span class="line">&gt;&gt; index(1px solid red,solid) //列表中找到 solid 值，并且返回他的位置值 2</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<h2 id="Introspection函数"><a href="#Introspection函数" class="headerlink" title="Introspection函数"></a>Introspection函数</h2><p>Introspection 函数包括了几个判断型函数：</p>
+<ul>
+<li>type-of($value)：返回一个值的类型</li>
+<li>unit($number)：返回一个值的单位</li>
+<li>unitless($number)：判断一个值是否带有单位</li>
+<li>comparable($number-1, $number-2)：判断两个值是否可以做加、减和合并</li>
+</ul>
+<p>这几个函数主要用来对值做一个判断的作用，我们来依次看每个函数的功能。</p>
+<h3 id="Introspection-函数-type-of"><a href="#Introspection-函数-type-of" class="headerlink" title="Introspection 函数 -type-of()"></a>Introspection 函数 -type-of()</h3><p>type-of() 函数主要用来判断一个值是属于什么类型：</p>
+<p>返回值：</p>
+<ul>
+<li>number 为数值型。</li>
+<li>string 为字符串型。</li>
+<li>bool 为布尔型。</li>
+<li>color 为颜色型。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; type-of(100)</span><br><span class="line">&quot;number&quot;</span><br><span class="line">&gt;&gt; type-of(100px)</span><br><span class="line">&quot;number&quot;</span><br><span class="line">&gt;&gt; type-of(&quot;asdf&quot;)</span><br><span class="line">&quot;string&quot;</span><br><span class="line">&gt;&gt; type-of(asdf)</span><br><span class="line">&quot;string&quot;</span><br><span class="line">&gt;&gt; type-of(true)</span><br><span class="line">&quot;bool&quot;</span><br><span class="line">&gt;&gt; type-of(false)</span><br><span class="line">&quot;bool&quot;</span><br><span class="line">&gt;&gt; type-of(#fff)</span><br><span class="line">&quot;color&quot;</span><br><span class="line">&gt;&gt; type-of(blue)</span><br><span class="line">&quot;color&quot;</span><br><span class="line">&gt;&gt; type-of(1 / 2 = 1)</span><br><span class="line">&quot;string&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="unit-函数"><a href="#unit-函数" class="headerlink" title="unit()函数"></a>unit()函数</h3><p>unit() 函数主要是用来获取一个值所使用的单位，碰到复杂的计算时，其能根据运算得到一个“多单位组合”的值，不过只充许乘、除运算：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; unit(100)</span><br><span class="line">&quot;&quot;</span><br><span class="line">&gt;&gt; unit(100px)</span><br><span class="line">&quot;px&quot;</span><br><span class="line">&gt;&gt; unit(20%)</span><br><span class="line">&quot;%&quot;</span><br><span class="line">&gt;&gt; unit(1em)</span><br><span class="line">&quot;em&quot;</span><br><span class="line">&gt;&gt; unit(10px * 3em)</span><br><span class="line">&quot;em*px&quot;</span><br><span class="line">&gt;&gt; unit(10px / 3em)</span><br><span class="line">&quot;px/em&quot;</span><br><span class="line">&gt;&gt; unit(10px * 2em / 3cm / 1rem)</span><br><span class="line">&quot;em/rem&quot;</span><br></pre></td></tr></table></figure>
+<p>但加、减碰到不同单位时，unit() 函数将会报错，除 px 与 cm、mm 运算之外：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; unit(1px + 1cm)</span><br><span class="line">&quot;px&quot;</span><br><span class="line">&gt;&gt; unit(1px - 1cm)</span><br><span class="line">&quot;px&quot;</span><br><span class="line">&gt;&gt; unit(1px + 1mm)</span><br><span class="line">&quot;px&quot;</span><br><span class="line">&gt;&gt; unit(10px * 2em - 3cm / 1rem)</span><br><span class="line">SyntaxError: Incompatible units: &apos;cm&apos; and &apos;px*em&apos;.</span><br><span class="line">&gt;&gt; unit(10px * 2em - 1px / 1rem)</span><br><span class="line">SyntaxError: Incompatible units: &apos;&apos; and &apos;em&apos;.</span><br><span class="line">&gt;&gt; unit(1px - 1em)</span><br><span class="line">SyntaxError: Incompatible units: &apos;em&apos; and &apos;px&apos;.</span><br><span class="line">&gt;&gt; unit(1px - 1rem)</span><br><span class="line">SyntaxError: Incompatible units: &apos;rem&apos; and &apos;px&apos;.</span><br><span class="line">&gt;&gt; unit(1px - 1%)</span><br><span class="line">SyntaxError: Incompatible units: &apos;%&apos; and &apos;px&apos;.</span><br><span class="line">&gt;&gt; unit(1cm + 1em)</span><br><span class="line">SyntaxError: Incompatible units: &apos;em&apos; and &apos;cm&apos;.</span><br></pre></td></tr></table></figure>
+<p>unit() 函数对于单位运算相对来说也没有规律，而且有些单位也无法整合成一个单位，对于我们在 CSS 中运用中并不适合，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; unit(10px * 3em)</span><br><span class="line">&quot;em*px&quot;</span><br><span class="line">&gt;&gt; unit(10px / 3em)</span><br><span class="line">&quot;px/em&quot;</span><br><span class="line">&gt;&gt; unit(10px * 2em / 3cm / 1rem)</span><br><span class="line">&quot;em/rem&quot;</span><br></pre></td></tr></table></figure>
+<p>换句话说，上面运算出来的单位，对于在 CSS 中使用将是没有任何意义的。</p>
+<h2 id="unitless-函数"><a href="#unitless-函数" class="headerlink" title="unitless()函数"></a>unitless()函数</h2><p>unitless() 函数相对来说简单明了些，只是用来判断一个值是否带有单位，如果不带单位返回的值为 true，带单位返回的值为 false：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; unitless(100)</span><br><span class="line">true</span><br><span class="line">&gt;&gt; unitless(100px)</span><br><span class="line">false</span><br><span class="line">&gt;&gt; unitless(100em)</span><br><span class="line">false</span><br><span class="line">&gt;&gt; unitless(100%)</span><br><span class="line">false</span><br><span class="line">&gt;&gt; unitless(1 /2 )</span><br><span class="line">true</span><br><span class="line">&gt;&gt; unitless(1 /2 + 2 )</span><br><span class="line">true</span><br><span class="line">&gt;&gt; unitless(1px /2 + 2 )</span><br><span class="line">false</span><br></pre></td></tr></table></figure>
+<h2 id="comparable-函数"><a href="#comparable-函数" class="headerlink" title="comparable()函数"></a>comparable()函数</h2><p>comparable() 函数主要是用来判断两个数是否可以进行“加，减”以及“合并”。如果可以返回的值为 true，如果不可以返回的值是 false：</p>
+<h2 id="Miscellaneous函数"><a href="#Miscellaneous函数" class="headerlink" title="Miscellaneous函数"></a>Miscellaneous函数</h2><p>在这里把 Miscellaneous 函数称为三元条件函数，主要因为他和 JavaScript 中的三元判断非常的相似。他有两个值，当条件成立返回一种值，当条件不成立时返回另一种值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if($condition,$if-true,$if-false)</span><br></pre></td></tr></table></figure>
+<p>上面表达式的意思是当 $condition 条件成立时，返回的值为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$if-true，否则返回的是 $if-false 值。</span><br><span class="line">&gt;&gt; if(true,1px,2px)</span><br><span class="line">1px</span><br><span class="line">&gt;&gt; if(false,1px,2px)</span><br><span class="line">2px</span><br></pre></td></tr></table></figure></p>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>Sass 的 map 长得与 JSON 极其相似：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$map: (</span><br><span class="line">    $key1: value1,</span><br><span class="line">    $key2: value2,</span><br><span class="line">    $key3: value3</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>首先有一个类似于 Sass 的变量一样，用个 $ 加上命名空间来声明 map。后面紧接是一个小括号 ()，将数据以 key:value 的形式赋予，其中 key 和 value 是成对出现，并且每对之间使用逗号 (,) 分隔，其中最后一组后面没有逗号。</p>
+<p>其中键 key 是用来查找相关联的值 value。使用 map 可以很容易收集键的值和动态插入。我们来回忆一下，在 Sass 中常用下面的方式定义变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$default-color: #fff !default;</span><br><span class="line">$primary-color: #22ae39 !default;</span><br></pre></td></tr></table></figure>
+<p>我们使用 map 可以更好的进行管理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$color: (</span><br><span class="line">    default: #fff,</span><br><span class="line">    primary: #22ae39</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>$default-color: #fff !default;<br>$primary-color: #22ae39 !default;</p>
+<p>我们使用 map 可以更好的进行管理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$color: (</span><br><span class="line">    default: #fff,</span><br><span class="line">    primary: #22ae39</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>对于 Sass 的 map，还可以让 map 嵌套 map。其实就是 map 的某一个 key 当成 map，里面可以继续放一对或者多对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">key:value：</span><br><span class="line">$map: (</span><br><span class="line">    key1: value1,</span><br><span class="line">    key2: (</span><br><span class="line">        key-1: value-1,</span><br><span class="line">        key-2: value-2,</span><br><span class="line">    ),</span><br><span class="line">    key3: value3</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<h2 id="Sass-Maps的函数"><a href="#Sass-Maps的函数" class="headerlink" title="Sass Maps的函数"></a>Sass Maps的函数</h2><p>前面介绍了使用 map 来管理变量，但要在 Sass 中获取变量，或者对 map 做更多有意义的操作，我们必须借助于 map 的函数功能。在 Sass 中 map 自身带了七个函数：</p>
+<ul>
+<li>map-get($map,$key)：根据给定的 key 值，返回 map 中相关的值。</li>
+<li>map-merge($map1,$map2)：将两个 map 合并成一个新的 map。</li>
+<li>map-remove($map,$key)：从 map 中删除一个 key，返回一个新 map。</li>
+<li>map-keys($map)：返回 map 中所有的 key。</li>
+<li>map-values($map)：返回 map 中所有的 value。</li>
+<li>map-has-key($map,$key)：根据给定的 key 值判断 map 是否有对应的 value 值，如果有返回 true，否则返回 false。</li>
+<li>keywords($args)：返回一个函数的参数，这个参数可以动态的设置 key 和 value。</li>
+</ul>
+<h3 id="Sass-Maps的函数-map-get-map-key"><a href="#Sass-Maps的函数-map-get-map-key" class="headerlink" title="Sass Maps的函数-map-get($map,$key)"></a>Sass Maps的函数-map-get($map,$key)</h3><p>map-get($map,$key) 函数的作用是根据 $key 参数，返回 $key 在 $map 中对应的 value 值。如果 $key 不存在 $map中，将返回 null 值。此函数包括两个参数：</p>
+<ul>
+<li>$map：定义好的 map。</li>
+<li>$key：需要遍历的 key。</li>
+</ul>
+<p>来看一个简单的示例，假设定义了一个 $social-colors 的 map:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$social-colors: (</span><br><span class="line">    dribble: #ea4c89,</span><br><span class="line">    facebook: #3b5998,</span><br><span class="line">    github: #171515,</span><br><span class="line">    google: #db4437,</span><br><span class="line">    twitter: #55acee</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>假设要获取 facebook 键值对应的值 #3b5998，我们就可以使用 map-get() 函数来实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.btn-dribble&#123;</span><br><span class="line">  color: map-get($social-colors,facebook);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来的CSS：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.btn-dribble &#123;</span><br><span class="line">  color: #3b5998;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们来看另一种情况，假设 $social-colors 这个 map 没有 $weibo 这个 key:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.btn-weibo&#123;</span><br><span class="line">  font-size: 12px;</span><br><span class="line">  color: map-get($social-colors,weibo);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时编译出来的是CSS：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.btn-weibo &#123;</span><br><span class="line">  font-size: 12px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从 编译出来的 CSS 可以得知，如果 $key 不在 $map 中，不会编译出 CSS，其实在 Sass 中，map-get($social- colors,weibo) 返回了一个 null 值。但在编译出来的 CSS 中，你只知道他没有编译出样式，而且在命令终端编译时，也没有任何错误或者警告信息。说实话，你并不知道他为什么编译不出来样式，或者说他已返回了值为 null。体验不强，也不好排错。其实如果我们自定义一个函数，另外加个判断，那就截然不同。</p>
+<h3 id="Sass-Maps的函数-map-has-key-map-key"><a href="#Sass-Maps的函数-map-has-key-map-key" class="headerlink" title="Sass Maps的函数-map-has-key($map,$key)"></a>Sass Maps的函数-map-has-key($map,$key)</h3><p>map-has-key($map,$key) 函数将返回一个布尔值。当 $map 中有这个 $key，则函数返回 true，否则返回 false。</p>
+<p>前面的示例，当 $key 不在 $map 中时，使用 map-get($map,$key) 函数将返回一个 null 值。但对于开发人员，并看不到任何提示信息。如果使用 map-has-key($map,$key) 函数就可以改变这一状态。我们来看一个简单的示例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@if map-has-key($social-colors,facebook)&#123;</span><br><span class="line">    .btn-facebook &#123;</span><br><span class="line">        color: map-get($social-colors,facebook);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; @else &#123;</span><br><span class="line">    @warn &quot;No color found for faceboo in $social-colors map. Property ommitted.&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.btn-fackbook&#123;</span><br><span class="line">    color: #3b5998;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Sass-Maps的函数-map-keys-map"><a href="#Sass-Maps的函数-map-keys-map" class="headerlink" title="Sass Maps的函数-map-keys($map)"></a>Sass Maps的函数-map-keys($map)</h3><p>map-keys($map) 函数将会返回 $map 中的所有 key。这些值赋予给一个变量，那他就是一个列表。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map-keys($social-colors);</span><br></pre></td></tr></table></figure>
+<p>其返回的值为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;dribble&quot;,&quot;facebook&quot;,&quot;github&quot;,&quot;google&quot;,&quot;twitter&quot;</span><br></pre></td></tr></table></figure>
+<p>换句话说：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list: map-keys($social-colors);</span><br></pre></td></tr></table></figure>
+<p>相当于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$list:&quot;dribble&quot;,&quot;facebook&quot;,&quot;github&quot;,&quot;google&quot;,&quot;twitter&quot;;</span><br></pre></td></tr></table></figure>
+<p>这个时候，就可以配合 Sass 的 list 做很多事情。</p>
+<p>上面的示例，可以做通过 map-keys($map) 来做一个修改：<br>@function colors($color){</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$names: map-keys($social-colors);</span><br><span class="line">    @if not index($names,$color)&#123;</span><br><span class="line">        @warn &quot;Waring: `#&#123;$color&#125; is not a valid color name.`&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    @return map-get($social-colors,$color);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中最不同之处，我们使 用map-key s将 $social-colors 这个 map 的所有 key 取出，并赋予给一个名 为 $names 的列表。然后通过 index($names,$color) 返回 $color 在 $names 位置，如果这个位置不存在，将返回提示信息，如果存在将返回正确的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.btn-weibo&#123;</span><br><span class="line">    color: colors(weibo);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Sass-Maps的函数-map-values-map-、map-merge-map1-map2"><a href="#Sass-Maps的函数-map-values-map-、map-merge-map1-map2" class="headerlink" title="Sass Maps的函数-map-values($map)、map-merge($map1,$map2)"></a>Sass Maps的函数-map-values($map)、map-merge($map1,$map2)</h3><p>map-values($map)</p>
+<p>map-values($map) 函数类似于 map-keys($map) 功能，不同的是 map-values($map )获取的是 $map 的所有 value 值，可以说也将是一个列表。而且，map-values($map) 中如果有相同的 value 也将会全部获取出来。</p>
+<p>如前面的示例，使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map-values($social-colors)</span><br></pre></td></tr></table></figure>
+<p>将会返回：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#ea4c89,#3b5998,#171515,#db4437,#55acee</span><br></pre></td></tr></table></figure>
+<p>值与值之前同样用逗号分隔。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">map-merge($map1,$map2)</span><br></pre></td></tr></table></figure>
+<p>map-merge($map1,$map2)</p>
+<p>map-merge($map1,$map2) 函数是将 $map1 和 $map2 合并，然后得到一个新的 $map。如果你要快速将新的值插入到 $map 中的话，这种方法是最佳方法。假设我们有两个 $map:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$color: (</span><br><span class="line">    text: #f36,</span><br><span class="line">    link: #f63,</span><br><span class="line">    border: #ddd,</span><br><span class="line">    backround: #fff</span><br><span class="line">);</span><br><span class="line">$typo:(</span><br><span class="line">    font-size: 12px,</span><br><span class="line">    line-height: 1.6</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>如果希望将这两个 $map 合并成一个 map，我们只要这样做：<br>$newmap: map-merge($color,$typo);</p>
+<p>将会生成一个新的 map:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$newmap:(</span><br><span class="line">    text: #f36,</span><br><span class="line">    link: #f63,</span><br><span class="line">    border: #ddd,</span><br><span class="line">    background: #fff,</span><br><span class="line">    font-size: 12px,</span><br><span class="line">    line-height: 1.6</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>这样你就可以借助 map-get( ) 等函数做其他事情了。</p>
+<p>不过有一点需要注意，如果 $map1 和 $map2 中有相同的 $key 名，那么将 $map2 中的 $key 会取代 $map1 中的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$color: (</span><br><span class="line">    text: #f36,</span><br><span class="line">    link: #f63,</span><br><span class="line">    border: #ddd,</span><br><span class="line">    backround: #fff</span><br><span class="line">);</span><br><span class="line">$typo:(</span><br><span class="line">    font-size: 12px,</span><br><span class="line">    line-height: 1.6,</span><br><span class="line">    border: #ccc,</span><br><span class="line">    background: #000</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>执行：<br>$newmap: map-merge($color,$typo);</p>
+<p>得到的新 map:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$newmap:(</span><br><span class="line">    text: #f36,</span><br><span class="line">    link: #f63,</span><br><span class="line">    font-size: 12px,</span><br><span class="line">    line-height: 1.6,</span><br><span class="line">    border: #ccc,</span><br><span class="line">    background: #000</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="Sass-Maps的函数-map-remove-map-key-、keywords-args"><a href="#Sass-Maps的函数-map-remove-map-key-、keywords-args" class="headerlink" title="Sass Maps的函数-map-remove($map,$key)、keywords($args)"></a>Sass Maps的函数-map-remove($map,$key)、keywords($args)</h3><p>map-remove($map,$key) 函数是用来删除当前 $map 中的某一个 $key，从而得到一个新的 map。其返回的值还是一个 map。他并不能直接从一个 map 中删除另一个 map，仅能通过删除 map 中的某个 key 得到新 map。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$map:map-remove($social-colors,dribble);</span><br></pre></td></tr></table></figure>
+<p>返回的是一个新 map:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$map:(</span><br><span class="line">    facebook: #3b5998,</span><br><span class="line">    github: #171515,</span><br><span class="line">    google: #db4437,</span><br><span class="line">    twitter: #55acee</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>如果删除的 key 并不存在于 $map 中，那么 map-remove() 函数返回的新 map 和以前的 map 一样。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$map:map-remove($social-colors,weibo);</span><br></pre></td></tr></table></figure>
+<p>返回的值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$map: (</span><br><span class="line">    dribble: #ea4c89,</span><br><span class="line">    facebook: #3b5998,</span><br><span class="line">    github: #171515,</span><br><span class="line">    google: #db4437,</span><br><span class="line">    twitter: #55acee</span><br><span class="line">);</span><br><span class="line">keywords($args)</span><br></pre></td></tr></table></figure>
+<h4 id="keywords-args"><a href="#keywords-args" class="headerlink" title="keywords($args)"></a>keywords($args)</h4><p>keywords($args) 函数可以说是一个动态创建 map 的函数。可以通过混合宏或函数的参数变创建 map。参数也是成对出现，其中 $args 变成 key(会自动去掉$符号)，而 $args 对应的值就是value。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@mixin map($args...)&#123;</span><br><span class="line">    @debug keywords($args);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@include map(</span><br><span class="line">  $dribble: #ea4c89,</span><br><span class="line">  $facebook: #3b5998,</span><br><span class="line">  $github: #171515,</span><br><span class="line">  $google: #db4437,</span><br><span class="line">  $twitter: #55acee</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>在命令终端可以看到一个输入的 @debug 信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DEBUG: (dribble: #ea4c89, facebook: #3b5998, github: #171515, google: #db4437, twitter: #55acee)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537686718067/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1537686718067/" itemprop="url">18-颜色函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+00:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-07-scss</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在 Sass 的官方文档中，列出了 Sass 的颜色函数清单，从大的方面主要分为 RGB , HSL 和 Opacity 三大函数，当然其还包括一些其他的颜色函数，比如说 adjust-color 和 change-color 等。在这章节中，将主要和大家一起探讨 Sass 颜色函数中常见的 RGB、HSL 和 Opacity 函数。</p>
+<h2 id="1、RGB颜色函数"><a href="#1、RGB颜色函数" class="headerlink" title="1、RGB颜色函数"></a>1、RGB颜色函数</h2><p>RGB 颜色只是颜色中的一种表达式，其中 R 是 red 表示红色，G 是 green 表示绿色而 B 是 blue 表示蓝色。在 Sass 中为 RGB 颜色提供六种函数：</p>
+<ul>
+<li>rgb($red,$green,$blue)：根据红、绿、蓝三个值创建一个颜色；</li>
+<li>rgba($red,$green,$blue,$alpha)：根据红、绿、蓝和透明度值创建一个颜色；</li>
+<li>red($color)：从一个颜色中获取其中红色值；</li>
+<li>green($color)：从一个颜色中获取其中绿色值；</li>
+<li>blue($color)：从一个颜色中获取其中蓝色值；</li>
+<li>mix($color-1,$color-2,[$weight])：把两种颜色混合在一起。</li>
+</ul>
+<p>接下来，分别在终端使用 RGB 函数来进行计算，看其最终结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ sass -i</span><br><span class="line">&gt;&gt; rgb(200,40,88) //根据r:200,g:40,b:88计算出一个十六进制颜色值</span><br><span class="line">#c82858</span><br><span class="line">&gt;&gt; rgba(#c82858,.65) //根据#c82858的65%透明度计算出一个rgba颜色值</span><br><span class="line">rgba(200, 40, 88, 0.65)</span><br><span class="line">&gt;&gt; red(#c82858) //从#c82858颜色值中得到红色值 200</span><br><span class="line">200</span><br><span class="line">&gt;&gt; green(#c82858) //从#c82858颜色值中得到绿色值 40</span><br><span class="line">40</span><br><span class="line">&gt;&gt; blue(#c82858) //从#c82858颜色值中得到蓝色值 88</span><br><span class="line">88</span><br><span class="line">&gt;&gt; mix(#c82858,rgba(200,40,80,.65),.3) //把#c82858和rgba(200,40,88,.65) 两颜色按比例混合得到一个新颜色</span><br><span class="line">rgba(200, 40, 80, 0.65105)</span><br></pre></td></tr></table></figure>
+<p>从上面的简单运算结果可以很清晰的知道。在 RGB 颜色函数中，在实际中常用的主要是 rgba() 和 mix() 两个函数，而 rgb() 函数只能快速的将一个 rgb 颜色转换成十六进制颜色表达，red()、green() 和 blue() 函数，只能取得某一颜色的一个值，对于颜色上使用并无太大作用（或许他的好处，我还没有理解过来）。接下来，主要来实战一下 rgba() 和 mix() 函数在实际中的运用。</p>
+<h3 id="RGB颜色函数-RGBA-函数"><a href="#RGB颜色函数-RGBA-函数" class="headerlink" title="RGB颜色函数-RGBA()函数"></a>RGB颜色函数-RGBA()函数</h3><p>rgba() 函数主要用来将一个颜色根据透明度转换成 rgba 颜色。</p>
+<p>其语法有两种格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rgba($red,$green,$blue,$alpha)  //将一个rgba颜色转译出来，和未转译的值一样</span><br><span class="line">rgba($color,$alpha)  //将一个Hex颜色转换成rgba颜色</span><br></pre></td></tr></table></figure>
+<p>其中 rgba($color,$alpha) 函数作用更大，主要运用在这样的情形之中：假设在实际中知道的颜色值是 #f36 或者 red，但在使用中，需要给他们配上一个透明度，这个时候在原来的 CSS 中，首先需要通过制图工具，得到 #f36 或 red 颜色的 R、G、B 值，而不能直接使用（注意 css3 是可以的，但是存在浏览器兼容问题）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//CSS</span><br><span class="line">color: rgba(#f36,.5); //在css中，这是无效的写法</span><br></pre></td></tr></table></figure>
+<p>但在 Sass 中，RGBA() 函数就能解决这个问题。我们先来看一个简单的例子，假设在变量中定义了一个基本的变量：<br>$color: #f36;<br>$bgColor: orange;<br>$borderColor:green;<br>同时给他们加上 .5 的透明度：<br>//SCSS<br>.rgba {<br>    color: rgba(#f36,.5);<br>    background: rgba(orange,.5);<br>    border-color: rgba(green,.5);<br>}<br>语法：</p>
+<p>在这个实例中，我们使用了 Sass 的 rgba 函数，在括号是函数的参数，第一个参数是需要转换的颜色，他可以是任何颜色的表达方式，也可以是一个颜色变量；第二个参数是颜色的透明度，其值是 0~1 之间。上面的代码转译出来：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.rgba &#123;</span><br><span class="line">  color: rgba(255, 51, 102, 0.5);</span><br><span class="line">  background: rgba(255, 165, 0, 0.5);</span><br><span class="line">  border-color: rgba(0, 128, 0, 0.5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在来看一个调用前面定义的变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//SCSS</span><br><span class="line">.rgba &#123;</span><br><span class="line">    color: rgba($color,.5);</span><br><span class="line">    background: rgba($bgColor,.5);</span><br><span class="line">    border-color: rgba($borderColor,.5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来的 css 代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//CSS</span><br><span class="line">.rgba &#123;</span><br><span class="line">  color: rgba(255, 51, 102, 0.5);</span><br><span class="line">  background: rgba(255, 165, 0, 0.5);</span><br><span class="line">  border-color: rgba(0, 128, 0, 0.5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="RGB颜色函数-Red-、Green-、Blue-函数"><a href="#RGB颜色函数-Red-、Green-、Blue-函数" class="headerlink" title="RGB颜色函数-Red()、Green()、Blue()函数"></a>RGB颜色函数-Red()、Green()、Blue()函数</h3><h4 id="Red-函数"><a href="#Red-函数" class="headerlink" title="Red() 函数"></a>Red() 函数</h4><p>red() 函数非常简单，其主要用来获取一个颜色当中的红色值。假设有一个 #f36 的颜色，如果你想得到 #f36 中的 red 值是多少，这个时候使用 red() 函数就能很简单获取。</p>
+<h4 id="Green-函数"><a href="#Green-函数" class="headerlink" title="Green() 函数"></a>Green() 函数</h4><p>green() 函数和 red() 函数一样，用来获取某一个颜色值中 green 的值。同样拿 ”#f36“ 颜色为例：</p>
+<h4 id="Blue-函数"><a href="#Blue-函数" class="headerlink" title="Blue() 函数"></a>Blue() 函数</h4><p>同理，blue() 函数是用来获取某一个颜色值中 blue 的值</p>
+<h3 id="RGB颜色函数-Mix-函数"><a href="#RGB颜色函数-Mix-函数" class="headerlink" title="RGB颜色函数-Mix()函数"></a>RGB颜色函数-Mix()函数</h3><p>Mix 函数是将两种颜色根据一定的比例混合在一起，生成另一种颜色。其使用语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mix($color-1,$color-2,$weight);</span><br></pre></td></tr></table></figure>
+<p><strong>$color-1</strong> 和 <strong>$color-2</strong> 指的是你需要合并的颜色，颜色可以是任何表达式，也可以是颜色变量。</p>
+<p><strong>$weight</strong> 为 合并的比例（选择权重），默认值为 50%，其取值范围是 0~1 之间。它是每个 RGB 的百分比来衡量，当然透明度也会有一定的权重。默认的比例是 50%，这意味着两个颜色各占一半，如果指定的比例是 25%，这意味着第一个颜色所占比例为 25%，第二个颜色所占比例为75%。</p>
+<h2 id="HSL函数简介"><a href="#HSL函数简介" class="headerlink" title="HSL函数简介"></a>HSL函数简介</h2><ul>
+<li>hsl($hue,$saturation,$lightness)：通过色相（hue）、饱和度(saturation)和亮度（lightness）的值创建一个颜色；</li>
+<li>hsla($hue,$saturation,$lightness,$alpha)：通过色相（hue）、饱和度(saturation)、亮度（lightness）和透明（alpha）的值创建一个颜色；</li>
+<li>hue($color)：从一个颜色中获取色相（hue）值；</li>
+<li>saturation($color)：从一个颜色中获取饱和度（saturation）值；</li>
+<li>lightness($color)：从一个颜色中获取亮度（lightness）值；</li>
+<li>adjust-hue($color,$degrees)：通过改变一个颜色的色相值，创建一个新的颜色；</li>
+<li>lighten($color,$amount)：通过改变颜色的亮度值，让颜色变亮，创建一个新的颜色；</li>
+<li>darken($color,$amount)：通过改变颜色的亮度值，让颜色变暗，创建一个新的颜色；</li>
+<li>saturate($color,$amount)：通过改变颜色的饱和度值，让颜色更饱和，从而创建一个新的颜色</li>
+<li>desaturate($color,$amount)：通过改变颜色的饱和度值，让颜色更少的饱和，从而创建出一个新的颜色；</li>
+<li>grayscale($color)：将一个颜色变成灰色，相当于desaturate($color,100%);</li>
+<li>complement($color)：返回一个补充色，相当于adjust-hue($color,180deg);</li>
+<li>invert($color)：反回一个反相色，红、绿、蓝色值倒过来，而透明度不变。</li>
+</ul>
+<h3 id="HSL函数-lighten"><a href="#HSL函数-lighten" class="headerlink" title="HSL函数-lighten()"></a>HSL函数-lighten()</h3><p>来看一个简单的实例，首先定义一个颜色变量：<br>$baseColor: #ad141e;</p>
+<p>使用 lighten() 和 darken() 函数来修改 10% 的亮度值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//SCSS</span><br><span class="line">.lighten &#123;</span><br><span class="line">    background: lighten($baseColor,10%);</span><br><span class="line">&#125;</span><br><span class="line">.darken&#123;</span><br><span class="line">    background: darken($baseColor,10%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来的 css 代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//CSS</span><br><span class="line">.lighten &#123;</span><br><span class="line">  background: #db1926;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.darken &#123;</span><br><span class="line">  background: #7f0f16;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="HSL函数-saturate"><a href="#HSL函数-saturate" class="headerlink" title="HSL函数-saturate()"></a>HSL函数-saturate()</h3><p>saturate()、desaturate()这两个函数是通过改变颜色的饱和度来得到一个新的颜色，他们和前面介绍的修改亮度得到新颜色的方法非常相似。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//SCSS</span><br><span class="line">$baseColor: #ad141e;</span><br><span class="line">.saturate &#123;</span><br><span class="line">  background: saturate($baseColor,30%); //在原色饱和度基础上增加饱和度</span><br><span class="line">&#125;</span><br><span class="line">.desaturate &#123;</span><br><span class="line">  background: desaturate($baseColor,30%);//在原色饱和度基础上减少饱和度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来的 css 代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//CSS</span><br><span class="line">.saturate &#123;</span><br><span class="line">  background: #c1000d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.desaturate &#123;</span><br><span class="line">  background: #903137;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="HSL函数-adjust-hue-函数"><a href="#HSL函数-adjust-hue-函数" class="headerlink" title="HSL函数-adjust-hue()函数"></a>HSL函数-adjust-hue()函数</h3><p>这个是通过调整颜色的色相换算一个新颜色。他需要一个颜色和色相度数值。通常这个度数值是在 -360deg 至 360deg 之间，当然了可以是百分数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//SCSS</span><br><span class="line">$baseColor: #ad141e;</span><br><span class="line">.adjust-hue-deg &#123;</span><br><span class="line">  background: adjust-hue($baseColor,30deg);</span><br><span class="line">&#125;</span><br><span class="line">.adjust-hue-per &#123;</span><br><span class="line">  background: adjust-hue($baseColor,30%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出的 css 代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//CSS</span><br><span class="line">.adjust-hue-deg &#123;</span><br><span class="line">  background: #ad5614;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.adjust-hue-per &#123;</span><br><span class="line">  background: #ad5614;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="HSL函数-grayscale-函数"><a href="#HSL函数-grayscale-函数" class="headerlink" title="HSL函数-grayscale()函数"></a>HSL函数-grayscale()函数</h3><p>这个函数会颜色的饱和度值直接调至 0%，所以此函数与 desaturate($color,100%) 所起的功能是一样的。一般这个函数能将彩色颜色转换成不同程度的灰色。</p>
+<h2 id="Opacity函数简介"><a href="#Opacity函数简介" class="headerlink" title="Opacity函数简介"></a>Opacity函数简介</h2><ul>
+<li>alpha($color) /opacity($color)：获取颜色透明度值；</li>
+<li>rgba($color, $alpha)：改变颜色的透明度值；</li>
+<li>opacify($color, $amount) / fade-in($color, $amount)：使颜色更不透明；</li>
+<li>transparentize($color, $amount) / fade-out($color, $amount)：使颜色更加透明。</li>
+</ul>
+<h3 id="Opacity函数-alpha-、opacity-函数"><a href="#Opacity函数-alpha-、opacity-函数" class="headerlink" title="Opacity函数-alpha()、opacity()函数"></a>Opacity函数-alpha()、opacity()函数</h3><p>alphpa() 和 opacity() 函数很简单，与前面介绍的 red(),green() 等函数很类似。这个函数的主要功能是用来获取一个颜色的透明度值。如果颜色没有特别指定透明度，那么这两个函数得到的值都会是 1：</p>
+<h3 id="Opacity函数-opacify-、fade-in-函数"><a href="#Opacity函数-opacify-、fade-in-函数" class="headerlink" title="Opacity函数-opacify()、fade-in()函数"></a>Opacity函数-opacify()、fade-in()函数</h3><p>这两个函数是用来对已有颜色的透明度做一个加法运算，会让颜色更加不透明。其接受两个参数，第一个参数是原始颜色，第二个参数是你需要增加的透明度值，其取值范围主要是在 0~1 之间。当透明度值增加到大于 1 时，会以 1 计算，表示颜色不具有任何透明度。</p>
+<p>其中 fade-in( ) 函数又名 fade_in() 函数。其所起作用等效。</p>
+<h3 id="Opacity函数-transparentize-、-fade-out-函数"><a href="#Opacity函数-transparentize-、-fade-out-函数" class="headerlink" title="Opacity函数-transparentize()、 fade-out()函数"></a>Opacity函数-transparentize()、 fade-out()函数</h3><p>transparentize() 和 fade-out() 函数所起作用刚好与 opacify() 和 fade-in() 函数相反，让颜色更加的透明。这两个函数会让透明值做减法运算，当计算出来的结果小于 0 时会以 0 计算，表示全透明。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537686729132/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1537686729132/" itemprop="url">19-sass中的@规则</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:57:37+00:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-07-scss/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-07-scss</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h2><p>Sass 扩展了 CSS 的 @import 规则，让它能够引入 SCSS 和 Sass 文件。 所有引入的 SCSS 和 Sass 文件都会被合并并输出一个单一的 CSS 文件。 另外，被导入的文件中所定义的变量或 mixins 都可以在主文件中使用。</p>
+<p>Sass 会在当前目录下寻找其他 Sass 文件， 如果是 Rack、Rails 或 Merb 环境中则是 Sass 文件目录。 也可以通过 :load_paths 选项或者在命令行中使用 –load-path 选项来指定额外的搜索目录。</p>
+<p>@import 根据文件名引入。 默认情况下，它会寻找 Sass 文件并直接引入， 但是，在少数几种情况下，它会被编译成 CSS 的 @import 规则：</p>
+<ul>
+<li>如果文件的扩展名是 .css。</li>
+<li>如果文件名以 http:// 开头。</li>
+<li>如果文件名是 url()。</li>
+<li>如果 @import 包含了任何媒体查询（media queries）。</li>
+</ul>
+<p>如果上述情况都没有出现，并且扩展名是 .scss 或 .sass， 该名称的 Sass 或 SCSS 文件就会被引入。 如果没有扩展名， Sass 将试着找出具有 .scss 或 .sass 扩展名的同名文件并将其引入。</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;foo.scss&quot;;</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;foo&quot;;</span><br></pre></td></tr></table></figure>
+<p>两者都将引入 foo.scss 文件， 而</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;foo.css&quot;;</span><br><span class="line">@import &quot;foo&quot; screen;</span><br><span class="line">@import &quot;http://foo.com/bar&quot;;</span><br><span class="line">@import url(foo);</span><br></pre></td></tr></table></figure>
+<p>将被编译为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;foo.css&quot;;</span><br><span class="line">@import &quot;foo&quot; screen;</span><br><span class="line">@import &quot;http://foo.com/bar&quot;;</span><br><span class="line">@import url(foo);</span><br></pre></td></tr></table></figure>
+<p>也可以通过一个 @import 引入多个文件。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;rounded-corners&quot;, &quot;text-shadow&quot;;</span><br></pre></td></tr></table></figure>
+<p>将引入 rounded-corners 和 text-shadow 两个文件。</p>
+<p>如果你有一个 SCSS 或 Sass 文件需要引入， 但是你又不希望它被编译为一个 CSS 文件， 这时，你就可以在文件名前面加一个下划线，就能避免被编译。 这将告诉 Sass 不要把它编译成 CSS 文件。 然后，你就可以像往常一样引入这个文件了，而且还可以省略掉文件名前面的下划线。</p>
+<p>例如，你有一个文件叫做 _colors.scss。 这样就不会生成 _colors.css 文件了， 而且你还可以这样做：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;colors&quot;;//不用加下划线</span><br></pre></td></tr></table></figure>
+<p>来引入 _colors.scss 文件。</p>
+<p>注意，在同一个目录不能同时存在带下划线和不带下划线的同名文件。 例如， _colors.scss 不能与 colors.scss 并存。</p>
+<h4 id="嵌套-import"><a href="#嵌套-import" class="headerlink" title="嵌套 @import"></a>嵌套 @import</h4><p>虽然大部分时间只需在顶层文件使用 @import 就行了， 但是，你还可以把他们包含在 CSS 规则 和 @media 规则中。</p>
+<p>来看官网提供的一个简单示例：</p>
+<p>假设要引入的样式文件<code>example.scss</code>文件中包含这样的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.example &#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后这样引用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#main &#123;</span><br><span class="line">  @import &quot;example&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来的 CSS：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#main .example &#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="media"><a href="#media" class="headerlink" title="@media"></a>@media</h3><p>Sass 中的 @media 指令和 CSS 的使用规则一样的简单，但它有另外一个功能，可以嵌套在 CSS 规则中。有点类似 JS 的冒泡功能一样，如果在样式中使用 @media 指令，它将冒泡到外面。来看一个简单示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.sidebar &#123;</span><br><span class="line">  width: 300px;</span><br><span class="line">  @media screen and (orientation: landscape) &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.sidebar &#123;</span><br><span class="line">  width: 300px; &#125;</span><br><span class="line">  @media screen and (orientation: landscape) &#123;</span><br><span class="line">    .sidebar &#123;</span><br><span class="line">      width: 500px; &#125; &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="extend"><a href="#extend" class="headerlink" title="@extend"></a>@extend</h3><p>Sass 中的 @extend 是用来扩展选择器或占位符。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.error &#123;</span><br><span class="line">  border: 1px #f00;</span><br><span class="line">  background-color: #fdd;</span><br><span class="line">&#125;</span><br><span class="line">.error.intrusion &#123;</span><br><span class="line">  background-image: url(&quot;/image/hacked.png&quot;);</span><br><span class="line">&#125;</span><br><span class="line">.seriousError &#123;</span><br><span class="line">  @extend .error;</span><br><span class="line">  border-width: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="多个扩展"><a href="#多个扩展" class="headerlink" title="多个扩展"></a>多个扩展</h4><p>所设某个样式要继承多个地方的样式，那么可以使用 @extend 来继承多个选择器或占位符的样式，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.error &#123;</span><br><span class="line">  border: 1px #f00;</span><br><span class="line">  background-color: #fdd;</span><br><span class="line">&#125;</span><br><span class="line">.attention &#123;</span><br><span class="line">  font-size: 3em;</span><br><span class="line">  background-color: #ff0;</span><br><span class="line">&#125;</span><br><span class="line">.seriousError &#123;</span><br><span class="line">  @extend .error;</span><br><span class="line">  @extend .attention;</span><br><span class="line">  border-width: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来的CSS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.error, .seriousError &#123;</span><br><span class="line">  border: 1px #f00;</span><br><span class="line">  background-color: #fdd; &#125;</span><br><span class="line"></span><br><span class="line">.attention, .seriousError &#123;</span><br><span class="line">  font-size: 3em;</span><br><span class="line">  background-color: #ff0; &#125;</span><br><span class="line"></span><br><span class="line">.seriousError &#123;</span><br><span class="line">  border-width: 3px; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="扩展单一选择器"><a href="#扩展单一选择器" class="headerlink" title="扩展单一选择器"></a>扩展单一选择器</h4><p>前面我们知道 %placeholder 不使用@extend显示调用是不会生成任何样式代码。那么在选择器中使用占位符一样。比如下面的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#context a%extreme &#123;</span><br><span class="line">  color: blue;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">  font-size: 2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码在不调用之前不产生任何代码，只有能过@extend调用之后才生成代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.notice &#123;</span><br><span class="line">  @extend %extreme;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来的CSS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#context a.notice &#123;</span><br><span class="line">  color: blue;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">  font-size: 2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="at-root"><a href="#at-root" class="headerlink" title="@at-root"></a>@at-root</h2><p>@at-root 从字面上解释就是跳出根元素。当你选择器嵌套多层之后，想让某个选择器跳出，此时就可以使用 @at-root。来看一个简单的示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.a &#123;</span><br><span class="line">  color: red;</span><br><span class="line"></span><br><span class="line">  .b &#123;</span><br><span class="line">    color: orange;</span><br><span class="line"></span><br><span class="line">    .c &#123;</span><br><span class="line">      color: yellow;</span><br><span class="line"></span><br><span class="line">      @at-root .d &#123;</span><br><span class="line">        color: green;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译出来的CSS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.a &#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.a .b &#123;</span><br><span class="line">  color: orange;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.a .b .c &#123;</span><br><span class="line">  color: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.d &#123;</span><br><span class="line">  color: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="debug"><a href="#debug" class="headerlink" title="@debug"></a>@debug</h2><p>@debug 在 Sass 中是用来调试的，当你的在 Sass 的源码中使用了 @debug 指令之后，Sass 代码在编译出错时，在命令终端会输出你设置的提示 Bug:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@debug 10em + 12em;</span><br></pre></td></tr></table></figure>
+<p>会输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Line 1 DEBUG: 22em</span><br></pre></td></tr></table></figure>
+<h2 id="warn"><a href="#warn" class="headerlink" title="@warn"></a>@warn</h2><p>@warn 和 @debug 功能类似，用来帮助我们更好的调试 Sass。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@mixin adjust-location($x, $y) &#123;</span><br><span class="line">  @if unitless($x) &#123;</span><br><span class="line">    @warn &quot;Assuming #&#123;$x&#125; to be in pixels&quot;;</span><br><span class="line">    $x: 1px * $x;</span><br><span class="line">  &#125;</span><br><span class="line">  @if unitless($y) &#123;</span><br><span class="line">    @warn &quot;Assuming #&#123;$y&#125; to be in pixels&quot;;</span><br><span class="line">    $y: 1px * $y;</span><br><span class="line">  &#125;</span><br><span class="line">  position: relative; left: $x; top: $y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="error"><a href="#error" class="headerlink" title="@error"></a>@error</h2><p>@error 和 @warn、@debug 功能是如出一辙。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537685348633/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1537685348633/" itemprop="url">01-JQ复习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+00:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-00-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-00-基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图"></a>轮播图</h2><hr>
+<p>如果父级设定<code>position:relative</code>,子级设定<code>position:absolute</code>要设父级高度,否则高度撑不开;</p>
+<h2 id="jq-on-方法"><a href="#jq-on-方法" class="headerlink" title="jq on()方法"></a>jq on()方法</h2><hr>
+<pre><code>$(&quot;.div1&quot;).on(&apos;click&apos;, function(event) {
+    // console.log($(this)[0].tagName);
+    // console.log($(this).attr(&apos;class&apos;));
+    // $(this).html(&quot;hello&quot;);
+    // event.preventDefault();
+    console.log(event.target.tagName+&quot; : &quot;+$(event.target).attr(&apos;class&apos;)+&quot; &quot;+$(this).attr(&apos;class&apos;));
+    // $(this)指的是绑定事件的元素,也就是.div1
+});
+</code></pre><blockquote>
+<p><code>$(this)[0].tagName</code><br>如果委托的元素没有写出来,那么$(this)指的是 $(“.div1”),如果有写委托元素,那么$(this)指的是委托元素</p>
+</blockquote>
+<h2 id="jq的取值赋值"><a href="#jq的取值赋值" class="headerlink" title="jq的取值赋值"></a>jq的取值赋值</h2><hr>
+<ul>
+<li>当一组元素的时候,取值是一组中的第一个</li>
+<li>当一组元素的时候,赋值是一组中的所有元素<blockquote>
+<p>$().text()是特例,会获取所有选中元素的文本内容,不包括html标签</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="return-false"><a href="#return-false" class="headerlink" title="return false;"></a>return false;</h2><blockquote>
+<p>阻止默认事件<code>event.preventDefault();</code> <code>又阻止冒泡event.stopPropagation();</code> </p>
+</blockquote>
+<h2 id="offset"><a href="#offset" class="headerlink" title="offset();"></a>offset();</h2><blockquote>
+<p><code>offset().left</code>//获取到屏幕的左距离<br><code>position().left</code>//自己转换为定位元素,忽略margin值</p>
+</blockquote>
+<h2 id="Parent-offsetParent"><a href="#Parent-offsetParent" class="headerlink" title="Parent() offsetParent();"></a>Parent() offsetParent();</h2><blockquote>
+<p><code>Parent()</code>//获取父级<br><code>offsetParent()</code>//获取有定位的父级</p>
+</blockquote>
+<h2 id="screenX-clientX-pageX的区别"><a href="#screenX-clientX-pageX的区别" class="headerlink" title="screenX clientX pageX的区别"></a>screenX clientX pageX的区别</h2><p><img src="http://images.cnitblog.com/blog/82061/201303/07210454-f730fa013b43446d99dda1898a9d5cf8.png" alt="image"></p>
+<p><a href="http://note.youdao.com/yws/public/redirect/share?id=808c21b3f588e430056c8911ecceb291&amp;type=false" target="_blank" rel="noopener">查看图片</a></p>
+<h2 id="outerWidth-与原生offsetWidth"><a href="#outerWidth-与原生offsetWidth" class="headerlink" title="outerWidth()与原生offsetWidth"></a>outerWidth()与原生offsetWidth</h2><hr>
+<pre><code>//outerWidth():可以获取到隐藏元素的值
+//offsetWidth : 是获取不到隐藏元素的值
+</code></pre><h2 id="clone"><a href="#clone" class="headerlink" title="clone()"></a>clone()</h2><hr>
+<blockquote>
+<p>clone(true)会把绑定到原来元素的事件也一并克隆.</p>
+</blockquote>
+<h2 id="包装"><a href="#包装" class="headerlink" title="包装"></a>包装</h2><hr>
+<ul>
+<li><p><strong>wrap() :</strong> 包装</p>
+</li>
+<li><p><strong>wrapAll() :</strong> 整体包装</p>
+</li>
+<li><p><strong>wrapInner() :</strong> 内部包装</p>
+</li>
+<li><p><strong>unwrap() :</strong> 删除包装 ( 删除父级 : 不包括body )</p>
+</li>
+</ul>
+<h2 id="表单序列化"><a href="#表单序列化" class="headerlink" title="表单序列化"></a>表单序列化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//console.log($(&apos;form&apos;).serialize());  //string : a=1&amp;b=2&amp;c=3</span><br><span class="line">	</span><br><span class="line">	console.log( $(&apos;form&apos;).serializeArray() );</span><br><span class="line">	</span><br><span class="line">	[</span><br><span class="line">		&#123; name : &apos;a&apos; , value : &apos;1&apos; &#125;,</span><br><span class="line">		&#123; name : &apos;b&apos; , value : &apos;2&apos; &#125;,</span><br><span class="line">		&#123; name : &apos;c&apos; , value : &apos;3&apos; &#125;</span><br><span class="line">	]</span><br></pre></td></tr></table></figure>
+<h2 id="stop"><a href="#stop" class="headerlink" title="stop()"></a>stop()</h2><ul>
+<li><p>$(‘#div1’).stop();   //默认 : 只会阻止当前运动</p>
+</li>
+<li><p>$(‘#div1’).stop(true); //阻止后续的运动</p>
+</li>
+<li><p>$(‘#div1’).stop(true,true); //可以立即停止到指定的目标点</p>
+</li>
+<li><p>$(‘#div1’).finish();  //立即停止到所有指定的目标点  </p>
+</li>
+</ul>
+<h2 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">					url: &quot;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su&quot;,</span><br><span class="line">					type: &apos;get&apos;,//默认get,不用写也可以</span><br><span class="line">					dataType: &apos;jsonp&apos;,</span><br><span class="line">					jsonp: &quot;cb&quot;,//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)</span><br><span class="line">					// jsonpCallback:&quot;baidu&quot;,//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名</span><br><span class="line">					data:&#123;</span><br><span class="line">//						json:1,</span><br><span class="line">						wd:&quot;a&quot;</span><br><span class="line">					&#125;,</span><br><span class="line">					success:function (data) &#123;</span><br><span class="line">						console.log(data);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li><code>$.extend({})</code> //工具方法</li>
+<li><code>$.fn.extend({})</code>//$()方法</li>
+</ul>
+<h2 id="grep"><a href="#grep" class="headerlink" title="$.grep()"></a>$.grep()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">jQuery.grep( array, function [, invert ] )</span><br><span class="line"></span><br><span class="line">$.grep( [0,1,2], function(n,i)&#123;</span><br><span class="line">   return n &gt; 0;</span><br><span class="line"> &#125;);</span><br><span class="line"> //结果:</span><br><span class="line"> //[1, 2]</span><br></pre></td></tr></table></figure>
+<h2 id="插件的几种参数用法"><a href="#插件的几种参数用法" class="headerlink" title="插件的几种参数用法:"></a>插件的几种参数用法:</h2><ol>
+<li>传入json对象:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$( &quot;.selector&quot; ).button(&#123;</span><br><span class="line">  disabled: true,</span><br><span class="line">  create: function( event, ui ) &#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2.传入参数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$( &quot;.selector&quot; ).button( &quot;disable&quot; );</span><br><span class="line"></span><br><span class="line">var isDisabled = $( &quot;.selector&quot; ).button( &quot;option&quot;, &quot;disabled&quot; );</span><br><span class="line"></span><br><span class="line">$( &quot;.selector&quot; ).button( &quot;option&quot;, &quot;disabled&quot;, true );</span><br></pre></td></tr></table></figure>
+<p>3.事件绑定:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$( &quot;.selector&quot; ).on( &quot;buttoncreate&quot;, function( event, ui ) &#123;&#125; );</span><br></pre></td></tr></table></figure></p>
+<h2 id="index"><a href="#index" class="headerlink" title="index()"></a>index()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt; </span><br><span class="line">&lt;li id=&quot;foo&quot;&gt;foo&lt;/li&gt; </span><br><span class="line">&lt;li id=&quot;bar&quot;&gt;bar&lt;/li&gt; </span><br><span class="line">&lt;li id=&quot;baz&quot;&gt;baz&lt;/li&gt; </span><br><span class="line">&lt;/ul&gt; </span><br><span class="line"></span><br><span class="line">$(&apos;li&apos;).index(document.getElementById(&apos;bar&apos;)); //1，传递一个DOM对象，返回这个对象在原先集合中的索引位置 </span><br><span class="line">$(&apos;li&apos;).index($(&apos;#bar&apos;)); //1，传递一个jQuery对象 </span><br><span class="line">$(&apos;li&apos;).index($(&apos;li:gt(0)&apos;)); //1，传递一组jQuery对象，返回这个对象中第一个元素在原先集合中的索引位置 </span><br><span class="line">$(&apos;#bar&apos;).index(&apos;li&apos;); //1，传递一个选择器，返回#bar在所有li中的做引位置 </span><br><span class="line">$(&apos;#bar&apos;).index(); //1，不传递参数，返回这个元素在同辈中的索引位置。</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537685400414/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1537685400414/" itemprop="url">01-js基础复习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+00:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-json注意点"><a href="#1-json注意点" class="headerlink" title="1  json注意点"></a>1  json注意点</h3><h5 id="1-1-json-“name”-相当于-json-name"><a href="#1-1-json-“name”-相当于-json-name" class="headerlink" title="1.1  json[“name”]相当于 json.name"></a>1.1  json[“name”]相当于 json.name</h5><h5 id="1-2-for-in-json"><a href="#1-2-for-in-json" class="headerlink" title="1.2  for in json:"></a>1.2  for in json:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(var attr in json)&#123;</span><br><span class="line">    json[attr]    //这里中括号不用双引号&quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="1-3-for-in-适用于数组"><a href="#1-3-for-in-适用于数组" class="headerlink" title="1.3  for in 适用于数组"></a>1.3  for in 适用于数组</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(var i in attr)&#123;</span><br><span class="line">    attr[i]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-数组"><a href="#2-数组" class="headerlink" title="2 数组"></a>2 数组</h3><h5 id="2-1-数组定义方式"><a href="#2-1-数组定义方式" class="headerlink" title="2.1 数组定义方式:"></a>2.1 数组定义方式:</h5><ul>
+<li>var arr=[];</li>
+<li><p>var arr=new Array();</p>
+<p>  new Array(4);//表示数组的长度为4;</p>
+<h5 id="2-2-对象属性和方法"><a href="#2-2-对象属性和方法" class="headerlink" title="2.2 对象属性和方法"></a>2.2 对象属性和方法</h5><p>Array | 对象属性<br>—|—<br>constructor    |返回对创建此对象的数组函数的引用。<br>length      |设置或返回数组中元素的数目。<br>prototype    |使您有能力向对象添加属性和方法。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Array</th>
+<th>对象方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>concat()</td>
+<td>连接两个或更多的数组，并返回结果。</td>
+</tr>
+<tr>
+<td>join()</td>
+<td>把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。</td>
+</tr>
+<tr>
+<td>pop()</td>
+<td>删除并返回数组的最后一个元素</td>
+</tr>
+<tr>
+<td>push()</td>
+<td>向数组的末尾添加一个或更多元素，并返回新的长度。</td>
+</tr>
+<tr>
+<td>reverse()</td>
+<td>颠倒数组中元素的顺序。</td>
+</tr>
+<tr>
+<td>shift()</td>
+<td>删除并返回数组的第一个元素</td>
+</tr>
+<tr>
+<td>slice()</td>
+<td>从某个已有的数组返回选定的元素</td>
+</tr>
+<tr>
+<td>sort()</td>
+<td>对数组的元素进行排序</td>
+</tr>
+<tr>
+<td>splice()</td>
+<td>删除元素，并向数组添加新元素。</td>
+</tr>
+<tr>
+<td>toSource()</td>
+<td>返回该对象的源代码。</td>
+</tr>
+<tr>
+<td>toString()</td>
+<td>把数组转换为字符串，并返回结果。</td>
+</tr>
+<tr>
+<td>toLocaleString()</td>
+<td>把数组转换为本地数组，并返回结果。</td>
+</tr>
+<tr>
+<td>unshift()</td>
+<td>向数组的开头添加一个或更多元素，并返回新的长度。</td>
+</tr>
+<tr>
+<td>valueOf()</td>
+<td>返回数组对象的原始值</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-2-sort"><a href="#2-2-sort" class="headerlink" title="2.2 sort:"></a>2.2 sort:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.sort(function(a,b)&#123;</span><br><span class="line">    return parseInt(a)-parseInt(b);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>随机排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var arr = [ 1,2,3,4,5,6,7,8 ];</span><br><span class="line"></span><br><span class="line">arr.sort(function ( a, b ) &#123;</span><br><span class="line">	return Math.random() - 0.5;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">alert( arr );</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-3-随机数"><a href="#2-3-随机数" class="headerlink" title="2.3 随机数"></a>2.3 随机数</h5><blockquote>
+<p>Math.round(Math.random()*(y-x)+x)</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537685484127/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1537685484127/" itemprop="url">01-引入方式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+00:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-05-react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="1-引入方式"><a href="#1-引入方式" class="headerlink" title="1. 引入方式:"></a>1. 引入方式:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">新版本需要注意的地方：</span><br><span class="line"></span><br><span class="line">1，js文件引用换成最新的</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react-dom.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">2，</span><br><span class="line">&lt;script type=&quot;text/jsx&quot;&gt; 换成 &lt;script type=&quot;text/babel&quot;&gt;</span><br><span class="line">3，  var tipE = React.findDOMNode(this.refs.tip);</span><br><span class="line">换成 var tipE = ReactDOM.findDOMNode(this.refs.tip);</span><br><span class="line">4,React.render 换成 ReactDOM.render</span><br></pre></td></tr></table></figure>
+<h5 id="2-单独引入jsx"><a href="#2-单独引入jsx" class="headerlink" title="2. 单独引入jsx"></a>2. 单独引入jsx</h5><p><code>&lt;script type=&quot;text/babel&quot; src=&quot;src/helloworld.js&quot;&gt;&lt;/script&gt;</code></p>
+<h5 id="3-demo"><a href="#3-demo" class="headerlink" title="3.demo"></a>3.demo</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Hello React!&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;js/build/react.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/build/react-dom.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/build/browser.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;example&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script type=&quot;text/babel&quot; src=&quot;js/16-demo.jsx&quot;&gt; &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537685575141/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1537685575141/" itemprop="url">02-React.Children</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+00:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-05-react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>React.Children 是顶层API之一，为处理 this.props.childrenb 这个封闭的数据结构提供了有用的工具。</p>
+</blockquote>
+<blockquote>
+<p>this.props 对象的属性与组件的属性一一对应，但是有一个例外，就是 this.props.children 属性。它表示组件的所有子节点。</p>
+</blockquote>
+<h5 id="1-React-Children-map"><a href="#1-React-Children-map" class="headerlink" title="1.React.Children.map"></a>1.React.Children.map</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">object React.Children.map(object children, function fn [, object context])</span><br><span class="line"></span><br><span class="line">使用方法：</span><br><span class="line">React.Children.map(this.props.children, function (child) &#123;</span><br><span class="line">    return &lt;li&gt;&#123;child&#125;&lt;/li&gt;;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">其他方法</span><br><span class="line">this.props.children.forEach(function (child) &#123;</span><br><span class="line">    return &lt;li&gt;&#123;child&#125;&lt;/li&gt;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>在每一个直接子级（包含在 children 参数中的）上调用 fn 函数，此函数中的 this 指向 上下文。如果 children 是一个内嵌的对象或者数组，它将被遍历：不会传入容器对象到 fn 中。如果 children 参数是 null 或者 undefined，那么返回 null 或者 undefined 而不是一个空对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/jsx&quot;&gt;</span><br><span class="line">  var NotesList = React.createClass(&#123;</span><br><span class="line">    render: function() &#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;ol&gt;</span><br><span class="line">          &#123;</span><br><span class="line">            React.Children.map(this.props.children, function (child) &#123;</span><br><span class="line">                    return &lt;li&gt;&#123;child&#125;&lt;/li&gt;;</span><br><span class="line">                &#125;)</span><br><span class="line">          &#125;</span><br><span class="line">        &lt;/ol&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  React.render(</span><br><span class="line">    &lt;NotesList&gt;</span><br><span class="line">      &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">      &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">    &lt;/NotesList&gt;,</span><br><span class="line">    document.body</span><br><span class="line">  );</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>这里需要注意， <code>this.props.children</code> 的值有三种可能：如果当前组件没有子节点，它就是 <code>undefined</code> ;如果有一个子节点，数据类型是 <code>object</code> ；如果有多个子节点，数据类型就是 <code>array</code> 。所以，处理 <code>this.props.children</code> 的时候要小心。<br>React 提供一个工具方法 <code>React.Children</code>来处理 <code>this.props.children</code> 。我们可以用 <code>React.Children.map</code> 来遍历子节点，而不用担心 <code>this.props.children</code> 的数据类型是 undefined 还是 object。</p>
+<p>传入如下ReactElement：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;NotesList&gt;</span><br><span class="line">   &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">   &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">&lt;/NotesList&gt;</span><br><span class="line">//返回两个子节点</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;&lt;/NotesList&gt;</span><br><span class="line">//返回undefined</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;null&lt;/NotesList&gt;</span><br><span class="line">//返回null</span><br></pre></td></tr></table></figure>
+<h5 id="2、React-Children-forEach"><a href="#2、React-Children-forEach" class="headerlink" title="2、React.Children.forEach"></a>2、React.Children.forEach</h5><blockquote>
+<p>React.Children.forEach(object children, function fn [, object context])</p>
+</blockquote>
+<p>类似于 React.Children.map()，但是不返回对象。</p>
+<h5 id="3、React-Children-count"><a href="#3、React-Children-count" class="headerlink" title="3、React.Children.count"></a>3、React.Children.count</h5><blockquote>
+<p>number React.Children.count(object children)</p>
+</blockquote>
+<p>返回 children 当中的组件总数，和传递给 map 或者 forEach 的回调函数的调用次数一致。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">render: function() &#123;</span><br><span class="line">    console.log(React.Children.count(this.props.children)); //2</span><br><span class="line"></span><br><span class="line">    return (</span><br><span class="line">      &lt;ol&gt;</span><br><span class="line">        &#123;</span><br><span class="line">          this.props.children.forEach(function (child) &#123;</span><br><span class="line">              return &lt;li&gt;&#123;child&#125;&lt;/li&gt;</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &lt;/ol&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>不同的ReactElement，输出count值:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;NotesList&gt;</span><br><span class="line">    &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">    &lt;span&gt;hello&lt;/span&gt;</span><br><span class="line">&lt;/NotesList&gt;</span><br><span class="line">console.log(React.Children.count(this.props.children)); //2</span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;&lt;/NotesList&gt;</span><br><span class="line">console.log(React.Children.count(this.props.children)); //0</span><br><span class="line"></span><br><span class="line">&lt;NotesList&gt;null&lt;/NotesList&gt;</span><br><span class="line">console.log(React.Children.count(this.props.children)); //1</span><br></pre></td></tr></table></figure>
+<h5 id="4、React-Children-only"><a href="#4、React-Children-only" class="headerlink" title="4、React.Children.only"></a>4、React.Children.only</h5><blockquote>
+<p>object React.Children.only(object children)</p>
+</blockquote>
+<p>返回 children 中 <strong>仅有的子级</strong>。否则抛出异常。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(React.Children.only(this.props.children[0])); </span><br><span class="line">//输出对象this.props.children[0]</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537685566382/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1537685566382/" itemprop="url">02-js模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+00:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-00-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-00-基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="01-工厂模式"><a href="#01-工厂模式" class="headerlink" title="01-工厂模式"></a>01-工厂模式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function CreatePerson(name)&#123;</span><br><span class="line">	</span><br><span class="line">	this.name = name;</span><br><span class="line">	this.showName = function()&#123;</span><br><span class="line">		alert( this.name );</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var p1 = new CreatePerson(&apos;小明&apos;);</span><br><span class="line">//p1.showName();</span><br><span class="line">var p2 = new CreatePerson(&apos;小强&apos;);</span><br><span class="line">//p2.showName();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>当new去调用一个函数: 这个时候函数中的this就是创建出来的对象,而且函数的的返回值直接就是this啦(隐式返回)  </li>
+<li>new后面调用的函数 : 叫做构造函数</li>
+</ul>
+</blockquote>
+<h3 id="01-01-对象的引用"><a href="#01-01-对象的引用" class="headerlink" title="01.01-对象的引用"></a>01.01-对象的引用</h3><ol>
+<li>==基本类型== : 赋值的时候只是值的复制</li>
+<li>==对象类型== : 赋值不仅是值的复制，而且也是引用的传递</li>
+</ol>
+<h3 id="01-02-对象的比较"><a href="#01-02-对象的比较" class="headerlink" title="01.02-对象的比较"></a>01.02-对象的比较</h3><ol>
+<li>==基本类型== : 值相同就可以</li>
+<li>==对象类型== : 对象类型 : 值和引用都相同才行</li>
+</ol>
+<h2 id="02-工厂模式之原型"><a href="#02-工厂模式之原型" class="headerlink" title="02-工厂模式之原型"></a>02-工厂模式之原型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function 构造函数()&#123;</span><br><span class="line">	this.属性</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">构造函数.原型.方法 = function()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">var 对象1 = new 构造函数();</span><br><span class="line">对象1.方法();</span><br></pre></td></tr></table></figure>
+<ol>
+<li>先变型:</li>
+<li>尽量不要出现函数嵌套函数</li>
+<li>可以有全局变量</li>
+<li>把onload中不是赋值的语句放到单独函数中</li>
+</ol>
+<p><strong>改成面向对象:</strong></p>
+<ol>
+<li>全局变量就是属性</li>
+<li>函数就是方法</li>
+<li>Onload中创建对象</li>
+<li>改this指向问题 : 事件或者是定时器,尽量让面向对象中的this指向对象</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">window.onload = function()&#123;</span><br><span class="line">	</span><br><span class="line">	var t1 = new Tab();</span><br><span class="line">	t1.init();</span><br><span class="line">	</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function Tab()&#123;</span><br><span class="line">	this.oParent = document.getElementById(&apos;div1&apos;);</span><br><span class="line">	this.aInput = this.oParent.getElementsByTagName(&apos;input&apos;);</span><br><span class="line">	this.aDiv = this.oParent.getElementsByTagName(&apos;div&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Tab.prototype.init = function()&#123;</span><br><span class="line">	var This = this;</span><br><span class="line">	for(var i=0;i&lt;this.aInput.length;i++)&#123;</span><br><span class="line">		this.aInput[i].index = i;</span><br><span class="line">		this.aInput[i].onclick = function()&#123;</span><br><span class="line">			This.change(this);</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Tab.prototype.change = function(obj)&#123;</span><br><span class="line">	for(var i=0;i&lt;this.aInput.length;i++)&#123;</span><br><span class="line">		this.aInput[i].className = &apos;&apos;;</span><br><span class="line">		this.aDiv[i].style.display = &apos;none&apos;;</span><br><span class="line">	&#125;</span><br><span class="line">	obj.className = &apos;active&apos;;</span><br><span class="line">	this.aDiv[obj.index].style.display = &apos;block&apos;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537685850083/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1537685850083/" itemprop="url">02-产生不重复的随机数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+00:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><p>生成第i个[min,max]区间的随机数，并与之前i-1个数比较，如有重复，令i=i-1;重复生成第i个随机数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function my_ran2(n,min,max)&#123;</span><br><span class="line">    var arr=[];</span><br><span class="line">    for(i=0;i&lt;n;i++)&#123;</span><br><span class="line">        arr[i]=parseInt(Math.random()*(max-min+1)+min);</span><br><span class="line">        for(j=0;j&lt;i;j++)&#123;</span><br><span class="line">            if(arr[i]==arr[j])&#123;</span><br><span class="line">                i=i-1;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537685908717/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1537685908717/" itemprop="url">03-BOM</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:28:37+00:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h4><h6 id="1"><a href="#1" class="headerlink" title="1"></a>1</h6><blockquote>
+<p>可视区尺寸:alert( document.documentElement.clientHeight );  </p>
+</blockquote>
+<blockquote>
+<p>窗口内容高度:document.body.offsetHeight</p>
+</blockquote>
+<p>document.body是DOM中Document对象里的body节点， document.documentElement是文档对象根节点(html)的引用。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="静修">
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">322</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

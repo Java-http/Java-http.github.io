@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="前端-01-切图CSS,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="01-同时使用背景图片和背景颜色？1.test&amp;#123;background:url(&amp;quot;图片链接&amp;quot;) center center no-repeat; background-color：#000;&amp;#125; 1.test&amp;#123;background:url(&amp;quot;图片链接&amp;quot;) #000000 center center no-repeat;&amp;#125;">
+<meta name="keywords" content="前端-01-切图CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02-模仿京东">
+<meta property="og:url" content="https://java-http.github.io/1537685902545/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:description" content="01-同时使用背景图片和背景颜色？1.test&amp;#123;background:url(&amp;quot;图片链接&amp;quot;) center center no-repeat; background-color：#000;&amp;#125; 1.test&amp;#123;background:url(&amp;quot;图片链接&amp;quot;) #000000 center center no-repeat;&amp;#125;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://note.youdao.com/yws/api/personal/file/F48871E185A04FCFB997783625937B9D?method=download&shareKey=f7d14d8c726b1178f27b350bcf38d687">
+<meta property="og:image" content="http://note.youdao.com/yws/api/personal/file/E49B5B283AB84DB38D9439394D9AB832?method=download&shareKey=38ed652cbce18514727641bc1116a428">
+<meta property="og:updated_time" content="2019-10-31T10:38:28.717Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="02-模仿京东">
+<meta name="twitter:description" content="01-同时使用背景图片和背景颜色？1.test&amp;#123;background:url(&amp;quot;图片链接&amp;quot;) center center no-repeat; background-color：#000;&amp;#125; 1.test&amp;#123;background:url(&amp;quot;图片链接&amp;quot;) #000000 center center no-repeat;&amp;#125;">
+<meta name="twitter:image" content="http://note.youdao.com/yws/api/personal/file/F48871E185A04FCFB997783625937B9D?method=download&shareKey=f7d14d8c726b1178f27b350bcf38d687">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'ON53N4VTIJ',
+      apiKey: '5d906b40edb561e5ed49fa3b12164e62',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索文章","hits_empty":"抱歉，没有找到结果关于: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://java-http.github.io/1537685902545/">
+
+
+
+
+
+  <title>02-模仿京东 | 静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537685902545/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">02-模仿京东</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T10:01:35+00:00">
+                2018-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="01-同时使用背景图片和背景颜色？"><a href="#01-同时使用背景图片和背景颜色？" class="headerlink" title="01-同时使用背景图片和背景颜色？"></a>01-同时使用背景图片和背景颜色？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.test&#123;background:url(&quot;图片链接&quot;) center center no-repeat; background-color：#000;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.test&#123;background:url(&quot;图片链接&quot;) #000000 center center no-repeat;&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>背景图片需要在背景颜色之前；  </li>
+<li>需要设置多个值时使用background，只需图片链接时可直接用background-img链接;</li>
+</ol>
+</blockquote>
+<h2 id="02-line-height-和-height会传递给子级"><a href="#02-line-height-和-height会传递给子级" class="headerlink" title="02-line-height 和 height会传递给子级"></a>02-line-height 和 height会传递给子级</h2><h2 id="03-font"><a href="#03-font" class="headerlink" title="03-font"></a>03-font</h2><p>可以按顺序设置如下属性：</p>
+<ul>
+<li>font-style</li>
+<li>font-variant</li>
+<li>font-weight</li>
+<li>font-size/line-height</li>
+<li>font-family</li>
+</ul>
+<h2 id="04-text-align-center"><a href="#04-text-align-center" class="headerlink" title="04-text-align: center;"></a>04-text-align: center;</h2><p>这个属性是用来对齐行内内容的，所以，==不应该对块级内容起作用==。<br>块状元素用==margin: 0 auto;==</p>
+<h2 id="05-box-sizing"><a href="#05-box-sizing" class="headerlink" title="05-box-sizing"></a>05-box-sizing</h2><p>跟正常盒子一样,从边框接触处算起,不占边框</p>
+<p><img src="http://note.youdao.com/yws/api/personal/file/F48871E185A04FCFB997783625937B9D?method=download&amp;shareKey=f7d14d8c726b1178f27b350bcf38d687" alt="image"><br><a href="http://note.youdao.com/yws/public/redirect/share?id=f7d14d8c726b1178f27b350bcf38d687&amp;type=false" target="_blank" rel="noopener">查看图片</a></p>
+<h2 id="06-tab切换"><a href="#06-tab切换" class="headerlink" title="06-tab切换"></a>06-tab切换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.goods_tab&#123;float: right;height: 34px;margin-top: 5px;border:1px solid #ededed;border-bottom: none;z-index: 1;line-height: 34px;&#125;</span><br><span class="line">.goods_tab li&#123;float: left;display: inline;height: 34px;position: relative;&#125;</span><br><span class="line">.goods_tab li a&#123;float: left;height: 32px;padding: 0 16px;overflow: hidden;border-top: 3px solid  rgba(0,0,0,0);border-left: solid 1px rgba(0,0,0,0);border-right: solid 1px rgba(0,0,0,0);border-bottom:1px solid rgba(0,0,0,0);color: #666;position: relative;top: -1px;z-index: 2;&#125;</span><br><span class="line">.goods_tab li span&#123;position: absolute; width: 1px; background: #ededed; overflow: hidden; height: 14px; top: 10px; right: -1px;z-index: 1;&#125;</span><br><span class="line">.goods_tab li:hover a&#123;color: #c81623;border-left: solid 1px #c81623; border-right: solid 1px #c81623; border-top: 3px solid #c81623;border-bottom:1px solid #fff;&#125; </span><br><span class="line">.goods_tab li:hover span&#123;display: none;&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://note.youdao.com/yws/api/personal/file/E49B5B283AB84DB38D9439394D9AB832?method=download&amp;shareKey=38ed652cbce18514727641bc1116a428" alt="image"><br><a href="http://note.youdao.com/yws/public/redirect/share?id=38ed652cbce18514727641bc1116a428&amp;type=false" target="_blank" rel="noopener">查看图片</a></p>
+<h2 id="07-tab切换"><a href="#07-tab切换" class="headerlink" title="07-tab切换"></a>07-tab切换</h2><h3 id="a标签不能嵌套a标签-否则会自动分离成各自a标签"><a href="#a标签不能嵌套a标签-否则会自动分离成各自a标签" class="headerlink" title="==a标签不能嵌套a标签,否则会自动分离成各自a标签=="></a>==a标签不能嵌套a标签,否则会自动分离成各自a标签==</h3><h2 id="08-浮动-li"><a href="#08-浮动-li" class="headerlink" title="08-浮动 li"></a>08-浮动 li</h2><h3 id="浮动li里面包含a-gt-img标签时候-a标签宽度会自动包裹图片宽度-li宽度随a-img"><a href="#浮动li里面包含a-gt-img标签时候-a标签宽度会自动包裹图片宽度-li宽度随a-img" class="headerlink" title="==浮动li里面包含a&gt;img标签时候,a标签宽度会自动包裹图片宽度,li宽度随a img=="></a>==浮动li里面包含a&gt;img标签时候,a标签宽度会自动包裹图片宽度,li宽度随a img==</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端-01-切图CSS/" rel="tag"><i class="fa fa-tag"></i> 前端-01-切图CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/1537685175752/" rel="next" title="01-import路径问题">
+                <i class="fa fa-chevron-left"></i> 01-import路径问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/1537685978491/" rel="prev" title="03-弹性布局">
+                03-弹性布局 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="静修">
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">322</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#01-同时使用背景图片和背景颜色？"><span class="nav-number">1.</span> <span class="nav-text">01-同时使用背景图片和背景颜色？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#02-line-height-和-height会传递给子级"><span class="nav-number">2.</span> <span class="nav-text">02-line-height 和 height会传递给子级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#03-font"><span class="nav-number">3.</span> <span class="nav-text">03-font</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#04-text-align-center"><span class="nav-number">4.</span> <span class="nav-text">04-text-align: center;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#05-box-sizing"><span class="nav-number">5.</span> <span class="nav-text">05-box-sizing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#06-tab切换"><span class="nav-number">6.</span> <span class="nav-text">06-tab切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#07-tab切换"><span class="nav-number">7.</span> <span class="nav-text">07-tab切换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a标签不能嵌套a标签-否则会自动分离成各自a标签"><span class="nav-number">7.1.</span> <span class="nav-text">==a标签不能嵌套a标签,否则会自动分离成各自a标签==</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#08-浮动-li"><span class="nav-number">8.</span> <span class="nav-text">08-浮动 li</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动li里面包含a-gt-img标签时候-a标签宽度会自动包裹图片宽度-li宽度随a-img"><span class="nav-number">8.1.</span> <span class="nav-text">==浮动li里面包含a&gt;img标签时候,a标签宽度会自动包裹图片宽度,li宽度随a img==</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

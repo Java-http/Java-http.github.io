@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="前端-12-微信小程序,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="小程序踩坑01 cover-view的坑1.不支持边框样式比如我要给一个cover-view设置底部边框，我会在下面再添加一个cover-view，给第二个cover-view设置宽度百分之百，高度为1个像素，说白了就是模拟边框 2 滚动问题tip: 基础库 1.9.90 起 cover-view 支持 overflow-y: scroll，但不支持动态更新 overflow  暂不支持 over">
+<meta name="keywords" content="前端-12-微信小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="03-微信小程序踩坑">
+<meta property="og:url" content="https://java-http.github.io/1546390477110/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:description" content="小程序踩坑01 cover-view的坑1.不支持边框样式比如我要给一个cover-view设置底部边框，我会在下面再添加一个cover-view，给第二个cover-view设置宽度百分之百，高度为1个像素，说白了就是模拟边框 2 滚动问题tip: 基础库 1.9.90 起 cover-view 支持 overflow-y: scroll，但不支持动态更新 overflow  暂不支持 over">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-31T10:38:28.717Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="03-微信小程序踩坑">
+<meta name="twitter:description" content="小程序踩坑01 cover-view的坑1.不支持边框样式比如我要给一个cover-view设置底部边框，我会在下面再添加一个cover-view，给第二个cover-view设置宽度百分之百，高度为1个像素，说白了就是模拟边框 2 滚动问题tip: 基础库 1.9.90 起 cover-view 支持 overflow-y: scroll，但不支持动态更新 overflow  暂不支持 over">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'ON53N4VTIJ',
+      apiKey: '5d906b40edb561e5ed49fa3b12164e62',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索文章","hits_empty":"抱歉，没有找到结果关于: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://java-http.github.io/1546390477110/">
+
+
+
+
+
+  <title>03-微信小程序踩坑 | 静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1546390477110/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">03-微信小程序踩坑</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-23T17:58:07+00:00">
+                2019-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-12-微信小程序/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-12-微信小程序</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="小程序踩坑"><a href="#小程序踩坑" class="headerlink" title="小程序踩坑"></a>小程序踩坑</h1><h2 id="01-cover-view的坑"><a href="#01-cover-view的坑" class="headerlink" title="01 cover-view的坑"></a>01 cover-view的坑</h2><h3 id="1-不支持边框样式"><a href="#1-不支持边框样式" class="headerlink" title="1.不支持边框样式"></a>1.不支持边框样式</h3><p>比如我要给一个cover-view设置底部边框，我会在下面再添加一个cover-view，给第二个cover-view设置宽度百分之百，高度为1个像素，说白了就是模拟边框</p>
+<h3 id="2-滚动问题"><a href="#2-滚动问题" class="headerlink" title="2 滚动问题"></a>2 滚动问题</h3><p><strong>tip: 基础库 1.9.90 起 cover-view 支持 <code>overflow-y: scroll</code>，但不支持动态更新 overflow</strong></p>
+<blockquote>
+<p>暂不支持 <code>overflow-x: scroll</code></p>
+</blockquote>
+<h3 id="3-控制显示"><a href="#3-控制显示" class="headerlink" title="3 控制显示"></a>3 控制显示</h3><p>使用 <strong>hidden</strong> 代替 <strong>wx:if</strong></p>
+<blockquote>
+<p>自定义组件嵌套 cover-view 时，自定义组件的 slot 及其父节点暂不支持通过 wx:if 控制显隐，否则会导致 cover-view 不显示</p>
+</blockquote>
+<h2 id="04-绑定事件"><a href="#04-绑定事件" class="headerlink" title="04 绑定事件"></a>04 绑定事件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button bindtap=&apos;toFixInfoPage&apos; data-NO=&apos;&#123;&#123;NO&#125;&#125;&gt;Click Me&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(event.currentTarget.dataset.no);</span><br></pre></td></tr></table></figure>
+<p>在绑定事件处理函数的时候，也就是在wxml页面中，data-设置变量的时候是不分大小写的，但是<strong>在js里event的dataset就全部转换成了小写</strong>，我们在JS页面也只能用小写才能用它！！！</p>
+<p><del>&gt; <strong>传过来的值都是字符串,需注意!!</strong></del></p>
+<h2 id="05-set-Data-key值动态设置"><a href="#05-set-Data-key值动态设置" class="headerlink" title="05 set-Data key值动态设置"></a>05 set-Data key值动态设置</h2><p>这个不算小程序的坑，一个注意点，加上<code>[]</code>中括号：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const arr=[&apos;showProvince&apos;,&apos;showCity&apos;,&apos;showArea&apos;];</span><br><span class="line">arr.forEach(item=&gt;&#123;</span><br><span class="line">    if(item===type)&#123;</span><br><span class="line">      this.setData(&#123;[type]:true&#125;)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      this.setData(&#123;[item]:false&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>另外一个例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var index=event.currentTarget.dataset.index;</span><br><span class="line">var flag=!this.data.categories[index].active;</span><br><span class="line">this.setData(&#123;[&apos;categories[&apos;+index+&apos;].active&apos;]:flag&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="06-函数防抖的问题"><a href="#06-函数防抖的问题" class="headerlink" title="06 函数防抖的问题"></a>06 函数防抖的问题</h2><p>函数防抖这里引用<code>underscore</code>的<code>debounce</code></p>
+<p><code>this</code> 绑定不需要更改</p>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">getCode:debounce(function(event)&#123;</span><br><span class="line">  console.log(this);</span><br><span class="line">  console.log(&apos;提交事件&apos;);</span><br><span class="line">&#125;,5000,true),</span><br></pre></td></tr></table></figure>
+<h2 id="07-input-绑定事件"><a href="#07-input-绑定事件" class="headerlink" title="07 input 绑定事件"></a>07 input 绑定事件</h2><p>由于小程序input组件没有提供双向绑定的功能,需要简单加上绑定事件监听</p>
+<p><strong>wxml部分</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;input </span><br><span class="line">  bindblur=&quot;handleInput&quot; // 防止用户手写获取不到input值</span><br><span class="line">  bindinput=&quot;handleInput&quot; // 绑定事件</span><br><span class="line">  data-inputkey=&quot;phone&quot; // 通过inputkey标记</span><br><span class="line">  value=&quot;&#123;&#123;phone&#125;&#125;&quot;</span><br><span class="line">  type=&quot;number&quot;</span><br><span class="line">  class=&quot;yx-input&quot; </span><br><span class="line">  placeholder=&quot;请输入您的手机号&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>js部分</strong></p>
+<p> 第一种方案：（只适用单向绑定情况）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * input 绑定事件</span><br><span class="line"> */</span><br><span class="line">handleInput(event)&#123;</span><br><span class="line">  this.setData(&#123;[event.currentTarget.dataset.inputkey]:event.detail. value&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>第一种方案存在input和textarea在输入内容时，如果在bindinput事件时，通过调用setData保存输入的内容，光标就会自动跑到最后去，这也是个大坑。</p>
+</blockquote>
+<p> 第二种方案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * input 绑定事件</span><br><span class="line"> */</span><br><span class="line">handleInput(event)&#123;</span><br><span class="line">  var keyName=event.currentTarget.dataset.inputkey;</span><br><span class="line">  var arr=keyName.split(&quot;.&quot;);</span><br><span class="line">  var obj=&#123;&#125;</span><br><span class="line">  if(arr.length==1)&#123;</span><br><span class="line">    this.data[keyName]=event.detail.value;</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    for(var i=0;i&lt;arr.length;i++)&#123;</span><br><span class="line">      if(i==0)&#123;</span><br><span class="line">        obj=this.data[arr[i]]</span><br><span class="line">      &#125;else if(i==arr.length-1)&#123;</span><br><span class="line">        obj[arr[i]]=event.detail.value;</span><br><span class="line">      &#125;else&#123;</span><br><span class="line">        obj=obj[arr[i]]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="08-async-await-引入"><a href="#08-async-await-引入" class="headerlink" title="08 async/await 引入"></a><del>08 async/await 引入</del></h2><blockquote>
+<p>注意: 小程序于20190508更新了微信开发者工具,增强编译功能已经支持 <code>async</code> ,不再需要引入 <code>regenerator-runtime.js</code></p>
+</blockquote>
+<p><del>经过微信开发者工具的不断升级，它的“ES6转ES5”的功能也渐渐有了加强，所以要用async/await的话，只需要引入regenerator runtime就可以了。</del></p>
+<p><strong>需要熟悉async api，特别是报错的处理上！</strong><br><strong>需要熟悉async api，特别是报错的处理上！！</strong><br><strong>需要熟悉async api，特别是报错的处理上！！！</strong>  </p>
+<p>把 <code>regenerator-runtime.js</code>  放到 <code>libs</code> 目录下，在页面引入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import regeneratorRuntime from &quot;../../libs/regenerator-runtime&quot;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 注意:这里用了resolve返回布尔值出去，所以在上面不需要 catch promise</span><br><span class="line"> * @returns &#123;Promise [boolean]&#125; </span><br><span class="line"> */</span><br><span class="line">verify()&#123;</span><br><span class="line">  return new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">    if(this.data.phone===&apos;&apos;)&#123;</span><br><span class="line">      wx.showToast(&#123;</span><br><span class="line">        title: &apos;请输入手机号码&apos;, //提示的内容,</span><br><span class="line">        icon: &apos;none&apos;, //图标,</span><br><span class="line">        duration: 2000, //延迟时间,</span><br><span class="line">        mask: true, //显示透明蒙层，防止触摸穿透,</span><br><span class="line">      &#125;);</span><br><span class="line">      resolve(false);</span><br><span class="line">    &#125;</span><br><span class="line">    if(!/1[0-9]&#123;10&#125;/.test(this.data.phone))&#123;</span><br><span class="line">      wx.showToast(&#123;</span><br><span class="line">        title: &apos;请输入正确的手机号码&apos;, //提示的内容,</span><br><span class="line">        icon: &apos;none&apos;, //图标,</span><br><span class="line">        duration: 2000, //延迟时间,</span><br><span class="line">        mask: true, //显示透明蒙层，防止触摸穿透,</span><br><span class="line">      &#125;);</span><br><span class="line">      resolve(false);</span><br><span class="line">    &#125;</span><br><span class="line">    resolve(true);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：data数据的获取用 <code>this.data.xx</code> 获取</p>
+</blockquote>
+<h2 id="09-微信小程序里Promise不支持finally"><a href="#09-微信小程序里Promise不支持finally" class="headerlink" title="09 微信小程序里Promise不支持finally"></a>09 微信小程序里Promise不支持finally</h2><p>引入 <code>promise-finally.js</code>,放在<code>libs</code>目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &apos;../../libs/promise-finally&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Promise.prototype.finally = function (callback) &#123;</span><br><span class="line">  let P = this.constructor;</span><br><span class="line">  return this.then(</span><br><span class="line">    value  =&gt; P.resolve(callback()).then(() =&gt; value),</span><br><span class="line">    reason =&gt; P.resolve(callback()).then(() =&gt; &#123; throw reason &#125;)</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="10-wxss不能设置本地背景图片"><a href="#10-wxss不能设置本地背景图片" class="headerlink" title="10 wxss不能设置本地背景图片"></a>10 wxss不能设置本地背景图片</h2><blockquote>
+<p>wxss 中的本地资源图片无法通过 WXSS 获取，可以使用网络图片，或者 base64，或者使用<image>标签。请参考文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/qa.html#%E6%9C%AC%E5%9C%B0%E8%B5%84%E6%BA%90%E6%97%A0%E6%B3%95%E9%80%9A%E8%BF%87-wxss-%E8%8E%B7%E5%8F%96" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/qa.html#%E6%9C%AC%E5%9C%B0%E8%B5%84%E6%BA%90%E6%97%A0%E6%B3%95%E9%80%9A%E8%BF%87-wxss-%E8%8E%B7%E5%8F%96</a></image></p>
+</blockquote>
+<p>采用 image 标签 + 绝对定位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.image-section&#123;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.image__bg&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class=&quot;dots__item image-section&quot;&gt;</span><br><span class="line">  &lt;image</span><br><span class="line">    class=&quot;image__bg&quot;</span><br><span class="line">    src=&quot;/img/index-bg.png&quot;&gt;</span><br><span class="line">  &lt;/image&gt;</span><br><span class="line">  &lt;view class=&quot;image__bg&quot;&gt;</span><br><span class="line">    &lt;view class=&quot;dots__name&quot;&gt;xxx维修点&lt;/view&gt;</span><br><span class="line">    &lt;view class=&quot;dots__distance&quot;&gt;454米&lt;/view&gt;</span><br><span class="line">    &lt;view class=&quot;dots__neast&quot;&gt;距离最近&lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="11-关于小程序-scroll-view-左右横向滑动没有效果（无法滑动）问题"><a href="#11-关于小程序-scroll-view-左右横向滑动没有效果（无法滑动）问题" class="headerlink" title="11 关于小程序 scroll-view 左右横向滑动没有效果（无法滑动）问题"></a>11 关于小程序 scroll-view 左右横向滑动没有效果（无法滑动）问题</h2><blockquote>
+<p><a href="https://www.cnblogs.com/miu-key/p/7606024.html" target="_blank" rel="noopener">参考链接</a></p>
+</blockquote>
+<ol>
+<li>scroll-view 中的需要滑动的元素不可以用 float 浮动;</li>
+<li><p>scroll-view 中的包裹需要滑动的元素的大盒子用 display:flex;是没有作用的；</p>
+</li>
+<li><p>scroll-view 中的需要滑动的元素要用 <strong>dislay:inline-block;</strong> 进行元素的横向编排；</p>
+</li>
+<li><p>包裹 scroll-view 的大盒子有明确的宽和加上样式–&gt;<strong>overflow:hidden;white-space:nowrap;</strong></p>
+</li>
+</ol>
+<h2 id="12-关于小程序UI组件库"><a href="#12-关于小程序UI组件库" class="headerlink" title="12 关于小程序UI组件库"></a>12 关于小程序UI组件库</h2><p>这里引用了部分有赞的小程序组件库 <a href="https://youzan.github.io/vant-weapp/#/intro" target="_blank" rel="noopener">vant-weapp</a></p>
+<h2 id="13-textarea使用注意点"><a href="#13-textarea使用注意点" class="headerlink" title="13 textarea使用注意点"></a>13 textarea使用注意点</h2><h3 id="13-1-小程序textarea遮挡键盘"><a href="#13-1-小程序textarea遮挡键盘" class="headerlink" title="13.1 小程序textarea遮挡键盘"></a>13.1 小程序textarea遮挡键盘</h3><p>设置<code>cursor-spacing</code>, 文档属性说明:</p>
+<blockquote>
+<p>指定光标与键盘的距离，单位px或rpx，默认为px。取 textarea 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离</p>
+</blockquote>
+<h3 id="13-2-获取textarea的值"><a href="#13-2-获取textarea的值" class="headerlink" title="13.2 获取textarea的值"></a>13.2 获取textarea的值</h3><p><strong>input和textarea都有一个共同的问题，用户使用手写输入法时，bindinput无法获取到用户输入的内容。</strong></p>
+<h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><p>再添加一个bindblur事件，可以获取到手写输入法的内容。</p>
+<blockquote>
+<p><a href="https://cloud.tencent.com/developer/article/1351477" target="_blank" rel="noopener">参考文章</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea </span><br><span class="line">  bindblur=&quot;handleInput&quot;</span><br><span class="line">  bindinput=&quot;handleInput&quot;</span><br><span class="line">  bindconfirm=&quot;handleInput&quot;</span><br><span class="line">  data-inputkey=&quot;installForm.describe&quot; </span><br><span class="line">  cursor-spacing=&quot;80&quot;</span><br><span class="line">  class=&quot;textarea-info&quot;</span><br><span class="line">  placeholder=&quot;请输入服务描述&quot;</span><br><span class="line">  name=&quot;&quot; </span><br><span class="line">  id=&quot;&quot;&gt;</span><br><span class="line">&lt;/textarea&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<pre><code>当键盘输入时，触发 input 事件，event.detail = {value, cursor}，bindinput 处理函数的返回值并不会反映到 textarea 上
+</code></pre></blockquote>
+<h4 id="13-3-textatea在actionsheet隐藏时刻还显示字体"><a href="#13-3-textatea在actionsheet隐藏时刻还显示字体" class="headerlink" title="13.3 textatea在actionsheet隐藏时刻还显示字体"></a>13.3 textatea在actionsheet隐藏时刻还显示字体</h4><p>在actionsheet隐藏时刻,通过动态修改 textarea class 解决<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;showActionSheet?&apos;&apos;:&apos;hide&apos;&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.hide&#123;</span><br><span class="line">  display: none!important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea</span><br><span class="line">  cursor-spacing=&quot;80&quot;</span><br><span class="line">  class=&quot;textarea-info &#123;&#123;showActionSheet?&apos;&apos;:&apos;hide&apos;&#125;&#125;&quot;</span><br><span class="line">  style=&quot;background:#fff;&quot;</span><br><span class="line">  placeholder=&quot;请输入详细地址,如小区、楼座、门牌号等&quot;&gt;</span><br><span class="line">&lt;/textarea&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="14-微信小程序使用wxparse问题："><a href="#14-微信小程序使用wxparse问题：" class="headerlink" title="14 微信小程序使用wxparse问题："></a>14 微信小程序使用wxparse问题：</h2><blockquote>
+<p><a href="https://github.com/icindy/wxParse" target="_blank" rel="noopener">文档地址</a></p>
+</blockquote>
+<p>使用wxparse报错<code>template12 not found</code>请看 <a href="https://github.com/icindy/wxParse/wiki/wxParse-%E5%A6%82%E4%BD%95%E9%87%8D%E5%A4%8D%E5%B5%8C%E5%A5%97%E6%A8%A1%E7%89%88" target="_blank" rel="noopener">github issue</a></p>
+<h3 id="14-1-显示图片的相对路径问题"><a href="#14-1-显示图片的相对路径问题" class="headerlink" title="14.1 显示图片的相对路径问题"></a>14.1 显示图片的相对路径问题</h3><h5 id="修改-html2json-js"><a href="#修改-html2json-js" class="headerlink" title="修改 html2json.js"></a>修改 html2json.js</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//对img添加额外数据</span><br><span class="line">if (node.tag === &apos;img&apos;) &#123;</span><br><span class="line">    node.imgIndex = results.images.length;</span><br><span class="line">    var imgUrl = “http://www.baidu.com(这块换成你的域名地址前缀就可以了)”+node.attr.src;</span><br><span class="line">    if (imgUrl[0] == &apos;&apos;) &#123;</span><br><span class="line">        imgUrl.splice(0, 1);</span><br><span class="line">    &#125;</span><br><span class="line">    imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);</span><br><span class="line">    node.attr.src = imgUrl;</span><br><span class="line">    node.from = bindName;</span><br><span class="line">    results.images.push(node);</span><br><span class="line">    results.imageUrls.push(imgUrl);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="14-2-console-dir在真机报错"><a href="#14-2-console-dir在真机报错" class="headerlink" title="14.2 console.dir在真机报错"></a>14.2 console.dir在真机报错</h3><h5 id="修改-html2json-js-1"><a href="#修改-html2json-js-1" class="headerlink" title="修改 html2json.js"></a>修改 html2json.js</h5><p>就是把 console.dir 注释掉，或者用 console.log 代替就好了啊。。这就是一个 log 日志，在功能上没啥用</p>
+<h2 id="15-如何promise微信小程序api"><a href="#15-如何promise微信小程序api" class="headerlink" title="15. 如何promise微信小程序api"></a>15. 如何promise微信小程序api</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//util.js</span><br><span class="line">import Promise from &apos;./bluebird.min&apos;;</span><br><span class="line">export const wxPromise = function(fn) &#123;</span><br><span class="line">  return function (obj = &#123;&#125;) &#123;</span><br><span class="line">    return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">      obj.success = function(res) &#123;</span><br><span class="line">        resolve(res);</span><br><span class="line">      &#125;</span><br><span class="line">      obj.fail = function(err) &#123;</span><br><span class="line">        reject(err);</span><br><span class="line">      &#125;</span><br><span class="line">      fn(obj)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="16-微信小程序不支持加载本地ttf字体文件"><a href="#16-微信小程序不支持加载本地ttf字体文件" class="headerlink" title="16. 微信小程序不支持加载本地ttf字体文件"></a>16. 微信小程序不支持加载本地ttf字体文件</h2><blockquote>
+<p><a href="https://transfonter.org/" target="_blank" rel="noopener">https://transfonter.org/</a></p>
+</blockquote>
+<p>通过将ttf文件转成base64</p>
+<h2 id="17-wx-if-hidden-切换自定义组件的坑"><a href="#17-wx-if-hidden-切换自定义组件的坑" class="headerlink" title="17. wx:if hidden 切换自定义组件的坑"></a>17. wx:if hidden 切换自定义组件的坑</h2><p>含有自定义组件的三个（及其以上？）组件，按照特定顺序（自定义组件位于首位？）排列，并使用 wx:if wx:elif wx:else 条件动态切换组件的渲染，会报错：<code>Error: Expect START descriptor with depth 2 but get another</code></p>
+<p>解决的办法也很简单，把wx:elif或者wx:else或者hidden全部改成wx:if就可以了。</p>
+<h2 id="18-小程序骨架屏实践"><a href="#18-小程序骨架屏实践" class="headerlink" title="18. 小程序骨架屏实践"></a>18. 小程序骨架屏实践</h2><p>具体操作请看 <a href="https://github.com/jayZOU/skeleton" target="_blank" rel="noopener">https://github.com/jayZOU/skeleton</a></p>
+<h2 id="19-eslint校验"><a href="#19-eslint校验" class="headerlink" title="19. eslint校验"></a>19. eslint校验</h2><p><code>eslint</code>配置参考<a href="https://github.com/AlloyTeam/eslint-config-alloy" target="_blank" rel="noopener">AlloyTeam出品</a></p>
+<p>安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev eslint babel-eslint eslint-config-alloy</span><br></pre></td></tr></table></figure>
+<p>在你的项目根目录下创建 <code>.eslintrc.js</code>，并将以下内容复制到文件中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;extends&quot;: [&quot;eslint-config-alloy&quot;],</span><br><span class="line">  // 注意这是全局变量， </span><br><span class="line">  // 当访问当前源文件内未定义的变量时，no-undef 规则将发出警告</span><br><span class="line">  // 所以需要定义这些额外的全局变量</span><br><span class="line">  &quot;globals&quot;: &#123;</span><br><span class="line">    &quot;App&quot;: false</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;rules&quot;: &#123;</span><br><span class="line">    &quot;indent&quot;: [&quot;error&quot;, 2]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建<code>.eslintignore</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">build/*.js</span><br><span class="line">config/*.js</span><br><span class="line">src/assets</span><br></pre></td></tr></table></figure>
+<p>在 <code>VSCode</code> 中使用: 安装<code>eslint</code>插件，在「文件 =&gt; 首选项 =&gt; 设置」</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;eslint.autoFixOnSave&quot;: true,</span><br><span class="line">    &quot;eslint.validate&quot;: [</span><br><span class="line">        &quot;javascript&quot;,</span><br><span class="line">        &quot;javascriptreact&quot;,</span><br><span class="line">        &quot;html&quot;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;language&quot;: &quot;vue&quot;,</span><br><span class="line">            &quot;autoFix&quot;: true</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;language&quot;: &quot;typescript&quot;,</span><br><span class="line">            &quot;autoFix&quot;: true</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;language&quot;: &quot;typescriptreact&quot;,</span><br><span class="line">            &quot;autoFix&quot;: true</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端-12-微信小程序/" rel="tag"><i class="fa fa-tag"></i> 前端-12-微信小程序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/1550915852848/" rel="next" title="85-缓存">
+                <i class="fa fa-chevron-left"></i> 85-缓存
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/1550915965282/" rel="prev" title="86-webpack中的tree shaking">
+                86-webpack中的tree shaking <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="静修">
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">322</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#小程序踩坑"><span class="nav-number">1.</span> <span class="nav-text">小程序踩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#01-cover-view的坑"><span class="nav-number">1.1.</span> <span class="nav-text">01 cover-view的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-不支持边框样式"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.不支持边框样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-滚动问题"><span class="nav-number">1.1.2.</span> <span class="nav-text">2 滚动问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-控制显示"><span class="nav-number">1.1.3.</span> <span class="nav-text">3 控制显示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#04-绑定事件"><span class="nav-number">1.2.</span> <span class="nav-text">04 绑定事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#05-set-Data-key值动态设置"><span class="nav-number">1.3.</span> <span class="nav-text">05 set-Data key值动态设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#06-函数防抖的问题"><span class="nav-number">1.4.</span> <span class="nav-text">06 函数防抖的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#07-input-绑定事件"><span class="nav-number">1.5.</span> <span class="nav-text">07 input 绑定事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#08-async-await-引入"><span class="nav-number">1.6.</span> <span class="nav-text">08 async/await 引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#09-微信小程序里Promise不支持finally"><span class="nav-number">1.7.</span> <span class="nav-text">09 微信小程序里Promise不支持finally</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-wxss不能设置本地背景图片"><span class="nav-number">1.8.</span> <span class="nav-text">10 wxss不能设置本地背景图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-关于小程序-scroll-view-左右横向滑动没有效果（无法滑动）问题"><span class="nav-number">1.9.</span> <span class="nav-text">11 关于小程序 scroll-view 左右横向滑动没有效果（无法滑动）问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-关于小程序UI组件库"><span class="nav-number">1.10.</span> <span class="nav-text">12 关于小程序UI组件库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-textarea使用注意点"><span class="nav-number">1.11.</span> <span class="nav-text">13 textarea使用注意点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#13-1-小程序textarea遮挡键盘"><span class="nav-number">1.11.1.</span> <span class="nav-text">13.1 小程序textarea遮挡键盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-2-获取textarea的值"><span class="nav-number">1.11.2.</span> <span class="nav-text">13.2 获取textarea的值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法："><span class="nav-number">1.11.2.1.</span> <span class="nav-text">解决办法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-3-textatea在actionsheet隐藏时刻还显示字体"><span class="nav-number">1.11.2.2.</span> <span class="nav-text">13.3 textatea在actionsheet隐藏时刻还显示字体</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-微信小程序使用wxparse问题："><span class="nav-number">1.12.</span> <span class="nav-text">14 微信小程序使用wxparse问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#14-1-显示图片的相对路径问题"><span class="nav-number">1.12.1.</span> <span class="nav-text">14.1 显示图片的相对路径问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#修改-html2json-js"><span class="nav-number">1.12.1.0.1.</span> <span class="nav-text">修改 html2json.js</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-2-console-dir在真机报错"><span class="nav-number">1.12.2.</span> <span class="nav-text">14.2 console.dir在真机报错</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#修改-html2json-js-1"><span class="nav-number">1.12.2.0.1.</span> <span class="nav-text">修改 html2json.js</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#15-如何promise微信小程序api"><span class="nav-number">1.13.</span> <span class="nav-text">15. 如何promise微信小程序api</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-微信小程序不支持加载本地ttf字体文件"><span class="nav-number">1.14.</span> <span class="nav-text">16. 微信小程序不支持加载本地ttf字体文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-wx-if-hidden-切换自定义组件的坑"><span class="nav-number">1.15.</span> <span class="nav-text">17. wx:if hidden 切换自定义组件的坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-小程序骨架屏实践"><span class="nav-number">1.16.</span> <span class="nav-text">18. 小程序骨架屏实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-eslint校验"><span class="nav-number">1.17.</span> <span class="nav-text">19. eslint校验</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

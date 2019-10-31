@@ -1,0 +1,2275 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="静修-个人博客">
+<meta property="og:url" content="https://java-http.github.io/page/2/index.html">
+<meta property="og:site_name" content="静修-个人博客">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="静修-个人博客">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'ON53N4VTIJ',
+      apiKey: '5d906b40edb561e5ed49fa3b12164e62',
+      indexName: 'hexo',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索文章","hits_empty":"抱歉，没有找到结果关于: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://java-http.github.io/page/2/">
+
+
+
+
+
+  <title>静修-个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静修-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1567239323425/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1567239323425/" itemprop="url">100-js按位取反</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-31T16:15:20+00:00">
+                2019-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="按位取反"><a href="#按位取反" class="headerlink" title="按位取反~"></a>按位取反~</h2><p>基本概念：</p>
+<blockquote>
+<p>这是js中的一元操作符：按位取反。</p>
+</blockquote>
+<p>计算规则为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~x = -(x+1);</span><br></pre></td></tr></table></figure>
+<p>即：~-1 = 0、~1 = -2。</p>
+<p>就来看看<code>~1</code>的计算步骤：</p>
+<ul>
+<li><p>将<code>1</code>(这里叫：原码)转二进制 ＝ <code>00000001</code></p>
+</li>
+<li><p>按位取反 ＝ <code>11111110</code></p>
+</li>
+<li><p>发现符号位(即最高位)为<code>1</code>(表示负数)，将除符号位之外的其他数字取反 ＝ <code>10000001</code></p>
+</li>
+<li><p>末位加1取其补码 ＝ <code>10000010</code></p>
+</li>
+</ul>
+<p>转换回十进制 ＝ <code>-2</code></p>
+<h2 id="indexOf-神操作"><a href="#indexOf-神操作" class="headerlink" title="indexOf 神操作"></a>indexOf 神操作</h2><p><code>~</code>取反的用法是，是因为-1的取反操作等于0，而其他数的取反操作不等于0。所以用<code>indexOf</code>操作符可以用<code>~</code>操作来判断某个字符串里是否有某个字符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;123456&apos;</span><br><span class="line">if(~str.indexOf(0))&#123;</span><br><span class="line">  console.log(&apos;因为取反之后不为零，说明indexOf的结果不等于-1，所以表示str字符串里包含了对应字符&apos;)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  console.log(&apos;说明取反之后为零，说明indexOf的结果等于-1，所以表示str字符串里不包含了对应字符&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://www.cnblogs.com/moqiutao/p/6275483.html" target="_blank" rel="noopener">参考文章</a><br><a href="https://blog.csdn.net/qq_31070475/article/details/72598500" target="_blank" rel="noopener">参考文章</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1567239277848/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1567239277848/" itemprop="url">10-构造函数加不加props</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-31T16:14:35+00:00">
+                2019-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-05-react/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-05-react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="加与不加props的区别究竟在哪里呢？"><a href="#加与不加props的区别究竟在哪里呢？" class="headerlink" title="加与不加props的区别究竟在哪里呢？"></a>加与不加props的区别究竟在哪里呢？</h2><blockquote>
+<p>以下来自stackoverflow的解释：</p>
+<p><a href="http://note.youdao.com/" target="_blank" rel="noopener">What’s the difference between “super()” and “super(props)” in React when using es6 classes?</a></p>
+</blockquote>
+<p>不加<code>props</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">constructor(props) &#123;</span><br><span class="line">    super();</span><br><span class="line">    console.log(this.props) //undefined</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>加<code>props</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    console.log(this.props) //props will get logged.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1567239198631/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1567239198631/" itemprop="url">37-css3文本两端对齐</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-31T16:13:16+00:00">
+                2019-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;box&quot;&gt;你好好了&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;box&quot;&gt;你好&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  border: 1px solid #000;</span><br><span class="line">  padding: 10px;</span><br><span class="line">  text-align: justify;</span><br><span class="line">  &amp;:after &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    width: 100%;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    height: 0;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="//note.youdao.com/yws/public/resource/ade1ce783b8d152f281c793ec03caff9/xmlnote/E404675E2D4241C38500A6AC85E8DE17/14291" alt="image"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1567239116160/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1567239116160/" itemprop="url">09-angular-commit规范</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-31T16:11:53+00:00">
+                2019-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-10-git/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-10-git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>feat：新功能（feature）</li>
+<li>fix：修补bug</li>
+<li>docs：文档（documentation）</li>
+<li>style： 格式（不影响代码运行的变动）</li>
+<li>refactor：重构（即不是新增功能，也不是修改bug的代码变动）</li>
+<li>test：增加测试</li>
+<li>chore：构建过程或辅助工具的变动</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1567239038331/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1567239038331/" itemprop="url">99-js解绑监听事件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-31T16:10:35+00:00">
+                2019-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>addEventListener()</code>和<code>removeEventListener()</code>用来绑定事件和解绑事件</p>
+<p>它们都接受3个参数<code>addEventListener(eventName，function，true)</code></p>
+<p>第三个参数为<code>true</code>表示在捕获阶段调用事件处理程序，<code>false</code>表示在冒泡阶段调用事件处理程序</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;resize&apos;,function(event)&#123;</span><br><span class="line">  event.preventDefault();</span><br><span class="line">  console.log(&apos;调整浏览器窗口大小时触发resize事件&apos;)</span><br><span class="line">&#125;,false)</span><br></pre></td></tr></table></figure>
+<p>当移除事件时用<code>removeEventListener()</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">window.removeEventListener(&apos;resize&apos;,function(event)&#123;</span><br><span class="line">  event.preventDefault();</span><br><span class="line">  console.log(&apos;解绑resize事件&apos;)</span><br><span class="line">&#125;,false)</span><br></pre></td></tr></table></figure>
+<p>但是发现并<strong>没有解绑成功！！！</strong></p>
+<p>因为解绑和绑定时的函数名要相同，也就意味着通过<code>addEventListener</code>绑定的匿名函数是不能解绑的</p>
+<p>正确的绑定和解绑示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function resizeWindow(event)&#123;</span><br><span class="line">  event.preventDefault();</span><br><span class="line">  console.log(&apos;调整浏览器窗口大小时触发resize事件&apos;)</span><br><span class="line">&#125;</span><br><span class="line">window.addEventListener(&apos;resize&apos;, resizeWindow, false);</span><br><span class="line">window.removeEventListener(&apos;resize&apos;, resizeWindow, false);</span><br></pre></td></tr></table></figure>
+<p>这样就ok了</p>
+<blockquote>
+<p>版权声明：本文为CSDN博主「xmy_wh」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/xmy_wh/article/details/84634410" target="_blank" rel="noopener">https://blog.csdn.net/xmy_wh/article/details/84634410</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1537686589042/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1537686589042/" itemprop="url">14-个人前端常用工具软件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-31T16:08:55+00:00">
+                2019-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-00-基础/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-00-基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>windows个人常用的软件</p>
+</blockquote>
+<h2 id="1-工具软件"><a href="#1-工具软件" class="headerlink" title="1.工具软件"></a>1.工具软件</h2><ol>
+<li><p><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git</a> ：版本管理工具</p>
+</li>
+<li><p><a href="https://tortoisegit.org/" target="_blank" rel="noopener">tortoisegit</a> ：git图形管理工具</p>
+</li>
+<li><p><a href="https://tortoisesvn.net/" target="_blank" rel="noopener">tortoisesvn</a> ：svn版本管理工具</p>
+</li>
+<li><p>photoshop ：前端切图必备</p>
+</li>
+<li><p>animate cc ：需要动画的时候用</p>
+</li>
+<li><p>有道云笔记 ：有markdown模式，笔记写代码很方便</p>
+</li>
+<li><p><a href="https://www.getpostman.com/" target="_blank" rel="noopener">postman</a> :调试接口</p>
+</li>
+<li><p><a href="https://www.telerik.com/fiddler" target="_blank" rel="noopener">fiddler</a> :抓包工具</p>
+</li>
+<li><p><del><a href="http://koala-app.com/index-zh.html" target="_blank" rel="noopener">Koala</a> :一款编译scss,less的软件，官网下载建议迅雷下载。</del></p>
+</li>
+<li><p>ditto： 剪切板管理神器</p>
+</li>
+<li><p>Snipaste: 截图神器</p>
+</li>
+<li><p>GifCam: 录制GIF神器</p>
+</li>
+<li><p><a href="https://sourceforge.net/projects/synergy-stable-builds/" target="_blank" rel="noopener">synergy</a>: 键鼠共用神器<a href="https://blog.csdn.net/weixin_41995979/article/details/81990179" target="_blank" rel="noopener">参考</a></p>
+</li>
+<li><p><a href="http://www.google.cn/chrome/browser/desktop/index.html" target="_blank" rel="noopener">chrome浏览器</a> ：</p>
+<ul>
+<li><p>常用插件：</p>
+<ul>
+<li>AngularJS Batarang</li>
+<li>cross-request 3.0 : YApi 跨域请求</li>
+<li>EZ Zoom</li>
+<li>Google 翻译</li>
+<li>JetBrains IDE Support</li>
+<li>Lighthouse</li>
+<li>Octotree:逛github项目目录用的</li>
+<li>React Developer Tools</li>
+<li>Redux DevTools</li>
+<li>Screencastify </li>
+<li>Tampermonkey</li>
+<li>Vue.js devtools</li>
+<li>Wappalyzer</li>
+<li>WhatFont</li>
+<li>Xdebug helper</li>
+<li>扩展程序二维码(QR码)生成器(QR Code Generator)</li>
+<li>掘金</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>火狐浏览器</p>
+</li>
+<li>xshell</li>
+<li>FileZilla </li>
+<li><a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="noopener">nvm-windows</a></li>
+<li><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs</a></p>
+<ul>
+<li>常用全局包(看个人需要安装)<ul>
+<li>@vue/cli</li>
+<li>@vue/cli-init (vue-cli2.0)</li>
+<li>autoprefixer</li>
+<li>babel-cli</li>
+<li>browser-sync</li>
+<li>cnpm</li>
+<li>egg-init</li>
+<li>eslint</li>
+<li>gulp</li>
+<li>hexo-cli</li>
+<li>http-server</li>
+<li>jshint</li>
+<li>prettier</li>
+<li>rimraf</li>
+<li>vsce</li>
+<li>yarn</li>
+<li>yx-easy-gulp</li>
+<li>typescript</li>
+<li>create-react-app</li>
+<li>create-react-native-app</li>
+<li>dva-cli</li>
+<li>exp</li>
+<li>react-native-cli</li>
+<li>wepy-cli</li>
+<li>windows-build-tools</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-前端idea"><a href="#2-前端idea" class="headerlink" title="2.前端idea"></a>2.前端idea</h2><ol>
+<li><p><a href="http://www.sublimetext.com/" target="_blank" rel="noopener">sublime text3</a> ：由于转vscode了，sublime只作简单的文本编辑。</p>
+<ul>
+<li><p>插件列表：</p>
+<ul>
+<li>Package Control 安装在 新版sublime text3 不用 ctrl+~ 输入一段长长的命令行了，可以在命令行下输入pack选择第一项就行了。</li>
+<li>中文汉化插件：<code>ChineseLocalization</code></li>
+<li>IMESupport</li>
+<li><code>a file icon</code>，<code>boxy theme</code> 主题插件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">vscode</a> ：目前写代码的主要idea</p>
+<ul>
+<li><p>常用插件：</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-autoprefixer" target="_blank" rel="noopener">Autoprefixer</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2" target="_blank" rel="noopener">Bracket Pair Colorizer 2</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans" target="_blank" rel="noopener">Chinese (Simplified) Language Pack for Visual Studio Code</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code" target="_blank" rel="noopener">Dart</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=joelday.docthis" target="_blank" rel="noopener">Document This</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=atian25.eggjs" target="_blank" rel="noopener">eggjs</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=SS.element-ui-snippets" target="_blank" rel="noopener">Element UI Snippets</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank" rel="noopener">ESLint</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=doi.fileheadercomment" target="_blank" rel="noopener">File Header Comment</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter" target="_blank" rel="noopener">Flutter</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory" target="_blank" rel="noopener">Git History</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" target="_blank" rel="noopener">GitLens — Git supercharged</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=jsynowiec.vscode-insertdatestring" target="_blank" rel="noopener">Insert Date String</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion" target="_blank" rel="noopener">IntelliSense for CSS class names in HTML</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=donjayamanne.jquerysnippets" target="_blank" rel="noopener">jQuery Code Snippets</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=qiu8310.minapp-vscode" target="_blank" rel="noopener">minapp</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=HookyQR.minify" target="_blank" rel="noopener">minify</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=banxi.mpvue-snippets" target="_blank" rel="noopener">mpvue snippets</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense" target="_blank" rel="noopener">npm Intellisense</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=traBpUkciP.vscode-npm-scripts" target="_blank" rel="noopener">NPM-Scripts</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=peakchen90.open-html-in-browser" target="_blank" rel="noopener">Open HTML in Default Browser</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense" target="_blank" rel="noopener">Path Intellisense</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="noopener">Prettier - Code formatter</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=hex-ci.px2rem-plus" target="_blank" rel="noopener">px2rem+</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode" target="_blank" rel="noopener">Quokka.js</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync" target="_blank" rel="noopener">Settings Sync</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint" target="_blank" rel="noopener">stylelint</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings" target="_blank" rel="noopener">Sublime Text Keymap and Settings Importer</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log" target="_blank" rel="noopener">Turbo Console Log</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=octref.vetur" target="_blank" rel="noopener">Vetur</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ashhitch.vs-code-css-comments" target="_blank" rel="noopener">VS Code CSS Comments</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ElemeFE.vscode-element-helper" target="_blank" rel="noopener">vscode-element-helper</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets" target="_blank" rel="noopener">Vue 2 Snippets</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets" target="_blank" rel="noopener">Vue VSCode Snippets</a></li>
+</ul>
+</li>
+<li><p>已停用或弃用插件:</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag" target="_blank" rel="noopener"><del>Auto Rename Tag</del></a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare" target="_blank" rel="noopener">Live Share</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=lperdomo.angular1-code-snippets-johnpapastyle" target="_blank" rel="noopener"><del>Angular 1.x snippets</del></a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=traBpUkciP.vscode-npm-scripts" target="_blank" rel="noopener"><del>NPM-Scripts</del></a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug" target="_blank" rel="noopener"><del>PHP Debug</del></a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-intellisense" target="_blank" rel="noopener"><del>PHP IntelliSense</del></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1567237937554/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1567237937554/" itemprop="url">97-Object.create</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-31T15:52:14+00:00">
+                2019-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>object.create()</code> 是使用指定的原型proto对象及其属性<code>propertiesObject</code>去创建一个新的对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Object.myCreate = function (obj, properties)  &#123;</span><br><span class="line">  var F = function ()  &#123;&#125;</span><br><span class="line">  F.prototype = obj</span><br><span class="line">  if (properties) &#123;</span><br><span class="line">     Object.defineProperties(F, properties)</span><br><span class="line">  &#125;</span><br><span class="line">  return new F()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.myCreate(&#123;&#125;, &#123;a: &#123;value: 1&#125;&#125;)     // &#123;a: 1&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1561797351908/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1561797351908/" itemprop="url">37-vscode配置stylelint</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-29T16:35:48+00:00">
+                2019-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>时隔两月,vscode prettier的设置已经更改,所以重新记录下</p>
+</blockquote>
+<h2 id="1-vscode安装插件prettier和stylelint"><a href="#1-vscode安装插件prettier和stylelint" class="headerlink" title="1 vscode安装插件prettier和stylelint"></a>1 vscode安装插件prettier和stylelint</h2><h3 id="1-1-下载地址"><a href="#1-1-下载地址" class="headerlink" title="1.1 下载地址"></a>1.1 下载地址</h3><ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint&amp;ssr=false#review-details" target="_blank" rel="noopener">stylelint</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" rel="noopener">Prettier Formatter for Visual Studio Code</a></li>
+</ul>
+<h3 id="1-2-配置"><a href="#1-2-配置" class="headerlink" title="1.2 配置"></a>1.2 配置</h3><p>在 <code>/.vscode/settings.json</code> 增加配置,这样做是为了同步项目中的配置，当然，你可以在全局设置中设置</p>
+<blockquote>
+<p>附带vscode eslint配置如下 <code>^_^</code></p>
+</blockquote>
+<p>settings.json：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// eslint 设置</span><br><span class="line">&quot;eslint.validate&quot;: [</span><br><span class="line">  &quot;html&quot;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;language&quot;: &quot;vue&quot;,</span><br><span class="line">    &quot;autoFix&quot;: true</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;language&quot;: &quot;javascript&quot;,</span><br><span class="line">    &quot;autoFix&quot;: true</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;language&quot;: &quot;javascriptreact&quot;,</span><br><span class="line">    &quot;autoFix&quot;: true</span><br><span class="line">  &#125;</span><br><span class="line">],</span><br><span class="line">&quot;eslint.autoFixOnSave&quot;: true,</span><br><span class="line">/* prettier配置遵循eslint规则 */</span><br><span class="line">&quot;prettier.jsxSingleQuote&quot;: true,</span><br><span class="line">&quot;prettier.semi&quot;: false,</span><br><span class="line"></span><br><span class="line">// stylelint配置</span><br><span class="line">&quot;stylelint.enable&quot;: true,</span><br><span class="line">&quot;css.validate&quot;: false,</span><br><span class="line">&quot;less.validate&quot;: false,</span><br><span class="line">&quot;scss.validate&quot;: false,</span><br><span class="line">&quot;[scss]&quot;: &#123;</span><br><span class="line">  &quot;editor.formatOnSave&quot;: true</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-项目安装相应依赖包"><a href="#2-项目安装相应依赖包" class="headerlink" title="2 项目安装相应依赖包"></a>2 项目安装相应依赖包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add --dev stylelint-config-prettier stylelint-prettier</span><br><span class="line"></span><br><span class="line">yarn add prettier --dev --exact</span><br></pre></td></tr></table></figure>
+<p>然后,在根目录加上<code>.stylelintrc.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  processors: [],</span><br><span class="line">  plugins: [],</span><br><span class="line">  extends: [&quot;stylelint-prettier/recommended&quot;],</span><br><span class="line">  rules: &#123;</span><br><span class="line">    // 取消某些规则如下:</span><br><span class="line">    &quot;unit-case&quot;: null,</span><br><span class="line">    &quot;rule-empty-line-before&quot;: null,</span><br><span class="line">    &quot;comment-empty-line-before&quot;: null,</span><br><span class="line">    &quot;declaration-block-trailing-semicolon&quot;: null,</span><br><span class="line">    &quot;selector-type-no-unknown&quot;: null</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>最后,加上忽略文件<code>.prettierignore</code>和<code>.prettierignore</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node_modules</span><br><span class="line">dist</span><br></pre></td></tr></table></figure>
+<p><strong>至此，设置完毕！~</strong></p>
+<p><img src="https://i.loli.net/2019/06/29/5d166774ed0c588040.gif" alt></p>
+<h2 id="3-taro项目单位PX大写自动格式化成小写问题"><a href="#3-taro项目单位PX大写自动格式化成小写问题" class="headerlink" title="3 taro项目单位PX大写自动格式化成小写问题"></a>3 taro项目单位PX大写自动格式化成小写问题</h2><p>在 <code>Taro</code> 中尺寸单位建议使用 <code>px</code>、 百分比 <code>%</code>，<code>Taro</code> 默认会对所有单位进行转换。当前忽略单个属性的最简单的方法，就是 <code>px</code> 单位使用大写字母<code>Px</code> or <code>PX</code>。</p>
+<p>由于我们之前已经设置<code>prettier</code>插件自动格式化<code>[scss]</code>文件，导致写<code>PX</code>会被自动格式化成小写<code>px</code></p>
+<p>如何避免这个问题，只要在上面写<code>/* prettier-ignore */</code>即可避免自动格式化成小写字母</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* prettier-ignore */</span><br><span class="line">height: 44PX;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考文章<br><a href="https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint&amp;ssr=false#review-details" target="_blank" rel="noopener">stylelint插件</a><br><a href="https://prettier.io/docs/en/integrating-with-linters.html" target="_blank" rel="noopener">文档-prettier与Linters集成</a><br><a href="https://juejin.im/post/5b4ffd1ef265da0f990d52e8" target="_blank" rel="noopener">掘金-css代码规范工具stylelint</a><br><a href="https://juejin.im/post/5c85fe6ff265da2d8410ba74" target="_blank" rel="noopener">掘金-VScode下搭配ESLint、TSLint、stylelint的代码检查配方</a><br><a href="https://juejin.im/post/5a791d566fb9a0634853400e" target="_blank" rel="noopener">掘金-vscode + prettier 专治代码洁癖（一）</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1561797262994/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1561797262994/" itemprop="url">36-vscode配置csscomb</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-29T16:34:17+00:00">
+                2019-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-01-切图CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-01-切图CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="setting-json"><a href="#setting-json" class="headerlink" title="setting.json"></a>setting.json</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// css 自动格式化,vscode 需要安装 csscomb 插件</span><br><span class="line">&quot;csscomb.formatOnSave&quot;: true,</span><br><span class="line">&quot;csscomb.preset&quot;: &quot;./.vscode/csscomb.json&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="csscomb-json"><a href="#csscomb-json" class="headerlink" title="csscomb.json"></a>csscomb.json</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;exclude&quot;: [&quot;.git/**&quot;, &quot;node_modules/**&quot;, &quot;bower_components/**&quot;],</span><br><span class="line">  &quot;sort-order&quot;: [</span><br><span class="line">    [</span><br><span class="line">      &quot;position&quot;,</span><br><span class="line">      &quot;top&quot;,</span><br><span class="line">      &quot;right&quot;,</span><br><span class="line">      &quot;bottom&quot;,</span><br><span class="line">      &quot;left&quot;,</span><br><span class="line">      &quot;z-index&quot;,</span><br><span class="line">      &quot;display&quot;,</span><br><span class="line">      &quot;visibility&quot;,</span><br><span class="line">      &quot;float&quot;,</span><br><span class="line">      &quot;clear&quot;,</span><br><span class="line">      &quot;overflow&quot;,</span><br><span class="line">      &quot;-ms-overflow-x&quot;,</span><br><span class="line">      &quot;-ms-overflow-y&quot;,</span><br><span class="line">      &quot;overflow-x&quot;,</span><br><span class="line">      &quot;overflow-y&quot;,</span><br><span class="line">      &quot;-webkit-overflow-scrolling&quot;,</span><br><span class="line">      &quot;clip&quot;,</span><br><span class="line">      &quot;-webkit-align-content&quot;,</span><br><span class="line">      &quot;-ms-flex-line-pack&quot;,</span><br><span class="line">      &quot;align-content&quot;,</span><br><span class="line">      &quot;-webkit-box-align&quot;,</span><br><span class="line">      &quot;-moz-box-align&quot;,</span><br><span class="line">      &quot;-webkit-align-items&quot;,</span><br><span class="line">      &quot;align-items&quot;,</span><br><span class="line">      &quot;-ms-flex-align&quot;,</span><br><span class="line">      &quot;-webkit-align-self&quot;,</span><br><span class="line">      &quot;-ms-flex-item-align&quot;,</span><br><span class="line">      &quot;-ms-grid-row-align&quot;,</span><br><span class="line">      &quot;align-self&quot;,</span><br><span class="line">      &quot;-webkit-box-flex&quot;,</span><br><span class="line">      &quot;-webkit-flex&quot;,</span><br><span class="line">      &quot;-moz-box-flex&quot;,</span><br><span class="line">      &quot;-ms-flex&quot;,</span><br><span class="line">      &quot;flex&quot;,</span><br><span class="line">      &quot;-webkit-flex-flow&quot;,</span><br><span class="line">      &quot;-ms-flex-flow&quot;,</span><br><span class="line">      &quot;flex-flow&quot;,</span><br><span class="line">      &quot;-webkit-flex-basis&quot;,</span><br><span class="line">      &quot;-ms-flex-preferred-size&quot;,</span><br><span class="line">      &quot;flex-basis&quot;,</span><br><span class="line">      &quot;-webkit-box-orient&quot;,</span><br><span class="line">      &quot;-webkit-box-direction&quot;,</span><br><span class="line">      &quot;-webkit-flex-direction&quot;,</span><br><span class="line">      &quot;-moz-box-orient&quot;,</span><br><span class="line">      &quot;-moz-box-direction&quot;,</span><br><span class="line">      &quot;-ms-flex-direction&quot;,</span><br><span class="line">      &quot;flex-direction&quot;,</span><br><span class="line">      &quot;-webkit-flex-grow&quot;,</span><br><span class="line">      &quot;-ms-flex-positive&quot;,</span><br><span class="line">      &quot;flex-grow&quot;,</span><br><span class="line">      &quot;-webkit-flex-shrink&quot;,</span><br><span class="line">      &quot;-ms-flex-negative&quot;,</span><br><span class="line">      &quot;flex-shrink&quot;,</span><br><span class="line">      &quot;-webkit-flex-wrap&quot;,</span><br><span class="line">      &quot;-ms-flex-wrap&quot;,</span><br><span class="line">      &quot;flex-wrap&quot;,</span><br><span class="line">      &quot;-webkit-box-pack&quot;,</span><br><span class="line">      &quot;-moz-box-pack&quot;,</span><br><span class="line">      &quot;-ms-flex-pack&quot;,</span><br><span class="line">      &quot;-webkit-justify-content&quot;,</span><br><span class="line">      &quot;justify-content&quot;,</span><br><span class="line">      &quot;-webkit-box-ordinal-group&quot;,</span><br><span class="line">      &quot;-webkit-order&quot;,</span><br><span class="line">      &quot;-moz-box-ordinal-group&quot;,</span><br><span class="line">      &quot;-ms-flex-order&quot;,</span><br><span class="line">      &quot;order&quot;,</span><br><span class="line">      &quot;-webkit-box-sizing&quot;,</span><br><span class="line">      &quot;-moz-box-sizing&quot;,</span><br><span class="line">      &quot;box-sizing&quot;,</span><br><span class="line">      &quot;margin&quot;,</span><br><span class="line">      &quot;margin-top&quot;,</span><br><span class="line">      &quot;margin-right&quot;,</span><br><span class="line">      &quot;margin-bottom&quot;,</span><br><span class="line">      &quot;margin-left&quot;,</span><br><span class="line">      &quot;padding&quot;,</span><br><span class="line">      &quot;padding-top&quot;,</span><br><span class="line">      &quot;padding-right&quot;,</span><br><span class="line">      &quot;padding-bottom&quot;,</span><br><span class="line">      &quot;padding-left&quot;,</span><br><span class="line">      &quot;min-width&quot;,</span><br><span class="line">      &quot;min-height&quot;,</span><br><span class="line">      &quot;max-width&quot;,</span><br><span class="line">      &quot;max-height&quot;,</span><br><span class="line">      &quot;width&quot;,</span><br><span class="line">      &quot;height&quot;,</span><br><span class="line">      &quot;outline&quot;,</span><br><span class="line">      &quot;outline-width&quot;,</span><br><span class="line">      &quot;outline-style&quot;,</span><br><span class="line">      &quot;outline-color&quot;,</span><br><span class="line">      &quot;outline-offset&quot;,</span><br><span class="line">      &quot;border&quot;,</span><br><span class="line">      &quot;border-spacing&quot;,</span><br><span class="line">      &quot;border-collapse&quot;,</span><br><span class="line">      &quot;border-width&quot;,</span><br><span class="line">      &quot;border-style&quot;,</span><br><span class="line">      &quot;border-color&quot;,</span><br><span class="line">      &quot;border-top&quot;,</span><br><span class="line">      &quot;border-top-width&quot;,</span><br><span class="line">      &quot;border-top-style&quot;,</span><br><span class="line">      &quot;border-top-color&quot;,</span><br><span class="line">      &quot;border-right&quot;,</span><br><span class="line">      &quot;border-right-width&quot;,</span><br><span class="line">      &quot;border-right-style&quot;,</span><br><span class="line">      &quot;border-right-color&quot;,</span><br><span class="line">      &quot;border-bottom&quot;,</span><br><span class="line">      &quot;border-bottom-width&quot;,</span><br><span class="line">      &quot;border-bottom-style&quot;,</span><br><span class="line">      &quot;border-bottom-color&quot;,</span><br><span class="line">      &quot;border-left&quot;,</span><br><span class="line">      &quot;border-left-width&quot;,</span><br><span class="line">      &quot;border-left-style&quot;,</span><br><span class="line">      &quot;border-left-color&quot;,</span><br><span class="line">      &quot;-webkit-border-radius&quot;,</span><br><span class="line">      &quot;-moz-border-radius&quot;,</span><br><span class="line">      &quot;border-radius&quot;,</span><br><span class="line">      &quot;-webkit-border-top-left-radius&quot;,</span><br><span class="line">      &quot;-moz-border-radius-topleft&quot;,</span><br><span class="line">      &quot;border-top-left-radius&quot;,</span><br><span class="line">      &quot;-webkit-border-top-right-radius&quot;,</span><br><span class="line">      &quot;-moz-border-radius-topright&quot;,</span><br><span class="line">      &quot;border-top-right-radius&quot;,</span><br><span class="line">      &quot;-webkit-border-bottom-right-radius&quot;,</span><br><span class="line">      &quot;-moz-border-radius-bottomright&quot;,</span><br><span class="line">      &quot;border-bottom-right-radius&quot;,</span><br><span class="line">      &quot;-webkit-border-bottom-left-radius&quot;,</span><br><span class="line">      &quot;-moz-border-radius-bottomleft&quot;,</span><br><span class="line">      &quot;border-bottom-left-radius&quot;,</span><br><span class="line">      &quot;-webkit-border-image&quot;,</span><br><span class="line">      &quot;-moz-border-image&quot;,</span><br><span class="line">      &quot;-o-border-image&quot;,</span><br><span class="line">      &quot;border-image&quot;,</span><br><span class="line">      &quot;-webkit-border-image-source&quot;,</span><br><span class="line">      &quot;-moz-border-image-source&quot;,</span><br><span class="line">      &quot;-o-border-image-source&quot;,</span><br><span class="line">      &quot;border-image-source&quot;,</span><br><span class="line">      &quot;-webkit-border-image-slice&quot;,</span><br><span class="line">      &quot;-moz-border-image-slice&quot;,</span><br><span class="line">      &quot;-o-border-image-slice&quot;,</span><br><span class="line">      &quot;border-image-slice&quot;,</span><br><span class="line">      &quot;-webkit-border-image-width&quot;,</span><br><span class="line">      &quot;-moz-border-image-width&quot;,</span><br><span class="line">      &quot;-o-border-image-width&quot;,</span><br><span class="line">      &quot;border-image-width&quot;,</span><br><span class="line">      &quot;-webkit-border-image-outset&quot;,</span><br><span class="line">      &quot;-moz-border-image-outset&quot;,</span><br><span class="line">      &quot;-o-border-image-outset&quot;,</span><br><span class="line">      &quot;border-image-outset&quot;,</span><br><span class="line">      &quot;-webkit-border-image-repeat&quot;,</span><br><span class="line">      &quot;-moz-border-image-repeat&quot;,</span><br><span class="line">      &quot;-o-border-image-repeat&quot;,</span><br><span class="line">      &quot;border-image-repeat&quot;,</span><br><span class="line">      &quot;-webkit-border-top-image&quot;,</span><br><span class="line">      &quot;-moz-border-top-image&quot;,</span><br><span class="line">      &quot;-o-border-top-image&quot;,</span><br><span class="line">      &quot;border-top-image&quot;,</span><br><span class="line">      &quot;-webkit-border-right-image&quot;,</span><br><span class="line">      &quot;-moz-border-right-image&quot;,</span><br><span class="line">      &quot;-o-border-right-image&quot;,</span><br><span class="line">      &quot;border-right-image&quot;,</span><br><span class="line">      &quot;-webkit-border-bottom-image&quot;,</span><br><span class="line">      &quot;-moz-border-bottom-image&quot;,</span><br><span class="line">      &quot;-o-border-bottom-image&quot;,</span><br><span class="line">      &quot;border-bottom-image&quot;,</span><br><span class="line">      &quot;-webkit-border-left-image&quot;,</span><br><span class="line">      &quot;-moz-border-left-image&quot;,</span><br><span class="line">      &quot;-o-border-left-image&quot;,</span><br><span class="line">      &quot;border-left-image&quot;,</span><br><span class="line">      &quot;-webkit-border-corner-image&quot;,</span><br><span class="line">      &quot;-moz-border-corner-image&quot;,</span><br><span class="line">      &quot;-o-border-corner-image&quot;,</span><br><span class="line">      &quot;border-corner-image&quot;,</span><br><span class="line">      &quot;-webkit-border-top-left-image&quot;,</span><br><span class="line">      &quot;-moz-border-top-left-image&quot;,</span><br><span class="line">      &quot;-o-border-top-left-image&quot;,</span><br><span class="line">      &quot;border-top-left-image&quot;,</span><br><span class="line">      &quot;-webkit-border-top-right-image&quot;,</span><br><span class="line">      &quot;-moz-border-top-right-image&quot;,</span><br><span class="line">      &quot;-o-border-top-right-image&quot;,</span><br><span class="line">      &quot;border-top-right-image&quot;,</span><br><span class="line">      &quot;-webkit-border-bottom-right-image&quot;,</span><br><span class="line">      &quot;-moz-border-bottom-right-image&quot;,</span><br><span class="line">      &quot;-o-border-bottom-right-image&quot;,</span><br><span class="line">      &quot;border-bottom-right-image&quot;,</span><br><span class="line">      &quot;-webkit-border-bottom-left-image&quot;,</span><br><span class="line">      &quot;-moz-border-bottom-left-image&quot;,</span><br><span class="line">      &quot;-o-border-bottom-left-image&quot;,</span><br><span class="line">      &quot;border-bottom-left-image&quot;,</span><br><span class="line">      &quot;background&quot;,</span><br><span class="line">      &quot;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader&quot;,</span><br><span class="line">      &quot;background-color&quot;,</span><br><span class="line">      &quot;background-image&quot;,</span><br><span class="line">      &quot;background-attachment&quot;,</span><br><span class="line">      &quot;background-position&quot;,</span><br><span class="line">      &quot;-ms-background-position-x&quot;,</span><br><span class="line">      &quot;-ms-background-position-y&quot;,</span><br><span class="line">      &quot;background-position-x&quot;,</span><br><span class="line">      &quot;background-position-y&quot;,</span><br><span class="line">      &quot;-webkit-background-clip&quot;,</span><br><span class="line">      &quot;-moz-background-clip&quot;,</span><br><span class="line">      &quot;background-clip&quot;,</span><br><span class="line">      &quot;background-origin&quot;,</span><br><span class="line">      &quot;-webkit-background-size&quot;,</span><br><span class="line">      &quot;-moz-background-size&quot;,</span><br><span class="line">      &quot;-o-background-size&quot;,</span><br><span class="line">      &quot;background-size&quot;,</span><br><span class="line">      &quot;background-repeat&quot;,</span><br><span class="line">      &quot;box-decoration-break&quot;,</span><br><span class="line">      &quot;-webkit-box-shadow&quot;,</span><br><span class="line">      &quot;-moz-box-shadow&quot;,</span><br><span class="line">      &quot;box-shadow&quot;,</span><br><span class="line">      &quot;color&quot;,</span><br><span class="line">      &quot;table-layout&quot;,</span><br><span class="line">      &quot;caption-side&quot;,</span><br><span class="line">      &quot;empty-cells&quot;,</span><br><span class="line">      &quot;list-style&quot;,</span><br><span class="line">      &quot;list-style-position&quot;,</span><br><span class="line">      &quot;list-style-type&quot;,</span><br><span class="line">      &quot;list-style-image&quot;,</span><br><span class="line">      &quot;quotes&quot;,</span><br><span class="line">      &quot;content&quot;,</span><br><span class="line">      &quot;counter-increment&quot;,</span><br><span class="line">      &quot;counter-reset&quot;,</span><br><span class="line">      &quot;-ms-writing-mode&quot;,</span><br><span class="line">      &quot;vertical-align&quot;,</span><br><span class="line">      &quot;text-align&quot;,</span><br><span class="line">      &quot;-webkit-text-align-last&quot;,</span><br><span class="line">      &quot;-moz-text-align-last&quot;,</span><br><span class="line">      &quot;-ms-text-align-last&quot;,</span><br><span class="line">      &quot;text-align-last&quot;,</span><br><span class="line">      &quot;text-decoration&quot;,</span><br><span class="line">      &quot;text-emphasis&quot;,</span><br><span class="line">      &quot;text-emphasis-position&quot;,</span><br><span class="line">      &quot;text-emphasis-style&quot;,</span><br><span class="line">      &quot;text-emphasis-color&quot;,</span><br><span class="line">      &quot;text-indent&quot;,</span><br><span class="line">      &quot;-ms-text-justify&quot;,</span><br><span class="line">      &quot;text-justify&quot;,</span><br><span class="line">      &quot;text-outline&quot;,</span><br><span class="line">      &quot;text-transform&quot;,</span><br><span class="line">      &quot;text-wrap&quot;,</span><br><span class="line">      &quot;-ms-text-overflow&quot;,</span><br><span class="line">      &quot;text-overflow&quot;,</span><br><span class="line">      &quot;text-overflow-ellipsis&quot;,</span><br><span class="line">      &quot;text-overflow-mode&quot;,</span><br><span class="line">      &quot;text-shadow&quot;,</span><br><span class="line">      &quot;white-space&quot;,</span><br><span class="line">      &quot;word-spacing&quot;,</span><br><span class="line">      &quot;-ms-word-wrap&quot;,</span><br><span class="line">      &quot;word-wrap&quot;,</span><br><span class="line">      &quot;-ms-word-break&quot;,</span><br><span class="line">      &quot;word-break&quot;,</span><br><span class="line">      &quot;-moz-tab-size&quot;,</span><br><span class="line">      &quot;-o-tab-size&quot;,</span><br><span class="line">      &quot;tab-size&quot;,</span><br><span class="line">      &quot;-webkit-hyphens&quot;,</span><br><span class="line">      &quot;-moz-hyphens&quot;,</span><br><span class="line">      &quot;hyphens&quot;,</span><br><span class="line">      &quot;letter-spacing&quot;,</span><br><span class="line">      &quot;font&quot;,</span><br><span class="line">      &quot;font-weight&quot;,</span><br><span class="line">      &quot;font-style&quot;,</span><br><span class="line">      &quot;font-variant&quot;,</span><br><span class="line">      &quot;font-size-adjust&quot;,</span><br><span class="line">      &quot;font-stretch&quot;,</span><br><span class="line">      &quot;font-size&quot;,</span><br><span class="line">      &quot;font-family&quot;,</span><br><span class="line">      &quot;src&quot;,</span><br><span class="line">      &quot;line-height&quot;,</span><br><span class="line">      &quot;opacity&quot;,</span><br><span class="line">      &quot;-ms-filter:\\&apos;progid:DXImageTransform.Microsoft.Alpha&quot;,</span><br><span class="line">      &quot;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity&quot;,</span><br><span class="line">      &quot;-ms-interpolation-mode&quot;,</span><br><span class="line">      &quot;-webkit-filter&quot;,</span><br><span class="line">      &quot;-ms-filter&quot;,</span><br><span class="line">      &quot;filter&quot;,</span><br><span class="line">      &quot;resize&quot;,</span><br><span class="line">      &quot;cursor&quot;,</span><br><span class="line">      &quot;nav-index&quot;,</span><br><span class="line">      &quot;nav-up&quot;,</span><br><span class="line">      &quot;nav-right&quot;,</span><br><span class="line">      &quot;nav-down&quot;,</span><br><span class="line">      &quot;nav-left&quot;,</span><br><span class="line">      &quot;-webkit-transition&quot;,</span><br><span class="line">      &quot;-moz-transition&quot;,</span><br><span class="line">      &quot;-ms-transition&quot;,</span><br><span class="line">      &quot;-o-transition&quot;,</span><br><span class="line">      &quot;transition&quot;,</span><br><span class="line">      &quot;-webkit-transition-delay&quot;,</span><br><span class="line">      &quot;-moz-transition-delay&quot;,</span><br><span class="line">      &quot;-ms-transition-delay&quot;,</span><br><span class="line">      &quot;-o-transition-delay&quot;,</span><br><span class="line">      &quot;transition-delay&quot;,</span><br><span class="line">      &quot;-webkit-transition-timing-function&quot;,</span><br><span class="line">      &quot;-moz-transition-timing-function&quot;,</span><br><span class="line">      &quot;-ms-transition-timing-function&quot;,</span><br><span class="line">      &quot;-o-transition-timing-function&quot;,</span><br><span class="line">      &quot;transition-timing-function&quot;,</span><br><span class="line">      &quot;-webkit-transition-duration&quot;,</span><br><span class="line">      &quot;-moz-transition-duration&quot;,</span><br><span class="line">      &quot;-ms-transition-duration&quot;,</span><br><span class="line">      &quot;-o-transition-duration&quot;,</span><br><span class="line">      &quot;transition-duration&quot;,</span><br><span class="line">      &quot;-webkit-transition-property&quot;,</span><br><span class="line">      &quot;-moz-transition-property&quot;,</span><br><span class="line">      &quot;-ms-transition-property&quot;,</span><br><span class="line">      &quot;-o-transition-property&quot;,</span><br><span class="line">      &quot;transition-property&quot;,</span><br><span class="line">      &quot;-webkit-transform&quot;,</span><br><span class="line">      &quot;-moz-transform&quot;,</span><br><span class="line">      &quot;-ms-transform&quot;,</span><br><span class="line">      &quot;-o-transform&quot;,</span><br><span class="line">      &quot;transform&quot;,</span><br><span class="line">      &quot;-webkit-transform-origin&quot;,</span><br><span class="line">      &quot;-moz-transform-origin&quot;,</span><br><span class="line">      &quot;-ms-transform-origin&quot;,</span><br><span class="line">      &quot;-o-transform-origin&quot;,</span><br><span class="line">      &quot;transform-origin&quot;,</span><br><span class="line">      &quot;-webkit-animation&quot;,</span><br><span class="line">      &quot;-moz-animation&quot;,</span><br><span class="line">      &quot;-ms-animation&quot;,</span><br><span class="line">      &quot;-o-animation&quot;,</span><br><span class="line">      &quot;animation&quot;,</span><br><span class="line">      &quot;-webkit-animation-name&quot;,</span><br><span class="line">      &quot;-moz-animation-name&quot;,</span><br><span class="line">      &quot;-ms-animation-name&quot;,</span><br><span class="line">      &quot;-o-animation-name&quot;,</span><br><span class="line">      &quot;animation-name&quot;,</span><br><span class="line">      &quot;-webkit-animation-duration&quot;,</span><br><span class="line">      &quot;-moz-animation-duration&quot;,</span><br><span class="line">      &quot;-ms-animation-duration&quot;,</span><br><span class="line">      &quot;-o-animation-duration&quot;,</span><br><span class="line">      &quot;animation-duration&quot;,</span><br><span class="line">      &quot;-webkit-animation-play-state&quot;,</span><br><span class="line">      &quot;-moz-animation-play-state&quot;,</span><br><span class="line">      &quot;-ms-animation-play-state&quot;,</span><br><span class="line">      &quot;-o-animation-play-state&quot;,</span><br><span class="line">      &quot;animation-play-state&quot;,</span><br><span class="line">      &quot;-webkit-animation-timing-function&quot;,</span><br><span class="line">      &quot;-moz-animation-timing-function&quot;,</span><br><span class="line">      &quot;-ms-animation-timing-function&quot;,</span><br><span class="line">      &quot;-o-animation-timing-function&quot;,</span><br><span class="line">      &quot;animation-timing-function&quot;,</span><br><span class="line">      &quot;-webkit-animation-delay&quot;,</span><br><span class="line">      &quot;-moz-animation-delay&quot;,</span><br><span class="line">      &quot;-ms-animation-delay&quot;,</span><br><span class="line">      &quot;-o-animation-delay&quot;,</span><br><span class="line">      &quot;animation-delay&quot;,</span><br><span class="line">      &quot;-webkit-animation-iteration-count&quot;,</span><br><span class="line">      &quot;-moz-animation-iteration-count&quot;,</span><br><span class="line">      &quot;-ms-animation-iteration-count&quot;,</span><br><span class="line">      &quot;-o-animation-iteration-count&quot;,</span><br><span class="line">      &quot;animation-iteration-count&quot;,</span><br><span class="line">      &quot;-webkit-animation-direction&quot;,</span><br><span class="line">      &quot;-moz-animation-direction&quot;,</span><br><span class="line">      &quot;-ms-animation-direction&quot;,</span><br><span class="line">      &quot;-o-animation-direction&quot;,</span><br><span class="line">      &quot;animation-direction&quot;,</span><br><span class="line">      &quot;pointer-events&quot;,</span><br><span class="line">      &quot;unicode-bidi&quot;,</span><br><span class="line">      &quot;direction&quot;,</span><br><span class="line">      &quot;-webkit-columns&quot;,</span><br><span class="line">      &quot;-moz-columns&quot;,</span><br><span class="line">      &quot;columns&quot;,</span><br><span class="line">      &quot;-webkit-column-span&quot;,</span><br><span class="line">      &quot;-moz-column-span&quot;,</span><br><span class="line">      &quot;column-span&quot;,</span><br><span class="line">      &quot;-webkit-column-width&quot;,</span><br><span class="line">      &quot;-moz-column-width&quot;,</span><br><span class="line">      &quot;column-width&quot;,</span><br><span class="line">      &quot;-webkit-column-count&quot;,</span><br><span class="line">      &quot;-moz-column-count&quot;,</span><br><span class="line">      &quot;column-count&quot;,</span><br><span class="line">      &quot;-webkit-column-fill&quot;,</span><br><span class="line">      &quot;-moz-column-fill&quot;,</span><br><span class="line">      &quot;column-fill&quot;,</span><br><span class="line">      &quot;-webkit-column-gap&quot;,</span><br><span class="line">      &quot;-moz-column-gap&quot;,</span><br><span class="line">      &quot;column-gap&quot;,</span><br><span class="line">      &quot;-webkit-column-rule&quot;,</span><br><span class="line">      &quot;-moz-column-rule&quot;,</span><br><span class="line">      &quot;column-rule&quot;,</span><br><span class="line">      &quot;-webkit-column-rule-width&quot;,</span><br><span class="line">      &quot;-moz-column-rule-width&quot;,</span><br><span class="line">      &quot;column-rule-width&quot;,</span><br><span class="line">      &quot;-webkit-column-rule-style&quot;,</span><br><span class="line">      &quot;-moz-column-rule-style&quot;,</span><br><span class="line">      &quot;column-rule-style&quot;,</span><br><span class="line">      &quot;-webkit-column-rule-color&quot;,</span><br><span class="line">      &quot;-moz-column-rule-color&quot;,</span><br><span class="line">      &quot;column-rule-color&quot;,</span><br><span class="line">      &quot;break-before&quot;,</span><br><span class="line">      &quot;break-inside&quot;,</span><br><span class="line">      &quot;break-after&quot;,</span><br><span class="line">      &quot;page-break-before&quot;,</span><br><span class="line">      &quot;page-break-inside&quot;,</span><br><span class="line">      &quot;page-break-after&quot;,</span><br><span class="line">      &quot;orphans&quot;,</span><br><span class="line">      &quot;widows&quot;,</span><br><span class="line">      &quot;-ms-zoom&quot;,</span><br><span class="line">      &quot;zoom&quot;,</span><br><span class="line">      &quot;max-zoom&quot;,</span><br><span class="line">      &quot;min-zoom&quot;,</span><br><span class="line">      &quot;user-zoom&quot;,</span><br><span class="line">      &quot;orientation&quot;</span><br><span class="line">    ]</span><br><span class="line">  ],</span><br><span class="line"></span><br><span class="line">  &quot;always-semicolon&quot;: true,</span><br><span class="line">  &quot;block-indent&quot;: &quot;  &quot;,</span><br><span class="line">  &quot;color-case&quot;: &quot;lower&quot;,</span><br><span class="line">  &quot;color-shorthand&quot;: false,</span><br><span class="line">  &quot;eof-newline&quot;: true,</span><br><span class="line">  &quot;leading-zero&quot;: false,</span><br><span class="line">  &quot;quotes&quot;: &quot;single&quot;,</span><br><span class="line">  &quot;space-after-colon&quot;: &quot; &quot;,</span><br><span class="line">  &quot;space-after-combinator&quot;: &quot; &quot;,</span><br><span class="line">  &quot;space-after-opening-brace&quot;: &quot;\n  &quot;,</span><br><span class="line">  &quot;space-after-selector-delimiter&quot;: &quot;\n&quot;,</span><br><span class="line">  &quot;space-before-closing-brace&quot;: &quot;\n&quot;,</span><br><span class="line">  &quot;space-before-colon&quot;: &quot;&quot;,</span><br><span class="line">  &quot;space-before-combinator&quot;: &quot; &quot;,</span><br><span class="line">  &quot;space-before-opening-brace&quot;: &quot; &quot;,</span><br><span class="line">  &quot;space-before-selector-delimiter&quot;: &quot;&quot;,</span><br><span class="line">  &quot;strip-spaces&quot;: true,</span><br><span class="line">  &quot;unitless-zero&quot;: true,</span><br><span class="line">  &quot;vendor-prefix-align&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://java-http.github.io/1561797164391/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="静修">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静修-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/1561797164391/" itemprop="url">96-切换npm源</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-29T16:32:39+00:00">
+                2019-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端-02-js基础复习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-02-js基础复习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="全局配置切换到淘宝源"><a href="#全局配置切换到淘宝源" class="headerlink" title="全局配置切换到淘宝源"></a>全局配置切换到淘宝源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<h2 id="全局配置切换到官方源"><a href="#全局配置切换到官方源" class="headerlink" title="全局配置切换到官方源"></a>全局配置切换到官方源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npmjs.org</span><br></pre></td></tr></table></figure>
+<h2 id="查看当前地址"><a href="#查看当前地址" class="headerlink" title="查看当前地址"></a>查看当前地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="静修">
+          <p class="site-author-name" itemprop="name">静修</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">322</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">静修</span>
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
